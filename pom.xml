@@ -158,18 +158,6 @@
       <version>${slf4j.version}</version>
     </dependency>
 
-    <!--日志相关jar包-->
-    <dependency>
-      <groupId>org.apache.bval</groupId>
-      <artifactId>bval-jsr303</artifactId>
-      <version>0.5</version>
-    </dependency>
-    <dependency>
-      <groupId>org.hibernate</groupId>
-      <artifactId>hibernate-validator</artifactId>
-      <version>5.2.4.Final</version>
-    </dependency>
-
     <!-- mapper JSON -->
     <dependency>
       <groupId>org.codehaus.jackson</groupId>

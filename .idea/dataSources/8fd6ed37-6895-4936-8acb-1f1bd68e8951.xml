@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dataSource name="excellent_house@localhost">
-  <database-model serializer="dbm" rdbms="MYSQL" format-version="4.1">
+<dataSource name="excellent_house@172.25.39.91">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="4.2">
     <root id="1"/>
     <schema id="2" parent="1" name="excellent_house">
       <Current>1</Current>
@@ -21,7 +21,7 @@
     <schema id="15" parent="1" name="test"/>
     <schema id="16" parent="1" name="video_db"/>
     <schema id="17" parent="1" name="world"/>
-    <table id="18" parent="2" name="collection_decocompany">
+    <table id="18" parent="2" name="collection_deco_company">
       <Comment>用户收藏装修公司表</Comment>
     </table>
     <table id="19" parent="2" name="collection_designer">
@@ -36,10 +36,10 @@
     <table id="22" parent="2" name="company">
       <Comment>公司表（房地产商）</Comment>
     </table>
-    <table id="23" parent="2" name="decocompany">
+    <table id="23" parent="2" name="deco_company">
       <Comment>装修公司表</Comment>
     </table>
-    <table id="24" parent="2" name="decoinstance">
+    <table id="24" parent="2" name="deco_instance">
       <Comment>装修实例</Comment>
     </table>
     <table id="25" parent="2" name="designer">
@@ -66,13 +66,13 @@
     <table id="32" parent="2" name="school">
       <Comment>学校表</Comment>
     </table>
-    <table id="33" parent="2" name="schoolnearby">
+    <table id="33" parent="2" name="school_nearby">
       <Comment>楼盘附近的学校表</Comment>
     </table>
     <table id="34" parent="2" name="transport">
       <Comment>公共交通表</Comment>
     </table>
-    <table id="35" parent="2" name="transportnearby">
+    <table id="35" parent="2" name="transport_nearby">
       <Comment>楼盘附近的交通表</Comment>
     </table>
     <table id="36" parent="2" name="user">
@@ -83,7 +83,7 @@
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="38" parent="18" name="decocompany_id">
+    <column id="38" parent="18" name="deco_company_id">
       <Position>2</Position>
       <DataType>int(11)|0</DataType>
     </column>
@@ -663,16 +663,15 @@
     <column id="175" parent="33" name="id">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
     </column>
     <column id="176" parent="33" name="school_id">
       <Position>2</Position>
       <DataType>int(11)|0</DataType>
-      <NotNull>1</NotNull>
     </column>
     <column id="177" parent="33" name="premises_id">
       <Position>3</Position>
       <DataType>int(11)|0</DataType>
-      <NotNull>1</NotNull>
     </column>
     <column id="178" parent="33" name="create_time">
       <Position>4</Position>
@@ -684,8 +683,7 @@
     </column>
     <key id="180" parent="33" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
-      <ColNames>school_id
-premises_id</ColNames>
+      <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
     <column id="181" parent="34" name="id">
