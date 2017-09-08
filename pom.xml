@@ -203,7 +203,7 @@
   </dependencies>
 
   <build>
-    <finalName>starryNight</finalName>
+    <finalName>ExcellentHouse</finalName>
     <plugins>
       <plugin>
         <groupId>org.mybatis.generator</groupId>
