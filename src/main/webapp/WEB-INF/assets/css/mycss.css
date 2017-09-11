@@ -1,0 +1,51 @@
+.avatar{
+  widmy_layoutth: 100%;
+    height: 100%;
+}
+.avatar_div{
+    width: 70px;
+    height: 40px;
+}
+.mymenu{
+    margin-left: -50px;
+   border:none;
+    width: 2px;
+    min-width: 1px;
+}
+.my_layout{
+
+    padding-top: 0px;
+ margin-bottom: 0px;
+    padding-bottom: 0px;
+}
+.my_button{
+    font-size: 16px;
+    font-weight: 600;
+    padding: 16.5px 30px;
+    border-radius: 0;
+    border: none;
+    margin-top: -60px;
+    color: #333;
+    background: #fff;
+    position: absolute;
+    outline: none;
+}
+.nav > li:hover .dropdown-menu {
+    display: block;
+    animation-duration: 4s;
+}
+#my_nar > div.collapse.navbar-collapse > ul > li> a:hover{
+    color: #2a67cd;
+
+}
+
+#my_nar{
+    text-transform: uppercase;
+    background: none;
+    border: none;
+    font-family: 'Montserrat', sans-serif;
+    margin-top: 5px;
+}
+.my_active{
+   color: #5bc0de;
+}
