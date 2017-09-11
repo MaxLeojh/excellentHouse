@@ -26,4 +26,8 @@ public class UserServiceImpl implements UserService {
 
         return userList;
     }
+
+    public int insertUser(User user){
+        return userMapper.insert(user);
+    }
 }

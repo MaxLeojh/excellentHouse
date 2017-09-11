@@ -9,4 +9,5 @@ import java.util.List;
  */
 public interface UserService {
     public List<User> selectAllUser();
+    public int insertUser(User user);
 }

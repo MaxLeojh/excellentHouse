@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -15,21 +15,21 @@
     <link rel="shortcut icon" href="assets/images/favicon.png">
 
     <!-- Bootstrap -->
-    <link href="plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-    <link href="plugins/slick/slick.css" rel="stylesheet">
-    <link href="plugins/slick-nav/slicknav.css" rel="stylesheet">
-    <link href="plugins/wow/animate.css" rel="stylesheet">
-    <link href="assets/css/bootstrap.css" rel="stylesheet">
-    <link href="assets/css/theme.css" rel="stylesheet">
-    <link href="assets/css/mycss.css" rel="stylesheet">
-    <script src="assets/js/myJS.js"></script>
+    <link href="../plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="../plugins/slick/slick.css" rel="stylesheet">
+    <link href="../plugins/slick-nav/slicknav.css" rel="stylesheet">
+    <link href="../plugins/wow/animate.css" rel="stylesheet">
+    <link href="../assets/css/bootstrap.css" rel="stylesheet">
+    <link href="../assets/css/theme.css" rel="stylesheet">
+    <link href="../assets/css/mycss.css" rel="stylesheet">
+    <script src="../assets/js/myJS.js"></script>
 </head>
 <body class="">
 
 <div id="page-loader">
     <div class="loaders">
-        <img src="assets/images/loader/3.gif" alt="First Loader">
-        <img src="assets/images/loader/4.gif" alt="First Loader">
+        <img src="../assets/images/loader/3.gif" alt="First Loader">
+        <img src="../assets/images/loader/4.gif" alt="First Loader">
     </div>
 </div>
 <header id="site-header">
@@ -37,14 +37,14 @@
         <div class="row">
             <div class="col-md-3 col-sm-5 col-xs-5">
                 <figure id="site-logo">
-                    <a href="index.html"><img src="assets/images/logo.png" alt="Logo"></a>
+                    <a href="index.html"><img src="../assets/images/logo.png" alt="Logo"></a>
                 </figure>
             </div>
             <!--个人信息-->
             <div class="col-md-4 col-sm-7 col-xs-7" style="float: right">
                 <div class="contact-in-header clearfix">
                     <div class="col-md-6 col-sm-6 col-xs-6 avatar_div">
-                        <img class=" avatar" src="assets/images/avatar.png">
+                        <img class=" avatar" src="../assets/images/avatar.png">
                     </div>
                     <span class="col-md-6 col-sm-6 col-xs-6">
                         wzc
@@ -70,7 +70,7 @@
                         <ul class="nav navbar-nav">
                             <li><a href="index.html">首页</a></li>
                             <li><a href="#">新房</a></li>
-                            <li><a href="contact.html" class="dropdown-toggle "style="  background-color: white;" data-toggle="dropdown">二手房 <b
+                            <li><a href="contact.html" class="dropdown-toggle " style="  background-color: white;" data-toggle="dropdown">二手房 <b
                                     class="caret"></b></a>
                                 <ul class="dropdown-menu depth_0">
                                     <li><a href="#">Feature 1</a></li>
@@ -110,10 +110,10 @@
 </header>
 <div class="main-slider-wrapper clearfix ">
     <div id="main-slider">
-        <div class="slide"><img src="assets/images/slider/1.jpg" alt="Slide"></div>
-        <div class="slide"><img src="assets/images/slider/2.jpg" alt="Slide"></div>
-        <div class="slide"><img src="assets/images/slider/3.jpg" alt="Slide"></div>
-        <div class="slide"><img src="assets/images/slider/4.jpg" alt="Slide"></div>
+        <div class="slide"><img src="../assets/images/slider/1.jpg" alt="Slide"></div>
+        <div class="slide"><img src="../assets/images/slider/2.jpg" alt="Slide"></div>
+        <div class="slide"><img src="../assets/images/slider/3.jpg" alt="Slide"></div>
+        <div class="slide"><img src="../assets/images/slider/4.jpg" alt="Slide"></div>
     </div>
     <div id="slider-contents">
         <div class="container text-center">
@@ -278,7 +278,7 @@
                 <article class="property layout-item clearfix">
                     <figure class="feature-image">
                         <a class="clearfix zoom" href="single-property.html"><img data-action="zoom"
-                                                                                  src="assets/images/property/1.jpg"
+                                                                                  src="../assets/images/property/1.jpg"
                                                                                   alt="Property Image"></a>
                         <span class="btn btn-warning btn-sale">for sale</span>
                     </figure>
@@ -304,7 +304,7 @@
                                 sanctus est Lorem ipsum dolor sit amet. </p>
                         </div>
                         <div class="author-box clearfix">
-                            <a href="#" class="author-img"><img src="assets/images/agents/1.jpg" alt="Agent Image"></a>
+                            <a href="#" class="author-img"><img src="../assets/images/agents/1.jpg" alt="Agent Image"></a>
                             <cite class="author-name">Personal Seller: <a href="#">Linda Garret</a></cite>
                             <span class="phone"><i class="fa fa-phone"></i> 00894 692-49-22</span>
                         </div>
@@ -315,7 +315,7 @@
                 <article class="property layout-item clearfix">
                     <figure class="feature-image">
                         <a class="clearfix zoom" href="single-property.html"><img data-action="zoom"
-                                                                                  src="assets/images/property/2.jpg"
+                                                                                  src="../assets/images/property/2.jpg"
                                                                                   alt="Property Image"></a>
                         <span class="btn btn-warning btn-sale">for sale</span>
                     </figure>
@@ -341,7 +341,7 @@
                                 sanctus est Lorem ipsum dolor sit amet. </p>
                         </div>
                         <div class="author-box clearfix">
-                            <a href="#" class="author-img"><img src="assets/images/agents/1.jpg" alt="Agent Image"></a>
+                            <a href="#" class="author-img"><img src="../assets/images/agents/1.jpg" alt="Agent Image"></a>
                             <cite class="author-name">Personal Seller: <a href="#">Linda Garret</a></cite>
                             <span class="phone"><i class="fa fa-phone"></i> 00894 692-49-22</span>
                         </div>
@@ -352,7 +352,7 @@
                 <article class="property layout-item clearfix">
                     <figure class="feature-image">
                         <a class="clearfix zoom" href="single-property.html"><img data-action="zoom"
-                                                                                  src="assets/images/property/3.jpg"
+                                                                                  src="../assets/images/property/3.jpg"
                                                                                   alt="Property Image"></a>
                         <span class="btn btn-warning btn-sale">for sale</span>
                     </figure>
@@ -378,7 +378,7 @@
                                 sanctus est Lorem ipsum dolor sit amet. </p>
                         </div>
                         <div class="author-box clearfix">
-                            <a href="#" class="author-img"><img src="assets/images/agents/1.jpg" alt="Agent Image"></a>
+                            <a href="#" class="author-img"><img src="../assets/images/agents/1.jpg" alt="Agent Image"></a>
                             <cite class="author-name">Personal Seller: <a href="#">Linda Garret</a></cite>
                             <span class="phone"><i class="fa fa-phone"></i> 00894 692-49-22</span>
                         </div>
@@ -389,7 +389,7 @@
                 <article class="property layout-item clearfix">
                     <figure class="feature-image">
                         <a class="clearfix zoom" href="single-property.html"><img data-action="zoom"
-                                                                                  src="assets/images/property/4.jpg"
+                                                                                  src="../assets/images/property/4.jpg"
                                                                                   alt="Property Image"></a>
                         <span class="btn btn-warning btn-sale">for sale</span>
                     </figure>
@@ -415,7 +415,7 @@
                                 sanctus est Lorem ipsum dolor sit amet. </p>
                         </div>
                         <div class="author-box clearfix">
-                            <a href="#" class="author-img"><img src="assets/images/agents/1.jpg" alt="Agent Image"></a>
+                            <a href="#" class="author-img"><img src="../assets/images/agents/1.jpg" alt="Agent Image"></a>
                             <cite class="author-name">Personal Seller: <a href="#">Linda Garret</a></cite>
                             <span class="phone"><i class="fa fa-phone"></i> 00894 692-49-22</span>
                         </div>
@@ -426,7 +426,7 @@
                 <article class="property layout-item clearfix">
                     <figure class="feature-image">
                         <a class="clearfix zoom" href="single-property.html"><img data-action="zoom"
-                                                                                  src="assets/images/property/5.jpg"
+                                                                                  src="../assets/images/property/5.jpg"
                                                                                   alt="Property Image"></a>
                         <span class="btn btn-warning btn-sale">for sale</span>
                     </figure>
@@ -452,7 +452,7 @@
                                 sanctus est Lorem ipsum dolor sit amet. </p>
                         </div>
                         <div class="author-box clearfix">
-                            <a href="#" class="author-img"><img src="assets/images/agents/1.jpg" alt="Agent Image"></a>
+                            <a href="#" class="author-img"><img src="../assets/images/agents/1.jpg" alt="Agent Image"></a>
                             <cite class="author-name">Personal Seller: <a href="#">Linda Garret</a></cite>
                             <span class="phone"><i class="fa fa-phone"></i> 00894 692-49-22</span>
                         </div>
@@ -463,7 +463,7 @@
                 <article class="property layout-item clearfix">
                     <figure class="feature-image">
                         <a class="clearfix zoom" href="single-property.html"><img data-action="zoom"
-                                                                                  src="assets/images/property/6.jpg"
+                                                                                  src="../assets/images/property/6.jpg"
                                                                                   alt="Property Image"></a>
                         <span class="btn btn-warning btn-sale">for sale</span>
                     </figure>
@@ -489,7 +489,7 @@
                                 sanctus est Lorem ipsum dolor sit amet. </p>
                         </div>
                         <div class="author-box clearfix">
-                            <a href="#" class="author-img"><img src="assets/images/agents/1.jpg" alt="Agent Image"></a>
+                            <a href="#" class="author-img"><img src="../assets/images/agents/1.jpg" alt="Agent Image"></a>
                             <cite class="author-name">Personal Seller: <a href="#">Linda Garret</a></cite>
                             <span class="phone"><i class="fa fa-phone"></i> 00894 692-49-22</span>
                         </div>
@@ -514,7 +514,7 @@
                 <div class="col-lg-4 col-md-6">
                     <article class="property clearfix">
                         <figure class="feature-image">
-                            <a class="clearfix" href="single-property.html"> <img src="assets/images/property/1.jpg"
+                            <a class="clearfix" href="single-property.html"> <img src="../assets/images/property/1.jpg"
                                                                                   alt="Property Image"></a>
                         </figure>
                         <div class="property-contents">
@@ -539,7 +539,7 @@
                 <div class="col-lg-4 col-md-6">
                     <article class="property clearfix">
                         <figure class="feature-image">
-                            <a class="clearfix" href="single-property.html"> <img src="assets/images/property/2.jpg"
+                            <a class="clearfix" href="single-property.html"> <img src="../assets/images/property/2.jpg"
                                                                                   alt="Property Image"></a>
                         </figure>
                         <div class="property-contents">
@@ -564,7 +564,7 @@
                 <div class="col-lg-4 col-md-6">
                     <article class="property clearfix">
                         <figure class="feature-image">
-                            <a class="clearfix" href="single-property.html"> <img src="assets/images/property/3.jpg"
+                            <a class="clearfix" href="single-property.html"> <img src="../assets/images/property/3.jpg"
                                                                                   alt="Property Image"></a>
                         </figure>
                         <div class="property-contents">
@@ -589,7 +589,7 @@
                 <div class="col-lg-4 col-md-6">
                     <article class="property clearfix">
                         <figure class="feature-image">
-                            <a class="clearfix" href="single-property.html"> <img src="assets/images/property/4.jpg"
+                            <a class="clearfix" href="single-property.html"> <img src="../assets/images/property/4.jpg"
                                                                                   alt="Property Image"></a>
                         </figure>
                         <div class="property-contents">
@@ -614,7 +614,7 @@
                 <div class="col-lg-4 col-md-6">
                     <article class="property clearfix">
                         <figure class="feature-image">
-                            <a class="clearfix" href="single-property.html"> <img src="assets/images/property/5.jpg"
+                            <a class="clearfix" href="single-property.html"> <img src="../assets/images/property/5.jpg"
                                                                                   alt="Property Image"></a>
                         </figure>
                         <div class="property-contents">
@@ -639,7 +639,7 @@
                 <div class="col-lg-4 col-md-6">
                     <article class="property clearfix">
                         <figure class="feature-image">
-                            <a class="clearfix" href="single-property.html"> <img src="assets/images/property/6.jpg"
+                            <a class="clearfix" href="single-property.html"> <img src="../assets/images/property/6.jpg"
                                                                                   alt="Property Image"></a>
                         </figure>
                         <div class="property-contents">
@@ -673,8 +673,8 @@
         <p class="wow slideInRight">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
             incididunt ut <br>
             labore et dolore magna aliquan ut enim ad minim veniam.</p>
-        <a class="btn" href="#"><img src="assets/images/iso-btn.png" alt="ISO Button"></a>
-        <a class="btn" href="#"><img src="assets/images/playstore-btn.png" alt="Play Store Button"></a>
+        <a class="btn" href="#"><img src="../assets/images/iso-btn.png" alt="ISO Button"></a>
+        <a class="btn" href="#"><img src="../assets/images/playstore-btn.png" alt="Play Store Button"></a>
     </div>
 </section>
 <section id="home-features-section" class="text-center">
@@ -690,28 +690,28 @@
         <div class="row">
             <div class="col-md-3 col-xs-6">
                 <div class="feature clearfix">
-                    <i class="icon"><img src="assets/images/features/1.png" alt="Feature Icon"></i>
+                    <i class="icon"><img src="../assets/images/features/1.png" alt="Feature Icon"></i>
                     <h6 class="entry-title">Paying guest</h6>
                     <p>Dolor sit amet consectetuer sed diam nonummy euismod tincidunt laoreet dolore magna</p>
                 </div>
             </div>
             <div class="col-md-3 col-xs-6">
                 <div class="feature clearfix">
-                    <i class="icon"><img src="assets/images/features/2.png" alt="Feature Icon"></i>
+                    <i class="icon"><img src="../assets/images/features/2.png" alt="Feature Icon"></i>
                     <h6 class="entry-title">Paying guest</h6>
                     <p>Dolor sit amet consectetuer sed diam nonummy euismod tincidunt laoreet dolore magna</p>
                 </div>
             </div>
             <div class="col-md-3 col-xs-6">
                 <div class="feature clearfix">
-                    <i class="icon"><img src="assets/images/features/3.png" alt="Feature Icon"></i>
+                    <i class="icon"><img src="../assets/images/features/3.png" alt="Feature Icon"></i>
                     <h6 class="entry-title">Paying guest</h6>
                     <p>Dolor sit amet consectetuer sed diam nonummy euismod tincidunt laoreet dolore magna</p>
                 </div>
             </div>
             <div class="col-md-3 col-xs-6">
                 <div class="feature clearfix">
-                    <i class="icon"><img src="assets/images/features/4.png" alt="Feature Icon"></i>
+                    <i class="icon"><img src="../assets/images/features/4.png" alt="Feature Icon"></i>
                     <h6 class="entry-title">Paying guest</h6>
                     <p>Dolor sit amet consectetuer sed diam nonummy euismod tincidunt laoreet dolore magna</p>
                 </div>
@@ -726,7 +726,7 @@
                 <div class="col-md-4 col-sm-6">
                     <section class="widget about-widget clearfix">
                         <h4 class="title hide">About Us</h4>
-                        <a class="footer-logo" href="#"><img src="assets/images/footer-logo.png" alt="Footer Logo"></a>
+                        <a class="footer-logo" href="#"><img src="../assets/images/footer-logo.png" alt="Footer Logo"></a>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
                             labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
                             laboris nisi</p>
@@ -774,19 +774,19 @@
 </footer>
 <a href="#top" id="scroll-top"><i class="fa fa-angle-up"></i></a>
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<script src="assets/js/jquery.min.js"></script>
-<script src="assets/js/jquery.migrate.js"></script>
-<script src="assets/js/bootstrap.min.js"></script>
-<script src="plugins/slick-nav/jquery.slicknav.min.js"></script>
-<script src="plugins/slick/slick.min.js"></script>
-<script src="plugins/jquery-ui/jquery-ui.min.js"></script>
+<script src="../assets/js/jquery.min.js"></script>
+<script src="../assets/js/jquery.migrate.js"></script>
+<script src="../assets/js/bootstrap.min.js"></script>
+<script src="../plugins/slick-nav/jquery.slicknav.min.js"></script>
+<script src="../plugins/slick/slick.min.js"></script>
+<script src="../plugins/jquery-ui/jquery-ui.min.js"></script>
 <!-- <script src="plugins/tweetie/tweetie.js"></script> -->
-<script src="plugins/forms/jquery.form.min.js"></script>
-<script src="plugins/forms/jquery.validate.min.js"></script>
-<script src="plugins/modernizr/modernizr.custom.js"></script>
-<script src="plugins/wow/wow.min.js"></script>
-<script src="plugins/zoom/zoom.js"></script>
-<script src="plugins/mixitup/mixitup.min.js"></script>
+<script src="../plugins/forms/jquery.form.min.js"></script>
+<script src="../plugins/forms/jquery.validate.min.js"></script>
+<script src="../plugins/modernizr/modernizr.custom.js"></script>
+<script src="../plugins/wow/wow.min.js"></script>
+<script src="../plugins/zoom/zoom.js"></script>
+<script src="../plugins/mixitup/mixitup.min.js"></script>
 <script>
     var result = window.matchMedia('(max-width: 992px)');
 
@@ -801,6 +801,6 @@
 </script>
 <!--<script src="http://ditu.google.cn/maps/api/js?key=AIzaSyD2MtZynhsvwI2B40juK6SifR_OSyj4aBA&libraries=places"></script>-->
 <!--<script src="plugins/whats-nearby/source/WhatsNearby.js"></script>-->
-<script src="assets/js/theme.js"></script>
+<script src="../assets/js/theme.js"></script>
 </body>
 </html>

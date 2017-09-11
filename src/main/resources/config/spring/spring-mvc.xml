@@ -38,13 +38,15 @@
     <mvc:annotation-driven/>
 
     <!-- 对静态资源文件的访问 -->
-    <mvc:resources location="/WEB-INF/jsp/assets/" mapping="/assets/**"/>
+    <!--<mvc:resources location="/WEB-INF/jsp/assets/" mapping="/assets/**"/>-->
     <mvc:resources location="/WEB-INF/images/" mapping="/images/**"/>
     <mvc:resources location="/WEB-INF/css/" mapping="/css/**"/>
     <mvc:resources location="/WEB-INF/fonts/" mapping="/fonts/**"/>
     <mvc:resources location="/WEB-INF/js/" mapping="/js/**"/>
     <mvc:resources location="/WEB-INF/videos/" mapping="/videos/**"/>
     <mvc:resources location="/WEB-INF/video/" mapping="/video/**"/>
+    <mvc:resources location="/WEB-INF/assets/" mapping="/assets/**"/>
+    <mvc:resources location="/WEB-INF/plugins/" mapping="/plugins/**"/>
 
 
     <!-- 有关首页的 -->
@@ -57,8 +59,12 @@
 
     <!-- 定义跳转的文件的前后缀 ，视图模式配置 -->
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-        <property name="prefix" value="/WEB-INF/ftl/"/>
-        <property name="suffix" value=".ftl"/>
+        <!--<property name="prefix" value="/WEB-INF/ftl/"/>-->
+        <property name="prefix" value="/WEB-INF/jsp/"/>
+        <!--<property name="prefix" value="/WEB-INF/HTML/"/>-->
+        <!--<property name="suffix" value=".ftl"/>-->
+        <property name="suffix" value=".jsp"/>
+        <!--<property name="suffix" value=".html"/>-->
     </bean>
 
     <!-- 文件上传配置 -->
