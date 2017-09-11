@@ -7,7 +7,7 @@
     <link rel="stylesheet" type="text/css" href="css/new_default.css">
     <link rel="shortcut icon" href="" type="images/x-icon">
     <link rel="stylesheet" href="css/jquery.common.css">
-    <link rel="stylesheet" href="css/index.php.css">
+    <link rel="stylesheet" href="css/index.php.css">shuj
     <title>优购房</title>
     <script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
     <script src="js/eluminate.js"></script>
