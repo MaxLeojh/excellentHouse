@@ -1,6 +1,8 @@
 package edu.ynu.software.Rocket.excellentHouse.service;
 
+import edu.ynu.software.Rocket.excellentHouse.eneityAO.HouseAO;
 import edu.ynu.software.Rocket.excellentHouse.entity.House;
+import edu.ynu.software.Rocket.excellentHouse.entity.HouseExample;
 
 import java.util.List;
 
@@ -9,4 +11,6 @@ import java.util.List;
  */
 public interface HouseService {
     List<House> getAllHouse();
+
+    List<HouseAO> getHouseAOByKind(String kind);
 }

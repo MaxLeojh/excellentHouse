@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Home</title>
+    <title>ExcellentHouse</title>
 
     <!-- Styles -->
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Poppins:400,600" rel="stylesheet">
@@ -38,7 +38,7 @@
         <div class="row">
             <div class="col-md-3 col-sm-5 col-xs-5">
                 <figure id="site-logo">
-                    <a href="index.html"><img src="../assets/images/logo.png" alt="Logo"></a>
+                    <a href="/"><img src="../assets/images/logo.png" alt="Logo"></a>
                 </figure>
             </div>
             <!--个人信息-->
@@ -69,7 +69,7 @@
                     </div>
                     <div class="collapse navbar-collapse">
                         <ul class="nav navbar-nav">
-                            <li><a href="index.html">首页</a></li>
+                            <li><a href="/">首页</a></li>
                             <li><a href="#">新房</a></li>
                             <li><a href="contact.html" class="dropdown-toggle " style="  background-color: white;" data-toggle="dropdown">二手房 <b
                                     class="caret"></b></a>
@@ -80,8 +80,8 @@
                                     <li><a href="#">Feature 1</a></li>
                                 </ul>
                             </li>
-                            <li><a href="#">装修</a></li>
                             <li><a href="#">租房</a></li>
+                            <li><a href="#">装修</a></li>
                         </ul>
                     </div>
                 </nav>
@@ -131,6 +131,7 @@
         </div>
     </div>
 </div>
+
 <%--高级搜索--%>
 <div id="advance-search" class="main-page clearfix ">
     <div class="container">
@@ -320,13 +321,109 @@
     </div>
 </section>
 
-<%--租房模块--%>
+<%--二手房模块--%>
 <section id="home-property-for-rent-listing">
+    <header class="section-header home-section-header text-center">
+        <div class="container">
+            <h2 class="wow slideInLeft">二手房</h2>
+            <p class="wow slideInRight">这里是二手房模块 <br>
+                风拳流的奥义</p>
+        </div>
+    </header>
+    <div class="container">
+        <div class="row">
+            <div id="property-for-rent-slider">
+                <c:forEach items="${secondHandList}" var="house">
+                    <div class="col-lg-4 col-md-6">
+                        <article class="property clearfix">
+                            <figure class="feature-image">
+                                <a class="clearfix" href="single-property.html"> <img src="../assets/images/property/1.jpg"
+                                                                                      alt="Property Image"></a>
+                            </figure>
+                            <div class="property-contents">
+                                <header class="property-header clearfix">
+                                    <div class="pull-left">
+                                        <h6 class="entry-title"><a href="single-property.html">${house.entity.name}</a>
+                                        </h6>
+                                        <span class="property-location"><i class="fa fa-map-marker"></i> 地址施工中 </span>
+                                    </div>
+                                    <button class="btn btn-default btn-price pull-right btn-3d" data-hover="￥${house.entity.housePrice}万">
+                                        <strong>￥${house.entity.housePrice}万</strong></button>
+                                </header>
+                                <div class="property-meta clearfix">
+                                    <span><i class="fa fa-arrows-alt"></i> ${house.entity.area}m<sup>2</sup></span>
+                                    <span><i class="fa fa-bed"></i> ${house.type.bedroomnum} 室</span>
+                                    <span><i class="fa fa-bathtub"></i> ${house.type.bathroomnum} 卫</span>
+                                    <span><i class="fa fa-cab"></i> Yes</span>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </c:forEach>
+            </div>
+        </div>
+    </div>
+</section>
+
+<%--租房模块--%>
+<section id="home-property-listing">
     <header class="section-header home-section-header text-center">
         <div class="container">
             <h2 class="wow slideInLeft">租房</h2>
             <p class="wow slideInRight">这里是租房模块 <br>
                 走过路过</p>
+        </div>
+    </header>
+    <div class="container">
+        <div class="row">
+            <c:forEach items="${rentHouseList}" var="house">
+                <div class="col-lg-4 col-sm-6 layout-item-wrap">
+                    <article class="property layout-item clearfix">
+                        <figure class="feature-image">
+                            <a class="clearfix zoom" href=""><img data-action="zoom" src="../assets/images/property/1.jpg" alt="图片丢了"></a>
+                            <span class="btn btn-warning btn-sale">热卖中</span>
+                        </figure>
+                        <div class="property-contents clearfix">
+                            <header class="property-header clearfix">
+                                <div class="pull-left">
+                                    <h6 class="entry-title"><a href="/frontPremises/show?premisesId=${house.entity.id}">${house.entity.name}</a></h6>
+                                    <span class="property-location"><i class="fa fa-map-marker"></i>坐标施工中</span>
+                                </div>
+                                <button class="btn btn-default btn-price pull-right btn-3d" data-hover="￥${house.entity.housePrice}/月"><strong>￥${house.entity.housePrice}/月</strong>
+                                </button>
+                            </header>
+                            <div class="property-meta clearfix">
+                                <span><i class="fa fa-arrows-alt"></i> ${house.entity.area}m<sup>2</sup></span>
+                                <span><i class="fa fa-bed"></i> ${house.type.bedroomnum} 室</span>
+                                <span><i class="fa fa-bathtub"></i> ${house.type.bathroomnum} 卫</span>
+                                <span><i class="fa fa-cab"></i> Yes</span>
+                            </div>
+                            <div class="contents clearfix">
+                                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
+                                    invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et
+                                    accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata
+                                    sanctus est Lorem ipsum dolor sit amet. </p>
+                            </div>
+                            <div class="author-box clearfix">
+                                <a href="#" class="author-img"><img src="../assets/images/agents/1.jpg" alt="Agent Image"></a>
+                                <cite class="author-name">Personal Seller: <a href="#">Linda Garret</a></cite>
+                                <span class="phone"><i class="fa fa-phone"></i> 00894 692-49-22</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </c:forEach>
+        </div>
+    </div>
+</section>
+
+<%--装修模块--%>
+<section id="home-property-for-rent-listing">
+    <header class="section-header home-section-header text-center">
+        <div class="container">
+            <h2 class="wow slideInRight">装修</h2>
+            <p class="wow slideInLeft">这里是装修案例展示 <br>
+                装修技术哪家强？ </p>
         </div>
     </header>
     <div class="container">
@@ -364,110 +461,63 @@
     </div>
 </section>
 
-<%--装修模块--%>
-<section id="home-property-listing">
-    <header class="section-header home-section-header text-center">
-        <div class="container">
-            <h2 class="wow slideInRight">装修</h2>
-            <p class="wow slideInLeft">这里是装修案例展示 <br>
-                装修技术哪家强？ </p>
-        </div>
-    </header>
-    <div class="container">
-        <div class="row">
-            <c:forEach items="${premisesList}" var="premises">
-                <div class="col-lg-4 col-sm-6 layout-item-wrap">
-                    <article class="property layout-item clearfix">
-                        <figure class="feature-image">
-                            <a class="clearfix zoom" href=""><img data-action="zoom" src="../assets/images/property/1.jpg" alt="图片丢了"></a>
-                            <span class="btn btn-warning btn-sale">热卖中</span>
-                        </figure>
-                        <div class="property-contents clearfix">
-                            <header class="property-header clearfix">
-                                <div class="pull-left">
-                                    <h6 class="entry-title"><a href="/frontPremises/show?premisesId=${premises.id}">${premises.name}</a></h6>
-                                    <span class="property-location"><i class="fa fa-map-marker"></i>坐标施工中</span>
-                                </div>
-                                <button class="btn btn-default btn-price pull-right btn-3d" data-hover="￥${premises.averagePrice}"><strong>￥${premises.averagePrice}</strong>
-                                </button>
-                            </header>
-                            <div class="property-meta clearfix">
-                                <span><i class="fa fa-arrows-alt"></i> 3060 SqFt</span>
-                                <span><i class="fa fa-bed"></i> 3 Beds</span>
-                                <span><i class="fa fa-bathtub"></i> 3 Baths</span>
-                                <span><i class="fa fa-cab"></i> Yes</span>
-                            </div>
-                            <div class="contents clearfix">
-                                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
-                                    invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et
-                                    accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata
-                                    sanctus est Lorem ipsum dolor sit amet. </p>
-                            </div>
-                            <div class="author-box clearfix">
-                                <a href="#" class="author-img"><img src="../assets/images/agents/1.jpg" alt="Agent Image"></a>
-                                <cite class="author-name">Personal Seller: <a href="#">Linda Garret</a></cite>
-                                <span class="phone"><i class="fa fa-phone"></i> 00894 692-49-22</span>
-                            </div>
-                        </div>
-                    </article>
-                </div>
-            </c:forEach>
-        </div>
-    </div>
-</section>
+<%--广告模块--%>
+<%--<section id="announcement-section" class="text-center">--%>
+    <%--<div class="container ">--%>
+        <%--<h2 class="title wow slideInLeft">Download Our Latest App</h2>--%>
+        <%--<p class="wow slideInRight">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor--%>
+            <%--incididunt ut <br>--%>
+            <%--labore et dolore magna aliquan ut enim ad minim veniam.</p>--%>
+        <%--<a class="btn" href="#"><img src="../assets/images/iso-btn.png" alt="ISO Button"></a>--%>
+        <%--<a class="btn" href="#"><img src="../assets/images/playstore-btn.png" alt="Play Store Button"></a>--%>
+    <%--</div>--%>
+<%--</section>--%>
 
-<section id="announcement-section" class="text-center">
-    <div class="container ">
-        <h2 class="title wow slideInLeft">Download Our Latest App</h2>
-        <p class="wow slideInRight">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-            incididunt ut <br>
-            labore et dolore magna aliquan ut enim ad minim veniam.</p>
-        <a class="btn" href="#"><img src="../assets/images/iso-btn.png" alt="ISO Button"></a>
-        <a class="btn" href="#"><img src="../assets/images/playstore-btn.png" alt="Play Store Button"></a>
-    </div>
-</section>
-<section id="home-features-section" class="text-center">
-    <header class="section-header home-section-header">
-        <div class="container">
-            <h2 class="wow slideInRight">WHY CHOOSE US</h2>
-            <p class="wow slideInLeft">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                incididunt ut <br>
-                labore et dolore magna aliquan ut enim ad minim veniam.</p>
-        </div>
-    </header>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-3 col-xs-6">
-                <div class="feature clearfix">
-                    <i class="icon"><img src="../assets/images/features/1.png" alt="Feature Icon"></i>
-                    <h6 class="entry-title">Paying guest</h6>
-                    <p>Dolor sit amet consectetuer sed diam nonummy euismod tincidunt laoreet dolore magna</p>
-                </div>
-            </div>
-            <div class="col-md-3 col-xs-6">
-                <div class="feature clearfix">
-                    <i class="icon"><img src="../assets/images/features/2.png" alt="Feature Icon"></i>
-                    <h6 class="entry-title">Paying guest</h6>
-                    <p>Dolor sit amet consectetuer sed diam nonummy euismod tincidunt laoreet dolore magna</p>
-                </div>
-            </div>
-            <div class="col-md-3 col-xs-6">
-                <div class="feature clearfix">
-                    <i class="icon"><img src="../assets/images/features/3.png" alt="Feature Icon"></i>
-                    <h6 class="entry-title">Paying guest</h6>
-                    <p>Dolor sit amet consectetuer sed diam nonummy euismod tincidunt laoreet dolore magna</p>
-                </div>
-            </div>
-            <div class="col-md-3 col-xs-6">
-                <div class="feature clearfix">
-                    <i class="icon"><img src="../assets/images/features/4.png" alt="Feature Icon"></i>
-                    <h6 class="entry-title">Paying guest</h6>
-                    <p>Dolor sit amet consectetuer sed diam nonummy euismod tincidunt laoreet dolore magna</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+<%--WHY CHOOSE US--%>
+<%--<section id="home-features-section" class="text-center">--%>
+    <%--<header class="section-header home-section-header">--%>
+        <%--<div class="container">--%>
+            <%--<h2 class="wow slideInRight">WHY CHOOSE US</h2>--%>
+            <%--<p class="wow slideInLeft">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor--%>
+                <%--incididunt ut <br>--%>
+                <%--labore et dolore magna aliquan ut enim ad minim veniam.</p>--%>
+        <%--</div>--%>
+    <%--</header>--%>
+    <%--<div class="container">--%>
+        <%--<div class="row">--%>
+            <%--<div class="col-md-3 col-xs-6">--%>
+                <%--<div class="feature clearfix">--%>
+                    <%--<i class="icon"><img src="../assets/images/features/1.png" alt="Feature Icon"></i>--%>
+                    <%--<h6 class="entry-title">Paying guest</h6>--%>
+                    <%--<p>Dolor sit amet consectetuer sed diam nonummy euismod tincidunt laoreet dolore magna</p>--%>
+                <%--</div>--%>
+            <%--</div>--%>
+            <%--<div class="col-md-3 col-xs-6">--%>
+                <%--<div class="feature clearfix">--%>
+                    <%--<i class="icon"><img src="../assets/images/features/2.png" alt="Feature Icon"></i>--%>
+                    <%--<h6 class="entry-title">Paying guest</h6>--%>
+                    <%--<p>Dolor sit amet consectetuer sed diam nonummy euismod tincidunt laoreet dolore magna</p>--%>
+                <%--</div>--%>
+            <%--</div>--%>
+            <%--<div class="col-md-3 col-xs-6">--%>
+                <%--<div class="feature clearfix">--%>
+                    <%--<i class="icon"><img src="../assets/images/features/3.png" alt="Feature Icon"></i>--%>
+                    <%--<h6 class="entry-title">Paying guest</h6>--%>
+                    <%--<p>Dolor sit amet consectetuer sed diam nonummy euismod tincidunt laoreet dolore magna</p>--%>
+                <%--</div>--%>
+            <%--</div>--%>
+            <%--<div class="col-md-3 col-xs-6">--%>
+                <%--<div class="feature clearfix">--%>
+                    <%--<i class="icon"><img src="../assets/images/features/4.png" alt="Feature Icon"></i>--%>
+                    <%--<h6 class="entry-title">Paying guest</h6>--%>
+                    <%--<p>Dolor sit amet consectetuer sed diam nonummy euismod tincidunt laoreet dolore magna</p>--%>
+                <%--</div>--%>
+            <%--</div>--%>
+        <%--</div>--%>
+    <%--</div>--%>
+<%--</section>--%>
+
+<%--页脚--%>
 <footer id="footer">
     <div class="site-footer">
         <div class="container">
@@ -521,6 +571,7 @@
         </div>
     </div>
 </footer>
+
 <a href="#top" id="scroll-top"><i class="fa fa-angle-up"></i></a>
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="../assets/js/jquery.min.js"></script>
