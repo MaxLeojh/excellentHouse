@@ -326,7 +326,7 @@
         <div class="container">
             <h2 class="wow slideInLeft">租房</h2>
             <p class="wow slideInRight">这里是租房模块 <br>
-                你回来了</p>
+                走过路过</p>
         </div>
     </header>
     <div class="container">
@@ -360,6 +360,58 @@
                     </div>
                 </c:forEach>
             </div>
+        </div>
+    </div>
+</section>
+
+<%--装修模块--%>
+<section id="home-property-listing">
+    <header class="section-header home-section-header text-center">
+        <div class="container">
+            <h2 class="wow slideInRight">装修</h2>
+            <p class="wow slideInLeft">这里是装修案例展示 <br>
+                装修技术哪家强？ </p>
+        </div>
+    </header>
+    <div class="container">
+        <div class="row">
+            <c:forEach items="${premisesList}" var="premises">
+                <div class="col-lg-4 col-sm-6 layout-item-wrap">
+                    <article class="property layout-item clearfix">
+                        <figure class="feature-image">
+                            <a class="clearfix zoom" href=""><img data-action="zoom" src="../assets/images/property/1.jpg" alt="图片丢了"></a>
+                            <span class="btn btn-warning btn-sale">热卖中</span>
+                        </figure>
+                        <div class="property-contents clearfix">
+                            <header class="property-header clearfix">
+                                <div class="pull-left">
+                                    <h6 class="entry-title"><a href="/frontPremises/show?premisesId=${premises.id}">${premises.name}</a></h6>
+                                    <span class="property-location"><i class="fa fa-map-marker"></i>坐标施工中</span>
+                                </div>
+                                <button class="btn btn-default btn-price pull-right btn-3d" data-hover="￥${premises.averagePrice}"><strong>￥${premises.averagePrice}</strong>
+                                </button>
+                            </header>
+                            <div class="property-meta clearfix">
+                                <span><i class="fa fa-arrows-alt"></i> 3060 SqFt</span>
+                                <span><i class="fa fa-bed"></i> 3 Beds</span>
+                                <span><i class="fa fa-bathtub"></i> 3 Baths</span>
+                                <span><i class="fa fa-cab"></i> Yes</span>
+                            </div>
+                            <div class="contents clearfix">
+                                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
+                                    invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et
+                                    accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata
+                                    sanctus est Lorem ipsum dolor sit amet. </p>
+                            </div>
+                            <div class="author-box clearfix">
+                                <a href="#" class="author-img"><img src="../assets/images/agents/1.jpg" alt="Agent Image"></a>
+                                <cite class="author-name">Personal Seller: <a href="#">Linda Garret</a></cite>
+                                <span class="phone"><i class="fa fa-phone"></i> 00894 692-49-22</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </c:forEach>
         </div>
     </div>
 </section>

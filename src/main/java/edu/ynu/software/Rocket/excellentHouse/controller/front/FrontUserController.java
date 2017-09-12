@@ -43,9 +43,9 @@ public class FrontUserController {
         user.setName(userName);
         user.setEmail(Email);
         user.setPassWord(passWord);
-        int number = userService.insertUser(user);
-        System.out.println("the return number is "+number);
-        System.out.println(user.getUserId());
+        userService.insertUser(user);
+        int id = userService.getLastInsert();
+        System.out.println("------------"+id);
 
     }
 }
