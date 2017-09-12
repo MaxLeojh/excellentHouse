@@ -8,10 +8,9 @@
 
     <link rel="stylesheet" href="../assets/css/regedit.css" />
     <link rel="stylesheet" type="text/css" href="../assets/fonts/iconfont.css">
-    <title></title>
-    <style>
+    <script type="text/javascript" src="../assets/js/myJS.js"></script>
+    <title>优购房邮箱注册</title>
 
-    </style>
 </head>
 
 <body>
@@ -31,27 +30,36 @@
         </h4>
         <div class=" setting" >
             <!--设置用户信息-->
-            <div class="input-group input-group-lg my-input ">
-                <span class="input-group-addon iconfont icon-yonghu"></span>
-                <input type="text" class="form-control " placeholder="用户名">
-            </div>
+
+                <div class="input-group input-group-lg my-input ">
+                    <span class="input-group-addon iconfont icon-yonghu"></span>
+                    <input id="input_username" type="text" class="form-control "  onblur="check_username()" maxlength="16" placeholder="用户名">
+                    <span id="username-correct" class="mycheck iconfont icon-icon" > </span>
+                    <span id="username-error" class="my-error iconfont icon-cha">用户名长度在3-16字符 </span>
+                </div>
             <div class="input-group input-group-lg my-input">
                 <span class="input-group-addon  iconfont icon-youxiang "></span>
-                <input type="text" class="form-control" placeholder="邮箱">
+                <input id="input-email" type="email" class="form-control"  onblur="check_email()" placeholder="邮箱">
+                <span id="email-correct" class="mycheck iconfont icon-icon" > </span>
+                <span id="email-error" class="my-error iconfont icon-cha"   >邮箱格式不正确 </span>
             </div>
             <div class="input-group input-group-lg my-input">
                 <span class="input-group-addon  iconfont icon-suo "></span>
-                <input type="password" class="form-control " placeholder="密码">
+                <input id="password" type="password" class="form-control "onblur="check_password()" placeholder="密码">
+                <span id="password-correct" class="mycheck iconfont icon-icon"> </span>
             </div>
             <div class="input-group input-group-lg my-input">
                 <span class="input-group-addon  iconfont icon-suo "></span>
-                <input type="password" class="form-control" placeholder="确认密码">
+                <input id="confirm-password" type="password" class="form-control"onblur="check_password()" placeholder="确认密码">
+                <span id="confirm-password-correct" class="mycheck iconfont icon-icon"> </span>
+                <span id="password-error" class="my-error iconfont icon-cha"   >两次密码不一致 </span>
             </div>
 
                 <div class="input-group input-group-lg  my-input">
                     <span class="input-group-addon  iconfont icon-yanzhengma "></span>
-                    <input type="text" class="form-control" placeholder="验证码">
+                    <input type="text" class="form-control" placeholder="验证码"  onkeyup="value=value.replace(/[^\w\.\/]/ig,'')">
                     <span class="input-group-addon  iconfont  ">验证码图片</span>
+                    <span class="mycheck iconfont icon-icon"> </span>
                 </div>
 
 

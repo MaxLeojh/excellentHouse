@@ -82,10 +82,26 @@ margin-top: 37px;
 	width: 40%;
 	margin: auto;
 	margin-top: 30px;
+	position: relative;
 }
 .regedit-btn{
 	width: 40%;
 	margin-left: 30%;
 	margin-top: 30px;
 	margin-bottom: 30px;
+}
+.mycheck{
+	position: absolute;
+    color: green;
+	margin-top: 15px;
+	margin-left: 10px;
+	display: none;
+}
+.my-error{
+	position: absolute;
+	color: red;
+	margin-top: 15px;
+	margin-left: 10px;
+	width: 200px;
+	display: none;
 }
