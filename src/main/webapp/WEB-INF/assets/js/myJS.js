@@ -41,3 +41,18 @@ function check_password() {
         return true;
     }
 }
+function check_mobile(str)
+{
+    var re=/^1\d{10}$/;
+    if(re.test(str))
+    {
+       // alert("正确！");
+        document.getElementById("mobile-error").style.display="none";
+
+    }else
+    {
+       // alert("错误！");
+        document.getElementById("mobile-error").style.display="inline";
+
+    }
+}

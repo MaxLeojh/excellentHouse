@@ -7,11 +7,11 @@
 
 		<link rel="stylesheet" href="../assets/css/amazeui.min.css" />
 		<link rel="stylesheet" href="../assets/css/regedit.css" />
-
+		<link rel="stylesheet" type="text/css" href="../assets/fonts/iconfont.css">
 
 		<script type="text/javascript" src="../assets/js/jquery-1.9.1.min.js"></script>
 		<script type="text/javascript" src="../assets/js/amazeui.min.js"></script>
-
+		<script type="text/javascript" src="../assets/js/myJS.js"></script>
 		<title></title>
 		<style>
 
@@ -40,7 +40,9 @@
 					<div data-tab-panel-0 class="am-tab-panel am-active">
 						<div class="am-g">
 							<div class="am-u-sm-7 am-u-sm-offset-3 ">
-								<input type="text" placeholder="请输入您的手机号" class="am-form-field" />
+								<input type="text" placeholder="请输入您的手机号" class="am-form-field"  onblur="check_mobile(this.value)" />
+								<span id="mobile-correct" class="mycheck iconfont icon-icon" > </span>
+								<span id="mobile-error" class="my-error iconfont icon-cha">手机号码不符合格式 </span>
 							</div>
 						</div>
 						<div class="am-g setting-username">
@@ -84,12 +86,15 @@
 					<div data-tab-panel-1 class="am-tab-panel ">
 						<div class="am-g">
 							<div class="am-u-sm-6 am-u-sm-offset-3 ">
-								 <input type="password" placeholder="请输入密码" class="am-form-field" />
+								 <input type="password" placeholder="请输入密码" class="am-form-field" id="password"onblur="check_password()" />
+								<span id="password-correct" class="mycheck iconfont icon-icon"> </span>
 							</div>
 						</div>
 						<div class="am-g setting-username" >
 							<div class="am-u-sm-6 am-u-sm-offset-3 ">
-								<input type="password" placeholder="请再次输入密码" class="am-form-field"  />
+								<input type="password" placeholder="请再次输入密码" class="am-form-field"  id="confirm-password" onblur="check_password()"  />
+								<span id="confirm-password-correct" class="mycheck iconfont icon-icon"> </span>
+								<span id="password-error" class="my-error iconfont icon-cha"   >两次密码不一致 </span>
 							</div>
 						</div>
 
