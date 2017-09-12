@@ -105,3 +105,18 @@ margin-top: 37px;
 	width: 200px;
 	display: none;
 }
+.regedit-error{
+	position: absolute;
+	color: red;
+	margin-top: -45px;
+	margin-left: 520px;
+	width: 200px;
+	display: none;
+}
+.regedit-check{
+	position: absolute;
+	color: green;
+	margin-top: -45px;
+	margin-left: 520px;
+	display: none;
+}

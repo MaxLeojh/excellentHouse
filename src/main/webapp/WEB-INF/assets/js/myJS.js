@@ -48,7 +48,7 @@ function check_mobile(str)
     {
        // alert("正确！");
         document.getElementById("mobile-error").style.display="none";
-
+        document.getElementById("mobile-correct").style.display="inline";
     }else
     {
        // alert("错误！");
