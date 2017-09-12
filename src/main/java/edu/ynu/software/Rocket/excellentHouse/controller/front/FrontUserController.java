@@ -46,5 +46,6 @@ public class FrontUserController {
         int number = userService.insertUser(user);
         System.out.println("the return number is "+number);
         System.out.println(user.getUserId());
+
     }
 }
