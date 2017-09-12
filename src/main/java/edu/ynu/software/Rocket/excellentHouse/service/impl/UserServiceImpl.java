@@ -32,6 +32,10 @@ public class UserServiceImpl implements UserService {
     }
 
     public Integer insertUser(User user) {
-        return userCustomizedMapper.insert(user);
+        return userMapper.insert(user);
+    }
+
+    public Integer getLastInsert() {
+        return userCustomizedMapper.getLastInsert();
     }
 }

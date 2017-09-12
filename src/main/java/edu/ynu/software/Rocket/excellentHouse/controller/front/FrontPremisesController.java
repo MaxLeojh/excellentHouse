@@ -4,9 +4,11 @@ import edu.ynu.software.Rocket.excellentHouse.eneityAO.PremisesAO;
 import edu.ynu.software.Rocket.excellentHouse.entity.Company;
 import edu.ynu.software.Rocket.excellentHouse.entity.HouseType;
 import edu.ynu.software.Rocket.excellentHouse.entity.Premises;
+import edu.ynu.software.Rocket.excellentHouse.entity.User;
 import edu.ynu.software.Rocket.excellentHouse.service.CompanyService;
 import edu.ynu.software.Rocket.excellentHouse.service.HouseTypeService;
 import edu.ynu.software.Rocket.excellentHouse.service.PremisesService;
+import edu.ynu.software.Rocket.excellentHouse.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -33,6 +35,9 @@ public class FrontPremisesController {
 
     @Autowired
     HouseTypeService houseTypeService;
+
+    @Autowired
+    UserService userService;
 
     @RequestMapping(value = "/show", method = RequestMethod.GET)
     public ModelAndView index(HttpServletRequest request, HttpSession session, Integer premisesId){

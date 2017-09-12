@@ -50,7 +50,7 @@
         <property name="mapperLocations">
             <array>
                 <value>classpath:edu/ynu/software/Rocket/excellentHouse/mapper/*.xml</value>
-                <value>classpath:edu/ynu/software/Rocket/excellentHouse/mapper/Customized/*.xml</value>
+                <!--<value>classpath:edu/ynu/software/Rocket/excellentHouse/mapper/Customized/*.xml</value>-->
             </array>
         </property>
     </bean>
