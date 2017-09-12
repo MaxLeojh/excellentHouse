@@ -9,4 +9,8 @@ import java.util.List;
  */
 public interface UserService {
     public List<User> selectAllUser();
+
+    public Integer insertUser(User user);
+
+    public Integer getLastInsert();
 }

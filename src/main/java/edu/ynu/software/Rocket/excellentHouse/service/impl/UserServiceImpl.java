@@ -1,5 +1,6 @@
 package edu.ynu.software.Rocket.excellentHouse.service.impl;
 
+import edu.ynu.software.Rocket.excellentHouse.dao.UserCustomizedMapper;
 import edu.ynu.software.Rocket.excellentHouse.dao.UserMapper;
 import edu.ynu.software.Rocket.excellentHouse.entity.User;
 import edu.ynu.software.Rocket.excellentHouse.entity.UserExample;
@@ -18,6 +19,9 @@ public class UserServiceImpl implements UserService {
     @Autowired
     UserMapper userMapper;
 
+    @Autowired
+    UserCustomizedMapper userCustomizedMapper;
+
     public List<User> selectAllUser() {
         List<User> userList;
 
@@ -25,5 +29,13 @@ public class UserServiceImpl implements UserService {
         userList = userMapper.selectByExample(example);
 
         return userList;
+    }
+
+    public Integer insertUser(User user) {
+        return userMapper.insert(user);
+    }
+
+    public Integer getLastInsert() {
+        return userCustomizedMapper.getLastInsert();
     }
 }
