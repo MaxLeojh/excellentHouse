@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Home</title>
+    <title>优购房</title>
 
     <!-- Styles -->
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Poppins:400,600" rel="stylesheet">
@@ -74,10 +74,10 @@
                             <li><a href="contact.html" class="dropdown-toggle " style="  background-color: white;" data-toggle="dropdown">二手房 <b
                                     class="caret"></b></a>
                                 <ul class="dropdown-menu depth_0">
-                                    <li><a href="#">Feature 1</a></li>
-                                    <li><a href="#">Feature 1</a></li>
-                                    <li><a href="#">Feature 1</a></li>
-                                    <li><a href="#">Feature 1</a></li>
+                                    <li><a href="#">找小区</a></li>
+                                    <li><a href="#">找别墅</a></li>
+                                    <li><a href="#">找学校</a></li>
+                                    <li><a href="#">购房知识</a></li>
                                 </ul>
                             </li>
                             <li><a href="#">装修</a></li>
