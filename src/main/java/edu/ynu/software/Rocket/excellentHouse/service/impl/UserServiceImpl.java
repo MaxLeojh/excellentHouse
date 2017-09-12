@@ -18,6 +18,9 @@ public class UserServiceImpl implements UserService {
     @Autowired
     UserMapper userMapper;
 
+//    @Autowired
+//    UserCustomizedMapper userCustomizedMapper;
+
     public List<User> selectAllUser() {
         List<User> userList;
 
