@@ -1,11 +1,13 @@
 package edu.ynu.software.Rocket.excellentHouse.controller.front;
 
 import edu.ynu.software.Rocket.excellentHouse.entity.User;
+import edu.ynu.software.Rocket.excellentHouse.service.EmailService;
 import edu.ynu.software.Rocket.excellentHouse.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -22,6 +24,10 @@ public class FrontUserController {
 
     @Autowired
     UserService userService;
+
+    @Autowired
+    EmailService emailService;
+
     /*
     register:
     1.user name
@@ -29,7 +35,7 @@ public class FrontUserController {
     3.password
     4.verification code
      */
-    @RequestMapping("toRegister")
+    @RequestMapping("/toRegister")
     @ResponseBody
     public ModelAndView toRegister(){
         ModelAndView modelAndView = new ModelAndView("register");
@@ -37,15 +43,27 @@ public class FrontUserController {
         return modelAndView;
     }
 
-    @RequestMapping(value = "register", method = RequestMethod.POST)
-    public void register(String userName, String Email, String passWord, String verificationCode, HttpSession session, HttpServletResponse response){
-        User user = new User();
-        user.setName(userName);
-        user.setEmail(Email);
-        user.setPassWord(passWord);
-        userService.insertUser(user);
-        int id = userService.getLastInsert();
-        System.out.println("------------"+id);
+    @ResponseBody
+    @RequestMapping(value = "/register", method = RequestMethod.POST)
+    public void register(String userName, String Email, String passWord, String verificationCode, HttpSession session, HttpServletResponse response) throws Exception {
+        if (verificationCode.equals("233")){
+            User user = new User();
+            user.setName(userName);
+            user.setEmail(Email);
+            user.setPassWord(passWord);
+            userService.insertUser(user);
+            user.setUserId(userService.getLastInsert());
+            String verCode = user.getUserId().toString();
 
+            emailService.snedVerMail(user.getEmail(),verCode,user.getName());
+        }
+
+
+    }
+
+    @ResponseBody
+    @RequestMapping(value = "/emailConfirm")
+    public void emailConfirm(@RequestParam("code") String code){
+        System.out.println("------------"+code);
     }
 }
