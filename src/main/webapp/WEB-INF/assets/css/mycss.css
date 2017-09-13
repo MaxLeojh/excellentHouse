@@ -112,3 +112,12 @@
     margin-top: 20px;
     margin-left: 25%;
 }
+.house-name{
+    overflow : hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    height:15px;
+    width: 200px;
+}

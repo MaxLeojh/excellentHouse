@@ -340,16 +340,17 @@
         <div class="row">
             <div id="property-for-rent-slider">
                 <c:forEach items="${secondHandList}" var="house">
-                    <div class="col-lg-4 col-md-6">
-                        <article class="property clearfix">
+                    <div class="col-lg-4 col-md-6 layout-item-wrap">
+                        <article class="property clearfix layout-item">
                             <figure class="feature-image">
                                 <a class="clearfix" href="single-property.html"> <img src="../assets/images/property/1.jpg"
                                                                                       alt="Property Image"></a>
+
                             </figure>
                             <div class="property-contents">
                                 <header class="property-header clearfix">
                                     <div class="pull-left">
-                                        <h6 class="entry-title"><a href="single-property.html">${house.entity.name}</a>
+                                        <h6 class="entry-title house-name"><a href="single-property.html" title=${house.entity.name}>${house.entity.name}</a>
                                         </h6>
                                         <span class="property-location"><i class="fa fa-map-marker"></i> 地址施工中 </span>
                                     </div>
@@ -434,7 +435,7 @@
     </header>
     <div class="container">
         <div class="row">
-            <div id="property-for-rent-slider">
+            <div id="">
                 <c:forEach items="${decoInstanceList}" var="instance">
                     <div class="col-lg-4 col-md-6">
                         <article class="property clearfix">
