@@ -70,7 +70,7 @@
                     <div class="collapse navbar-collapse">
                         <ul class="nav navbar-nav">
                             <li><a href="/">首页</a></li>
-                            <li><a href="#">新房</a></li>
+                            <li><a href="/frontPremises/list">新房</a></li>
                             <li><a href="contact.html" class="dropdown-toggle " style="  background-color: white;" data-toggle="dropdown">二手房 <b
                                     class="caret"></b></a>
                                 <ul class="dropdown-menu depth_0">
@@ -290,7 +290,7 @@
                         <div class="property-contents clearfix">
                             <header class="property-header clearfix">
                                 <div class="pull-left">
-                                    <h6 class="entry-title"><a href="/frontPremises/show?premisesId=${premises.id}">${premises.name}</a></h6>
+                                    <h6 class="entry-title"><a href="/frontPremises/detail?premisesId=${premises.id}">${premises.name}</a></h6>
                                     <span class="property-location"><i class="fa fa-map-marker"></i>坐标施工中</span>
                                 </div>
                                 <button class="btn btn-default btn-price pull-right btn-3d" data-hover="￥${premises.averagePrice}"><strong>￥${premises.averagePrice}</strong>
@@ -429,7 +429,7 @@
     <div class="container">
         <div class="row">
             <div id="property-for-rent-slider">
-                <c:forEach items="${premisesList}" var="premises">
+                <c:forEach items="${decoInstanceList}" var="instance">
                     <div class="col-lg-4 col-md-6">
                         <article class="property clearfix">
                             <figure class="feature-image">
@@ -439,18 +439,19 @@
                             <div class="property-contents">
                                 <header class="property-header clearfix">
                                     <div class="pull-left">
-                                        <h6 class="entry-title"><a href="single-property.html">Guaranteed modern home</a>
+                                        <h6 class="entry-title"><a href="single-property.html">${instance.name}</a>
                                         </h6>
-                                        <span class="property-location"><i class="fa fa-map-marker"></i> 14 Tottenham Road, London</span>
+                                        <span class="property-location"><i class="fa fa-map-marker"></i> 坐标施工中 </span>
                                     </div>
-                                    <button class="btn btn-default btn-price pull-right btn-3d" data-hover="$389.000">
-                                        <strong>$389.000</strong></button>
+                                    <button class="btn btn-default btn-price pull-right btn-3d" data-hover="￥${instance.budget}万">
+                                        <strong>￥${instance.budget}万</strong></button>
                                 </header>
                                 <div class="property-meta clearfix">
-                                    <span><i class="fa fa-arrows-alt"></i> 3060 SqFt</span>
-                                    <span><i class="fa fa-bed"></i> 3 Beds</span>
-                                    <span><i class="fa fa-bathtub"></i> 3 Baths</span>
-                                    <span><i class="fa fa-cab"></i> Yes</span>
+                                    暂时不知道放什么
+                                        <%--<span><i class="fa fa-arrows-alt"></i> 3060 SqFt</span>--%>
+                                        <%--<span><i class="fa fa-bed"></i> 3 Beds</span>--%>
+                                        <%--<span><i class="fa fa-bathtub"></i> 3 Baths</span>--%>
+                                        <%--<span><i class="fa fa-cab"></i> Yes</span>--%>
                                 </div>
                             </div>
                         </article>
@@ -474,48 +475,48 @@
 <%--</section>--%>
 
 <%--WHY CHOOSE US--%>
-<%--<section id="home-features-section" class="text-center">--%>
-    <%--<header class="section-header home-section-header">--%>
-        <%--<div class="container">--%>
-            <%--<h2 class="wow slideInRight">WHY CHOOSE US</h2>--%>
-            <%--<p class="wow slideInLeft">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor--%>
-                <%--incididunt ut <br>--%>
-                <%--labore et dolore magna aliquan ut enim ad minim veniam.</p>--%>
-        <%--</div>--%>
-    <%--</header>--%>
-    <%--<div class="container">--%>
-        <%--<div class="row">--%>
-            <%--<div class="col-md-3 col-xs-6">--%>
-                <%--<div class="feature clearfix">--%>
-                    <%--<i class="icon"><img src="../assets/images/features/1.png" alt="Feature Icon"></i>--%>
-                    <%--<h6 class="entry-title">Paying guest</h6>--%>
-                    <%--<p>Dolor sit amet consectetuer sed diam nonummy euismod tincidunt laoreet dolore magna</p>--%>
-                <%--</div>--%>
-            <%--</div>--%>
-            <%--<div class="col-md-3 col-xs-6">--%>
-                <%--<div class="feature clearfix">--%>
-                    <%--<i class="icon"><img src="../assets/images/features/2.png" alt="Feature Icon"></i>--%>
-                    <%--<h6 class="entry-title">Paying guest</h6>--%>
-                    <%--<p>Dolor sit amet consectetuer sed diam nonummy euismod tincidunt laoreet dolore magna</p>--%>
-                <%--</div>--%>
-            <%--</div>--%>
-            <%--<div class="col-md-3 col-xs-6">--%>
-                <%--<div class="feature clearfix">--%>
-                    <%--<i class="icon"><img src="../assets/images/features/3.png" alt="Feature Icon"></i>--%>
-                    <%--<h6 class="entry-title">Paying guest</h6>--%>
-                    <%--<p>Dolor sit amet consectetuer sed diam nonummy euismod tincidunt laoreet dolore magna</p>--%>
-                <%--</div>--%>
-            <%--</div>--%>
-            <%--<div class="col-md-3 col-xs-6">--%>
-                <%--<div class="feature clearfix">--%>
-                    <%--<i class="icon"><img src="../assets/images/features/4.png" alt="Feature Icon"></i>--%>
-                    <%--<h6 class="entry-title">Paying guest</h6>--%>
-                    <%--<p>Dolor sit amet consectetuer sed diam nonummy euismod tincidunt laoreet dolore magna</p>--%>
-                <%--</div>--%>
-            <%--</div>--%>
-        <%--</div>--%>
-    <%--</div>--%>
-<%--</section>--%>
+<section id="home-features-section" class="text-center">
+    <header class="section-header home-section-header">
+        <div class="container">
+            <h2 class="wow slideInRight">为什么选择我们</h2>
+            <p class="wow slideInLeft">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                incididunt ut <br>
+                labore et dolore magna aliquan ut enim ad minim veniam.</p>
+        </div>
+    </header>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3 col-xs-6">
+                <div class="feature clearfix">
+                    <i class="icon"><img src="../assets/images/features/1.png" alt="Feature Icon"></i>
+                    <h6 class="entry-title">Paying guest</h6>
+                    <p>Dolor sit amet consectetuer sed diam nonummy euismod tincidunt laoreet dolore magna</p>
+                </div>
+            </div>
+            <div class="col-md-3 col-xs-6">
+                <div class="feature clearfix">
+                    <i class="icon"><img src="../assets/images/features/2.png" alt="Feature Icon"></i>
+                    <h6 class="entry-title">Paying guest</h6>
+                    <p>Dolor sit amet consectetuer sed diam nonummy euismod tincidunt laoreet dolore magna</p>
+                </div>
+            </div>
+            <div class="col-md-3 col-xs-6">
+                <div class="feature clearfix">
+                    <i class="icon"><img src="../assets/images/features/3.png" alt="Feature Icon"></i>
+                    <h6 class="entry-title">Paying guest</h6>
+                    <p>Dolor sit amet consectetuer sed diam nonummy euismod tincidunt laoreet dolore magna</p>
+                </div>
+            </div>
+            <div class="col-md-3 col-xs-6">
+                <div class="feature clearfix">
+                    <i class="icon"><img src="../assets/images/features/4.png" alt="Feature Icon"></i>
+                    <h6 class="entry-title">Paying guest</h6>
+                    <p>Dolor sit amet consectetuer sed diam nonummy euismod tincidunt laoreet dolore magna</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
 <%--页脚--%>
 <footer id="footer">
@@ -524,7 +525,7 @@
             <div class="row">
                 <div class="col-md-4 col-sm-6">
                     <section class="widget about-widget clearfix">
-                        <h4 class="title hide">About Us</h4>
+                        <h4 class="title hide">关于我们</h4>
                         <a class="footer-logo" href="#"><img src="../assets/images/footer-logo.png" alt="Footer Logo"></a>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
                             labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
@@ -547,11 +548,11 @@
                     <section class="widget address-widget clearfix">
                         <h4 class="title">OUR OFFICE</h4>
                         <ul>
-                            <li><i class="fa fa-map-marker"></i> 4 Tottenham Road, London, England.</li>
-                            <li><i class="fa fa-phone"></i> (123) 45678910</li>
-                            <li><i class="fa fa-envelope"></i> huycoi.art@gmail.com</li>
-                            <li><i class="fa fa-fax"></i> +84 962 216 601</li>
-                            <li><i class="fa fa-clock-o"></i> Mon - Sat: 9:00 - 18:00</li>
+                            <li><i class="fa fa-map-marker"></i> 位置暂不确定 </li>
+                            <li><i class="fa fa-phone"></i> 18487267900 </li>
+                            <li><i class="fa fa-envelope"></i> 451558608@qq.com </li>
+                            <li><i class="fa fa-fax"></i> 没有传真 </li>
+                            <li><i class="fa fa-clock-o"></i> Mon - Sat: 9:00 - 18:00 </li>
                         </ul>
                     </section>
                 </div>

@@ -1,9 +1,11 @@
 package edu.ynu.software.Rocket.excellentHouse.controller.front;
 
 import edu.ynu.software.Rocket.excellentHouse.eneityAO.HouseAO;
+import edu.ynu.software.Rocket.excellentHouse.entity.DecoInstance;
 import edu.ynu.software.Rocket.excellentHouse.entity.House;
 import edu.ynu.software.Rocket.excellentHouse.entity.Premises;
 import edu.ynu.software.Rocket.excellentHouse.entity.User;
+import edu.ynu.software.Rocket.excellentHouse.service.DecoInstanceService;
 import edu.ynu.software.Rocket.excellentHouse.service.HouseService;
 import edu.ynu.software.Rocket.excellentHouse.service.PremisesService;
 import edu.ynu.software.Rocket.excellentHouse.service.UserService;
@@ -32,6 +34,9 @@ public class FrontIndexController {
     @Autowired
     HouseService houseService;
 
+    @Autowired
+    DecoInstanceService decoInstanceService;
+
     @RequestMapping(value = "/show")
     @ResponseBody
     public ModelAndView index(){
@@ -48,6 +53,11 @@ public class FrontIndexController {
 //        租房
         List<HouseAO> rentHouseList = houseService.getHouseAOByKind("出租房");
         mav.addObject("rentHouseList", rentHouseList);
+
+//        装修案例展示
+        List<DecoInstance> decoInstanceList = decoInstanceService.getAllDecoIntance();
+        mav.addObject("decoInstanceList", decoInstanceList);
+
 
         mav.setViewName("index");
         return mav;

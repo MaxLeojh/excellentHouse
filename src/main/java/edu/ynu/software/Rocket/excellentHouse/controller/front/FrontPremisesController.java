@@ -24,7 +24,7 @@ import java.util.List;
  * Created by August on 2017/9/8.
  */
 @Controller
-@RequestMapping("/frontPremises")
+@RequestMapping("frontPremises")
 public class FrontPremisesController {
 
     @Autowired
@@ -39,7 +39,7 @@ public class FrontPremisesController {
     @Autowired
     UserService userService;
 
-    @RequestMapping(value = "/show", method = RequestMethod.GET)
+    @RequestMapping(value = "detail", method = RequestMethod.GET)
     public ModelAndView index(HttpServletRequest request, HttpSession session, Integer premisesId){
         ModelAndView mav = new ModelAndView();
 
@@ -56,6 +56,14 @@ public class FrontPremisesController {
 
         mav.addObject("premisesAO", premisesAO);
         mav.setViewName("premisesDetail");
+        return mav;
+    }
+
+    @RequestMapping(value = "list", method = RequestMethod.GET)
+    public ModelAndView list(HttpServletRequest request, HttpSession session, Integer premisesId) {
+        ModelAndView mav = new ModelAndView();
+
+        mav.setViewName("premisesList");
         return mav;
     }
 }
