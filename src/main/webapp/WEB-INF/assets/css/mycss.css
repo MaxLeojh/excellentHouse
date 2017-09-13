@@ -108,3 +108,7 @@
     position: relative;
     z-index: 999;
 }
+.not-login{
+    margin-top: 20px;
+    margin-left: 25%;
+}

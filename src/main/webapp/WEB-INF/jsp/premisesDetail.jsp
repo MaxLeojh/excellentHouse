@@ -1,7 +1,7 @@
 <%@ page import="java.text.SimpleDateFormat" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jstl/fmt" %>
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,7 +16,7 @@
 
 
     <!-- favicon and touch icons -->
-    <link rel="shortcut icon" href="assets/images/favicon.png" >
+    <link rel="shortcut icon" href="assets/images/favicon.png">
 
     <!-- Bootstrap -->
     <link href="../plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet">
@@ -48,7 +48,7 @@
                     <ul class="nav navbar-nav">
                         <li><a href="index.html">Home</a></li>
                         <li><a href="property-listing.html">Listing</a></li>
-                        <li><a href="single-property.html"class="my_active" >Property</a></li>
+                        <li><a href="single-property.html" class="my_active">Property</a></li>
                         <li><a href="gallery.html">Gallery</a></li>
                         <li><a href="contact.html">contact</a></li>
                     </ul>
@@ -68,7 +68,8 @@
             </div>
         </div>
     </div>
-</header>    <div id="property-single">
+</header>
+<div id="property-single">
     <%--楼盘图片展示--%>
     <div id="main-slider">
         <div class="slide"><img src="../assets/images/slider/1.jpg" alt="Slide"></div>
@@ -101,7 +102,8 @@
                 <%--简介--%>
                 <section class="property-contents common">
                     <div class="entry-title clearfix">
-                        <h4 class="pull-left">简介 </h4><a class="pull-right print-btn" href="javascript:window.print()">Print This Property <i class="fa fa-print"></i></a>
+                        <h4 class="pull-left">简介 </h4><a class="pull-right print-btn" href="javascript:window.print()">Print
+                        This Property <i class="fa fa-print"></i></a>
                     </div>
                     <p>${premisesAO.entity.introction}</p>
                 </section>
@@ -138,43 +140,51 @@
                 <%--售房类型--%>
                 <section class="property-video common">
                     <h4 class="entry-title">售房类型</h4>
-                    <c:forEach items="${premisesAO.houseTypeList}" var="houseType">
-                        <div class="col-lg-4 col-sm-6 layout-item-wrap">
-                            <article class="property layout-item clearfix">
-                                <figure class="feature-image">
-                                    <a class="clearfix zoom" href=""><img data-action="zoom" src="../assets/images/property/1.jpg" alt="图片丢了"></a>
-                                    <span class="btn btn-warning btn-sale">热卖中</span>
-                                </figure>
-                                <div class="property-contents clearfix">
-                                    <header class="property-header clearfix">
-                                        <div class="pull-left">
-                                            <h6 class="entry-title"><a href="/frontPremises/show?premisesId=${premises.id}">${houseType.name}</a></h6>
-                                            <span class="property-location"><i class="fa fa-map-marker"></i>坐标施工中</span>
+                    <div class="row">
+                        <c:forEach items="${premisesAO.houseTypeList}" var="houseType">
+                            <div class=" layout-item-wrap">
+                                <article class="property layout-item clearfix row">
+                                    <figure class="feature-image col-lg-4 col-sm-4">
+                                        <a class="clearfix zoom" href=""><img data-action="zoom"
+                                                                              src="../assets/images/property/1.jpg"
+                                                                              alt="图片丢了"></a>
+                                        <span class="btn btn-warning btn-sale">热卖中</span>
+                                    </figure>
+
+                                    <div class="property-contents clearfix col-lg-7 col-sm-7">
+                                        <header class="property-header clearfix">
+                                            <div class="pull-left">
+                                                <h6 class="entry-title"><a
+                                                        href="/frontPremises/show?premisesId=${premises.id}">${houseType.name}</a>
+                                                </h6>
+                                                <span class="property-location"><i
+                                                        class="fa fa-map-marker"></i>坐标施工中</span>
+                                            </div>
+                                            <button class="btn btn-default btn-price pull-right btn-3d"
+                                                    data-hover="￥${premises.averagePrice}">
+                                                <strong>￥${premises.averagePrice}</strong>
+                                            </button>
+                                        </header>
+                                        <div class="property-meta clearfix">
+                                            <span><i class="fa fa-arrows-alt"></i> 3060 SqFt</span>
+                                            <span><i class="fa fa-bed"></i> 3 Beds</span>
+                                            <span><i class="fa fa-bathtub"></i> 3 Baths</span>
+                                            <span><i class="fa fa-cab"></i> Yes</span>
                                         </div>
-                                        <button class="btn btn-default btn-price pull-right btn-3d" data-hover="￥${premises.averagePrice}"><strong>￥${premises.averagePrice}</strong>
-                                        </button>
-                                    </header>
-                                    <div class="property-meta clearfix">
-                                        <span><i class="fa fa-arrows-alt"></i> 3060 SqFt</span>
-                                        <span><i class="fa fa-bed"></i> 3 Beds</span>
-                                        <span><i class="fa fa-bathtub"></i> 3 Baths</span>
-                                        <span><i class="fa fa-cab"></i> Yes</span>
+                                        <div >
+                                            <p>环境优美</p>
+                                        </div>
+                                        <div >
+                                            <cite class="author-name">联系卖家 <a href="#">饶宇皓</a></cite>
+                                            <span class="phone"><i class="fa fa-phone"></i> 123</span>
+                                        </div>
                                     </div>
-                                    <div class="contents clearfix">
-                                        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
-                                            invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et
-                                            accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata
-                                            sanctus est Lorem ipsum dolor sit amet. </p>
-                                    </div>
-                                    <div class="author-box clearfix">
-                                        <a href="#" class="author-img"><img src="../assets/images/agents/1.jpg" alt="Agent Image"></a>
-                                        <cite class="author-name">Personal Seller: <a href="#">Linda Garret</a></cite>
-                                        <span class="phone"><i class="fa fa-phone"></i> 00894 692-49-22</span>
-                                    </div>
-                                </div>
-                            </article>
-                        </div>
-                    </c:forEach>
+                                </article>
+                            </div>
+                        </c:forEach>
+                    </div>
+
+
                 </section>
 
                 <%--附近--%>
@@ -191,7 +201,8 @@
                             <div class="agent-box clearfix">
                                 <div class="row">
                                     <div class="col-sm-5 col-xs-5">
-                                        <a href="#" class="agent-image"><img src="../assets/images/agents/2.jpg" alt="Agent Image"></a>
+                                        <a href="#" class="agent-image"><img src="../assets/images/agents/2.jpg"
+                                                                             alt="Agent Image"></a>
                                     </div>
                                     <div class="col-sm-7 col-xs-7">
                                         <cite class="agent-name">${premisesAO.company.name}</cite>
@@ -200,12 +211,13 @@
                                             <li><a href="#"><i class="fa fa-facebook-square"></i> Facebook</a></li>
                                             <li><a href="#"><i class="fa fa-twitter-square"></i> Twitter</a></li>
                                             <li><a href="#"><i class="fa fa-pinterest-square"></i> Pinterest</a></li>
-                                            <li><a href="#"><i class="fa fa-google-plus-square"></i> Google Plus</a></li>
+                                            <li><a href="#"><i class="fa fa-google-plus-square"></i> Google Plus</a>
+                                            </li>
                                         </ul>
                                         <a href="#" class="btn btn-warning">View Profile</a>
                                     </div>
                                 </div>
-                            <p>${premisesAO.company.info}</p>
+                                <p>${premisesAO.company.info}</p>
                             </div>
                             <div class="widget address-widget clearfix">
                                 <ul>
@@ -220,16 +232,43 @@
                         <div class="col-lg-5">
                             <div class="agent-contact-form">
                                 <form id="agent-form" class="agent-form" method="post" action="#">
-                                    <input type="text" name="name" placeholder="Full Name" class="required" >
+                                    <input type="text" name="name" placeholder="Full Name" class="required">
                                     <input type="text" name="phone" placeholder="Phone Number" class="required">
                                     <input type="text" name="email" placeholder="Email" class="email required">
-                                    <textarea name="message" cols="30" rows="5" class="required" placeholder="Message"></textarea>
-                                    <button class="btn btn-default btn-lg btn-3d" type="submit" data-hover="SUBMIT REQUEST">SUBMIT REQUEST</button>
+                                    <textarea name="message" cols="30" rows="5" class="required"
+                                              placeholder="Message"></textarea>
+                                    <button class="btn btn-default btn-lg btn-3d" type="submit"
+                                            data-hover="SUBMIT REQUEST">SUBMIT REQUEST
+                                    </button>
                                     <div class="error-container"></div>
                                     <div class="message-container"></div>
                                 </form>
                             </div>
                         </div>
+                    </div>
+                </section>
+
+                <%--论坛--%>
+                <section class="property-nearby-places common">
+                    <h4 class="entry-title">论坛</h4>
+                    <form role="form">
+                        <div class="form-group">
+                            <label >输入你的评论：</label>
+                            <textarea class="form-control" rows="3"></textarea>
+                        </div>
+                    </form>
+                    <div class="contact-in-header clearfix">
+                        <div class="col-md-6 col-sm-6 avatar_div">
+                            <img class=" avatar" src="../assets/images/avatar.png">
+                        </div>
+                        <span class="col-md-6 col-sm-6">
+                           wzc
+                           <br>
+                         <strong>主题*******</strong>
+                        </span>
+                        <a>
+                            评论
+                        </a>
                     </div>
                 </section>
             </div>
@@ -263,22 +302,22 @@
                                                 <label for="property-sub-location">Sub Location</label>
                                                 <select name="sub-location" id="property-sub-location">
                                                     <option value="">All Areas</option>
-                                                    <option value="brickell" > Brickell</option>
-                                                    <option value="brickyard" > Brickyard</option>
-                                                    <option value="bronx" > Bronx</option>
-                                                    <option value="brooklyn" > Brooklyn</option>
-                                                    <option value="coconut-grove" > Coconut Grove</option>
-                                                    <option value="downtown" > Downtown</option>
-                                                    <option value="eagle-rock" > Eagle Rock</option>
-                                                    <option value="englewood" > Englewood</option>
-                                                    <option value="hermosa" > Hermosa</option>
-                                                    <option value="hollywood" > Hollywood </option>
-                                                    <option value="lincoln-park" > Lincoln Park</option>
-                                                    <option value="manhattan" > Manhattan</option>
-                                                    <option value="midtown" > Midtown</option>
-                                                    <option value="queens" > Queens</option>
-                                                    <option value="westwood" > Westwood </option>
-                                                    <option value="wynwood" > Wynwood</option>
+                                                    <option value="brickell"> Brickell</option>
+                                                    <option value="brickyard"> Brickyard</option>
+                                                    <option value="bronx"> Bronx</option>
+                                                    <option value="brooklyn"> Brooklyn</option>
+                                                    <option value="coconut-grove"> Coconut Grove</option>
+                                                    <option value="downtown"> Downtown</option>
+                                                    <option value="eagle-rock"> Eagle Rock</option>
+                                                    <option value="englewood"> Englewood</option>
+                                                    <option value="hermosa"> Hermosa</option>
+                                                    <option value="hollywood"> Hollywood</option>
+                                                    <option value="lincoln-park"> Lincoln Park</option>
+                                                    <option value="manhattan"> Manhattan</option>
+                                                    <option value="midtown"> Midtown</option>
+                                                    <option value="queens"> Queens</option>
+                                                    <option value="westwood"> Westwood</option>
+                                                    <option value="wynwood"> Wynwood</option>
                                                 </select>
                                             </div>
                                             <div>
@@ -297,7 +336,7 @@
                                             </div>
                                             <div>
                                                 <label for="property-type">All Types</label>
-                                                <select id="property-type" name="type" >
+                                                <select id="property-type" name="type">
                                                     <option value="">All Types</option>
                                                     <option value="apartment"> Apartment</option>
                                                     <option value="condo"> Condo</option>
@@ -378,7 +417,7 @@
                                             </div>
                                             <div>
                                                 <label for="property-max-price">Max Prices</label>
-                                                <select name="max-price" id="property-max-price" >
+                                                <select name="max-price" id="property-max-price">
                                                     <option value="any" selected="selected">Any</option>
                                                     <option value="5000">$5000</option>
                                                     <option value="10000">$10000</option>
@@ -418,22 +457,22 @@
                                                 <label for="property-sub-location">Sub Location</label>
                                                 <select name="sub-location" id="property-sub-location">
                                                     <option value="">All Areas</option>
-                                                    <option value="brickell" > Brickell</option>
-                                                    <option value="brickyard" > Brickyard</option>
-                                                    <option value="bronx" > Bronx</option>
-                                                    <option value="brooklyn" > Brooklyn</option>
-                                                    <option value="coconut-grove" > Coconut Grove</option>
-                                                    <option value="downtown" > Downtown</option>
-                                                    <option value="eagle-rock" > Eagle Rock</option>
-                                                    <option value="englewood" > Englewood</option>
-                                                    <option value="hermosa" > Hermosa</option>
-                                                    <option value="hollywood" > Hollywood </option>
-                                                    <option value="lincoln-park" > Lincoln Park</option>
-                                                    <option value="manhattan" > Manhattan</option>
-                                                    <option value="midtown" > Midtown</option>
-                                                    <option value="queens" > Queens</option>
-                                                    <option value="westwood" > Westwood </option>
-                                                    <option value="wynwood" > Wynwood</option>
+                                                    <option value="brickell"> Brickell</option>
+                                                    <option value="brickyard"> Brickyard</option>
+                                                    <option value="bronx"> Bronx</option>
+                                                    <option value="brooklyn"> Brooklyn</option>
+                                                    <option value="coconut-grove"> Coconut Grove</option>
+                                                    <option value="downtown"> Downtown</option>
+                                                    <option value="eagle-rock"> Eagle Rock</option>
+                                                    <option value="englewood"> Englewood</option>
+                                                    <option value="hermosa"> Hermosa</option>
+                                                    <option value="hollywood"> Hollywood</option>
+                                                    <option value="lincoln-park"> Lincoln Park</option>
+                                                    <option value="manhattan"> Manhattan</option>
+                                                    <option value="midtown"> Midtown</option>
+                                                    <option value="queens"> Queens</option>
+                                                    <option value="westwood"> Westwood</option>
+                                                    <option value="wynwood"> Wynwood</option>
                                                 </select>
                                             </div>
                                             <div>
@@ -452,7 +491,7 @@
                                             </div>
                                             <div>
                                                 <label for="property-type">All Types</label>
-                                                <select id="property-type" name="type" >
+                                                <select id="property-type" name="type">
                                                     <option value="">All Types</option>
                                                     <option value="apartment"> Apartment</option>
                                                     <option value="condo"> Condo</option>
@@ -533,7 +572,7 @@
                                             </div>
                                             <div>
                                                 <label for="property-max-price">Max Prices</label>
-                                                <select name="max-price" id="property-max-price" >
+                                                <select name="max-price" id="property-max-price">
                                                     <option value="any" selected="selected">Any</option>
                                                     <option value="5000">$5000</option>
                                                     <option value="10000">$10000</option>
@@ -573,22 +612,22 @@
                                                 <label for="property-sub-location">Sub Location</label>
                                                 <select name="sub-location" id="property-sub-location">
                                                     <option value="">All Areas</option>
-                                                    <option value="brickell" > Brickell</option>
-                                                    <option value="brickyard" > Brickyard</option>
-                                                    <option value="bronx" > Bronx</option>
-                                                    <option value="brooklyn" > Brooklyn</option>
-                                                    <option value="coconut-grove" > Coconut Grove</option>
-                                                    <option value="downtown" > Downtown</option>
-                                                    <option value="eagle-rock" > Eagle Rock</option>
-                                                    <option value="englewood" > Englewood</option>
-                                                    <option value="hermosa" > Hermosa</option>
-                                                    <option value="hollywood" > Hollywood </option>
-                                                    <option value="lincoln-park" > Lincoln Park</option>
-                                                    <option value="manhattan" > Manhattan</option>
-                                                    <option value="midtown" > Midtown</option>
-                                                    <option value="queens" > Queens</option>
-                                                    <option value="westwood" > Westwood </option>
-                                                    <option value="wynwood" > Wynwood</option>
+                                                    <option value="brickell"> Brickell</option>
+                                                    <option value="brickyard"> Brickyard</option>
+                                                    <option value="bronx"> Bronx</option>
+                                                    <option value="brooklyn"> Brooklyn</option>
+                                                    <option value="coconut-grove"> Coconut Grove</option>
+                                                    <option value="downtown"> Downtown</option>
+                                                    <option value="eagle-rock"> Eagle Rock</option>
+                                                    <option value="englewood"> Englewood</option>
+                                                    <option value="hermosa"> Hermosa</option>
+                                                    <option value="hollywood"> Hollywood</option>
+                                                    <option value="lincoln-park"> Lincoln Park</option>
+                                                    <option value="manhattan"> Manhattan</option>
+                                                    <option value="midtown"> Midtown</option>
+                                                    <option value="queens"> Queens</option>
+                                                    <option value="westwood"> Westwood</option>
+                                                    <option value="wynwood"> Wynwood</option>
                                                 </select>
                                             </div>
                                             <div>
@@ -607,7 +646,7 @@
                                             </div>
                                             <div>
                                                 <label for="property-type">All Types</label>
-                                                <select id="property-type" name="type" >
+                                                <select id="property-type" name="type">
                                                     <option value="">All Types</option>
                                                     <option value="apartment"> Apartment</option>
                                                     <option value="condo"> Condo</option>
@@ -688,7 +727,7 @@
                                             </div>
                                             <div>
                                                 <label for="property-max-price">Max Prices</label>
-                                                <select name="max-price" id="property-max-price" >
+                                                <select name="max-price" id="property-max-price">
                                                     <option value="any" selected="selected">Any</option>
                                                     <option value="5000">$5000</option>
                                                     <option value="10000">$10000</option>
@@ -712,14 +751,19 @@
                                             </div>
                                         </fieldset>
                                     </div>
-                                    <button type="submit" class="btn btn-default btn-lg text-center btn-3d" data-hover="Search Property">Search Property</button>
+                                    <button type="submit" class="btn btn-default btn-lg text-center btn-3d"
+                                            data-hover="Search Property">Search Property
+                                    </button>
                                 </div>
                             </form>
-                        </div>    </section>
+                        </div>
+                    </section>
                     <section class="widget recent-properties clearfix">
                         <h5 class="title">Recent Properties</h5>
                         <div class="property clearfix">
-                            <a href="#" class="feature-image zoom"><img data-action="zoom" src="../assets/images/property/1.jpg" alt="Property Image"></a>
+                            <a href="#" class="feature-image zoom"><img data-action="zoom"
+                                                                        src="../assets/images/property/1.jpg"
+                                                                        alt="Property Image"></a>
                             <div class="property-contents">
                                 <h6 class="entry-title"><a href="single-property.html">Luxury family home</a></h6>
                                 <span class="btn-price">$389.000</span>
@@ -732,7 +776,9 @@
                             </div>
                         </div>
                         <div class="property clearfix">
-                            <a href="#" class="feature-image zoom"><img data-action="zoom" src="../assets/images/property/2.jpg" alt="Property Image"></a>
+                            <a href="#" class="feature-image zoom"><img data-action="zoom"
+                                                                        src="../assets/images/property/2.jpg"
+                                                                        alt="Property Image"></a>
                             <div class="property-contents">
                                 <h6 class="entry-title"><a href="single-property.html">Luxury family home</a></h6>
                                 <span class="btn-price">$389.000</span>
@@ -745,7 +791,9 @@
                             </div>
                         </div>
                         <div class="property clearfix">
-                            <a href="#" class="feature-image zoom"><img data-action="zoom" src="../assets/images/property/3.jpg" alt="Property Image"></a>
+                            <a href="#" class="feature-image zoom"><img data-action="zoom"
+                                                                        src="../assets/images/property/3.jpg"
+                                                                        alt="Property Image"></a>
                             <div class="property-contents">
                                 <h6 class="entry-title"><a href="single-property.html">Luxury family home</a></h6>
                                 <span class="btn-price">$389.000</span>
@@ -787,9 +835,10 @@
             <div class="row">
                 <div class="col-md-4 col-sm-6">
                     <section class="widget about-widget clearfix">
-                        <h4 class="title hide">About Us</h4>
-                        <a class="footer-logo" href="#"><img src="../assets/images/footer-logo.png" alt="Footer Logo"></a>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi</p>
+                        <h4 class="title hide">关于我们</h4>
+                        <a class="footer-logo" href="#"><img src="../assets/images/logo.png"
+                                                             alt="Footer Logo"></a>
+                        <p>优购房买卖房中心</p>
                         <ul class="social-icons clearfix">
                             <li><a href="#"><i class="fa fa-twitter"></i></a></li>
                             <li><a href="#"><i class="fa fa-facebook"></i></a></li>
@@ -800,19 +849,19 @@
                 </div>
                 <div class="col-md-4 col-sm-6">
                     <section class="widget twitter-widget clearfix">
-                        <h4 class="title">Latest Tweets</h4>
-                        <div id="twitter-feeds" class="clearfix"></div>
+                        <h4 class="title">更多</h4>
+
                     </section>
                 </div>
                 <div class="col-md-4 col-sm-6">
                     <section class="widget address-widget clearfix">
-                        <h4 class="title">OUR OFFICE</h4>
+                        <h4 class="title">联系我们</h4>
                         <ul>
-                            <li><i class="fa fa-map-marker"></i> 4 Tottenham Road, London, England.</li>
-                            <li><i class="fa fa-phone"></i> (123) 45678910</li>
-                            <li><i class="fa fa-envelope"></i> huycoi.art@gmail.com</li>
-                            <li><i class="fa fa-fax"></i> +84 962 216 601</li>
-                            <li><i class="fa fa-clock-o"></i> Mon - Sat: 9:00 - 18:00</li>
+                            <li><i class="fa fa-map-marker"></i> 云南大学</li>
+                            <li><i class="fa fa-phone"></i> 123</li>
+                            <li><i class="fa fa-envelope"></i> 123@</li>
+                            <li><i class="fa fa-fax"></i> +1111</li>
+                            <li><i class="fa fa-clock-o"></i>24小时为您服务</li>
                         </ul>
                     </section>
                 </div>
@@ -821,12 +870,11 @@
     </div>
     <div class="site-footer-bottom">
         <div class="container">
-            <p class="copyright pull-left wow slideInRight">Copyright &copy; 2017.Company name All rights reserved.</p>
+            <p class="copyright pull-left wow slideInRight">优购房 &copy; 2017</p>
             <nav class="footer-nav pull-right wow slideInLeft">
                 <ul>
-                    <li><a href="#">Terms & Conditions</a></li>
-                    <li><a href="#">Pricing</a></li>
-                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">关于我们</a></li>
+                    <li><a href="#">联系方式</a></li>
                 </ul>
             </nav>
         </div>
