@@ -38,4 +38,8 @@ public class UserServiceImpl implements UserService {
     public Integer getLastInsert() {
         return userCustomizedMapper.getLastInsert();
     }
+
+//    public int insertUser(User user){
+//        return userMapper.insert(user);
+//    }
 }
