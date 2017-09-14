@@ -11,59 +11,66 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"/>
-    <link rel="stylesheet" href="../assets/css/bootstrap.css"/>
-    <link rel="stylesheet" href="../assets/css/regedit.css"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <link rel="stylesheet" href="../assets/css/bootstrap.css" />
+    <link rel="stylesheet" href="../assets/css/regedit.css" />
     <link rel="stylesheet" type="text/css" href="../assets/fonts/iconfont.css">
-
+    <script type="text/javascript" src="../assets/js/myJS.js"></script>
     <title>注册-优购房</title>
 </head>
 <body>
-
 <div class="container">
     <div class="logo">
-        <div class="logo"><img src="../assets/images/logo.png"/></div>
+        <div class="logo"> <img src="../assets/images/logo.png" /> </div>
     </div>
-    <div class="head-riht">
-        <span class="login">我已注册，马上<a href="login.html">登录</a></span>
+    <div  class="head-riht">
+        <span class="login">我已注册，马上<a href="login.html" >登录</a></span>
     </div>
 </div>
 
-<div class="container mycontent">
+<div class="container mycontent" >
 
     <h4 class="title">
         邮箱注册
     </h4>
-    <div class=" setting">
+    <div class=" setting" >
         <!--设置用户信息-->
+
         <div class="input-group input-group-lg my-input ">
             <span class="input-group-addon iconfont icon-yonghu"></span>
-            <input id="username" type="text" class="form-control " placeholder="用户名">
+            <input id="username" type="text" class="form-control "  onblur="check_username()" maxlength="16" placeholder="用户名">
+            <span id="username-correct" class="mycheck iconfont icon-icon" > </span>
+            <span id="username-error" class="my-error iconfont icon-cha">用户名长度在3-16字符 </span>
         </div>
         <div class="input-group input-group-lg my-input">
             <span class="input-group-addon  iconfont icon-youxiang "></span>
-            <input id="email" type="text" class="form-control" placeholder="邮箱">
+            <input id="email" type="email" class="form-control"  onblur="check_email()" placeholder="邮箱">
+            <span id="email-correct" class="mycheck iconfont icon-icon" > </span>
+            <span id="email-error" class="my-error iconfont icon-cha"   >邮箱格式不正确 </span>
         </div>
         <div class="input-group input-group-lg my-input">
             <span class="input-group-addon  iconfont icon-suo "></span>
-            <input id="password" type="password" class="form-control " placeholder="密码">
+            <input id="password" type="password" class="form-control "onblur="check_password()" placeholder="密码">
+            <span id="password-correct" class="mycheck iconfont icon-icon"> </span>
         </div>
         <div class="input-group input-group-lg my-input">
             <span class="input-group-addon  iconfont icon-suo "></span>
-            <input type="password" class="form-control" placeholder="确认密码">
+            <input id="confirm-password" type="password" class="form-control"onblur="check_password()" placeholder="确认密码">
+            <span id="confirm-password-correct" class="mycheck iconfont icon-icon"> </span>
+            <span id="password-error" class="my-error iconfont icon-cha"   >两次密码不一致 </span>
         </div>
 
         <div class="input-group input-group-lg  my-input">
             <span class="input-group-addon  iconfont icon-yanzhengma "></span>
-            <input id="verCode" type="text" class="form-control" placeholder="验证码">
+            <input id="verCode" type="text" class="form-control" placeholder="验证码"  onkeyup="value=value.replace(/[^\w\.\/]/ig,'')">
             <span class="input-group-addon  iconfont  ">验证码图片</span>
+            <span class="mycheck iconfont icon-icon"> </span>
         </div>
 
 
-        <div class="checkbox " style="margin-left: 32%">
-            <input type="checkbox" checked style="height: 15px">
-            <a>《优购房章程》</a>
+        <div class="checkbox " style="margin-left: 32%" >
+            <input type="checkbox" checked style="height: 15px" >
+            <a >《优购房章程》</a>
         </div>
         <a class="regedit-btn" href="regedit-phone.html">使用手机注册>></a>
         <button id="register" class="btn btn-default regedit-btn agreebtn">立即注册</button>
@@ -76,10 +83,8 @@
 </div>
 
 
-<div class="my-input">
-    <p style="font-size: 12px;float: left; line-height: 10px;">© &nbsp;优购网 版权所有 ，并保留所有权利 <span
-            style="margin-left: 30px;"> Tel ：123</span><span style="margin-left: 20px;">E-mai：yougoufang@163.com</span>
-    </p>
+<div  class="my-input">
+    <p style="font-size: 12px;float: left; line-height: 10px;">© &nbsp;优购网 版权所有 ，并保留所有权利  <span  style="margin-left: 30px;"> Tel ：123</span><span  style="margin-left: 20px;">E-mai：yougoufang@163.com</span>  </p>
 </div>
 
 <script src="../assets/js/jquery.min.js"></script>
@@ -90,6 +95,7 @@
             var password = $("#password").val();
             var email = $("#email").val();
             var verCode = $("#verCode").val();
+            var passwordConfirm = $("#confirm-password").val();
 
             if (1 == 2) {
 
@@ -111,9 +117,9 @@
                     success: function (data) {
                         if (data.result == "success") {
                             alert("success");
-                            top.location = '../back_index';
+                            top.location = '/index/show';
                         } else {
-                            alert("fail");
+                            alert(data.ECode);
                         }
                     }
                 });

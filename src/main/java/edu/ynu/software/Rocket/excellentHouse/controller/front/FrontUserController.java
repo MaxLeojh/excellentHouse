@@ -1,5 +1,6 @@
 package edu.ynu.software.Rocket.excellentHouse.controller.front;
 
+import com.alibaba.fastjson.JSONObject;
 import edu.ynu.software.Rocket.excellentHouse.entity.User;
 import edu.ynu.software.Rocket.excellentHouse.service.EmailService;
 import edu.ynu.software.Rocket.excellentHouse.service.UserService;
@@ -13,6 +14,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import java.io.IOException;
 
 /**
  * Created by maxleo on 17-9-11.
@@ -28,13 +30,9 @@ public class FrontUserController {
     @Autowired
     EmailService emailService;
 
-    /*
-    register:
-    1.user name
-    2.user E-mail
-    3.password
-    4.verification code
-     */
+
+    String verCode = "2333";
+
     @RequestMapping("/toRegister")
     @ResponseBody
     public ModelAndView toRegister(){
@@ -43,19 +41,46 @@ public class FrontUserController {
         return modelAndView;
     }
 
+
+    /*
+    register:
+    1.user name
+    2.user E-mail
+    3.password
+    4.verification code
+     */
+
     @ResponseBody
     @RequestMapping(value = "/register", method = RequestMethod.POST)
     public void register(String userName, String Email, String passWord, String verificationCode, HttpSession session, HttpServletResponse response) throws Exception {
-        if (verificationCode.equals("233")){
+
+        JSONObject jsonObject = new JSONObject();
+
+        if (verificationCode.equals(verCode)){
             User user = new User();
             user.setName(userName);
             user.setEmail(Email);
             user.setPassWord(passWord);
-            userService.insertUser(user);
-            user.setUserId(userService.getLastInsert());
-            String verCode = user.getUserId().toString();
-
-            emailService.snedVerMail(user.getEmail(),verCode,user.getName());
+            int status = userService.insertUser(user);
+            if (status >0) {
+                user.setUserId(userService.getLastInsert());
+                String verCode = user.getUserId().toString();
+                emailService.snedVerMail(user.getEmail(),verCode,user.getName());
+                jsonObject.put("result","success");
+                response.getWriter().print(jsonObject.toString());
+            }
+            else {
+                //email has already exists.
+                jsonObject.put("result","fail");
+                jsonObject.put("ECode",100101);
+                response.getWriter().print(jsonObject.toString());
+            }
+        }
+        else {
+            //verCode error.
+            jsonObject.put("result","fail");
+            jsonObject.put("ECode",100102);
+            response.getWriter().print(jsonObject.toString());
         }
 
 
@@ -65,5 +90,35 @@ public class FrontUserController {
     @RequestMapping(value = "/emailConfirm")
     public void emailConfirm(@RequestParam("code") String code){
         System.out.println("------------"+code);
+        int userId = Integer.parseInt(code);//decode;
+        User user = userService.selectUserById(userId);
+        user.setIsEmailConfirm(true);
+        userService.update(user);
     }
+
+    @ResponseBody
+    @RequestMapping("/toLogin")
+    public ModelAndView toLogin(){
+        ModelAndView modelAndView = new ModelAndView("userLogin");
+
+        return modelAndView;
+    }
+
+    @ResponseBody
+    @RequestMapping(value = "/login", method = RequestMethod.POST)
+    public void login(String name,String password, HttpSession session, HttpServletResponse response) throws IOException {
+        JSONObject jsonObject = new JSONObject();
+
+        User user = userService.getUserByName(name);
+        if (user.getPassWord().equals(password)) {
+            session.setAttribute("user",user);
+            jsonObject.put("result","success");
+            response.getWriter().print(jsonObject.toString());
+        }
+        else {
+            jsonObject.put("result","fail");
+            response.getWriter().print(jsonObject.toString());
+        }
+    }
+
 }
