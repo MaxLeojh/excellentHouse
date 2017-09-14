@@ -11,4 +11,6 @@ public interface PremisesService {
     List<Premises> getAllPremises();
 
     Premises selectById(Integer premisesId);
+
+    List<Premises> testPage();
 }

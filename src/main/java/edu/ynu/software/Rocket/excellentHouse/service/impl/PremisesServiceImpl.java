@@ -31,4 +31,18 @@ public class PremisesServiceImpl implements PremisesService{
     public Premises selectById(Integer premisesId) {
         return premisesMapper.selectByPrimaryKey(premisesId);
     }
+
+    public List<Premises> testPage() {
+        List<Premises> premisesList = new ArrayList<Premises>();
+
+//        Page page = new Page();
+//        page.setBegin(0);
+//        page.setEnd(1);
+//
+//        PremisesExample example = new PremisesExample();
+//        example.setPage(page);
+//        premisesList = premisesMapper.selectByExample(example);
+
+        return premisesList;
+    }
 }

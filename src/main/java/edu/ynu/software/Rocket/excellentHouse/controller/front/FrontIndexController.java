@@ -43,7 +43,7 @@ public class FrontIndexController {
         ModelAndView mav = new ModelAndView();
 
 //        楼盘
-        List<Premises> premisesList = premisesService.getAllPremises();
+        List<Premises> premisesList = premisesService.testPage();
         mav.addObject("premisesList", premisesList);
 
 //        二手房

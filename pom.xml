@@ -31,6 +31,9 @@
     <!-- junit version -->
     <junit.version>4.12</junit.version>
 
+    <!-- SaaS SDK 版本 -->
+    <saas-sdk.version>1.0.3</saas-sdk.version>
+
   </properties>
 
   <dependencies>
@@ -209,11 +212,55 @@
       <version>1.9</version>
     </dependency>
 
+    <!-- SaaS SDK 加入了会报错... -->
+    <!--<dependency>-->
+      <!--<groupId>com.epicsaas</groupId>-->
+      <!--<artifactId>saas-sdk</artifactId>-->
+      <!--<version>${saas-sdk.version}</version>-->
+      <!--<exclusions>-->
+        <!--<exclusion>-->
+          <!--<groupId>org.elasticsearch</groupId>-->
+          <!--<artifactId>elasticsearch</artifactId>-->
+        <!--</exclusion>-->
+        <!--<exclusion>-->
+          <!--<groupId>com.epicpaas.others</groupId>-->
+          <!--<artifactId>fastdfs</artifactId>-->
+        <!--</exclusion>-->
+        <!--<exclusion>-->
+          <!--<groupId>com.rabbitmq</groupId>-->
+          <!--<artifactId>amqp-client</artifactId>-->
+        <!--</exclusion>-->
+        <!--<exclusion>-->
+          <!--<groupId>com.epicsaas</groupId>-->
+          <!--<artifactId>saas-ssb</artifactId>-->
+        <!--</exclusion>-->
+        <!--<exclusion>-->
+          <!--<groupId>net.sf.ehcache</groupId>-->
+          <!--<artifactId>ehcache</artifactId>-->
+        <!--</exclusion>-->
+      <!--</exclusions>-->
+    <!--</dependency>-->
+
     <!--Mybatis分页插件-->
     <dependency>
       <groupId>com.github.pagehelper</groupId>
       <artifactId>pagehelper</artifactId>
       <version>4.1.4</version>
+    </dependency>
+
+    <!--分页需要用到的包-->
+    <dependency>
+      <groupId>org.mybatis.generator</groupId>
+      <artifactId>mybatis-generator-core</artifactId>
+      <version>1.3.2</version>
+      <type>jar</type>
+      <!--<scope>test</scope>-->
+    </dependency>
+
+    <dependency>
+      <groupId>paginationplugin</groupId>
+      <artifactId>paginationplugin</artifactId>
+      <version>1.0</version>
     </dependency>
 
   </dependencies>
@@ -229,7 +276,27 @@
           <verbose>true</verbose>
           <overwrite>true</overwrite>
         </configuration>
+        <executions>
+          <execution>
+            <id>Generate MyBatis Artifacts</id>
+            <goals>
+              <goal>generate</goal>
+            </goals>
+          </execution>
+        </executions>
+        <dependencies>
+          <!--PaginationPlugin的jar包-->
+          <dependency>
+            <groupId>paginationplugin</groupId>
+            <artifactId>paginationplugin</artifactId>
+            <version>1.0</version>
+            <!--<scope>system</scope>-->
+            <!--<systemPath>${project.basedir}/src/main/webapp/WEB-INF/lib/PaginationPlugin.jar</systemPath>-->
+          </dependency>
+        </dependencies>
       </plugin>
+
+
     </plugins>
   </build>
 

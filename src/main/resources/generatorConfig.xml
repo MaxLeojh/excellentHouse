@@ -11,6 +11,9 @@
 
     <context id="default" targetRuntime="MyBatis3">
 
+        <!-- 这里引入扩展插件 -->
+        <!--<plugin type="PaginationPlugin"/>-->
+        <!--<plugin type="com.epicsaas.framework.mybatis.MySQLPaginationPlugin"></plugin>-->
 
         <!-- optional，旨在创建class时，对注释进行控制 -->
         <!-- true 表示去掉注释?-->
