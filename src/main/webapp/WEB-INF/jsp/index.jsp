@@ -43,22 +43,30 @@
             </div>
             <!--个人信息-->
             <div class="col-md-4 col-sm-7 col-xs-7" style="float: right">
-                <!--<div class="contact-in-header clearfix">-->
-                <!--<div class="col-md-6 col-sm-6 col-xs-6 avatar_div">-->
-                <!--<img class=" avatar" src="../assets/images/avatar.png">-->
-                <!--</div>-->
+                <c:choose>
+                    <c:when test="${user.userId > 0}">
+                        <div class="contact-in-header clearfix">
+                            <div class="col-md-6 col-sm-6 col-xs-6 avatar_div">
+                                <img class=" avatar" src="../assets/images/avatar.png">
+                            </div>
 
-                <!--<span class="col-md-6 col-sm-6 col-xs-6">-->
-                <!--wzc-->
-                <!--<br>-->
-                <!--<strong>****</strong>-->
-                <!--</span>-->
-                <!--</div>-->
-                <div class="not-login ">
-                    <a href="login.html">登陆</a>
-                    <span>/</span>
-                    <a href="regedit-email.html">注册</a>
-                </div>
+                            <span class="col-md-6 col-sm-6 col-xs-6">
+                        ${user.name}
+                        <br>
+                    <strong>${user.email}</strong>
+                    </span>
+                        </div>
+                    </c:when>
+                    <c:when test="${user.userId == 0}">
+                        <div class="not-login ">
+                            <a href="/user/toLogin">登陆</a>
+                            <span>/</span>
+                            <a href="/user/toRegister">注册</a>
+                        </div>
+                    </c:when>
+                </c:choose>
+
+
             </div>
             <!--个人信息end-->
             <!--菜单-->
@@ -340,16 +348,17 @@
         <div class="row">
             <div id="property-for-rent-slider">
                 <c:forEach items="${secondHandList}" var="house">
-                    <div class="col-lg-4 col-md-6">
-                        <article class="property clearfix">
+                    <div class="col-lg-4 col-md-6 layout-item-wrap">
+                        <article class="property clearfix layout-item">
                             <figure class="feature-image">
                                 <a class="clearfix" href="single-property.html"> <img src="../assets/images/property/1.jpg"
                                                                                       alt="Property Image"></a>
+
                             </figure>
                             <div class="property-contents">
                                 <header class="property-header clearfix">
                                     <div class="pull-left">
-                                        <h6 class="entry-title"><a href="single-property.html">${house.entity.name}</a>
+                                        <h6 class="entry-title house-name"><a href="single-property.html" title=${house.entity.name}>${house.entity.name}</a>
                                         </h6>
                                         <span class="property-location"><i class="fa fa-map-marker"></i> 地址施工中 </span>
                                     </div>
@@ -434,7 +443,7 @@
     </header>
     <div class="container">
         <div class="row">
-            <div id="property-for-rent-slider">
+            <div id="">
                 <c:forEach items="${decoInstanceList}" var="instance">
                     <div class="col-lg-4 col-md-6">
                         <article class="property clearfix">

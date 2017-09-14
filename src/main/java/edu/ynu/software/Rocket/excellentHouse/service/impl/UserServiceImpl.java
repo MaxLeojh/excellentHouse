@@ -35,11 +35,25 @@ public class UserServiceImpl implements UserService {
         return userMapper.insert(user);
     }
 
+    public User selectUserById(int id) {
+        return userMapper.selectByPrimaryKey(id);
+    }
+
     public Integer getLastInsert() {
         return userCustomizedMapper.getLastInsert();
     }
 
-//    public int insertUser(User user){
-//        return userMapper.insert(user);
-//    }
+    public int update(User user) {
+        return userMapper.updateByPrimaryKey(user);
+    }
+
+    public User getUserByName(String name) {
+        User user = new User();
+        UserExample userExample = new UserExample();
+        userExample.createCriteria().andNameEqualTo(name);
+        user = userMapper.selectByExample(userExample).get(0);
+        return user;
+    }
+
+
 }

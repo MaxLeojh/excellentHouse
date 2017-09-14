@@ -10,6 +10,8 @@ import java.util.List;
 public interface UserService {
     public List<User> selectAllUser();
     public Integer insertUser(User user);
-
+    public User selectUserById(int id);
     public Integer getLastInsert();
+    public int update(User user);
+    public User getUserByName(String name);
 }

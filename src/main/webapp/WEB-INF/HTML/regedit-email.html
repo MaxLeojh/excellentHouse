@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
     <link rel="stylesheet" href="../assets/css/bootstrap.css" />
-
     <link rel="stylesheet" href="../assets/css/regedit.css" />
     <link rel="stylesheet" type="text/css" href="../assets/fonts/iconfont.css">
     <script type="text/javascript" src="../assets/js/myJS.js"></script>
@@ -45,12 +44,13 @@
             </div>
             <div class="input-group input-group-lg my-input">
                 <span class="input-group-addon  iconfont icon-suo "></span>
-                <input id="password" type="password" class="form-control "onblur="check_password()" placeholder="密码">
+                <input id="password" type="password" class="form-control "onblur="check_password()"maxlength="16" placeholder="密码">
                 <span id="password-correct" class="mycheck iconfont icon-icon"> </span>
+                <span id="password-error2" class="my-error iconfont icon-cha"   >密码长度在3-16字符 </span>
             </div>
             <div class="input-group input-group-lg my-input">
                 <span class="input-group-addon  iconfont icon-suo "></span>
-                <input id="confirm-password" type="password" class="form-control"onblur="check_password()" placeholder="确认密码">
+                <input id="confirm-password" type="password" class="form-control"onblur="check_password()" maxlength="16" placeholder="确认密码">
                 <span id="confirm-password-correct" class="mycheck iconfont icon-icon"> </span>
                 <span id="password-error" class="my-error iconfont icon-cha"   >两次密码不一致 </span>
             </div>
