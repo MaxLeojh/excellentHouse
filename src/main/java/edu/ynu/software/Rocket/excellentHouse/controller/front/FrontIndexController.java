@@ -1,7 +1,12 @@
 package edu.ynu.software.Rocket.excellentHouse.controller.front;
 
+import edu.ynu.software.Rocket.excellentHouse.eneityAO.HouseAO;
+import edu.ynu.software.Rocket.excellentHouse.entity.DecoInstance;
+import edu.ynu.software.Rocket.excellentHouse.entity.House;
 import edu.ynu.software.Rocket.excellentHouse.entity.Premises;
 import edu.ynu.software.Rocket.excellentHouse.entity.User;
+import edu.ynu.software.Rocket.excellentHouse.service.DecoInstanceService;
+import edu.ynu.software.Rocket.excellentHouse.service.HouseService;
 import edu.ynu.software.Rocket.excellentHouse.service.PremisesService;
 import edu.ynu.software.Rocket.excellentHouse.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,16 +31,33 @@ public class FrontIndexController {
     @Autowired
     PremisesService premisesService;
 
+    @Autowired
+    HouseService houseService;
+
+    @Autowired
+    DecoInstanceService decoInstanceService;
+
     @RequestMapping(value = "/show")
     @ResponseBody
     public ModelAndView index(){
         ModelAndView mav = new ModelAndView();
 
-        List<User> userList = userService.selectAllUser();
-        mav.addObject("userList", userList);
-
+//        楼盘
         List<Premises> premisesList = premisesService.getAllPremises();
         mav.addObject("premisesList", premisesList);
+
+//        二手房
+        List<HouseAO> secondHandList = houseService.getHouseAOByKind("二手房");
+        mav.addObject("secondHandList",secondHandList);
+
+//        租房
+        List<HouseAO> rentHouseList = houseService.getHouseAOByKind("出租房");
+        mav.addObject("rentHouseList", rentHouseList);
+
+//        装修案例展示
+        List<DecoInstance> decoInstanceList = decoInstanceService.getAllDecoIntance();
+        mav.addObject("decoInstanceList", decoInstanceList);
+
 
         mav.setViewName("index");
         return mav;

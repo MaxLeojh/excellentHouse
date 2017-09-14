@@ -13,6 +13,7 @@ function check_email(){
             else {
                    document.getElementById("email-error").style.display="none";
                    document.getElementById("email-correct").style.display="inline";
+                    return true;
                }
 }
 function check_username(){
@@ -20,26 +21,38 @@ function check_username(){
     if(temp.value.length<3){
         document.getElementById("username-error").style.display="inline";
         document.getElementById("username-correct").style.display="none";
+        return false;
     }
     else {
         document.getElementById("username-error").style.display="none";
         document.getElementById("username-correct").style.display="inline";
+        return true;
     }
 }
 function check_password() {
     var password = document.getElementById("password");
     var confirm_password = document.getElementById("confirm-password");
-    if (password.value!=confirm_password.value){
-        document.getElementById("password-error").style.display="inline";
+    if(password.value.length<3){
+        document.getElementById("password-error2").style.display="inline";
         document.getElementById("password-correct").style.display="none";
         document.getElementById("confirm-password-correct").style.display="none";
         return false;
     }else {
-        document.getElementById("password-correct").style.display="inline";
-        document.getElementById("confirm-password-correct").style.display="inline";
-        document.getElementById("password-error").style.display="none";
-        return true;
+        if (password.value!=confirm_password.value){
+            document.getElementById("password-error").style.display="inline";
+            document.getElementById("password-error2").style.display="none";
+            document.getElementById("password-correct").style.display="none";
+            document.getElementById("confirm-password-correct").style.display="none";
+            return false;
+        }else {
+            document.getElementById("password-correct").style.display="inline";
+            document.getElementById("confirm-password-correct").style.display="inline";
+            document.getElementById("password-error2").style.display="none";
+            document.getElementById("password-error").style.display="none";
+            return true;
+        }
     }
+
 }
 function check_mobile(str)
 {
@@ -49,10 +62,11 @@ function check_mobile(str)
        // alert("正确！");
         document.getElementById("mobile-error").style.display="none";
         document.getElementById("mobile-correct").style.display="inline";
+        return true;
     }else
     {
        // alert("错误！");
         document.getElementById("mobile-error").style.display="inline";
-
+        return false;
     }
 }

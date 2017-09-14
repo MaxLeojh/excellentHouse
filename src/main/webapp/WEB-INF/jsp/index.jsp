@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>优购房</title>
+    <title>ExcellentHouse</title>
 
     <!-- Styles -->
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Poppins:400,600" rel="stylesheet">
@@ -38,7 +38,7 @@
         <div class="row">
             <div class="col-md-3 col-sm-5 col-xs-5">
                 <figure id="site-logo">
-                    <a href="index.html"><img src="../assets/images/logo.png" alt="Logo"></a>
+                    <a href="/"><img src="../assets/images/logo.png" alt="Logo"></a>
                 </figure>
             </div>
             <!--个人信息-->
@@ -83,19 +83,19 @@
                     </div>
                     <div class="collapse navbar-collapse">
                         <ul class="nav navbar-nav">
-                            <li><a href="index.html">首页</a></li>
-                            <li><a href="#">新房</a></li>
+                            <li><a href="/">首页</a></li>
+                            <li><a href="/frontPremises/list">新房</a></li>
                             <li><a href="contact.html" class="dropdown-toggle " style="  background-color: white;" data-toggle="dropdown">二手房 <b
                                     class="caret"></b></a>
                                 <ul class="dropdown-menu depth_0">
-                                    <li><a href="#">找小区</a></li>
-                                    <li><a href="#">找别墅</a></li>
-                                    <li><a href="#">找学校</a></li>
-                                    <li><a href="#">购房知识</a></li>
+                                    <li><a href="#">Feature 1</a></li>
+                                    <li><a href="#">Feature 1</a></li>
+                                    <li><a href="#">Feature 1</a></li>
+                                    <li><a href="#">Feature 1</a></li>
                                 </ul>
                             </li>
-                            <li><a href="#">装修</a></li>
                             <li><a href="#">租房</a></li>
+                            <li><a href="#">装修</a></li>
                         </ul>
                     </div>
                 </nav>
@@ -145,6 +145,7 @@
         </div>
     </div>
 </div>
+
 <%--高级搜索--%>
 <div id="advance-search" class="main-page clearfix ">
     <div class="container">
@@ -303,7 +304,7 @@
                         <div class="property-contents clearfix">
                             <header class="property-header clearfix">
                                 <div class="pull-left">
-                                    <h6 class="entry-title"><a href="/frontPremises/show?premisesId=${premises.id}">${premises.name}</a></h6>
+                                    <h6 class="entry-title"><a href="/frontPremises/detail?premisesId=${premises.id}">${premises.name}</a></h6>
                                     <span class="property-location"><i class="fa fa-map-marker"></i>坐标施工中</span>
                                 </div>
                                 <button class="btn btn-default btn-price pull-right btn-3d" data-hover="￥${premises.averagePrice}"><strong>￥${premises.averagePrice}</strong>
@@ -334,39 +335,40 @@
     </div>
 </section>
 
-<%--租房模块--%>
+<%--二手房模块--%>
 <section id="home-property-for-rent-listing">
     <header class="section-header home-section-header text-center">
         <div class="container">
-            <h2 class="wow slideInLeft">租房</h2>
-            <p class="wow slideInRight">这里是租房模块 <br>
-                走过路过</p>
+            <h2 class="wow slideInLeft">二手房</h2>
+            <p class="wow slideInRight">这里是二手房模块 <br>
+                风拳流的奥义</p>
         </div>
     </header>
     <div class="container">
         <div class="row">
             <div id="property-for-rent-slider">
-                <c:forEach items="${premisesList}" var="premises">
-                    <div class="col-lg-4 col-md-6">
-                        <article class="property clearfix">
+                <c:forEach items="${secondHandList}" var="house">
+                    <div class="col-lg-4 col-md-6 layout-item-wrap">
+                        <article class="property clearfix layout-item">
                             <figure class="feature-image">
                                 <a class="clearfix" href="single-property.html"> <img src="../assets/images/property/1.jpg"
                                                                                       alt="Property Image"></a>
+
                             </figure>
                             <div class="property-contents">
                                 <header class="property-header clearfix">
                                     <div class="pull-left">
-                                        <h6 class="entry-title"><a href="single-property.html">Guaranteed modern home</a>
+                                        <h6 class="entry-title house-name"><a href="single-property.html" title=${house.entity.name}>${house.entity.name}</a>
                                         </h6>
-                                        <span class="property-location"><i class="fa fa-map-marker"></i> 14 Tottenham Road, London</span>
+                                        <span class="property-location"><i class="fa fa-map-marker"></i> 地址施工中 </span>
                                     </div>
-                                    <button class="btn btn-default btn-price pull-right btn-3d" data-hover="$389.000">
-                                        <strong>$389.000</strong></button>
+                                    <button class="btn btn-default btn-price pull-right btn-3d" data-hover="￥${house.entity.housePrice}万">
+                                        <strong>￥${house.entity.housePrice}万</strong></button>
                                 </header>
                                 <div class="property-meta clearfix">
-                                    <span><i class="fa fa-arrows-alt"></i> 3060 SqFt</span>
-                                    <span><i class="fa fa-bed"></i> 3 Beds</span>
-                                    <span><i class="fa fa-bathtub"></i> 3 Baths</span>
+                                    <span><i class="fa fa-arrows-alt"></i> ${house.entity.area}m<sup>2</sup></span>
+                                    <span><i class="fa fa-bed"></i> ${house.type.bedroomnum} 室</span>
+                                    <span><i class="fa fa-bathtub"></i> ${house.type.bathroomnum} 卫</span>
                                     <span><i class="fa fa-cab"></i> Yes</span>
                                 </div>
                             </div>
@@ -378,18 +380,18 @@
     </div>
 </section>
 
-<%--装修模块--%>
+<%--租房模块--%>
 <section id="home-property-listing">
     <header class="section-header home-section-header text-center">
         <div class="container">
-            <h2 class="wow slideInRight">装修</h2>
-            <p class="wow slideInLeft">这里是装修案例展示 <br>
-                装修技术哪家强？ </p>
+            <h2 class="wow slideInLeft">租房</h2>
+            <p class="wow slideInRight">这里是租房模块 <br>
+                走过路过</p>
         </div>
     </header>
     <div class="container">
         <div class="row">
-            <c:forEach items="${premisesList}" var="premises">
+            <c:forEach items="${rentHouseList}" var="house">
                 <div class="col-lg-4 col-sm-6 layout-item-wrap">
                     <article class="property layout-item clearfix">
                         <figure class="feature-image">
@@ -399,16 +401,16 @@
                         <div class="property-contents clearfix">
                             <header class="property-header clearfix">
                                 <div class="pull-left">
-                                    <h6 class="entry-title"><a href="/frontPremises/show?premisesId=${premises.id}">${premises.name}</a></h6>
+                                    <h6 class="entry-title"><a href="/frontPremises/show?premisesId=${house.entity.id}">${house.entity.name}</a></h6>
                                     <span class="property-location"><i class="fa fa-map-marker"></i>坐标施工中</span>
                                 </div>
-                                <button class="btn btn-default btn-price pull-right btn-3d" data-hover="￥${premises.averagePrice}"><strong>￥${premises.averagePrice}</strong>
+                                <button class="btn btn-default btn-price pull-right btn-3d" data-hover="￥${house.entity.housePrice}/月"><strong>￥${house.entity.housePrice}/月</strong>
                                 </button>
                             </header>
                             <div class="property-meta clearfix">
-                                <span><i class="fa fa-arrows-alt"></i> 3060 SqFt</span>
-                                <span><i class="fa fa-bed"></i> 3 Beds</span>
-                                <span><i class="fa fa-bathtub"></i> 3 Baths</span>
+                                <span><i class="fa fa-arrows-alt"></i> ${house.entity.area}m<sup>2</sup></span>
+                                <span><i class="fa fa-bed"></i> ${house.type.bedroomnum} 室</span>
+                                <span><i class="fa fa-bathtub"></i> ${house.type.bathroomnum} 卫</span>
                                 <span><i class="fa fa-cab"></i> Yes</span>
                             </div>
                             <div class="contents clearfix">
@@ -430,20 +432,68 @@
     </div>
 </section>
 
-<section id="announcement-section" class="text-center">
-    <div class="container ">
-        <h2 class="title wow slideInLeft">Download Our Latest App</h2>
-        <p class="wow slideInRight">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-            incididunt ut <br>
-            labore et dolore magna aliquan ut enim ad minim veniam.</p>
-        <a class="btn" href="#"><img src="../assets/images/iso-btn.png" alt="ISO Button"></a>
-        <a class="btn" href="#"><img src="../assets/images/playstore-btn.png" alt="Play Store Button"></a>
+<%--装修模块--%>
+<section id="home-property-for-rent-listing">
+    <header class="section-header home-section-header text-center">
+        <div class="container">
+            <h2 class="wow slideInRight">装修</h2>
+            <p class="wow slideInLeft">这里是装修案例展示 <br>
+                装修技术哪家强？ </p>
+        </div>
+    </header>
+    <div class="container">
+        <div class="row">
+            <div id="">
+                <c:forEach items="${decoInstanceList}" var="instance">
+                    <div class="col-lg-4 col-md-6">
+                        <article class="property clearfix">
+                            <figure class="feature-image">
+                                <a class="clearfix" href="single-property.html"> <img src="../assets/images/property/1.jpg"
+                                                                                      alt="Property Image"></a>
+                            </figure>
+                            <div class="property-contents">
+                                <header class="property-header clearfix">
+                                    <div class="pull-left">
+                                        <h6 class="entry-title"><a href="single-property.html">${instance.name}</a>
+                                        </h6>
+                                        <span class="property-location"><i class="fa fa-map-marker"></i> 坐标施工中 </span>
+                                    </div>
+                                    <button class="btn btn-default btn-price pull-right btn-3d" data-hover="￥${instance.budget}万">
+                                        <strong>￥${instance.budget}万</strong></button>
+                                </header>
+                                <div class="property-meta clearfix">
+                                    暂时不知道放什么
+                                        <%--<span><i class="fa fa-arrows-alt"></i> 3060 SqFt</span>--%>
+                                        <%--<span><i class="fa fa-bed"></i> 3 Beds</span>--%>
+                                        <%--<span><i class="fa fa-bathtub"></i> 3 Baths</span>--%>
+                                        <%--<span><i class="fa fa-cab"></i> Yes</span>--%>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </c:forEach>
+            </div>
+        </div>
     </div>
 </section>
+
+<%--广告模块--%>
+<%--<section id="announcement-section" class="text-center">--%>
+    <%--<div class="container ">--%>
+        <%--<h2 class="title wow slideInLeft">Download Our Latest App</h2>--%>
+        <%--<p class="wow slideInRight">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor--%>
+            <%--incididunt ut <br>--%>
+            <%--labore et dolore magna aliquan ut enim ad minim veniam.</p>--%>
+        <%--<a class="btn" href="#"><img src="../assets/images/iso-btn.png" alt="ISO Button"></a>--%>
+        <%--<a class="btn" href="#"><img src="../assets/images/playstore-btn.png" alt="Play Store Button"></a>--%>
+    <%--</div>--%>
+<%--</section>--%>
+
+<%--WHY CHOOSE US--%>
 <section id="home-features-section" class="text-center">
     <header class="section-header home-section-header">
         <div class="container">
-            <h2 class="wow slideInRight">WHY CHOOSE US</h2>
+            <h2 class="wow slideInRight">为什么选择我们</h2>
             <p class="wow slideInLeft">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
                 incididunt ut <br>
                 labore et dolore magna aliquan ut enim ad minim veniam.</p>
@@ -482,13 +532,15 @@
         </div>
     </div>
 </section>
+
+<%--页脚--%>
 <footer id="footer">
     <div class="site-footer">
         <div class="container">
             <div class="row">
                 <div class="col-md-4 col-sm-6">
                     <section class="widget about-widget clearfix">
-                        <h4 class="title hide">About Us</h4>
+                        <h4 class="title hide">关于我们</h4>
                         <a class="footer-logo" href="#"><img src="../assets/images/footer-logo.png" alt="Footer Logo"></a>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
                             labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
@@ -511,11 +563,11 @@
                     <section class="widget address-widget clearfix">
                         <h4 class="title">OUR OFFICE</h4>
                         <ul>
-                            <li><i class="fa fa-map-marker"></i> 4 Tottenham Road, London, England.</li>
-                            <li><i class="fa fa-phone"></i> (123) 45678910</li>
-                            <li><i class="fa fa-envelope"></i> huycoi.art@gmail.com</li>
-                            <li><i class="fa fa-fax"></i> +84 962 216 601</li>
-                            <li><i class="fa fa-clock-o"></i> Mon - Sat: 9:00 - 18:00</li>
+                            <li><i class="fa fa-map-marker"></i> 位置暂不确定 </li>
+                            <li><i class="fa fa-phone"></i> 18487267900 </li>
+                            <li><i class="fa fa-envelope"></i> 451558608@qq.com </li>
+                            <li><i class="fa fa-fax"></i> 没有传真 </li>
+                            <li><i class="fa fa-clock-o"></i> Mon - Sat: 9:00 - 18:00 </li>
                         </ul>
                     </section>
                 </div>
@@ -535,6 +587,7 @@
         </div>
     </div>
 </footer>
+
 <a href="#top" id="scroll-top"><i class="fa fa-angle-up"></i></a>
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="../assets/js/jquery.min.js"></script>
