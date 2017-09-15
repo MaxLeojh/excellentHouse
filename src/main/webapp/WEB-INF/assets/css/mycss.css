@@ -121,3 +121,42 @@
     height:15px;
     width: 200px;
 }
+/*我的界面*/
+.my-avatar{
+    width: 100px;
+    height: 100px;
+    margin-top: 5%;
+    border-radius:50%
+}
+.up-img{
+    width: 100px;
+    display: block;
+    margin-top: 10px;
+    margin-left: 5px;
+}
+.input-name{
+    margin-top: 3px;
+}
+.input-row{
+    margin-top: 5px;
+}
+.margin-2{
+    margin-top:2%;
+}
+.input-date{
+    margin-left: 12px;
+}
+.save-btn{
+    width: 20%;
+    margin-left: 40%;
+}
+.delete{
+    float: right;
+}
+.my-price{
+    color: red;
+    font-size: 20px;
+}
+.my-info{
+    color: #0f9ae0;
+}

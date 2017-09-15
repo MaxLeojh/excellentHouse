@@ -25,7 +25,7 @@
     <link href="../plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet">
     <link href="../plugins/slick/slick.css" rel="stylesheet">
     <link href="../plugins/slick-nav/slicknav.css" rel="stylesheet">
-    <link href="../plugins/wow/animate.css" rel="stylesheet">
+    <link href="../assets/css/animate.css" rel="stylesheet">
     <link href="../assets/css/bootstrap.css" rel="stylesheet">
     <link href="../assets/css/theme.css" rel="stylesheet">
     <link href="../assets/css/mycss.css" rel="stylesheet">
