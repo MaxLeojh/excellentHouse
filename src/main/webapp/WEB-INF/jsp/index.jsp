@@ -43,22 +43,30 @@
             </div>
             <!--个人信息-->
             <div class="col-md-4 col-sm-7 col-xs-7" style="float: right">
-                <!--<div class="contact-in-header clearfix">-->
-                <!--<div class="col-md-6 col-sm-6 col-xs-6 avatar_div">-->
-                <!--<img class=" avatar" src="../assets/images/avatar.png">-->
-                <!--</div>-->
+                <c:choose>
+                    <c:when test="${user.userId > 0}">
+                        <div class="contact-in-header clearfix">
+                            <div class="col-md-6 col-sm-6 col-xs-6 avatar_div">
+                                <img class=" avatar" src="../assets/images/avatar.png">
+                            </div>
 
-                <!--<span class="col-md-6 col-sm-6 col-xs-6">-->
-                <!--wzc-->
-                <!--<br>-->
-                <!--<strong>****</strong>-->
-                <!--</span>-->
-                <!--</div>-->
-                <div class="not-login ">
-                    <a href="login.html">登陆</a>
-                    <span>/</span>
-                    <a href="regedit-email.html">注册</a>
-                </div>
+                            <span class="col-md-6 col-sm-6 col-xs-6">
+                        ${user.name}
+                        <br>
+                    <strong>${user.email}</strong>
+                    </span>
+                        </div>
+                    </c:when>
+                    <c:when test="${user.userId == 0}">
+                        <div class="not-login ">
+                            <a href="/user/toLogin">登陆</a>
+                            <span>/</span>
+                            <a href="/user/toRegister">注册</a>
+                        </div>
+                    </c:when>
+                </c:choose>
+
+
             </div>
             <!--个人信息end-->
             <!--菜单-->
