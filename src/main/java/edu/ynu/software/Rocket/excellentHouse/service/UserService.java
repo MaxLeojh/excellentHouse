@@ -1,5 +1,6 @@
 package edu.ynu.software.Rocket.excellentHouse.service;
 
+import edu.ynu.software.Rocket.excellentHouse.eneityAO.UserAO;
 import edu.ynu.software.Rocket.excellentHouse.entity.User;
 
 import java.util.List;
@@ -13,5 +14,6 @@ public interface UserService {
     public User selectUserById(int id);
     public Integer getLastInsert();
     public int update(User user);
-    public User getUserByName(String name);
+    public User getUserByEmail(String email);
+    public UserAO selectById(Integer userId);
 }

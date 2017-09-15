@@ -106,19 +106,28 @@ public class FrontUserController {
 
     @ResponseBody
     @RequestMapping(value = "/login", method = RequestMethod.POST)
-    public void login(String name,String password, HttpSession session, HttpServletResponse response) throws IOException {
+    public void login(String email, String password, HttpSession session, HttpServletResponse response) throws IOException {
         JSONObject jsonObject = new JSONObject();
 
-        User user = userService.getUserByName(name);
-        if (user.getPassWord().equals(password)) {
+        User user = userService.getUserByEmail(email);
+        if (user.getUserId() == null) {
+            jsonObject.put("result", "fail");
+            jsonObject.put("message", "no user");
+        }
+        else if (user.getIsEmailConfirm().equals(false)) {
+            jsonObject.put("result", "fail");
+            jsonObject.put("message", "email not pass");
+        }
+        else if (user.getPassWord().equals(password)) {
             session.setAttribute("user",user);
             jsonObject.put("result","success");
-            response.getWriter().print(jsonObject.toString());
         }
         else {
-            jsonObject.put("result","fail");
-            response.getWriter().print(jsonObject.toString());
+            jsonObject.put("result", "fail");
+            jsonObject.put("message", "please contract admin, phone:110");
         }
+
+        response.getWriter().print(jsonObject.toString());
     }
 
 }

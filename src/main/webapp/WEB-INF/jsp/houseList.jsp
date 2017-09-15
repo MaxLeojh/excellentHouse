@@ -2,18 +2,18 @@
 <%--
   Created by IntelliJ IDEA.
   User: August
-  Date: 2017/9/12
-  Time: 20:13
+  Date: 2017/9/14
+  Time: 14:13
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>楼盘</title>
+    <title>租房</title>
 
     <!-- Styles -->
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Poppins:400,600" rel="stylesheet">
@@ -44,7 +44,14 @@
         <ol class="breadcrumb wow slideInRight">
             <li><a href="/">主页</a></li>
             <%--<li><a href="property-map-view.html">列表</a></li>--%>
-            <li class="active">新房</li>
+            <c:choose>
+                <c:when test="${kind.equals('二手房')}">
+                    <li class="active">二手房</li>
+                </c:when>
+                <c:otherwise>
+                    <li class="active">租房</li>
+                </c:otherwise>
+            </c:choose>
         </ol>
     </div>
 </div>
@@ -53,7 +60,7 @@
     <!--头部-->
     <header class="section-header text-center">
         <div class="container">
-            <h2 class="pull-left">共有${premisesAOList.size()}个选择</h2>
+            <h2 class="pull-left">共有${houseAOList.size()}个选择</h2>
             <div class="pull-right">
                 <div class="property-sorting pull-left">
                     <label for="property-sort-dropdown"> 排序 </label>
@@ -70,8 +77,8 @@
     </header>
     <div class="container section-layout">
         <div class="row">
-            <!--楼盘信息-->
-            <c:forEach items="${premisesAOList}" var="premises">
+            <!--房源信息-->
+            <c:forEach items="${houseAOList}" var="house">
                 <div class="col-lg-4 col-sm-6 layout-item-wrap">
                     <article class="property layout-item clearfix">
                         <figure class="feature-image">
@@ -83,25 +90,25 @@
                         <div class="property-contents clearfix">
                             <header class="property-header clearfix">
                                 <div class="pull-left">
-                                    <h6 class="entry-title"><a href="/frontPremises/detail?premisesId=${premises.entity.id}">${premises.entity.name}</a></h6>
+                                    <h6 class="entry-title"><a href="single-property.html">${house.entity.name}</a></h6>
                                     <span class="property-location"><i class="fa fa-map-marker"></i>地址施工中</span>
                                 </div>
-                                <button class="btn btn-default btn-price pull-right btn-3d" data-hover="￥${premises.entity.averagePrice}">
-                                    <strong>￥${premises.entity.averagePrice}</strong></button>
+                                <button class="btn btn-default btn-price pull-right btn-3d" data-hover="￥${house.entity.housePrice}">
+                                    <strong>￥${house.entity.housePrice}</strong></button>
                             </header>
                             <div class="property-meta clearfix">
-                                <span><i class="fa fa-arrows-alt"></i> 3060㎡</span>
-                                <span><i class="fa fa-bed"></i> 3 室</span>
-                                <span><i class="fa fa-bathtub"></i> 一卫</span>
+                                <span><i class="fa fa-arrows-alt"></i> ${house.type.area} </span>
+                                <span><i class="fa fa-bed"></i> ${house.type.bedroomNum} 室 </span>
+                                <span><i class="fa fa-bathtub"></i> ${house.type.bathroomNum}卫 </span>
                                 <span><i class="fa fa-cab"></i> 有车位</span>
                             </div>
                             <div class="contents clearfix">
-                                <p>${premises.entity.introction}</p>
+                                <p>${house.entity.introduction}</p>
                             </div>
                             <div class="author-box clearfix">
                                 <a href="#" class="author-img"><img src="../assets/images/avatar.png" alt="Agent Image"></a>
-                                <cite class="author-name">房产公司 <a href="#">${premises.company.name}</a></cite>
-                                <span class="phone"><i class="fa fa-phone"></i>${premises.entity.phone}</span>
+                                <cite class="author-name">联系人:<a href="#"></a></cite>
+                                <span class="phone"><i class="fa fa-phone"></i>123</span>
                             </div>
                         </div>
                     </article>
@@ -139,4 +146,3 @@
 <script src="../assets/js/theme.js"></script>
 </body>
 </html>
-

@@ -13,6 +13,7 @@ import java.util.List;
 public class HouseAO {
     private House entity;
     private HouseType type;
+    private UserAO userAO;
     private List<Picture> pictureList;
     private List<Post> postList;
 
@@ -46,5 +47,13 @@ public class HouseAO {
 
     public void setPostList(List<Post> postList) {
         this.postList = postList;
+    }
+
+    public UserAO getUserAO() {
+        return userAO;
+    }
+
+    public void setUserAO(UserAO userAO) {
+        this.userAO = userAO;
     }
 }

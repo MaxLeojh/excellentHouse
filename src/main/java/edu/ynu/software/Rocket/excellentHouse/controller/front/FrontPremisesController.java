@@ -17,10 +17,11 @@ import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
- * 楼盘
+ * 楼盘管理
  * Created by August on 2017/9/8.
  */
 @Controller
@@ -38,6 +39,18 @@ public class FrontPremisesController {
 
     @Autowired
     UserService userService;
+
+    @RequestMapping(value = "list", method = RequestMethod.GET)
+    public ModelAndView list(HttpServletRequest request, HttpSession session) {
+        ModelAndView mav = new ModelAndView();
+
+        List<PremisesAO> premisesAOList = new ArrayList<PremisesAO>();
+        premisesAOList = premisesService.getAllPremisesAO();
+        mav.addObject("premisesAOList", premisesAOList);
+
+        mav.setViewName("premisesList");
+        return mav;
+    }
 
     @RequestMapping(value = "detail", method = RequestMethod.GET)
     public ModelAndView index(HttpServletRequest request, HttpSession session, Integer premisesId){
@@ -59,11 +72,4 @@ public class FrontPremisesController {
         return mav;
     }
 
-    @RequestMapping(value = "list", method = RequestMethod.GET)
-    public ModelAndView list(HttpServletRequest request, HttpSession session, Integer premisesId) {
-        ModelAndView mav = new ModelAndView();
-
-        mav.setViewName("premisesList");
-        return mav;
-    }
 }

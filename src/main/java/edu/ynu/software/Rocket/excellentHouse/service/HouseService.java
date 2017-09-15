@@ -13,4 +13,6 @@ public interface HouseService {
     List<House> getAllHouse();
 
     List<HouseAO> getHouseAOByKind(String kind);
+
+    HouseAO selectById(Integer houseId);
 }

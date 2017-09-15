@@ -2,12 +2,16 @@ package edu.ynu.software.Rocket.excellentHouse.service.impl;
 
 import edu.ynu.software.Rocket.excellentHouse.dao.UserCustomizedMapper;
 import edu.ynu.software.Rocket.excellentHouse.dao.UserMapper;
+import edu.ynu.software.Rocket.excellentHouse.eneityAO.UserAO;
+import edu.ynu.software.Rocket.excellentHouse.entity.Picture;
 import edu.ynu.software.Rocket.excellentHouse.entity.User;
 import edu.ynu.software.Rocket.excellentHouse.entity.UserExample;
+import edu.ynu.software.Rocket.excellentHouse.service.PictureService;
 import edu.ynu.software.Rocket.excellentHouse.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -21,6 +25,9 @@ public class UserServiceImpl implements UserService {
 
     @Autowired
     UserCustomizedMapper userCustomizedMapper;
+
+    @Autowired
+    PictureService pictureService;
 
     public List<User> selectAllUser() {
         List<User> userList;
@@ -47,13 +54,29 @@ public class UserServiceImpl implements UserService {
         return userMapper.updateByPrimaryKey(user);
     }
 
-    public User getUserByName(String name) {
+    public User getUserByEmail(String email) {
         User user = new User();
         UserExample userExample = new UserExample();
-        userExample.createCriteria().andNameEqualTo(name);
-        user = userMapper.selectByExample(userExample).get(0);
+        userExample.createCriteria().andEmailEqualTo(email);
+        List<User> userList = userMapper.selectByExample(userExample);
+        if (userList.size() == 1) {
+            user = userMapper.selectByExample(userExample).get(0);
+        }
+
         return user;
     }
 
+    public UserAO selectById(Integer userId) {
+        UserAO userAO = new UserAO();
+        User user = new User();
 
+        user = userMapper.selectByPrimaryKey(userId);
+        userAO.setEntity(user);
+
+        List<Picture> pictureList = new ArrayList<Picture>();
+        pictureList = pictureService.selectByEntityIdAndType(userId, "用户");
+        userAO.setPictureList(pictureList);
+
+        return userAO;
+    }
 }

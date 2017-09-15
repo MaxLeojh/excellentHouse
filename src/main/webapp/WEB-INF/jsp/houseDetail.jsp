@@ -1,3 +1,10 @@
+<%--
+  Created by IntelliJ IDEA.
+  User: August
+  Date: 2017/9/14
+  Time: 14:13
+  To change this template use File | Settings | File Templates.
+--%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -30,41 +37,8 @@
         <img src="../assets/images/loader/4.gif" alt="First Loader">
     </div>
 </div>
-<header id="site-header">
-
-    <div class="container">
-        <div class="row">
-            <div class="col-md-3">
-                <figure id="site-logo">
-                    <a href="index.html"><img src="../assets/images/logo.png" alt="Logo"></a>
-                </figure>
-            </div>
-            <div class="col-md-5 col-sm-8">
-                <nav id="site-nav" class="nav navbar-default">
-                    <ul class="nav navbar-nav">
-                        <li><a href="index.html">首页</a></li>
-                        <li><a href="property-listing.html">新房</a></li>
-                        <li><a href="single-property.html">二手房</a></li>
-                        <li><a href="gallery.html">装修</a></li>
-                        <li><a href="contact.html">租房</a></li>
-                    </ul>
-                </nav>
-            </div>
-            <div class="col-md-4 col-sm-4">
-                <div class="contact-in-header clearfix">
-                    <div class="col-md-6 col-sm-6 avatar_div">
-                        <img class=" avatar" src="../assets/images/avatar.png">
-                    </div>
-                    <span class="col-md-6 col-sm-6">
-                        wzc
-                        <br>
-                    <strong>****</strong>
-                    </span>
-                </div>
-            </div>
-        </div>
-    </div>
-</header>    <div id="property-single">
+<jsp:include page="frontHead.jsp"/>
+<div id="property-single">
     <div id="main-slider">
         <div class="slide"><img src="../assets/images/slider/1.jpg" alt="Slide"></div>
         <div class="slide"><img src="../assets/images/slider/2.jpg" alt="Slide"></div>
@@ -221,57 +195,7 @@
         </div>
     </div>
 </div>
-<footer id="footer">
-    <div class="site-footer">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4 col-sm-6">
-                    <section class="widget about-widget clearfix">
-                        <h4 class="title hide">关于我们</h4>
-                        <a class="footer-logo" href="#"><img src="../assets/images/footer-logo.png"
-                                                             alt="Footer Logo"></a>
-                        <p>优购房买卖房中心</p>
-                        <ul class="social-icons clearfix">
-                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                            <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
-                            <li><a href="#"><i class="fa fa-youtube-play"></i></a></li>
-                        </ul>
-                    </section>
-                </div>
-                <div class="col-md-4 col-sm-6">
-                    <section class="widget twitter-widget clearfix">
-                        <h4 class="title">更多</h4>
-
-                    </section>
-                </div>
-                <div class="col-md-4 col-sm-6">
-                    <section class="widget address-widget clearfix">
-                        <h4 class="title">联系我们</h4>
-                        <ul>
-                            <li><i class="fa fa-map-marker"></i> 云南大学</li>
-                            <li><i class="fa fa-phone"></i> 123</li>
-                            <li><i class="fa fa-envelope"></i> 123@</li>
-                            <li><i class="fa fa-fax"></i> +1111</li>
-                            <li><i class="fa fa-clock-o"></i>24小时为您服务</li>
-                        </ul>
-                    </section>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="site-footer-bottom">
-        <div class="container">
-            <p class="copyright pull-left wow slideInRight">优购房 &copy; 2017</p>
-            <nav class="footer-nav pull-right wow slideInLeft">
-                <ul>
-                    <li><a href="#">关于我们</a></li>
-                    <li><a href="#">联系方式</a></li>
-                </ul>
-            </nav>
-        </div>
-    </div>
-</footer>
+<jsp:include page="frontFoot.jsp"/>
 <a href="#top" id="scroll-top"><i class="fa fa-angle-up"></i></a>
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="../assets/js/jquery.min.js"></script>
