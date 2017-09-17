@@ -60,7 +60,7 @@
                             <li><a href="/">首页</a></li>
                             <li><a href="/frontPremises/list">新房</a></li>
                             <li><a href="/frontHouse/list?kind=二手房">二手房</a></li>
-                            <li><a href="/frontHouse/list?kind=租房">租房</a></li>
+                            <li><a href="/frontHouse/list?kind=出租房">租房</a></li>
                             <li><a href="/frontDecoInstance/list">装修</a></li>
                         </ul>
                     </div>

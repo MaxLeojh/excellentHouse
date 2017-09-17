@@ -13,7 +13,14 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>租房</title>
+    <c:choose>
+        <c:when test="${kind.equals('二手房')}">
+            <title>二手房</title>
+        </c:when>
+        <c:otherwise>
+            <title>租房</title>
+        </c:otherwise>
+    </c:choose>
 
     <!-- Styles -->
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Poppins:400,600" rel="stylesheet">
@@ -90,7 +97,7 @@
                         <div class="property-contents clearfix">
                             <header class="property-header clearfix">
                                 <div class="pull-left">
-                                    <h6 class="entry-title house-name"><a href="single-property.html">${house.entity.name}</a></h6>
+                                    <h6 class="entry-title  house-name"><a href="/frontHouse/detail?houseId=${house.entity.id}">${house.entity.name}</a></h6>
                                     <span class="property-location"><i class="fa fa-map-marker"></i>地址施工中</span>
                                 </div>
                                 <button class="btn btn-default btn-price pull-right btn-3d" data-hover="￥${house.entity.housePrice}">
@@ -107,8 +114,8 @@
                             </div>
                             <div class="author-box clearfix">
                                 <a href="#" class="author-img"><img src="../assets/images/avatar.png" alt="Agent Image"></a>
-                                <cite class="author-name">联系人:<a href="#"></a></cite>
-                                <span class="phone"><i class="fa fa-phone"></i>123</span>
+                                <cite class="author-name">联系人:<a href=""> ${house.userAO.entity.name} </a></cite>
+                                <span class="phone"><i class="fa fa-phone"></i>${house.userAO.entity.phoneNumber}</span>
                             </div>
                         </div>
                     </article>
