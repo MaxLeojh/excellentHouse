@@ -23,4 +23,13 @@ public class FrontDecoInstanceController {
         mav.setViewName("decoInstanceList");
         return mav;
     }
+
+    @RequestMapping(value = "detail", method = RequestMethod.GET)
+    public ModelAndView detail(HttpServletRequest request, HttpSession session, Integer decoInstanceId) {
+        ModelAndView mav = new ModelAndView();
+
+
+        mav.setViewName("decoInstanceDetail");
+        return mav;
+    }
 }
