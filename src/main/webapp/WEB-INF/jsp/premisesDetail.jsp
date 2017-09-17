@@ -26,6 +26,7 @@
     <link href="../assets/css/bootstrap.css" rel="stylesheet">
     <link href="../assets/css/theme.css" rel="stylesheet">
     <link href="../assets/css/mycss.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="../assets/fonts/iconfont.css">
 </head>
 <body class="">
 <div id="page-loader">
@@ -51,7 +52,11 @@
             <div class="col-lg-8 col-md-7">
                 <%--楼盘信息--%>
                 <section class="property-meta-wrapper common">
-                    <h3 class="entry-title">${premisesAO.entity.name}</h3>
+
+                    <div class="entry-title clearfix">
+                        <h4 class="pull-left">${premisesAO.entity.name}</h4>
+                        <a class="pull-right ">喜欢 <i  class="iconfont icon-xihuan " ></i></a>
+                    </div>
                     <div class="property-single-meta">
                         <ul class="clearfix">
                             <li><span>楼盘名字 :</span> ${premisesAO.entity.name} </li>
@@ -120,7 +125,7 @@
                                     <div class="property-contents clearfix col-lg-7 col-sm-7">
                                         <header class="property-header clearfix">
                                             <div class="pull-left">
-                                                <h6 class="entry-title"><a
+                                                <h6 class="entry-title house-name"><a
                                                         href="/frontPremises/show?premisesId=${premises.id}">${houseType.name}</a>
                                                 </h6>
                                                 <span class="property-location"><i
