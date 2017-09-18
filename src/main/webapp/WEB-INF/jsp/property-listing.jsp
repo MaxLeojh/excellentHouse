@@ -191,7 +191,7 @@
                     <div class="property-contents clearfix">
                         <header class="property-header clearfix">
                             <div class="pull-left">
-                                <h6 class="entry-title"><a href="single-property.html">天水家园</a></h6>
+                                <h6 class="entry-title house-name"><a href="single-property.html">天水家园</a></h6>
                                 <span class="property-location"><i class="fa fa-map-marker"></i>盘龙区</span>
                             </div>
                             <button class="btn btn-default btn-price pull-right btn-3d" data-hover="￥1400">

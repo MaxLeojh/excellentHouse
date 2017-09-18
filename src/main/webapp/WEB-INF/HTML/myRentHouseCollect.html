@@ -7,7 +7,7 @@
 	<head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Home</title>
+	<title></title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="description" content="" />
 	<meta name="keywords" content="" />
@@ -29,8 +29,7 @@
 	
 	<!-- Animate.css -->
 	<link rel="stylesheet" href="../assets/css/animate.css">
-	<!-- Icomoon Icon Fonts-->
-	<link rel="stylesheet" href="../assets/css/icomoon.css">
+
 	<!-- Bootstrap  -->
 	<link rel="stylesheet" href="../assets/css/bootstrap.css">
 
@@ -70,96 +69,58 @@
 
 		<div id="fh5co-main">
 			<div class="fh5co-narrow-content">
-				<h2 class="fh5co-heading animate-box" data-animate-effect="fadeInLeft">个人信息</h2>
-				<hr >
-				<!--基本信息-->
-				<div class="row">
-					<div class="col-md-9">
-						<div class="fh5co-feature animate-box " data-animate-effect="fadeInLeft">
-							<div class="row">
-								<div class="col-lg-offset-1 col-lg-4">
-									<img class="my-avatar" src="../assets/images/avatar.png">
-									<button class="btn btn-default up-img">上传头像</button>
-								</div>
-
-								<div class="col-lg-7">
-									<div class="row input-row" >
-										<span class="col-lg-4 input-name">用户名：</span>
-										<span class="col-lg-8" type="text" > 饶宇皓</span>
-									</div>
-									<div class="row input-row" >
-										<span class="col-lg-4 input-name">手机号：</span>
-										<span class="col-lg-4" type="text" > 18475786244</span>
-										<a class="col-lg-4">修改</a>
-									</div>
-									<div class="row input-row" >
-										<span class="col-lg-4 input-name">昵称：</span>
-										<div class="col-lg-8 " >
-											<input type="text" placeholder="八月">
-										</div>
-
-									</div>
-									<div class="row input-row" >
-										<span class="col-lg-4 input-name">邮箱：</span>
-										<span class="col-lg-4" type="text" > 18475786244@12</span>
-										<a class="col-lg-4">修改</a>
-									</div>
-									<div class="row input-row" >
-										<span class="col-lg-4 input-name">性别：</span>
-										<div class="col-lg-8">
-											<label><input name="sex"checked type="radio"/>男   </label>
-											<label class="col-lg-offset-1"><input name="sex" type="radio"  />女</label>
-										</div>
-
-									</div>
-								</div>
+				<h2 class="fh5co-heading animate-box" data-animate-effect="fadeInLeft">租房收藏</h2>
+				<div class="row row-bottom-padded-md">
+					<div class="col-md-3 col-sm-6 col-padding animate-box" data-animate-effect="fadeInLeft">
+						<div class="blog-entry">
+							<a href="#" class="blog-img"><img src="../assets/images/myImages/1.jpg" class="img-responsive" alt="加载失败啦"></a>
+							<div class="desc">
+								<h3><a href="#">收藏1</a><small>东城 东方财富 1室1厅 </small></h3>
+								<a>了解更多>></a>
+								<a href="#" class="delete"data-toggle="modal" data-target="#myModal">删除</a>
 							</div>
 						</div>
 					</div>
 				</div>
-				<hr >
-				<!--其他信息-->
-				<div class="row col-lg-offset-1">
-						<div class="fh5co-feature animate-box " data-animate-effect="fadeInLeft">
-								<div class="row input-row" >
-									<span class="col-lg-2 input-name">家庭住址：</span>
-									<div class="col-lg-4" style="height: 10px" >
-											<select class=" input-sm" style="font-size: 1px">
-												<option value="">云南</option>
-												<option value="">.云南</option>
-											</select>
-										<select class=" input-sm" style="font-size: 1px">
-											<option value="">昆明</option>
-											<option value="">.云南</option>
-										</select>
-										<select class=" input-sm" style="font-size: 1px">
-											<option value="">云南大学</option>
-											<option value="">.云南</option>
-										</select>
-									</div>
-								</div>
-							<div class="row margin-2 " >
-								<span class="col-lg-2 input-name">出生日期：</span>
-								<input class="input-date" type="date" value="2015-09-24"/>
-							</div>
-						</div>
-				</div>
-				<div class="fh5co-feature animate-box " data-animate-effect="fadeInLeft">
-				<button class="btn btn-block save-btn">保存</button>
-				</div>
 			</div>
+			<!-- 删除提示 -->
+			<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+								&times;
+							</button>
+							<h4 class="modal-title" id="myModalLabel">
+								提示
+							</h4>
+						</div>
+						<div class="modal-body">
+							确认删除收藏？
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-default" data-dismiss="modal">关闭
+							</button>
+							<button type="button" class="btn btn-primary">
+								确认
+							</button>
+						</div>
+					</div><!-- /.modal-content -->
+				</div><!-- /.modal -->
+			</div>
+
 		</div>
 	</div>
 
 	<!-- jQuery -->
 	<script src="../assets/js/jquery.min.js"></script>
 
+	<!-- Bootstrap -->
+	<script src="../assets/js/bootstrap.min.js"></script>
 	<!-- Waypoints -->
 	<script src="../assets/js/jquery.waypoints.min.js"></script>
 
-	<!-- Bootstrap -->
-	<script src="../assets/js/bootstrap.min.js"></script>
-
+	
 	
 	<!-- MAIN JS -->
 	<script src="../assets/js/main.js"></script>

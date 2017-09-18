@@ -83,7 +83,7 @@
                         <div class="property-contents clearfix">
                             <header class="property-header clearfix">
                                 <div class="pull-left">
-                                    <h6 class="entry-title"><a href="/frontPremises/detail?premisesId=${premises.entity.id}">${premises.entity.name}</a></h6>
+                                    <h6 class="entry-title house-name"><a href="/frontPremises/detail?premisesId=${premises.entity.id}">${premises.entity.name}</a></h6>
                                     <span class="property-location"><i class="fa fa-map-marker"></i>地址施工中</span>
                                 </div>
                                 <button class="btn btn-default btn-price pull-right btn-3d" data-hover="￥${premises.entity.averagePrice}">
