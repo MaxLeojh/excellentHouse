@@ -24,10 +24,9 @@
                                 <a href="/user/home"><img class=" avatar" src="../assets/images/avatar.png"></a>
                             </div>
 
-                            <span class="col-md-6 col-sm-6 col-xs-6">
+                            <span class="head-username col-md-6 col-sm-6 col-xs-6" >
                                 <a id="userName" href="/user/home" data-id="${user.userId}">${user.name}</a>
-                                <br>
-                                <strong>${user.email}</strong>
+                                <a class="logout" >注销</a>
                             </span>
                         </div>
                     </c:when>

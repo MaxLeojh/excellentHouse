@@ -58,8 +58,11 @@ $(function () {
                     alert("删除收藏成功");
                     // document.getElementById("collect").style.display="none";
                     // document.getElementById("hasCollect").style.display="inline";
-                    // alert("button.parents.val = " + button.parents().attr("class"));
-                    button.parents().style.display='none';
+                     alert("button.parents.val = " + button.parents().attr("class"));
+                    // button.parents().fadeOut();
+                    var p=button.parents();
+                    // button.parents().style.visibility="hidden";
+                    p.fadeOut();
                 }else{
                     alert("删除收藏失败..." + data.error_info);
                 }
