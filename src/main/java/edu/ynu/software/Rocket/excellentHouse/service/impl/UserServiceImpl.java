@@ -79,4 +79,17 @@ public class UserServiceImpl implements UserService {
 
         return userAO;
     }
+
+    public List<UserAO> selectAllUserAO() {
+        List<UserAO> userAOList = new ArrayList<UserAO>();
+        List<User> userList = new ArrayList<User>();
+
+        for (User user : userList) {
+            UserAO userAO = new UserAO();
+            userAO = selectById(user.getUserId());
+            userAOList.add(userAO);
+        }
+
+        return userAOList;
+    }
 }

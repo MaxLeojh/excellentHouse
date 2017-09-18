@@ -16,4 +16,6 @@ public interface UserService {
     public int update(User user);
     public User getUserByEmail(String email);
     public UserAO selectById(Integer userId);
+    public List<UserAO> selectAllUserAO();
+    public Integer deleteUser(Integer userId);
 }
