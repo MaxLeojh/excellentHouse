@@ -1,14 +1,8 @@
 package edu.ynu.software.Rocket.excellentHouse.controller.front;
 
 import edu.ynu.software.Rocket.excellentHouse.eneityAO.PremisesAO;
-import edu.ynu.software.Rocket.excellentHouse.entity.Company;
-import edu.ynu.software.Rocket.excellentHouse.entity.HouseType;
-import edu.ynu.software.Rocket.excellentHouse.entity.Premises;
-import edu.ynu.software.Rocket.excellentHouse.entity.User;
-import edu.ynu.software.Rocket.excellentHouse.service.CompanyService;
-import edu.ynu.software.Rocket.excellentHouse.service.HouseTypeService;
-import edu.ynu.software.Rocket.excellentHouse.service.PremisesService;
-import edu.ynu.software.Rocket.excellentHouse.service.UserService;
+import edu.ynu.software.Rocket.excellentHouse.entity.*;
+import edu.ynu.software.Rocket.excellentHouse.service.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,10 +11,11 @@ import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
- * 楼盘
+ * 楼盘管理
  * Created by August on 2017/9/8.
  */
 @Controller
@@ -39,31 +34,42 @@ public class FrontPremisesController {
     @Autowired
     UserService userService;
 
+    @Autowired
+    CollectionService collectionService;
+
+    @RequestMapping(value = "list", method = RequestMethod.GET)
+    public ModelAndView list(HttpServletRequest request, HttpSession session) {
+        ModelAndView mav = new ModelAndView();
+
+        List<PremisesAO> premisesAOList = new ArrayList<PremisesAO>();
+        premisesAOList = premisesService.getAllPremisesAO();
+        mav.addObject("premisesAOList", premisesAOList);
+
+        mav.setViewName("premisesList");
+        return mav;
+    }
+
     @RequestMapping(value = "detail", method = RequestMethod.GET)
     public ModelAndView index(HttpServletRequest request, HttpSession session, Integer premisesId){
         ModelAndView mav = new ModelAndView();
 
         PremisesAO premisesAO = new PremisesAO();
+        premisesAO = premisesService.selectByPremisesId(premisesId);
 
-        Premises premises = premisesService.selectById(premisesId);
-        premisesAO.setEntity(premises);
+        //判断用户是否收藏
+        Boolean isCollected = false;
+        User user = (User) session.getAttribute("user");
+        if (user != null) {
+            List<Collection> collectionList = collectionService.selectByIdAndType(user.getUserId(), premisesId, "楼盘");
+            if (collectionList.size() == 1) {
+               isCollected = true;
+            }
+        }
 
-        Company company = companyService.selectById(premises.getCompanyId());
-        premisesAO.setCompany(company);
-
-        List<HouseType> houseTypeList = houseTypeService.selectByCompanyId(premisesId);
-        premisesAO.setHouseTypeList(houseTypeList);
-
+        mav.addObject("isCollected", isCollected);
         mav.addObject("premisesAO", premisesAO);
         mav.setViewName("premisesDetail");
         return mav;
     }
 
-    @RequestMapping(value = "list", method = RequestMethod.GET)
-    public ModelAndView list(HttpServletRequest request, HttpSession session, Integer premisesId) {
-        ModelAndView mav = new ModelAndView();
-
-        mav.setViewName("premisesList");
-        return mav;
-    }
 }

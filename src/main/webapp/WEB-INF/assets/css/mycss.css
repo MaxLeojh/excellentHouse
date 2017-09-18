@@ -115,9 +115,73 @@
 .house-name{
     overflow : hidden;
     text-overflow: ellipsis;
+    -moz-text-overflow: ellipsis;
+    white-space: nowrap;
     display: -webkit-box;
     -webkit-line-clamp: 1;
     -webkit-box-orient: vertical;
     height:15px;
     width: 200px;
+
+}
+.house-name :hover{
+    overflow: visible;
+
+}
+/*我的界面*/
+.my-avatar{
+    width: 100px;
+    height: 100px;
+    margin-top: 5%;
+    border-radius:50%
+}
+.up-img{
+    display: block;
+    margin-top: 10px;
+    margin-left:-2%;
+}
+.input-name{
+    margin-top: 3px;
+}
+.input-row{
+    margin-top: 5px;
+}
+.margin-2{
+    margin-top:2%;
+}
+.input-date{
+    margin-left: 12px;
+}
+.save-btn{
+    width: 20%;
+    margin-left: 40%;
+}
+.delete{
+    float: right;
+}
+.my-price{
+    color: red;
+    font-size: 20px;
+}
+.my-info{
+    color: #6c98e2;
+}
+.my-img{
+    margin-top:7%;
+}
+.my-nav{
+    width: 70%;
+    margin-left: 15%;
+}
+.my-icon{
+    font-size: 100%;
+    margin-left: 50px;
+    transition: all 0.6s;
+}
+.my-icon:hover{
+    animation-name:flip;
+    color: #6c98e2;
+}
+.my-add-pic{
+    font-size: 100px;
 }

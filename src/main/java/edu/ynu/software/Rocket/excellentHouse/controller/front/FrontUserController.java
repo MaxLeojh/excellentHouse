@@ -1,8 +1,12 @@
 package edu.ynu.software.Rocket.excellentHouse.controller.front;
 
 import com.alibaba.fastjson.JSONObject;
+import edu.ynu.software.Rocket.excellentHouse.eneityAO.PremisesAO;
+import edu.ynu.software.Rocket.excellentHouse.entity.Collection;
 import edu.ynu.software.Rocket.excellentHouse.entity.User;
+import edu.ynu.software.Rocket.excellentHouse.service.CollectionService;
 import edu.ynu.software.Rocket.excellentHouse.service.EmailService;
+import edu.ynu.software.Rocket.excellentHouse.service.PremisesService;
 import edu.ynu.software.Rocket.excellentHouse.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -12,9 +16,13 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by maxleo on 17-9-11.
@@ -30,6 +38,11 @@ public class FrontUserController {
     @Autowired
     EmailService emailService;
 
+    @Autowired
+    CollectionService collectionService;
+
+    @Autowired
+    PremisesService premisesService;
 
     String verCode = "2333";
 
@@ -106,19 +119,136 @@ public class FrontUserController {
 
     @ResponseBody
     @RequestMapping(value = "/login", method = RequestMethod.POST)
-    public void login(String name,String password, HttpSession session, HttpServletResponse response) throws IOException {
+    public void login(String email, String password, HttpSession session, HttpServletResponse response) throws IOException {
         JSONObject jsonObject = new JSONObject();
 
-        User user = userService.getUserByName(name);
-        if (user.getPassWord().equals(password)) {
+        User user = userService.getUserByEmail(email);
+        if (user.getUserId() == null) {
+            jsonObject.put("result", "fail");
+            jsonObject.put("message", "no user");
+        }
+        else if (user.getIsEmailConfirm().equals(false)) {
+            jsonObject.put("result", "fail");
+            jsonObject.put("message", "email not pass");
+        }
+        else if (user.getPassWord().equals(password)) {
             session.setAttribute("user",user);
             jsonObject.put("result","success");
-            response.getWriter().print(jsonObject.toString());
         }
         else {
-            jsonObject.put("result","fail");
+            jsonObject.put("result", "fail");
+            jsonObject.put("message", "please contract admin, phone:110");
+        }
+
+        response.getWriter().print(jsonObject.toString());
+    }
+
+    @ResponseBody
+    @RequestMapping(value = "/home", method = RequestMethod.GET)
+    public ModelAndView userHome(HttpServletRequest request, HttpSession session) {
+        ModelAndView mav = new ModelAndView();
+
+        mav.setViewName("userHome");
+        return mav;
+    }
+
+    @ResponseBody
+    @RequestMapping(value = "/collectedPremises", method = RequestMethod.GET)
+    public ModelAndView userCollectedPremises(HttpServletRequest request, HttpSession session) {
+        ModelAndView mav = new ModelAndView();
+
+        User user = new User();
+        user = (User) session.getAttribute("user");
+
+        List<PremisesAO> premisesAOList = new ArrayList<PremisesAO>();
+        List<Collection> collectionList = new ArrayList<Collection>();
+
+        collectionList = collectionService.getUserCollection(user.getUserId(), "楼盘");
+        for (Collection collection : collectionList) {
+            PremisesAO premisesAO = new PremisesAO();
+            premisesAO = premisesService.selectByPremisesId(collection.getEntityId());
+            premisesAOList.add(premisesAO);
+        }
+        mav.addObject("premisesAOList", premisesAOList);
+
+        mav.setViewName("userCollectedPremises");
+        return mav;
+    }
+
+    @ResponseBody
+    @RequestMapping(value = "/collectedHouse", method = RequestMethod.GET)
+    public ModelAndView collectedHouse(HttpServletRequest request, HttpSession session) {
+        ModelAndView mav = new ModelAndView();
+
+        mav.setViewName("userCollectedHouse");
+        return mav;
+    }
+
+    @ResponseBody
+    @RequestMapping(value = "/collectedDecoInstance", method = RequestMethod.GET)
+    public ModelAndView collectedDecoInstance(HttpServletRequest request, HttpSession session) {
+        ModelAndView mav = new ModelAndView();
+
+        mav.setViewName("userCollectedDecoInstance");
+        return mav;
+    }
+
+    @ResponseBody
+    @RequestMapping(value = "/house", method = RequestMethod.GET)
+    public ModelAndView house(HttpServletRequest request, HttpSession session) {
+        ModelAndView mav = new ModelAndView();
+
+        mav.setViewName("userHouse");
+        return mav;
+    }
+
+    @RequestMapping(value = "/collect", method = RequestMethod.POST)
+    public void collect(HttpServletRequest request, HttpServletResponse response, HttpSession session) throws IOException,SQLException {
+        JSONObject jsonObject = new JSONObject();
+
+        Integer userId = new Integer(request.getParameter("userId"));
+        Integer entityId = new Integer(request.getParameter("entityId"));
+        String entityType = request.getParameter("entityType");
+
+        Collection collection = new Collection();
+        collection.setUserId(userId);
+        collection.setEntityId(entityId);
+        collection.setEntityType(entityType);
+        collection.setIsVaild(true);
+
+        try {
+            collectionService.insertCollection(collection);
+            jsonObject.put("result", "success");
+            response.getWriter().print(jsonObject.toString());
+        }
+        catch (Exception e) {
+            jsonObject.put("result", "fail");
+            jsonObject.put("error_info", e.getMessage());
             response.getWriter().print(jsonObject.toString());
         }
     }
 
+    @RequestMapping(value = "/deleteCollection", method = RequestMethod.POST)
+    public void deleteCollection(HttpServletRequest request, HttpServletResponse response, HttpSession session) throws IOException,SQLException {
+        JSONObject jsonObject = new JSONObject();
+
+        Integer userId = new Integer(request.getParameter("userId"));
+        Integer entityId = new Integer(request.getParameter("entityId"));
+        String entityType = request.getParameter("entityType");
+
+        Collection collection = new Collection();
+        collection = collectionService.selectByIdAndType(userId, entityId, entityType).get(0);
+        collection.setIsVaild(false);
+
+        try {
+            collectionService.deleteCollection(collection);
+            jsonObject.put("result", "success");
+            response.getWriter().print(jsonObject.toString());
+        }
+        catch (Exception e) {
+            jsonObject.put("result", "fail");
+            jsonObject.put("error_info", e.getMessage());
+            response.getWriter().print(jsonObject.toString());
+        }
+    }
 }

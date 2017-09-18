@@ -22,10 +22,11 @@
     <link href="../plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet">
     <link href="../plugins/slick/slick.css" rel="stylesheet">
     <link href="../plugins/slick-nav/slicknav.css" rel="stylesheet">
-    <link href="../plugins/wow/animate.css" rel="stylesheet">
+    <link href="../assets/css/animate.css" rel="stylesheet">
     <link href="../assets/css/bootstrap.css" rel="stylesheet">
     <link href="../assets/css/theme.css" rel="stylesheet">
     <link href="../assets/css/mycss.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="../assets/fonts/iconfont.css">
 </head>
 <body class="">
 <div id="page-loader">
@@ -34,48 +35,17 @@
         <img src="../assets/images/loader/4.gif" alt="First Loader">
     </div>
 </div>
-<header id="site-header">
-
-    <div class="container">
-        <div class="row">
-            <div class="col-md-3">
-                <figure id="site-logo">
-                    <a href="index.html"><img src="../assets/images/logo.png" alt="Logo"></a>
-                </figure>
-            </div>
-            <div class="col-md-5 col-sm-8">
-                <nav id="site-nav" class="nav navbar-default">
-                    <ul class="nav navbar-nav">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="property-listing.html">Listing</a></li>
-                        <li><a href="single-property.html" class="my_active">Property</a></li>
-                        <li><a href="gallery.html">Gallery</a></li>
-                        <li><a href="contact.html">contact</a></li>
-                    </ul>
-                </nav>
-            </div>
-            <div class="col-md-4 col-sm-4">
-                <div class="contact-in-header clearfix">
-                    <div class="col-md-6 col-sm-6 avatar_div">
-                        <img class=" avatar" src="../assets/images/avatar.png">
-                    </div>
-                    <span class="col-md-6 col-sm-6">
-                        wzc
-                        <br>
-                    <strong>****</strong>
-                    </span>
-                </div>
-            </div>
-        </div>
-    </div>
-</header>
+<jsp:include page="frontHead.jsp"/>
 <div id="property-single">
     <%--楼盘图片展示--%>
     <div id="main-slider">
-        <div class="slide"><img src="../assets/images/slider/1.jpg" alt="Slide"></div>
-        <div class="slide"><img src="../assets/images/slider/2.jpg" alt="Slide"></div>
-        <div class="slide"><img src="../assets/images/slider/3.jpg" alt="Slide"></div>
-        <div class="slide"><img src="../assets/images/slider/4.jpg" alt="Slide"></div>
+        <c:forEach items="${premisesAO.pictureList}" var="picture">
+            <div class="slide"><img src="${picture.pictureAddress}" alt="Slide"></div>
+        </c:forEach>
+        <%--<div class="slide"><img src="../assets/images/slider/1.jpg" alt="Slide"></div>--%>
+        <%--<div class="slide"><img src="../assets/images/slider/2.jpg" alt="Slide"></div>--%>
+        <%--<div class="slide"><img src="../assets/images/slider/3.jpg" alt="Slide"></div>--%>
+        <%--<div class="slide"><img src="../assets/images/slider/4.jpg" alt="Slide"></div>--%>
     </div>
 
     <%--主要内容--%>
@@ -85,7 +55,20 @@
             <div class="col-lg-8 col-md-7">
                 <%--楼盘信息--%>
                 <section class="property-meta-wrapper common">
-                    <h3 class="entry-title">${premisesAO.entity.name}</h3>
+
+                    <div class="entry-title clearfix">
+                            <h4 class="pull-left" id="premisesName" data-id="${premisesAO.entity.id}" data-type="楼盘">${premisesAO.entity.name}</h4>
+                        <c:choose>
+                            <c:when test="${isCollected == true}">
+                                <button id="hasCollect" class="pull-right ">已收藏 <i  class="iconfont icon-xihuan " ></i></button>
+                            </c:when>
+                            <c:otherwise>
+                                <button id="collect" class="pull-right ">收藏 <i  class="iconfont icon-xihuan " ></i></button>
+                                <button id="hasCollect" class="pull-right " style="display: none">已收藏 <i  class="iconfont icon-xihuan " ></i></button>
+                            </c:otherwise>
+                        </c:choose>
+
+                    </div>
                     <div class="property-single-meta">
                         <ul class="clearfix">
                             <li><span>楼盘名字 :</span> ${premisesAO.entity.name} </li>
@@ -108,9 +91,9 @@
                     <p>${premisesAO.entity.introction}</p>
                 </section>
 
-                <%--暂时不确定--%>
+                <%--暂时不确定放什么--%>
                 <section class="property-single-features common clearfix">
-                    <h4 class="entry-title">Property Features</h4>
+                    <h4 class="entry-title">没想好放什么</h4>
                     <ul class="property-single-features-list clearfix">
                         <li>Air Conditioning</li>
                         <li>Cable TV</li>
@@ -154,15 +137,15 @@
                                     <div class="property-contents clearfix col-lg-7 col-sm-7">
                                         <header class="property-header clearfix">
                                             <div class="pull-left">
-                                                <h6 class="entry-title"><a
+                                                <h6 class="entry-title house-name"><a
                                                         href="/frontPremises/show?premisesId=${premises.id}">${houseType.name}</a>
                                                 </h6>
                                                 <span class="property-location"><i
                                                         class="fa fa-map-marker"></i>坐标施工中</span>
                                             </div>
                                             <button class="btn btn-default btn-price pull-right btn-3d"
-                                                    data-hover="￥${premises.averagePrice}">
-                                                <strong>￥${premises.averagePrice}</strong>
+                                                    data-hover="￥${houseType.totalPrice}">
+                                                <strong>￥${houseType.totalPrice}</strong>
                                             </button>
                                         </header>
                                         <div class="property-meta clearfix">
@@ -172,7 +155,7 @@
                                             <span><i class="fa fa-cab"></i> Yes</span>
                                         </div>
                                         <div >
-                                            <p>环境优美</p>
+                                            <p>${houseType.introduction}</p>
                                         </div>
                                         <div >
                                             <cite class="author-name">联系卖家 <a href="#">饶宇皓</a></cite>
@@ -183,8 +166,6 @@
                             </div>
                         </c:forEach>
                     </div>
-
-
                 </section>
 
                 <%--附近--%>
@@ -221,7 +202,7 @@
                             </div>
                             <div class="widget address-widget clearfix">
                                 <ul>
-                                    <li><i class="fa fa-map-marker"></i> 4 Tottenham Road, London, England.</li>
+                                    <li><i class="fa fa-map-marker"></i> ${premisesAO.company.address} </li>
                                     <li><i class="fa fa-phone"></i> (123) 45678910</li>
                                     <li><i class="fa fa-envelope"></i> huycoi.art@gmail.com</li>
                                     <li><i class="fa fa-fax"></i> +84 962 216 601</li>
@@ -829,57 +810,7 @@
     </div>
 </div>
 
-<footer id="footer">
-    <div class="site-footer">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4 col-sm-6">
-                    <section class="widget about-widget clearfix">
-                        <h4 class="title hide">关于我们</h4>
-                        <a class="footer-logo" href="#"><img src="../assets/images/logo.png"
-                                                             alt="Footer Logo"></a>
-                        <p>优购房买卖房中心</p>
-                        <ul class="social-icons clearfix">
-                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                            <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
-                            <li><a href="#"><i class="fa fa-youtube-play"></i></a></li>
-                        </ul>
-                    </section>
-                </div>
-                <div class="col-md-4 col-sm-6">
-                    <section class="widget twitter-widget clearfix">
-                        <h4 class="title">更多</h4>
-
-                    </section>
-                </div>
-                <div class="col-md-4 col-sm-6">
-                    <section class="widget address-widget clearfix">
-                        <h4 class="title">联系我们</h4>
-                        <ul>
-                            <li><i class="fa fa-map-marker"></i> 云南大学</li>
-                            <li><i class="fa fa-phone"></i> 123</li>
-                            <li><i class="fa fa-envelope"></i> 123@</li>
-                            <li><i class="fa fa-fax"></i> +1111</li>
-                            <li><i class="fa fa-clock-o"></i>24小时为您服务</li>
-                        </ul>
-                    </section>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="site-footer-bottom">
-        <div class="container">
-            <p class="copyright pull-left wow slideInRight">优购房 &copy; 2017</p>
-            <nav class="footer-nav pull-right wow slideInLeft">
-                <ul>
-                    <li><a href="#">关于我们</a></li>
-                    <li><a href="#">联系方式</a></li>
-                </ul>
-            </nav>
-        </div>
-    </div>
-</footer>
+<jsp:include page="frontFoot.jsp"/>
 <a href="#top" id="scroll-top"><i class="fa fa-angle-up"></i></a>
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="../assets/js/jquery.min.js"></script>
@@ -898,5 +829,7 @@
 <!--<script src="http://ditu.google.cn/maps/api/js?key=AIzaSyD2MtZynhsvwI2B40juK6SifR_OSyj4aBA&libraries=places"></script>-->
 <script src="../plugins/whats-nearby/source/WhatsNearby.js"></script>
 <script src="../assets/js/theme.js"></script>
+
+<script src="../js/collection.js"></script>
 </body>
 </html>

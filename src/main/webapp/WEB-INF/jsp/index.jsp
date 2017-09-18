@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>ExcellentHouse</title>
+    <title>优购房</title>
 
     <!-- Styles -->
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Poppins:400,600" rel="stylesheet">
@@ -19,7 +19,7 @@
     <link href="../plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet">
     <link href="../plugins/slick/slick.css" rel="stylesheet">
     <link href="../plugins/slick-nav/slicknav.css" rel="stylesheet">
-    <link href="../plugins/wow/animate.css" rel="stylesheet">
+    <link href="../assets/css/animate.css" rel="stylesheet">
     <link href="../assets/css/bootstrap.css" rel="stylesheet">
     <link href="../assets/css/theme.css" rel="stylesheet">
     <link href="../assets/css/mycss.css" rel="stylesheet">
@@ -33,96 +33,7 @@
         <img src="../assets/images/loader/4.gif" alt="First Loader">
     </div>
 </div>
-<header id="site-header">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-3 col-sm-5 col-xs-5">
-                <figure id="site-logo">
-                    <a href="/"><img src="../assets/images/logo.png" alt="Logo"></a>
-                </figure>
-            </div>
-            <!--个人信息-->
-            <div class="col-md-4 col-sm-7 col-xs-7" style="float: right">
-                <c:choose>
-                    <c:when test="${user.userId > 0}">
-                        <div class="contact-in-header clearfix">
-                            <div class="col-md-6 col-sm-6 col-xs-6 avatar_div">
-                                <img class=" avatar" src="../assets/images/avatar.png">
-                            </div>
-
-                            <span class="col-md-6 col-sm-6 col-xs-6">
-                        ${user.name}
-                        <br>
-                    <strong>${user.email}</strong>
-                    </span>
-                        </div>
-                    </c:when>
-                    <c:when test="${user.userId == 0}">
-                        <div class="not-login ">
-                            <a href="/user/toLogin">登陆</a>
-                            <span>/</span>
-                            <a href="/user/toRegister">注册</a>
-                        </div>
-                    </c:when>
-                </c:choose>
-
-
-            </div>
-            <!--个人信息end-->
-            <!--菜单-->
-            <div class="col-md-5 col-sm-12 col-xs-12 ">
-                <nav id="my_nar" class="navbar navbar-default equinav" role="navigation">
-                    <div class="navbar-header hidden-lg hidden-md">
-                        <button type="button" class="navbar-toggle" data-toggle="collapse"
-                                data-target=".navbar-collapse">
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                        </button>
-                        <span class="navbar-brand">菜单</span>
-                    </div>
-                    <div class="collapse navbar-collapse">
-                        <ul class="nav navbar-nav">
-                            <li><a href="/">首页</a></li>
-                            <li><a href="/frontPremises/list">新房</a></li>
-                            <li><a href="contact.html" class="dropdown-toggle " style="  background-color: white;" data-toggle="dropdown">二手房 <b
-                                    class="caret"></b></a>
-                                <ul class="dropdown-menu depth_0">
-                                    <li><a href="#">Feature 1</a></li>
-                                    <li><a href="#">Feature 1</a></li>
-                                    <li><a href="#">Feature 1</a></li>
-                                    <li><a href="#">Feature 1</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="#">租房</a></li>
-                            <li><a href="#">装修</a></li>
-                        </ul>
-                    </div>
-                </nav>
-
-
-                <!--
-                <nav id="site-nav" class="nav navbar-default">
-                    <ul class="nav navbar-nav">
-                        <li class="dropdown "><a href="index.html">Home</a>
-                            <ul class="dropdown-menu mymenu">
-                                <li><a href="#">jmeter</a></li>
-                                <li><a href="#">EJB</a></li>
-                                <li><a href="#">Jasper</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="property-listing.html">Listing</a></li>
-                        <li><a href="single-property.html">Property</a></li>
-                        <li><a href="gallery.html">Gallery</a></li>
-                        <li><a href="contact.html">contact</a></li>
-                    </ul>
-                </nav>
-                --->
-            </div>
-
-        </div>
-    </div>
-</header>
+<jsp:include page="frontHead.jsp"/>
 <div class="main-slider-wrapper clearfix ">
     <div id="main-slider">
         <div class="slide"><img src="../assets/images/slider/1.jpg" alt="Slide"></div>
@@ -147,141 +58,7 @@
 </div>
 
 <%--高级搜索--%>
-<div id="advance-search" class="main-page clearfix ">
-    <div class="container">
-        <button class=" my_button" href="#adv-search-form" data-toggle="collapse">搜索</button>
-        <form action="#" id="adv-search-form" class="clearfix collapse ">
-            <fieldset>
-                <select name="location" id="main-location">
-                    <option value="">All Cities</option>
-                    <option value="chicago"> Chicago</option>
-                    <option value="los-angeles"> Los Angeles</option>
-                    <option value="miami"> Miami</option>
-                    <option value="new-york"> New York</option>
-                </select>
-                <select name="sub-location" id="property-sub-location">
-                    <option value="">All Areas</option>
-                    <option value="brickell"> Brickell</option>
-                    <option value="brickyard"> Brickyard</option>
-                    <option value="bronx"> Bronx</option>
-                    <option value="brooklyn"> Brooklyn</option>
-                    <option value="coconut-grove"> Coconut Grove</option>
-                    <option value="downtown"> Downtown</option>
-                    <option value="eagle-rock"> Eagle Rock</option>
-                    <option value="englewood"> Englewood</option>
-                    <option value="hermosa"> Hermosa</option>
-                    <option value="hollywood"> Hollywood</option>
-                    <option value="lincoln-park"> Lincoln Park</option>
-                    <option value="manhattan"> Manhattan</option>
-                    <option value="midtown"> Midtown</option>
-                    <option value="queens"> Queens</option>
-                    <option value="westwood"> Westwood</option>
-                    <option value="wynwood"> Wynwood</option>
-                </select>
-                <select id="property-status" name="status">
-                    <option value="">All Status</option>
-                    <option value="for-rent"> For Rent</option>
-                    <option value="for-sale"> For Sale</option>
-                    <option value="foreclosures"> Foreclosures</option>
-                    <option value="new-costruction"> New Costruction</option>
-                    <option value="new-listing"> New Listing</option>
-                    <option value="open-house"> Open House</option>
-                    <option value="reduced-price"> Reduced Price</option>
-                    <option value="resale"> Resale</option>
-                </select>
-                <select id="property-type" name="type">
-                    <option value="">All Types</option>
-                    <option value="apartment"> Apartment</option>
-                    <option value="condo"> Condo</option>
-                    <option value="farm"> Farm</option>
-                    <option value="loft"> Loft</option>
-                    <option value="lot"> Lot</option>
-                    <option value="multi-family-home"> Multi Family Home</option>
-                    <option value="single-family-home"> Single Family Home</option>
-                    <option value="townhouse"> Townhouse</option>
-                    <option value="villa"> Villa</option>
-                </select>
-                <select name="bedrooms" id="property-beds">
-                    <option value="">Beds</option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                    <option value="6">6</option>
-                    <option value="7">7</option>
-                    <option value="8">8</option>
-                    <option value="9">9</option>
-                    <option value="10">10</option>
-                    <option value="any">Any</option>
-                </select>
-                <select name="bathrooms" id="property-baths">
-                    <option value="">Bathrooms</option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                    <option value="6">6</option>
-                    <option value="7">7</option>
-                    <option value="8">8</option>
-                    <option value="9">9</option>
-                    <option value="10">10</option>
-                    <option value="any">Any</option>
-                </select>
-                <input type="text" name="min-area" id="property-min-area" placeholder="Min Area (sqft)">
-                <input type="text" name="max-area" id="property-max-area" placeholder="Max Area (sqft)">
-                <select name="min-price" id="property-min-price">
-                    <option value="any" selected="selected">Min Price</option>
-                    <option value="1000">$1000</option>
-                    <option value="5000">$5000</option>
-                    <option value="10000">$10000</option>
-                    <option value="50000">$50000</option>
-                    <option value="100000">$100000</option>
-                    <option value="200000">$200000</option>
-                    <option value="300000">$300000</option>
-                    <option value="400000">$400000</option>
-                    <option value="500000">$500000</option>
-                    <option value="600000">$600000</option>
-                    <option value="700000">$700000</option>
-                    <option value="800000">$800000</option>
-                    <option value="900000">$900000</option>
-                    <option value="1000000">$1000000</option>
-                    <option value="1500000">$1500000</option>
-                    <option value="2000000">$2000000</option>
-                    <option value="2500000">$2500000</option>
-                    <option value="5000000">$5000000</option>
-                </select>
-                <select name="max-price" id="property-max-price">
-                    <option value="any" selected="selected">Max Price</option>
-                    <option value="5000">$5000</option>
-                    <option value="10000">$10000</option>
-                    <option value="50000">$50000</option>
-                    <option value="100000">$100000</option>
-                    <option value="200000">$200000</option>
-                    <option value="300000">$300000</option>
-                    <option value="400000">$400000</option>
-                    <option value="500000">$500000</option>
-                    <option value="600000">$600000</option>
-                    <option value="700000">$700000</option>
-                    <option value="800000">$800000</option>
-                    <option value="900000">$900000</option>
-                    <option value="1000000">$1000000</option>
-                    <option value="1500000">$1500000</option>
-                    <option value="2000000">$2000000</option>
-                    <option value="2500000">$2500000</option>
-                    <option value="5000000">$5000000</option>
-                    <option value="10000000">$10000000</option>
-                </select>
-            </fieldset>
-            <button type="submit" class="btn btn-default btn-lg text-center">
-                立即搜索
-                <%--<br class="hidden-sm hidden-xs">--%>
-                <%--Property--%>
-            </button>
-        </form>
-    </div>
-</div>
+<jsp:include page="frontAdvanceSearch.jsp"/>
 
 <%--楼盘模块--%>
 <section id="home-property-listing">
@@ -358,7 +135,7 @@
                             <div class="property-contents">
                                 <header class="property-header clearfix">
                                     <div class="pull-left">
-                                        <h6 class="entry-title house-name"><a href="single-property.html" title=${house.entity.name}>${house.entity.name}</a>
+                                        <h6 class="entry-title house-name"><a href="/frontHouse/detail?houseId=${house.entity.id}" title=${house.entity.name}>${house.entity.name}</a>
                                         </h6>
                                         <span class="property-location"><i class="fa fa-map-marker"></i> 地址施工中 </span>
                                     </div>
@@ -367,8 +144,8 @@
                                 </header>
                                 <div class="property-meta clearfix">
                                     <span><i class="fa fa-arrows-alt"></i> ${house.entity.area}m<sup>2</sup></span>
-                                    <span><i class="fa fa-bed"></i> ${house.type.bedroomnum} 室</span>
-                                    <span><i class="fa fa-bathtub"></i> ${house.type.bathroomnum} 卫</span>
+                                    <span><i class="fa fa-bed"></i> ${house.type.bedroomNum} 室</span>
+                                    <span><i class="fa fa-bathtub"></i> ${house.type.bathroomNum} 卫</span>
                                     <span><i class="fa fa-cab"></i> Yes</span>
                                 </div>
                             </div>
@@ -401,7 +178,7 @@
                         <div class="property-contents clearfix">
                             <header class="property-header clearfix">
                                 <div class="pull-left">
-                                    <h6 class="entry-title"><a href="/frontPremises/show?premisesId=${house.entity.id}">${house.entity.name}</a></h6>
+                                    <h6 class="entry-title"><a href="/frontHouse/detail?houseId=${house.entity.id}">${house.entity.name}</a></h6>
                                     <span class="property-location"><i class="fa fa-map-marker"></i>坐标施工中</span>
                                 </div>
                                 <button class="btn btn-default btn-price pull-right btn-3d" data-hover="￥${house.entity.housePrice}/月"><strong>￥${house.entity.housePrice}/月</strong>
@@ -409,8 +186,8 @@
                             </header>
                             <div class="property-meta clearfix">
                                 <span><i class="fa fa-arrows-alt"></i> ${house.entity.area}m<sup>2</sup></span>
-                                <span><i class="fa fa-bed"></i> ${house.type.bedroomnum} 室</span>
-                                <span><i class="fa fa-bathtub"></i> ${house.type.bathroomnum} 卫</span>
+                                <span><i class="fa fa-bed"></i> ${house.type.bedroomNum} 室</span>
+                                <span><i class="fa fa-bathtub"></i> ${house.type.bathroomNum} 卫</span>
                                 <span><i class="fa fa-cab"></i> Yes</span>
                             </div>
                             <div class="contents clearfix">
@@ -454,7 +231,7 @@
                             <div class="property-contents">
                                 <header class="property-header clearfix">
                                     <div class="pull-left">
-                                        <h6 class="entry-title"><a href="single-property.html">${instance.name}</a>
+                                        <h6 class="entry-title"><a href="/frontDecoInstance/detail?decoInstanceId=${instance.id}">${instance.name}</a>
                                         </h6>
                                         <span class="property-location"><i class="fa fa-map-marker"></i> 坐标施工中 </span>
                                     </div>
@@ -534,59 +311,7 @@
 </section>
 
 <%--页脚--%>
-<footer id="footer">
-    <div class="site-footer">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4 col-sm-6">
-                    <section class="widget about-widget clearfix">
-                        <h4 class="title hide">关于我们</h4>
-                        <a class="footer-logo" href="#"><img src="../assets/images/footer-logo.png" alt="Footer Logo"></a>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                            labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                            laboris nisi</p>
-                        <ul class="social-icons clearfix">
-                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                            <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
-                            <li><a href="#"><i class="fa fa-youtube-play"></i></a></li>
-                        </ul>
-                    </section>
-                </div>
-                <div class="col-md-4 col-sm-6">
-                    <section class="widget twitter-widget clearfix">
-                        <h4 class="title">Latest Tweets</h4>
-                        <div id="twitter-feeds" class="clearfix"></div>
-                    </section>
-                </div>
-                <div class="col-md-4 col-sm-6">
-                    <section class="widget address-widget clearfix">
-                        <h4 class="title">OUR OFFICE</h4>
-                        <ul>
-                            <li><i class="fa fa-map-marker"></i> 位置暂不确定 </li>
-                            <li><i class="fa fa-phone"></i> 18487267900 </li>
-                            <li><i class="fa fa-envelope"></i> 451558608@qq.com </li>
-                            <li><i class="fa fa-fax"></i> 没有传真 </li>
-                            <li><i class="fa fa-clock-o"></i> Mon - Sat: 9:00 - 18:00 </li>
-                        </ul>
-                    </section>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="site-footer-bottom">
-        <div class="container">
-            <p class="copyright pull-left wow slideInRight">Copyright &copy; 2017.Company name All rights reserved.</p>
-            <nav class="footer-nav pull-right wow slideInLeft">
-                <ul>
-                    <li><a href="#">Terms & Conditions</a></li>
-                    <li><a href="#">Pricing</a></li>
-                    <li><a href="#">Contact</a></li>
-                </ul>
-            </nav>
-        </div>
-    </div>
-</footer>
+<jsp:include page="frontFoot.jsp"/>
 
 <a href="#top" id="scroll-top"><i class="fa fa-angle-up"></i></a>
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->

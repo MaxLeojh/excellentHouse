@@ -1,11 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%--
+  Created by IntelliJ IDEA.
+  User: August
+  Date: 2017/9/14
+  Time: 14:13
+  To change this template use File | Settings | File Templates.
+--%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<html>
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>优购房-租房</title>
+    <title>优购房-装修案例展示</title>
 
     <!-- Styles -->
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Poppins:400,600" rel="stylesheet">
@@ -18,7 +26,7 @@
     <link href="../plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet">
     <link href="../plugins/slick/slick.css" rel="stylesheet">
     <link href="../plugins/slick-nav/slicknav.css" rel="stylesheet">
-    <link href="../plugins/wow/animate.css" rel="stylesheet">
+    <link href="../assets/css/animate.css" rel="stylesheet">
     <link href="../assets/css/bootstrap.css" rel="stylesheet">
     <link href="../assets/css/theme.css" rel="stylesheet">
     <link href="../assets/css/mycss.css" rel="stylesheet">
@@ -30,41 +38,8 @@
         <img src="../assets/images/loader/4.gif" alt="First Loader">
     </div>
 </div>
-<header id="site-header">
-
-    <div class="container">
-        <div class="row">
-            <div class="col-md-3">
-                <figure id="site-logo">
-                    <a href="index.html"><img src="../assets/images/logo.png" alt="Logo"></a>
-                </figure>
-            </div>
-            <div class="col-md-5 col-sm-8">
-                <nav id="site-nav" class="nav navbar-default">
-                    <ul class="nav navbar-nav">
-                        <li><a href="index.html">首页</a></li>
-                        <li><a href="property-listing.html">新房</a></li>
-                        <li><a href="single-property.html">二手房</a></li>
-                        <li><a href="gallery.html">装修</a></li>
-                        <li><a href="contact.html">租房</a></li>
-                    </ul>
-                </nav>
-            </div>
-            <div class="col-md-4 col-sm-4">
-                <div class="contact-in-header clearfix">
-                    <div class="col-md-6 col-sm-6 avatar_div">
-                        <img class=" avatar" src="../assets/images/avatar.png">
-                    </div>
-                    <span class="col-md-6 col-sm-6">
-                        wzc
-                        <br>
-                    <strong>****</strong>
-                    </span>
-                </div>
-            </div>
-        </div>
-    </div>
-</header>    <div id="property-single">
+<jsp:include page="frontHead.jsp"/>
+<div id="property-single">
     <div id="main-slider">
         <div class="slide"><img src="../assets/images/slider/1.jpg" alt="Slide"></div>
         <div class="slide"><img src="../assets/images/slider/2.jpg" alt="Slide"></div>
@@ -75,13 +50,12 @@
         <div class="row">
             <div class="col-lg-8 col-md-7">
                 <section class="property-meta-wrapper common">
-                    <h3 class="entry-title">租房信息</h3>
+                    <h3 class="entry-title">${houseAO.entity.name}</h3>
                     <div class="property-single-meta">
                         <ul class="clearfix">
-                            <li><span>租金：</span> 5500/年</li>
-                            <li><span>房屋概况：</span>住宅 | 4室2厅2卫 </li>
-                            <li><span>小区：</span> 滇池卫城锦尚[西山区/滇池度假区]</li>
-                            <li><span>地  址 :</span> 红塔东路12号</li>
+                            <li><span>预算：</span> ￥${decoInstanceAO.entity.budget}</li>
+                            <li><span>装修风格：</span>${decoInstanceAO.entity.style}</li>
+                            <li><span>地  址 :</span> 地址施工中 </li>
                         </ul>
                     </div>
                 </section>
@@ -89,7 +63,7 @@
                     <div class="entry-title clearfix">
                         <h4 class="pull-left">描述 </h4><a class="pull-right print-btn" href="javascript:window.print()">打印信息 <i class="fa fa-print"></i></a>
                     </div>
-                    <p> 标准大跃层四室两厅两卫 精装修带着全套家具家电</p>
+                    <p> ${decoInstanceAO.entity.introduction} </p>
                 </section>
                 <section class="property-single-features common clearfix">
                     <h4 class="entry-title">配套设施</h4>
@@ -106,16 +80,16 @@
 
                     </ul>
                 </section>
-                <section class="property-video common">
-                    <h4 class="entry-title">附近</h4>
-                    <iframe src="" allowfullscreen></iframe>
-                </section>
-                <section class="property-nearby-places common">
-                    <h4 class="entry-title">交通</h4>
-                    <div id="nearby-places-map"></div>
-                </section>
+                <%--<section class="property-video common">--%>
+                <%--<h4 class="entry-title">附近</h4>--%>
+                <%--<iframe src="" allowfullscreen></iframe>--%>
+                <%--</section>--%>
+                <%--<section class="property-nearby-places common">--%>
+                <%--<h4 class="entry-title">交通</h4>--%>
+                <%--<div id="nearby-places-map"></div>--%>
+                <%--</section>--%>
                 <section class="property-agent common">
-                    <h4 class="entry-title">联系房东</h4>
+                    <h4 class="entry-title">设计师</h4>
                     <div class="row">
                         <div class="col-lg-7">
                             <div class="agent-box clearfix">
@@ -124,42 +98,42 @@
                                         <a href="#" class="agent-image"><img src="../assets/images/agents/2.jpg" alt="Agent Image"></a>
                                     </div>
                                     <div class="col-sm-7 col-xs-7">
-                                        <cite class="agent-name">饶宇皓</cite>
-                                        <small class="designation">经纪人 </small>
+                                        <cite class="agent-name">${decoInstanceAO.designerAO.entity.name}</cite>
+                                        <%--<small class="designation">经纪人 </small>--%>
                                         <ul class="agent-social-handlers clearfix">
                                             <li><a href="#"><i class="fa fa-facebook-square"></i> Facebook</a></li>
                                             <li><a href="#"><i class="fa fa-twitter-square"></i> Twitter</a></li>
                                             <li><a href="#"><i class="fa fa-pinterest-square"></i> Pinterest</a></li>
                                             <li><a href="#"><i class="fa fa-google-plus-square"></i> Google Plus</a></li>
                                         </ul>
-                                        <a href="#" class="btn btn-warning">详细</a>
+                                        <%--<a href="#" class="btn btn-warning">详细</a>--%>
                                     </div>
                                 </div>
                                 <p>服务商圈：滇池度假区-大商汇-世纪半岛片区</p>
                             </div>
                             <div class="widget address-widget clearfix">
                                 <ul>
-                                    <li><i class="fa fa-map-marker"></i> 云南大学</li>
-                                    <li><i class="fa fa-phone"></i> 123</li>
-                                    <li><i class="fa fa-envelope"></i> 123@mail.com</li>
-                                    <li><i class="fa fa-fax"></i> +666</li>
-                                    <li><i class="fa fa-clock-o"></i> 服务时间: 9:00 - 18:00</li>
+                                    <%--<li><i class="fa fa-map-marker"></i> 云南大学</li>--%>
+                                    <li><i class="fa fa-phone"></i> ${decoInstanceAO.designerAO.entity.phone}</li>
+                                    <%--<li><i class="fa fa-envelope"></i> </li>--%>
+                                    <%--<li><i class="fa fa-fax"></i> +666</li>--%>
+                                    <%--<li><i class="fa fa-clock-o"></i> 服务时间: 9:00 - 18:00</li>--%>
                                 </ul>
                             </div>
                         </div>
-                        <div class="col-lg-5">
-                            <div class="agent-contact-form">
-                                <form id="agent-form" class="agent-form" method="post" action="#">
-                                    <input type="text" name="name" placeholder="姓名" class="required" >
-                                    <input type="text" name="phone" placeholder="联系电话" class="required">
-                                    <input type="text" name="email" placeholder="邮箱" class="email required">
-                                    <textarea name="message" cols="30" rows="5" class="required" placeholder="详细信息"></textarea>
-                                    <button class="btn btn-default btn-lg btn-3d" type="submit" data-hover="提交">提交</button>
-                                    <div class="error-container"></div>
-                                    <div class="message-container"></div>
-                                </form>
-                            </div>
-                        </div>
+                        <%--<div class="col-lg-5">--%>
+                        <%--<div class="agent-contact-form">--%>
+                        <%--<form id="agent-form" class="agent-form" method="post" action="#">--%>
+                        <%--<input type="text" name="name" placeholder="姓名" class="required" >--%>
+                        <%--<input type="text" name="phone" placeholder="联系电话" class="required">--%>
+                        <%--<input type="text" name="email" placeholder="邮箱" class="email required">--%>
+                        <%--<textarea name="message" cols="30" rows="5" class="required" placeholder="详细信息"></textarea>--%>
+                        <%--<button class="btn btn-default btn-lg btn-3d" type="submit" data-hover="提交">提交</button>--%>
+                        <%--<div class="error-container"></div>--%>
+                        <%--<div class="message-container"></div>--%>
+                        <%--</form>--%>
+                        <%--</div>--%>
+                        <%--</div>--%>
                     </div>
                 </section>
             </div>
@@ -221,57 +195,7 @@
         </div>
     </div>
 </div>
-<footer id="footer">
-    <div class="site-footer">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4 col-sm-6">
-                    <section class="widget about-widget clearfix">
-                        <h4 class="title hide">关于我们</h4>
-                        <a class="footer-logo" href="#"><img src="../assets/images/footer-logo.png"
-                                                             alt="Footer Logo"></a>
-                        <p>优购房买卖房中心</p>
-                        <ul class="social-icons clearfix">
-                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                            <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
-                            <li><a href="#"><i class="fa fa-youtube-play"></i></a></li>
-                        </ul>
-                    </section>
-                </div>
-                <div class="col-md-4 col-sm-6">
-                    <section class="widget twitter-widget clearfix">
-                        <h4 class="title">更多</h4>
-
-                    </section>
-                </div>
-                <div class="col-md-4 col-sm-6">
-                    <section class="widget address-widget clearfix">
-                        <h4 class="title">联系我们</h4>
-                        <ul>
-                            <li><i class="fa fa-map-marker"></i> 云南大学</li>
-                            <li><i class="fa fa-phone"></i> 123</li>
-                            <li><i class="fa fa-envelope"></i> 123@</li>
-                            <li><i class="fa fa-fax"></i> +1111</li>
-                            <li><i class="fa fa-clock-o"></i>24小时为您服务</li>
-                        </ul>
-                    </section>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="site-footer-bottom">
-        <div class="container">
-            <p class="copyright pull-left wow slideInRight">优购房 &copy; 2017</p>
-            <nav class="footer-nav pull-right wow slideInLeft">
-                <ul>
-                    <li><a href="#">关于我们</a></li>
-                    <li><a href="#">联系方式</a></li>
-                </ul>
-            </nav>
-        </div>
-    </div>
-</footer>
+<jsp:include page="frontFoot.jsp"/>
 <a href="#top" id="scroll-top"><i class="fa fa-angle-up"></i></a>
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="../assets/js/jquery.min.js"></script>

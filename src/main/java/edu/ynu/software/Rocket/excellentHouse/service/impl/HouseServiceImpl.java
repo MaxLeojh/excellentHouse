@@ -5,8 +5,10 @@ import edu.ynu.software.Rocket.excellentHouse.dao.HouseTypeMapper;
 import edu.ynu.software.Rocket.excellentHouse.dao.PictureMapper;
 import edu.ynu.software.Rocket.excellentHouse.dao.PostMapper;
 import edu.ynu.software.Rocket.excellentHouse.eneityAO.HouseAO;
+import edu.ynu.software.Rocket.excellentHouse.eneityAO.UserAO;
 import edu.ynu.software.Rocket.excellentHouse.entity.*;
 import edu.ynu.software.Rocket.excellentHouse.service.HouseService;
+import edu.ynu.software.Rocket.excellentHouse.service.UserService;
 import javafx.geometry.Pos;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -30,6 +32,9 @@ public class HouseServiceImpl implements HouseService{
 
     @Autowired
     PostMapper postMapper;
+
+    @Autowired
+    UserService userService;
 
     public List<House> getAllHouse() {
         List<House> houseList = new ArrayList<House>();
@@ -76,6 +81,41 @@ public class HouseServiceImpl implements HouseService{
         }
 
         return houseAOList;
+    }
+
+    public HouseAO selectById(Integer houseId) {
+        HouseAO houseAO = new HouseAO();
+        House house = new House();
+
+        //实体
+        house = houseMapper.selectByPrimaryKey(houseId);
+        houseAO.setEntity(house);
+
+        //用户
+        UserAO userAO = new UserAO();
+        userAO = userService.selectById(house.getUserId());
+        houseAO.setUserAO(userAO);
+
+        //户型
+        HouseType houseType = new HouseType();
+        houseType = houseTypeMapper.selectByPrimaryKey(house.getTypeId());
+        houseAO.setType(houseType);
+
+        //图片
+        List<Picture> pictureList = new ArrayList<Picture>();
+        PictureExample pictureExample = new PictureExample();
+        pictureExample.createCriteria().andEntityIdEqualTo(house.getId()).andEntityTypeEqualTo(house.getKind());
+        pictureList = pictureMapper.selectByExample(pictureExample);
+        houseAO.setPictureList(pictureList);
+
+        //评论
+        List<Post> postList = new ArrayList<Post>();
+        PostExample postExample = new PostExample();
+        postExample.createCriteria().andEntityIdEqualTo(house.getId()).andEntityTypeEqualTo(house.getKind());
+        postList = postMapper.selectByExample(postExample);
+        houseAO.setPostList(postList);
+
+        return houseAO;
     }
 
 }

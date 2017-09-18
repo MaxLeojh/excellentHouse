@@ -11,6 +11,11 @@
     <param-value>classpath:config/mybatis/spring-mybatis.xml</param-value>
   </context-param>
 
+  <context-param>
+    <param-name>contextPluginLocation</param-name>
+    <param-value>classpath:config/mybatis/SqlMapConfig.xml</param-value>
+  </context-param>
+
   <!--<context-param>-->
     <!--<param-name>log4jConfigLocation</param-name>-->
     <!--<param-value>classpath:log4j.properties</param-value>-->

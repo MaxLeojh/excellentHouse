@@ -16,10 +16,11 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpSession;
 import java.util.List;
 
 /**
- * 优购房首页
+ * 首页管理
  * Created by August on 2017/9/4.
  */
 @Controller
@@ -39,8 +40,13 @@ public class FrontIndexController {
 
     @RequestMapping(value = "/show")
     @ResponseBody
-    public ModelAndView index(){
+    public ModelAndView index(HttpSession session){
         ModelAndView mav = new ModelAndView();
+
+        User user = (User) session.getAttribute("user");
+        if (user != null) {
+            mav.addObject("user", user);
+        }
 
 //        楼盘
         List<Premises> premisesList = premisesService.getAllPremises();

@@ -21,7 +21,7 @@
 <script type="text/javascript">
     $(function () {
         $("#login").click(function () {
-            var name = $("#IdStr").val();
+            var email = $("#IdStr").val();
             var password = $("#passWord").val();
 
             if (1 == 2) {
@@ -29,7 +29,7 @@
             }
             else {
                 var data = {
-                    "name": name,
+                    "email": email,
                     "password":password
                 };
 
@@ -44,7 +44,7 @@
                             alert("success");
                             top.location = '/index/show';
                         }else {
-                            alert("fail");
+                            alert("fail, error : " + data.message);
                         }
                     }
                 });
