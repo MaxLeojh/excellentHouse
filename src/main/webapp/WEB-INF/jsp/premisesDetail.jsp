@@ -229,9 +229,9 @@
                     </div>
                 </section>
 
-                <%--论坛--%>
+                <%--评论--%>
                 <section class="property-nearby-places common">
-                    <h4 class="entry-title">论坛</h4>
+                    <h4 class="entry-title">评论</h4>
                     <form role="form">
                         <div class="form-group">
                             <label >输入你的评论：</label>

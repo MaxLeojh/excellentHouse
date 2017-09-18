@@ -92,4 +92,13 @@ public class UserServiceImpl implements UserService {
 
         return userAOList;
     }
+
+    public Integer deleteUser(Integer userId) {
+        User user = new User();
+        user = userMapper.selectByPrimaryKey(userId);
+        user.setIsVaild(false);
+        Integer back = userMapper.updateByPrimaryKey(user);
+
+        return back;
+    }
 }
