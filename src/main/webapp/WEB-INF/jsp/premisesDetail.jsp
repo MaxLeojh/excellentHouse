@@ -36,16 +36,17 @@
     </div>
 </div>
 <jsp:include page="frontHead.jsp"/>
+
 <div id="property-single">
     <%--楼盘图片展示--%>
-    <div id="main-slider">
+    <div id="main-slider" class="my-slide"  >
         <c:forEach items="${premisesAO.pictureList}" var="picture">
-            <div class="slide"><img src="${picture.pictureAddress}" alt="Slide"></div>
+            <div class="slide my-slide"><img class="slide-img" src="${picture.pictureAddress}" alt="Slide"></div>
         </c:forEach>
-        <%--<div class="slide"><img src="../assets/images/slider/1.jpg" alt="Slide"></div>--%>
-        <%--<div class="slide"><img src="../assets/images/slider/2.jpg" alt="Slide"></div>--%>
-        <%--<div class="slide"><img src="../assets/images/slider/3.jpg" alt="Slide"></div>--%>
-        <%--<div class="slide"><img src="../assets/images/slider/4.jpg" alt="Slide"></div>--%>
+        <%--<div class="slide"><img class="slide-img" src="../images/premises/1.jpg" alt="Slide"></div>--%>
+        <%--<div class="slide"><img class="slide-img" src="../images/premises/2.jpg" alt="Slide"></div>--%>
+        <%--<div class="slide"><img class="slide-img" src="../images/premises/3.jpg" alt="Slide"></div>--%>
+        <%--<div class="slide my-slide"><img class="slide-img" src="../assets/images/slider/4.jpg" alt="Slide"></div>--%>
     </div>
 
     <%--主要内容--%>
@@ -58,8 +59,8 @@
 
                     <div class="entry-title clearfix">
                         <h4 class="pull-left">${premisesAO.entity.name}</h4>
-                        <button id="collect" class="pull-right ">收藏 <i  class="iconfont icon-xihuan " ></i></button>
-                        <button id="hasCollect" class="pull-right " style="display: none">已收藏 <i  class="iconfont icon-xihuan " ></i></button>
+                        <button id="collect" class="pull-right " >收藏 <i  class="iconfont icon-xihuan " ></i></button>
+                        <button id="hasCollect" class="pull-right " style="display: none">已收藏 <i  class="iconfont icon-iconfontlike " ></i></button>
                     </div>
                     <div class="property-single-meta">
                         <ul class="clearfix">
@@ -263,7 +264,7 @@
                                         <fieldset class="clearfix">
                                             <div>
                                                 <label for="main-location">All Location</label>
-                                                <select name="location" id="main-location">
+                                                <select name="location" >
                                                     <option value="">All Cities</option>
                                                     <option value="chicago"> Chicago</option>
                                                     <option value="los-angeles"> Los Angeles</option>
