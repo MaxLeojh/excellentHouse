@@ -21,11 +21,11 @@
                     <c:when test="${user.userId > 0}">
                         <div class="contact-in-header clearfix">
                             <div class="col-md-6 col-sm-6 col-xs-6 avatar_div">
-                                <a href="/user/homePage"><img class=" avatar" src="../assets/images/avatar.png"></a>
+                                <a href="/user/home"><img class=" avatar" src="../assets/images/avatar.png"></a>
                             </div>
 
                             <span class="col-md-6 col-sm-6 col-xs-6">
-                                <a href="/user/homePage">${user.name}</a>
+                                <a href="/user/home">${user.name}</a>
                                 <br>
                                 <strong>${user.email}</strong>
                             </span>

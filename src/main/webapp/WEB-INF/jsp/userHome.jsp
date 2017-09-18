@@ -6,7 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html>
+<!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
@@ -54,31 +54,10 @@
 
 </head>
 <body>
+<jsp:include page="frontHead.jsp"/>
 <div id="fh5co-page">
     <a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle"><i></i></a>
-    <aside id="fh5co-aside" role="complementary" class="border js-fullheight">
-
-        <h1 id="fh5co-logo"><a href="myHome.html">我的</a></h1>
-        <nav id="fh5co-main-menu" role="navigation">
-            <ul>
-                <li class="fh5co-active"><a href="myHome.html">我的资料</a></li>
-                <li id="myCollapsibleExample"><a href="#demo"  data-toggle="collapse">收藏</a>
-                    <ul id="demo" class="collapse ">
-                        <li ><a href="myRentHouse.html">租房收藏</a></li>
-                        <li><a href="mySecondHouse.html">二手房收藏</a></li>
-                        <li><a href="myPremises.html">楼盘收藏</a></li>
-                        <li><a href="myDecoration.html">装修收藏</a></li>
-                    </ul>
-                </li>
-                <li><a href="myPortfolio.html">我的二手房</a></li>
-                <li><a href="myAbout.html">我的租房</a></li>
-                <li><a href="myContact.html">Contact</a></li>
-            </ul>
-        </nav>
-
-
-
-    </aside>
+    <jsp:include page="userNavigation.jsp"/>
 
     <div id="fh5co-main">
         <div class="fh5co-narrow-content">
@@ -91,7 +70,7 @@
                         <div class="row">
                             <div class="col-lg-offset-1 col-lg-4">
                                 <img class="my-avatar" src="../assets/images/avatar.png">
-                                <button class="up-img">上传头像</button>
+                                <button class="btn btn-default up-img">上传头像</button>
                             </div>
 
                             <div class="col-lg-7">
@@ -113,7 +92,7 @@
                                 </div>
                                 <div class="row input-row" >
                                     <span class="col-lg-4 input-name">邮箱：</span>
-                                    <span class="col-lg-4" type="text" > 18475786244@</span>
+                                    <span class="col-lg-4" type="text" > 18475786244@12</span>
                                     <a class="col-lg-4">修改</a>
                                 </div>
                                 <div class="row input-row" >
