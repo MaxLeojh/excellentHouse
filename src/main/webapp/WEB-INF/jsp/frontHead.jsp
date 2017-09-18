@@ -25,7 +25,7 @@
                             </div>
 
                             <span class="col-md-6 col-sm-6 col-xs-6">
-                                <a href="/user/home">${user.name}</a>
+                                <a id="userName" href="/user/home" data-id="${user.userId}">${user.name}</a>
                                 <br>
                                 <strong>${user.email}</strong>
                             </span>

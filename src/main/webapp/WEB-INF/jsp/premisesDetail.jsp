@@ -57,9 +57,17 @@
                 <section class="property-meta-wrapper common">
 
                     <div class="entry-title clearfix">
-                        <h4 class="pull-left">${premisesAO.entity.name}</h4>
-                        <button id="collect" class="pull-right ">收藏 <i  class="iconfont icon-xihuan " ></i></button>
-                        <button id="hasCollect" class="pull-right " style="display: none">已收藏 <i  class="iconfont icon-xihuan " ></i></button>
+                            <h4 class="pull-left" id="premisesName" data-id="${premisesAO.entity.id}" data-type="楼盘">${premisesAO.entity.name}</h4>
+                        <c:choose>
+                            <c:when test="${isCollected == true}">
+                                <button id="hasCollect" class="pull-right ">已收藏 <i  class="iconfont icon-xihuan " ></i></button>
+                            </c:when>
+                            <c:otherwise>
+                                <button id="collect" class="pull-right ">收藏 <i  class="iconfont icon-xihuan " ></i></button>
+                                <button id="hasCollect" class="pull-right " style="display: none">已收藏 <i  class="iconfont icon-xihuan " ></i></button>
+                            </c:otherwise>
+                        </c:choose>
+
                     </div>
                     <div class="property-single-meta">
                         <ul class="clearfix">
