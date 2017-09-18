@@ -135,7 +135,7 @@
                             <div class="property-contents">
                                 <header class="property-header clearfix">
                                     <div class="pull-left">
-                                        <h6 class="entry-title house-name"><a href="single-property.html" title=${house.entity.name}>${house.entity.name}</a>
+                                        <h6 class="entry-title house-name"><a href="/frontHouse/detail?houseId=${house.entity.id}" title=${house.entity.name}>${house.entity.name}</a>
                                         </h6>
                                         <span class="property-location"><i class="fa fa-map-marker"></i> 地址施工中 </span>
                                     </div>
@@ -178,7 +178,7 @@
                         <div class="property-contents clearfix">
                             <header class="property-header clearfix">
                                 <div class="pull-left">
-                                    <h6 class="entry-title"><a href="/frontPremises/show?premisesId=${house.entity.id}">${house.entity.name}</a></h6>
+                                    <h6 class="entry-title"><a href="/frontHouse/detail?houseId=${house.entity.id}">${house.entity.name}</a></h6>
                                     <span class="property-location"><i class="fa fa-map-marker"></i>坐标施工中</span>
                                 </div>
                                 <button class="btn btn-default btn-price pull-right btn-3d" data-hover="￥${house.entity.housePrice}/月"><strong>￥${house.entity.housePrice}/月</strong>
@@ -231,7 +231,7 @@
                             <div class="property-contents">
                                 <header class="property-header clearfix">
                                     <div class="pull-left">
-                                        <h6 class="entry-title"><a href="single-property.html">${instance.name}</a>
+                                        <h6 class="entry-title"><a href="/frontDecoInstance/detail?decoInstanceId=${instance.id}">${instance.name}</a>
                                         </h6>
                                         <span class="property-location"><i class="fa fa-map-marker"></i> 坐标施工中 </span>
                                     </div>

@@ -38,10 +38,13 @@
 <div id="property-single">
     <%--楼盘图片展示--%>
     <div id="main-slider">
-        <div class="slide"><img src="../assets/images/slider/1.jpg" alt="Slide"></div>
-        <div class="slide"><img src="../assets/images/slider/2.jpg" alt="Slide"></div>
-        <div class="slide"><img src="../assets/images/slider/3.jpg" alt="Slide"></div>
-        <div class="slide"><img src="../assets/images/slider/4.jpg" alt="Slide"></div>
+        <c:forEach items="${premisesAO.pictureList}" var="picture">
+            <div class="slide"><img src="${picture.pictureAddress}" alt="Slide"></div>
+        </c:forEach>
+        <%--<div class="slide"><img src="../assets/images/slider/1.jpg" alt="Slide"></div>--%>
+        <%--<div class="slide"><img src="../assets/images/slider/2.jpg" alt="Slide"></div>--%>
+        <%--<div class="slide"><img src="../assets/images/slider/3.jpg" alt="Slide"></div>--%>
+        <%--<div class="slide"><img src="../assets/images/slider/4.jpg" alt="Slide"></div>--%>
     </div>
 
     <%--主要内容--%>

@@ -13,4 +13,28 @@ public class DecoInstanceAO {
     private DecoInstance entity;
     private DesignerAO designerAO;
     private List<Picture> pictureList;
+
+    public DecoInstance getEntity() {
+        return entity;
+    }
+
+    public void setEntity(DecoInstance entity) {
+        this.entity = entity;
+    }
+
+    public DesignerAO getDesignerAO() {
+        return designerAO;
+    }
+
+    public void setDesignerAO(DesignerAO designerAO) {
+        this.designerAO = designerAO;
+    }
+
+    public List<Picture> getPictureList() {
+        return pictureList;
+    }
+
+    public void setPictureList(List<Picture> pictureList) {
+        this.pictureList = pictureList;
+    }
 }
