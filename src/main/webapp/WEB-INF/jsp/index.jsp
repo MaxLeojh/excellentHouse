@@ -64,7 +64,7 @@
 <section id="home-property-listing">
     <header class="section-header home-section-header text-center">
         <div class="container">
-            <h2 class="wow slideInRight"><a href="/frontPremises/list">楼盘</a></h2>
+            <h2 class="wow slideInRight">楼盘</h2>
             <p class="wow slideInLeft">这里是楼盘的模块 <br>
                 以钱换钱了 </p>
         </div>
@@ -81,7 +81,7 @@
                         <div class="property-contents clearfix">
                             <header class="property-header clearfix">
                                 <div class="pull-left">
-                                    <h6 class="entry-title house-name "><a href="/frontPremises/detail?premisesId=${premises.id}">${premises.name}</a></h6>
+                                    <h6 class="entry-title"><a href="/frontPremises/detail?premisesId=${premises.id}">${premises.name}</a></h6>
                                     <span class="property-location"><i class="fa fa-map-marker"></i>坐标施工中</span>
                                 </div>
                                 <button class="btn btn-default btn-price pull-right btn-3d" data-hover="￥${premises.averagePrice}"><strong>￥${premises.averagePrice}</strong>
@@ -116,7 +116,7 @@
 <section id="home-property-for-rent-listing">
     <header class="section-header home-section-header text-center">
         <div class="container">
-            <h2 class="wow slideInLeft"><a href="/frontHouse/list?kind=二手房">二手房</a></h2>
+            <h2 class="wow slideInLeft">二手房</h2>
             <p class="wow slideInRight">这里是二手房模块 <br>
                 风拳流的奥义</p>
         </div>
@@ -135,7 +135,7 @@
                             <div class="property-contents">
                                 <header class="property-header clearfix">
                                     <div class="pull-left">
-                                        <h6 class="entry-title house-name"><a  href="single-property.html" title=${house.entity.name}>${house.entity.name}</a>
+                                        <h6 class="entry-title house-name"><a href="/frontHouse/detail?houseId=${house.entity.id}" title=${house.entity.name}>${house.entity.name}</a>
                                         </h6>
                                         <span class="property-location"><i class="fa fa-map-marker"></i> 地址施工中 </span>
                                     </div>
@@ -161,7 +161,7 @@
 <section id="home-property-listing">
     <header class="section-header home-section-header text-center">
         <div class="container">
-            <h2 class="wow slideInLeft"><a href="/frontHouse/list?kind=租房">租房</a></h2>
+            <h2 class="wow slideInLeft">租房</h2>
             <p class="wow slideInRight">这里是租房模块 <br>
                 走过路过</p>
         </div>
@@ -178,7 +178,7 @@
                         <div class="property-contents clearfix">
                             <header class="property-header clearfix">
                                 <div class="pull-left">
-                                    <h6 class="entry-title house-name"><a href="/frontPremises/show?premisesId=${house.entity.id}">${house.entity.name}</a></h6>
+                                    <h6 class="entry-title"><a href="/frontHouse/detail?houseId=${house.entity.id}">${house.entity.name}</a></h6>
                                     <span class="property-location"><i class="fa fa-map-marker"></i>坐标施工中</span>
                                 </div>
                                 <button class="btn btn-default btn-price pull-right btn-3d" data-hover="￥${house.entity.housePrice}/月"><strong>￥${house.entity.housePrice}/月</strong>
@@ -213,7 +213,7 @@
 <section id="home-property-for-rent-listing">
     <header class="section-header home-section-header text-center">
         <div class="container">
-            <h2 class="wow slideInRight"><a href="/frontDecoInstance/list">装修</a></h2>
+            <h2 class="wow slideInRight">装修</h2>
             <p class="wow slideInLeft">这里是装修案例展示 <br>
                 装修技术哪家强？ </p>
         </div>
@@ -231,7 +231,7 @@
                             <div class="property-contents">
                                 <header class="property-header clearfix">
                                     <div class="pull-left">
-                                        <h6 class="entry-title house-name"><a href="single-property.html">${instance.name}</a>
+                                        <h6 class="entry-title"><a href="/frontDecoInstance/detail?decoInstanceId=${instance.id}">${instance.name}</a>
                                         </h6>
                                         <span class="property-location"><i class="fa fa-map-marker"></i> 坐标施工中 </span>
                                     </div>

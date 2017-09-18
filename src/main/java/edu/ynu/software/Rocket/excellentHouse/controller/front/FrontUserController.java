@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
@@ -130,4 +131,48 @@ public class FrontUserController {
         response.getWriter().print(jsonObject.toString());
     }
 
+    @ResponseBody
+    @RequestMapping(value = "/home", method = RequestMethod.GET)
+    public ModelAndView userHome(HttpServletRequest request, HttpSession session) {
+        ModelAndView mav = new ModelAndView();
+
+        mav.setViewName("userHome");
+        return mav;
+    }
+
+    @ResponseBody
+    @RequestMapping(value = "/collectedPremises", method = RequestMethod.GET)
+    public ModelAndView userCollectedPremises(HttpServletRequest request, HttpSession session) {
+        ModelAndView mav = new ModelAndView();
+
+        mav.setViewName("userCollectedPremises");
+        return mav;
+    }
+
+    @ResponseBody
+    @RequestMapping(value = "/collectedHouse", method = RequestMethod.GET)
+    public ModelAndView collectedHouse(HttpServletRequest request, HttpSession session) {
+        ModelAndView mav = new ModelAndView();
+
+        mav.setViewName("userCollectedHouse");
+        return mav;
+    }
+
+    @ResponseBody
+    @RequestMapping(value = "/collectedDecoInstance", method = RequestMethod.GET)
+    public ModelAndView collectedDecoInstance(HttpServletRequest request, HttpSession session) {
+        ModelAndView mav = new ModelAndView();
+
+        mav.setViewName("userCollectedDecoInstance");
+        return mav;
+    }
+
+    @ResponseBody
+    @RequestMapping(value = "/house", method = RequestMethod.GET)
+    public ModelAndView house(HttpServletRequest request, HttpSession session) {
+        ModelAndView mav = new ModelAndView();
+
+        mav.setViewName("userHouse");
+        return mav;
+    }
 }

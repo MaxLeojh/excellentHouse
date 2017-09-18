@@ -15,5 +15,7 @@ public interface PremisesService {
 
     Premises selectById(Integer premisesId);
 
+    PremisesAO selectByPremisesId(Integer premisesId);
+
     List<Premises> testPage();
 }

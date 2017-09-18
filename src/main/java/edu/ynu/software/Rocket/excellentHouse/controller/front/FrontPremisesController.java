@@ -57,15 +57,7 @@ public class FrontPremisesController {
         ModelAndView mav = new ModelAndView();
 
         PremisesAO premisesAO = new PremisesAO();
-
-        Premises premises = premisesService.selectById(premisesId);
-        premisesAO.setEntity(premises);
-
-        Company company = companyService.selectById(premises.getCompanyId());
-        premisesAO.setCompany(company);
-
-        List<HouseType> houseTypeList = houseTypeService.selectByCompanyId(premisesId);
-        premisesAO.setHouseTypeList(houseTypeList);
+        premisesAO = premisesService.selectByPremisesId(premisesId);
 
         mav.addObject("premisesAO", premisesAO);
         mav.setViewName("premisesDetail");

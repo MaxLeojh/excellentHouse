@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: August
@@ -52,7 +53,7 @@
     <!--头部-->
     <header class="section-header text-center">
         <div class="container">
-            <h2 class="pull-left">共有100套符合要求</h2>
+            <h2 class="pull-left">共有${decoInstanceAOList.size()}个案例展示</h2>
             <div class="pull-right">
                 <div class="property-sorting pull-left">
                     <label for="property-sort-dropdown"> 排序 </label>
@@ -69,42 +70,43 @@
     </header>
     <div class="container section-layout">
         <div class="row">
-            <!--房源信息-->
-            <div class="col-lg-4 col-sm-6 layout-item-wrap">
-                <article class="property layout-item clearfix">
-                    <figure class="feature-image">
-                        <a class="clearfix zoom" href="single-property.html">
-                            <img data-action="zoom" src="../assets/images/property/1.jpg" alt="Property Image">
-                        </a>
-                        <span class="btn btn-warning btn-sale">热销</span>
-                    </figure>
-                    <div class="property-contents clearfix">
-                        <header class="property-header clearfix">
-                            <div class="pull-left">
-                                <h6 class="entry-title house-name"><a href="single-property.html">天水家园</a></h6>
-                                <span class="property-location"><i class="fa fa-map-marker"></i>盘龙区</span>
+            <!--装修信息-->
+            <c:forEach items="${decoInstanceAOList}" var="instance">
+                <div class="col-lg-4 col-sm-6 layout-item-wrap">
+                    <article class="property layout-item clearfix">
+                        <figure class="feature-image">
+                            <a class="clearfix zoom" href="single-property.html">
+                                <img data-action="zoom" src="../assets/images/property/1.jpg" alt="Property Image">
+                            </a>
+                            <span class="btn btn-warning btn-sale">热销</span>
+                        </figure>
+                        <div class="property-contents clearfix">
+                            <header class="property-header clearfix">
+                                <div class="pull-left">
+                                    <h6 class="entry-title"><a href="/frontDecoInstance/detail?decoInstanceId=${instance.entity.id}">${instance.entity.name}</a></h6>
+                                    <span class="property-location"><i class="fa fa-map-marker"></i>地址施工中</span>
+                                </div>
+                                <button class="btn btn-default btn-price pull-right btn-3d" data-hover="￥${instance.entity.budget}">
+                                    <strong>￥${instance.entity.budget}</strong></button>
+                            </header>
+                            <%--<div class="property-meta clearfix">--%>
+                                <%--<span><i class="fa fa-arrows-alt"></i> 3060㎡</span>--%>
+                                <%--<span><i class="fa fa-bed"></i> 3 室</span>--%>
+                                <%--<span><i class="fa fa-bathtub"></i> 一卫</span>--%>
+                                <%--<span><i class="fa fa-cab"></i> 有车位</span>--%>
+                            <%--</div>--%>
+                            <div class="contents clearfix">
+                                <p>${instance.entity.introduction}</p>
                             </div>
-                            <button class="btn btn-default btn-price pull-right btn-3d" data-hover="￥1400">
-                                <strong>￥1400</strong></button>
-                        </header>
-                        <div class="property-meta clearfix">
-                            <span><i class="fa fa-arrows-alt"></i> 3060㎡</span>
-                            <span><i class="fa fa-bed"></i> 3 室</span>
-                            <span><i class="fa fa-bathtub"></i> 一卫</span>
-                            <span><i class="fa fa-cab"></i> 有车位</span>
+                            <div class="author-box clearfix">
+                                <a href="#" class="author-img"><img src="../assets/images/avatar.png" alt="Agent Image"></a>
+                                <cite class="author-name">设计师  <a href="#">${instance.designerAO.entity.name}</a></cite>
+                                <span class="phone"><i class="fa fa-phone"></i>${instance.designerAO.entity.phone}</span>
+                            </div>
                         </div>
-                        <div class="contents clearfix">
-                            <p>环境优美，交通方便，你值得拥有 </p>
-                        </div>
-                        <div class="author-box clearfix">
-                            <a href="#" class="author-img"><img src="../assets/images/avatar.png" alt="Agent Image"></a>
-                            <cite class="author-name">联系人<a href="#">饶宇皓</a></cite>
-                            <span class="phone"><i class="fa fa-phone"></i>123</span>
-                        </div>
-                    </div>
-                </article>
-            </div>
-
+                    </article>
+                </div>
+            </c:forEach>
         </div>
         <ul id="pagination" class="text-center clearfix">
             <li class="disabled"><a href="#">上一页</a></li>

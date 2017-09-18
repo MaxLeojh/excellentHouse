@@ -95,6 +95,32 @@ public class PremisesServiceImpl implements PremisesService{
         return premisesMapper.selectByPrimaryKey(premisesId);
     }
 
+    public PremisesAO selectByPremisesId(Integer premisesId) {
+        PremisesAO premisesAO = new PremisesAO();
+
+        Premises premises = new Premises();
+        premises = premisesMapper.selectByPrimaryKey(premisesId);
+        premisesAO.setEntity(premises);
+
+        Company company = new Company();
+        company = companyMapper.selectByPrimaryKey(premises.getCompanyId());
+        premisesAO.setCompany(company);
+
+        List<HouseType> houseTypeList = new ArrayList<HouseType>();
+        houseTypeList = houseTypeService.selectByCompanyId(premises.getId());
+        premisesAO.setHouseTypeList(houseTypeList);
+
+        List<Picture> pictureList = new ArrayList<Picture>();
+        pictureList = pictureService.selectByEntityIdAndType(premises.getId(), "楼盘");
+        premisesAO.setPictureList(pictureList);
+
+        List<Post> postList = new ArrayList<Post>();
+        postList = postService.seleceByEntityIdAndType(premises.getId(), "楼盘");
+        premisesAO.setPostList(postList);
+
+        return premisesAO;
+    }
+
     public List<Premises> testPage() {
         List<Premises> premisesList = new ArrayList<Premises>();
 

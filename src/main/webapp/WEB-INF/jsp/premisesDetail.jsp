@@ -39,10 +39,13 @@
 <div id="property-single">
     <%--楼盘图片展示--%>
     <div id="main-slider">
-        <div class="slide"><img src="../assets/images/slider/1.jpg" alt="Slide"></div>
-        <div class="slide"><img src="../assets/images/slider/2.jpg" alt="Slide"></div>
-        <div class="slide"><img src="../assets/images/slider/3.jpg" alt="Slide"></div>
-        <div class="slide"><img src="../assets/images/slider/4.jpg" alt="Slide"></div>
+        <c:forEach items="${premisesAO.pictureList}" var="picture">
+            <div class="slide"><img src="${picture.pictureAddress}" alt="Slide"></div>
+        </c:forEach>
+        <%--<div class="slide"><img src="../assets/images/slider/1.jpg" alt="Slide"></div>--%>
+        <%--<div class="slide"><img src="../assets/images/slider/2.jpg" alt="Slide"></div>--%>
+        <%--<div class="slide"><img src="../assets/images/slider/3.jpg" alt="Slide"></div>--%>
+        <%--<div class="slide"><img src="../assets/images/slider/4.jpg" alt="Slide"></div>--%>
     </div>
 
     <%--主要内容--%>
@@ -55,7 +58,8 @@
 
                     <div class="entry-title clearfix">
                         <h4 class="pull-left">${premisesAO.entity.name}</h4>
-                        <a class="pull-right ">喜欢 <i  class="iconfont icon-xihuan " ></i></a>
+                        <button id="collect" class="pull-right ">收藏 <i  class="iconfont icon-xihuan " ></i></button>
+                        <button id="hasCollect" class="pull-right " style="display: none">已收藏 <i  class="iconfont icon-xihuan " ></i></button>
                     </div>
                     <div class="property-single-meta">
                         <ul class="clearfix">
@@ -817,5 +821,7 @@
 <!--<script src="http://ditu.google.cn/maps/api/js?key=AIzaSyD2MtZynhsvwI2B40juK6SifR_OSyj4aBA&libraries=places"></script>-->
 <script src="../plugins/whats-nearby/source/WhatsNearby.js"></script>
 <script src="../assets/js/theme.js"></script>
+
+<script src="../js/collection.js"></script>
 </body>
 </html>
