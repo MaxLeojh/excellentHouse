@@ -179,13 +179,13 @@ public class FrontUserController {
     public ModelAndView userCollectedPremises(HttpServletRequest request, HttpSession session) {
         ModelAndView mav = new ModelAndView();
 
-        User user = new User();
-        user = (User) session.getAttribute("user");
+        UserAO userAO = new UserAO();
+        userAO = (UserAO) session.getAttribute("user");
 
         List<PremisesAO> premisesAOList = new ArrayList<PremisesAO>();
         List<Collection> collectionList = new ArrayList<Collection>();
 
-        collectionList = collectionService.getUserCollection(user.getUserId(), "楼盘");
+        collectionList = collectionService.getUserCollection(userAO.getEntity().getUserId(), "楼盘");
         for (Collection collection : collectionList) {
             PremisesAO premisesAO = new PremisesAO();
             premisesAO = premisesService.selectByPremisesId(collection.getEntityId());
