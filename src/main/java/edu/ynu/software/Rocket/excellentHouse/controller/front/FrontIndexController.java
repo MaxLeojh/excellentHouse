@@ -1,6 +1,7 @@
 package edu.ynu.software.Rocket.excellentHouse.controller.front;
 
 import edu.ynu.software.Rocket.excellentHouse.eneityAO.HouseAO;
+import edu.ynu.software.Rocket.excellentHouse.eneityAO.UserAO;
 import edu.ynu.software.Rocket.excellentHouse.entity.DecoInstance;
 import edu.ynu.software.Rocket.excellentHouse.entity.House;
 import edu.ynu.software.Rocket.excellentHouse.entity.Premises;
@@ -43,9 +44,9 @@ public class FrontIndexController {
     public ModelAndView index(HttpSession session){
         ModelAndView mav = new ModelAndView();
 
-        User user = (User) session.getAttribute("user");
-        if (user != null) {
-            mav.addObject("user", user);
+        UserAO userAO = (UserAO) session.getAttribute("user");
+        if (userAO != null) {
+            mav.addObject("user", userAO);
         }
 
 //        楼盘

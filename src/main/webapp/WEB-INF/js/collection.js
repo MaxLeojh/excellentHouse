@@ -4,9 +4,15 @@
 //增加收藏关系
 $(function () {
     $("#collect").click(function () {
+
         var userId = $("#userName").attr("data-id");
         var entityId = $("#premisesName").attr("data-id");
         var entityType = $("#premisesName").attr("data-type");
+
+        if (userId == null) {
+            alert("请先登录！");
+            return;
+        }
 
         var data = {
             "userId" : userId,

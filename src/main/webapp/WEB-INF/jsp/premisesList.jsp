@@ -137,6 +137,7 @@
 <!--<script src="http://ditu.google.cn/maps/api/js?key=AIzaSyD2MtZynhsvwI2B40juK6SifR_OSyj4aBA&libraries=places"></script>-->
 <script src="../plugins/whats-nearby/source/WhatsNearby.js"></script>
 <script src="../assets/js/theme.js"></script>
+<script src="../js/user.js"></script>
 </body>
 </html>
 

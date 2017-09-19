@@ -2,6 +2,7 @@ package edu.ynu.software.Rocket.excellentHouse.controller.front;
 
 import com.alibaba.fastjson.JSONObject;
 import edu.ynu.software.Rocket.excellentHouse.eneityAO.PremisesAO;
+import edu.ynu.software.Rocket.excellentHouse.eneityAO.UserAO;
 import edu.ynu.software.Rocket.excellentHouse.entity.Collection;
 import edu.ynu.software.Rocket.excellentHouse.entity.User;
 import edu.ynu.software.Rocket.excellentHouse.service.CollectionService;
@@ -132,7 +133,8 @@ public class FrontUserController {
             jsonObject.put("message", "email not pass");
         }
         else if (user.getPassWord().equals(password)) {
-            session.setAttribute("user",user);
+            UserAO userAO = userService.selectById(user.getUserId());
+            session.setAttribute("user",userAO);
             jsonObject.put("result","success");
         }
         else {
@@ -142,6 +144,26 @@ public class FrontUserController {
 
         response.getWriter().print(jsonObject.toString());
     }
+
+    @ResponseBody
+    @RequestMapping(value = "/logout", method = RequestMethod.POST)
+    public void logout(HttpSession session, HttpServletResponse response) throws IOException{
+        JSONObject jsonObject = new JSONObject();
+
+        session.removeAttribute("user");
+
+        try {
+
+            jsonObject.put("result", "success");
+            response.getWriter().print(jsonObject.toString());
+        }
+        catch (Exception e) {
+
+            jsonObject.put("result", "fail");
+            response.getWriter().print(jsonObject.toString());
+        }
+    }
+
 
     @ResponseBody
     @RequestMapping(value = "/home", method = RequestMethod.GET)
