@@ -1,13 +1,23 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%--
+  Created by IntelliJ IDEA.
+  User: maxleo
+  Date: 17-9-18
+  Time: 下午9:45
+  To change this template use File | Settings | File Templates.
+--%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <!-- Meta, title, CSS, favicons, etc. -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Gentelella Alela! | </title>
+    <title>User List | Excellent House</title>
 
     <!-- Bootstrap -->
     <link href="../vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -17,9 +27,20 @@
     <link href="../vendors/nprogress/nprogress.css" rel="stylesheet">
     <!-- iCheck -->
     <link href="../vendors/iCheck/skins/flat/green.css" rel="stylesheet">
+    Datatables
+    <link href="../vendors/datatables.net-bs/css/dataTables.bootstrap.min.css" rel="stylesheet">
+    <link href="../vendors/datatables.net-buttons-bs/css/buttons.bootstrap.min.css" rel="stylesheet">
+    <link href="../vendors/datatables.net-fixedheader-bs/css/fixedHeader.bootstrap.min.css" rel="stylesheet">
+    <link href="../vendors/datatables.net-responsive-bs/css/responsive.bootstrap.min.css" rel="stylesheet">
+    <link href="../vendors/datatables.net-scroller-bs/css/scroller.bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom Theme Style -->
     <link href="../build/css/custom.min.css" rel="stylesheet">
+    <style>
+        td {
+            font-size: medium;
+        }
+    </style>
 </head>
 
 <body class="nav-md">
@@ -45,7 +66,7 @@
                 </div>
                 <!-- /menu profile quick info -->
 
-                <br />
+                <br/>
 
                 <!-- sidebar menu -->
                 <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
@@ -69,7 +90,8 @@
                                     <li><a href="form_buttons.html">Form Buttons</a></li>
                                 </ul>
                             </li>
-                            <li><a><i class="fa fa-desktop"></i> UI Elements <span class="fa fa-chevron-down"></span></a>
+                            <li><a><i class="fa fa-desktop"></i> UI Elements <span
+                                    class="fa fa-chevron-down"></span></a>
                                 <ul class="nav child_menu">
                                     <li><a href="general_elements.html">General Elements</a></li>
                                     <li><a href="media_gallery.html">Media Gallery</a></li>
@@ -88,7 +110,8 @@
                                     <li><a href="tables_dynamic.html">Table Dynamic</a></li>
                                 </ul>
                             </li>
-                            <li><a><i class="fa fa-bar-chart-o"></i> Data Presentation <span class="fa fa-chevron-down"></span></a>
+                            <li><a><i class="fa fa-bar-chart-o"></i> Data Presentation <span
+                                    class="fa fa-chevron-down"></span></a>
                                 <ul class="nav child_menu">
                                     <li><a href="chartjs.html">Chart JS</a></li>
                                     <li><a href="chartjs2.html">Chart JS2</a></li>
@@ -108,7 +131,8 @@
                     <div class="menu_section">
                         <h3>Live On</h3>
                         <ul class="nav side-menu">
-                            <li><a><i class="fa fa-bug"></i> Additional Pages <span class="fa fa-chevron-down"></span></a>
+                            <li><a><i class="fa fa-bug"></i> Additional Pages <span
+                                    class="fa fa-chevron-down"></span></a>
                                 <ul class="nav child_menu">
                                     <li><a href="e_commerce.html">E-commerce</a></li>
                                     <li><a href="projects.html">Projects</a></li>
@@ -127,7 +151,8 @@
                                     <li><a href="pricing_tables.html">Pricing Tables</a></li>
                                 </ul>
                             </li>
-                            <li><a><i class="fa fa-sitemap"></i> Multilevel Menu <span class="fa fa-chevron-down"></span></a>
+                            <li><a><i class="fa fa-sitemap"></i> Multilevel Menu <span
+                                    class="fa fa-chevron-down"></span></a>
                                 <ul class="nav child_menu">
                                     <li><a href="#level1_1">Level One</a>
                                     <li><a>Level One<span class="fa fa-chevron-down"></span></a>
@@ -144,7 +169,8 @@
                                     </li>
                                 </ul>
                             </li>
-                            <li><a href="javascript:void(0)"><i class="fa fa-laptop"></i> Landing Page <span class="label label-success pull-right">Coming Soon</span></a></li>
+                            <li><a href="javascript:void(0)"><i class="fa fa-laptop"></i> Landing Page <span
+                                    class="label label-success pull-right">Coming Soon</span></a></li>
                         </ul>
                     </div>
 
@@ -180,7 +206,8 @@
 
                     <ul class="nav navbar-nav navbar-right">
                         <li class="">
-                            <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                            <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown"
+                               aria-expanded="false">
                                 <img src="../production/images/img.jpg" alt="">John Doe
                                 <span class=" fa fa-angle-down"></span>
                             </a>
@@ -198,14 +225,16 @@
                         </li>
 
                         <li role="presentation" class="dropdown">
-                            <a href="javascript:;" class="dropdown-toggle info-number" data-toggle="dropdown" aria-expanded="false">
+                            <a href="javascript:;" class="dropdown-toggle info-number" data-toggle="dropdown"
+                               aria-expanded="false">
                                 <i class="fa fa-envelope-o"></i>
                                 <span class="badge bg-green">6</span>
                             </a>
                             <ul id="menu1" class="dropdown-menu list-unstyled msg_list" role="menu">
                                 <li>
                                     <a>
-                                        <span class="image"><img src="../production/images/img.jpg" alt="Profile Image" /></span>
+                                        <span class="image"><img src="../production/images/img.jpg"
+                                                                 alt="Profile Image"/></span>
                                         <span>
                           <span>John Smith</span>
                           <span class="time">3 mins ago</span>
@@ -217,7 +246,8 @@
                                 </li>
                                 <li>
                                     <a>
-                                        <span class="image"><img src="../production/images/img.jpg" alt="Profile Image" /></span>
+                                        <span class="image"><img src="../production/images/img.jpg"
+                                                                 alt="Profile Image"/></span>
                                         <span>
                           <span>John Smith</span>
                           <span class="time">3 mins ago</span>
@@ -229,7 +259,8 @@
                                 </li>
                                 <li>
                                     <a>
-                                        <span class="image"><img src="../production/images/img.jpg" alt="Profile Image" /></span>
+                                        <span class="image"><img src="../production/images/img.jpg"
+                                                                 alt="Profile Image"/></span>
                                         <span>
                           <span>John Smith</span>
                           <span class="time">3 mins ago</span>
@@ -241,7 +272,8 @@
                                 </li>
                                 <li>
                                     <a>
-                                        <span class="image"><img src="../production/images/img.jpg" alt="Profile Image" /></span>
+                                        <span class="image"><img src="../production/images/img.jpg"
+                                                                 alt="Profile Image"/></span>
                                         <span>
                           <span>John Smith</span>
                           <span class="time">3 mins ago</span>
@@ -272,189 +304,64 @@
             <div class="">
                 <div class="page-title">
                     <div class="title_left">
-                        <h3>Projects <small>Listing design</small></h3>
-                    </div>
-
-                    <div class="title_right">
-                        <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
-                            <div class="input-group">
-                                <input type="text" class="form-control" placeholder="Search for...">
-                                <span class="input-group-btn">
-                      <button class="btn btn-default" type="button">Go!</button>
-                    </span>
-                            </div>
-                        </div>
+                        <h3>Excellent House Users Management
+                        </h3>
                     </div>
                 </div>
 
                 <div class="clearfix"></div>
 
                 <div class="row">
-                    <div class="col-md-12">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
                         <div class="x_panel">
                             <div class="x_title">
-                                <h2>Projects</h2>
-                                <ul class="nav navbar-right panel_toolbox">
-                                    <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
-                                    </li>
-                                    <li class="dropdown">
-                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
-                                        <ul class="dropdown-menu" role="menu">
-                                            <li><a href="#">Settings 1</a>
-                                            </li>
-                                            <li><a href="#">Settings 2</a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li><a class="close-link"><i class="fa fa-close"></i></a>
-                                    </li>
-                                </ul>
+                                <h2>Users</h2>
                                 <div class="clearfix"></div>
                             </div>
                             <div class="x_content">
-
-                                <p>Simple table with project listing with progress and editing options</p>
-
-                                <!-- start project list -->
-                                <table class="table">
+                                <table id="datatable" class="table table-striped table-bordered">
                                     <thead>
                                     <tr>
-                                        <th style="width: 1%">#</th>
-                                        <th style="width: 20%">Project Name</th>
-                                        <th>Team Members</th>
-                                        <th>Project Progress</th>
-                                        <th>Status</th>
-                                        <th style="width: 15%">#Edit</th>
+                                        <th>user ID</th>
+                                        <th>IMG</th>
+                                        <th>user name</th>
+                                        <th>E-mail</th>
+                                        <th>gender</th>
+                                        <th>phone number</th>
+                                        <th>E-mail confirm</th>
+                                        <th>valid</th>
+                                        <th>state</th>
+                                        <th>create time</th>
+                                        <th style="width: 10%">Operation</th>
                                     </tr>
                                     </thead>
+
+
                                     <tbody>
-                                    <tr>
-                                        <td>#</td>
-                                        <td>
-                                            kaslkaslkasll
-                                        </td>
-                                        <td>
-                                           shbshshss
-                                        </td>
-                                        <td>
-                                           dadada
-                                        </td>
-                                        <td>
-                                            ssssss
-                                        </td>
-                                        <td>
-                                            <a href="#" class="btn btn-primary btn-xs" data-toggle="modal" data-target=".modelided"><i class="fa fa-folder"></i> View </a>
+                                    <c:forEach items="${userAOList}" var="user">
+                                        <tr>
+                                            <td>${user.entity.userId}</td>
+                                            <td><img src="../production/images/user.png" class="avatar"></td>
+                                            <td>${user.entity.name}</td>
+                                            <td>${user.entity.email}</td>
+                                            <td>${user.entity.gender}</td>
+                                            <td>${user.entity.phoneNumber}</td>
+                                            <td>${user.entity.isEmailConfirm}</td>
+                                            <td>${user.entity.isVaild}</td>
+                                            <td>${user.entity.state}</td>
+                                            <td>${user.entity.createTime}</td>
+                                            <td>
+                                                <%--<a class="edit" data-id="${user.entity.userId}" href="#"  style="color: #00aeef">Edit</a>--%>
+                                                <%--<a class="delete" data-id="${user.entity.userId}" href="#" style="color: red">Delete</a>--%>
+                                                    <a data-id="${user.entity.userId}" href="#" class="edit btn btn-info btn-xs"><i class="fa fa-pencil"></i> Edit </a>
+                                                    <a data-id="${user.entity.userId}" href="#" class="delete btn btn-danger btn-xs"><i class="fa fa-trash-o"></i> Delete </a>
+                                            </td>
+                                        </tr>
+                                    </c:forEach>
 
-                                            <div class="modal fade modelided" tabindex="-1" role="dialog" aria-hidden="true">
-                                                <div class="modal-dialog modal-sm">
-                                                    <div class="modal-content">
-
-                                                        <div class="modal-header">
-                                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span>
-                                                            </button>
-                                                            <h4 class="modal-title" id="myModalLabel2">User details</h4>
-                                                        </div>
-                                                        <div class="modal-body" style="text-align: center">
-                                                            <div class="profile_img">
-                                                                <div id="crop-avatar">
-                                                                    <!-- Current avatar -->
-                                                                    <img class="img-responsive avatar-view" src="../production/images/picture.jpg" alt="Avatar" title="Change the avatar" style="margin: auto">
-                                                                </div>
-                                                            </div>
-                                                            <h3>Samuel Doe</h3>
-
-                                                            <ul class="list-unstyled user_data">
-                                                                <li><i class="fa fa-map-marker user-profile-icon"></i> San Francisco, California, USA
-                                                                </li>
-
-                                                                <li>
-                                                                    <i class="fa fa-briefcase user-profile-icon"></i> Software Engineer
-                                                                </li>
-
-                                                                <li class="m-top-xs">
-                                                                    <i class="fa fa-external-link user-profile-icon"></i>
-                                                                    <a href="http://www.kimlabs.com/profile/" target="_blank">www.kimlabs.com</a>
-                                                                </li>
-                                                            </ul>
-                                                        </div>
-                                                        <div class="modal-footer">
-                                                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                                            <button type="button" class="btn btn-primary">Save changes</button>
-                                                        </div>
-
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <a href="#" class="btn btn-info btn-xs"><i class="fa fa-pencil"></i> Edit </a>
-                                            <a href="#" class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i> Delete </a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>#</td>
-                                        <td>
-                                            kaslkaslkasll
-                                        </td>
-                                        <td>
-                                            shbshshss
-                                        </td>
-                                        <td>
-                                            dadada
-                                        </td>
-                                        <td>
-                                            ssssss
-                                        </td>
-                                        <td>
-                                            <a href="#" class="btn btn-primary btn-xs"><i class="fa fa-folder"></i> View </a>
-                                            <a href="#" class="btn btn-info btn-xs"><i class="fa fa-pencil"></i> Edit </a>
-                                            <a href="#" class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i> Delete </a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>#</td>
-                                        <td>
-                                            kaslkaslkasll
-                                        </td>
-                                        <td>
-                                            shbshshss
-                                        </td>
-                                        <td>
-                                            dadada
-                                        </td>
-                                        <td>
-                                            ssssss
-                                        </td>
-                                        <td>
-                                            <a href="#" class="btn btn-primary btn-xs"><i class="fa fa-folder"></i> View </a>
-                                            <a href="#" class="btn btn-info btn-xs"><i class="fa fa-pencil"></i> Edit </a>
-                                            <a href="#" class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i> Delete </a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>#</td>
-                                        <td>
-                                            kaslkaslkasll
-                                        </td>
-                                        <td>
-                                            shbshshss
-                                        </td>
-                                        <td>
-                                            dadada
-                                        </td>
-                                        <td>
-                                            ssssss
-                                        </td>
-                                        <td>
-                                            <a href="#" class="btn btn-primary btn-xs"><i class="fa fa-folder"></i> View </a>
-                                            <a href="#" class="btn btn-info btn-xs"><i class="fa fa-pencil"></i> Edit </a>
-                                            <a href="#" class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i> Delete </a>
-                                        </td>
-                                    </tr>
 
                                     </tbody>
                                 </table>
-                                <!-- end project list -->
-
                             </div>
                         </div>
                     </div>
@@ -482,10 +389,80 @@
 <script src="../vendors/fastclick/lib/fastclick.js"></script>
 <!-- NProgress -->
 <script src="../vendors/nprogress/nprogress.js"></script>
-<!-- bootstrap-progressbar -->
-<script src="../vendors/bootstrap-progressbar/bootstrap-progressbar.min.js"></script>
+<!-- iCheck -->
+<script src="../vendors/iCheck/icheck.min.js"></script>
+<!-- Datatables -->
+<script src="../vendors/datatables.net/js/jquery.dataTables.min.js"></script>
+<script src="../vendors/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+<script src="../vendors/datatables.net-buttons/js/dataTables.buttons.min.js"></script>
+<script src="../vendors/datatables.net-buttons-bs/js/buttons.bootstrap.min.js"></script>
+<script src="../vendors/datatables.net-buttons/js/buttons.flash.min.js"></script>
+<script src="../vendors/datatables.net-buttons/js/buttons.html5.min.js"></script>
+<script src="../vendors/datatables.net-buttons/js/buttons.print.min.js"></script>
+<script src="../vendors/datatables.net-fixedheader/js/dataTables.fixedHeader.min.js"></script>
+<script src="../vendors/datatables.net-keytable/js/dataTables.keyTable.min.js"></script>
+<script src="../vendors/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
+<script src="../vendors/datatables.net-responsive-bs/js/responsive.bootstrap.js"></script>
+<script src="../vendors/datatables.net-scroller/js/dataTables.scroller.min.js"></script>
+<script src="../vendors/jszip/dist/jszip.min.js"></script>
+<script src="../vendors/pdfmake/build/pdfmake.min.js"></script>
+<script src="../vendors/pdfmake/build/vfs_fonts.js"></script>
 
 <!-- Custom Theme Scripts -->
 <script src="../build/js/custom.min.js"></script>
+
+<script type="text/javascript">
+    $(function () {
+
+        $(".edit").click(function () {
+            var id = $(this).attr("data-id");
+
+            if (1 == 2) {
+
+            }
+            else {
+                var data = {
+                    "userId": id
+                };
+
+                $.ajax({
+                    type:'post',
+                    url:'/manageUser/edit',
+                    dataType:'json',
+                    data:data
+                });
+            }
+        });
+
+        $(".delete").click(function () {
+            var id = $(this).attr("data-id");
+
+            if (1 == 2) {
+
+            }
+            else {
+                var data = {
+                    "userId": id
+                };
+
+                $.ajax({
+                    type:'post',
+                    url:'/manageUser/edit',
+                    dataType:'json',
+                    data:data,
+                    success:function (data) {
+                        if (data.result == "success") {
+                            alert("success");
+                            top.location = '/index/show';
+                        }else {
+                            alert("fail");
+                        }
+                    }
+                });
+            }
+        });
+    })
+</script>
+
 </body>
 </html>
