@@ -92,4 +92,8 @@ public class UserServiceImpl implements UserService {
 
         return userAOList;
     }
+
+    public Integer deleteUser(Integer userId) {
+        return null;
+    }
 }
