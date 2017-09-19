@@ -41,7 +41,7 @@ public class ManageUserController {
         userAOList = userService.selectAllUserAO();
         mav.addObject("userAOList", userAOList);
 
-        mav.setViewName("3");
+        mav.setViewName("mUserList");
         return mav;
     }
 

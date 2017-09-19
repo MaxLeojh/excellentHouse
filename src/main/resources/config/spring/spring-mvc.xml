@@ -47,6 +47,10 @@
     <mvc:resources location="/WEB-INF/video/" mapping="/video/**"/>
     <mvc:resources location="/WEB-INF/assets/" mapping="/assets/**"/>
     <mvc:resources location="/WEB-INF/plugins/" mapping="/plugins/**"/>
+    <mvc:resources location="/WEB-INF/vendors/" mapping="/vendors/**"/>
+    <mvc:resources location="/WEB-INF/production/" mapping="/production/**"/>
+    <mvc:resources location="/WEB-INF/build/" mapping="/build/**"/>
+
 
 
     <!-- 有关首页的 -->
