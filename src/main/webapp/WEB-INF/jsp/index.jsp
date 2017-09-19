@@ -74,25 +74,26 @@
             <c:forEach items="${premisesList}" var="premises">
                 <div class="col-lg-4 col-sm-6 layout-item-wrap">
                     <article class="property layout-item clearfix">
-                        <figure class="feature-image">
-                            <a class="clearfix zoom" href=""><img data-action="zoom" src="../assets/images/property/1.jpg" alt="图片丢了"></a>
+                        <figure class="feature-image zoom">
+                            <%--<a class="clearfix zoom" href=""><img data-action="zoom" src="../assets/images/property/1.jpg" alt="图片丢了"></a>--%>
+                            <a class="clearfix " href=""><img data-action="zoom" src="${premises.pictureList.get(0).pictureAddress}" alt="图片丢了"></a>
                             <span class="btn btn-warning btn-sale">热卖中</span>
                         </figure>
                         <div class="property-contents clearfix">
                             <header class="property-header clearfix">
                                 <div class="pull-left">
-                                    <h6 class="entry-title"><a href="/frontPremises/detail?premisesId=${premises.id}">${premises.name}</a></h6>
+                                    <h6 class="entry-title"><a href="/frontPremises/detail?premisesId=${premises.entity.id}">${premises.entity.name}</a></h6>
                                     <span class="property-location"><i class="fa fa-map-marker"></i>坐标施工中</span>
                                 </div>
-                                <button class="btn btn-default btn-price pull-right btn-3d" data-hover="￥${premises.averagePrice}"><strong>￥${premises.averagePrice}</strong>
+                                <button class="btn btn-default btn-price pull-right btn-3d" data-hover="￥${premises.entity.averagePrice}"><strong>￥${premises.entity.averagePrice}</strong>
                                 </button>
                             </header>
-                            <div class="property-meta clearfix">
-                                <span><i class="fa fa-arrows-alt"></i> 3060 SqFt</span>
-                                <span><i class="fa fa-bed"></i> 3 Beds</span>
-                                <span><i class="fa fa-bathtub"></i> 3 Baths</span>
-                                <span><i class="fa fa-cab"></i> Yes</span>
-                            </div>
+                            <%--<div class="property-meta clearfix">--%>
+                                <%--<span><i class="fa fa-arrows-alt"></i> 3060 SqFt</span>--%>
+                                <%--<span><i class="fa fa-bed"></i> 3 Beds</span>--%>
+                                <%--<span><i class="fa fa-bathtub"></i> 3 Baths</span>--%>
+                                <%--<span><i class="fa fa-cab"></i> Yes</span>--%>
+                            <%--</div>--%>
                             <div class="contents clearfix">
                                 <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
                                     invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et
@@ -231,12 +232,12 @@
                             <div class="property-contents">
                                 <header class="property-header clearfix">
                                     <div class="pull-left">
-                                        <h6 class="entry-title"><a href="/frontDecoInstance/detail?decoInstanceId=${instance.id}">${instance.name}</a>
+                                        <h6 class="entry-title"><a href="/frontDecoInstance/detail?decoInstanceId=${instance.entity.id}">${instance.entity.name}</a>
                                         </h6>
                                         <span class="property-location"><i class="fa fa-map-marker"></i> 坐标施工中 </span>
                                     </div>
-                                    <button class="btn btn-default btn-price pull-right btn-3d" data-hover="￥${instance.budget}万">
-                                        <strong>￥${instance.budget}万</strong></button>
+                                    <button class="btn btn-default btn-price pull-right btn-3d" data-hover="￥${instance.entity.budget}万">
+                                        <strong>￥${instance.entity.budget}万</strong></button>
                                 </header>
                                 <div class="property-meta clearfix">
                                     暂时不知道放什么

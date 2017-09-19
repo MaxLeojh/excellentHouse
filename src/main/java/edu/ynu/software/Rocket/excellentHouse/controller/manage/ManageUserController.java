@@ -2,7 +2,6 @@ package edu.ynu.software.Rocket.excellentHouse.controller.manage;
 
 import com.alibaba.fastjson.JSONObject;
 import edu.ynu.software.Rocket.excellentHouse.eneityAO.UserAO;
-import edu.ynu.software.Rocket.excellentHouse.entity.User;
 import edu.ynu.software.Rocket.excellentHouse.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
