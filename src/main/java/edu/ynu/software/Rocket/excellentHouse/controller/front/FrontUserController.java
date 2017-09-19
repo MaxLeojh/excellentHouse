@@ -224,6 +224,7 @@ public class FrontUserController {
         return mav;
     }
 
+    @ResponseBody
     @RequestMapping(value = "/collect", method = RequestMethod.POST)
     public void collect(HttpServletRequest request, HttpServletResponse response, HttpSession session) throws IOException,SQLException {
         JSONObject jsonObject = new JSONObject();
@@ -250,6 +251,7 @@ public class FrontUserController {
         }
     }
 
+    @ResponseBody
     @RequestMapping(value = "/deleteCollection", method = RequestMethod.POST)
     public void deleteCollection(HttpServletRequest request, HttpServletResponse response, HttpSession session) throws IOException,SQLException {
         JSONObject jsonObject = new JSONObject();
@@ -272,5 +274,11 @@ public class FrontUserController {
             jsonObject.put("error_info", e.getMessage());
             response.getWriter().print(jsonObject.toString());
         }
+    }
+
+    @ResponseBody
+    @RequestMapping(value = "newHouse", method = RequestMethod.POST)
+    public void newHouse(HttpServletRequest request, HttpServletResponse response, HttpSession session, String type) {
+
     }
 }

@@ -77,7 +77,7 @@
                                     <div class="desc">
                                         <h3><a href="#">${premises.entity.name}</a><small> 位置施工中 </small></h3>
                                         <a href="/frontPremises/detail?premisesId=${premises.entity.id}">了解更多>></a>
-                                        <button id="deleteCollection" class="delete"data-toggle="modal" data-target="#myModal" data-id="${premises.entity.id}" data-type="楼盘">删除</button>
+                                        <button id="deleteCollection" class="deleteCollection" data-toggle="modal" data-target="#myModal" data-id="${premises.entity.id}" data-type="楼盘">删除</button>
                                     </div>
                                 </div>
                             </div>
