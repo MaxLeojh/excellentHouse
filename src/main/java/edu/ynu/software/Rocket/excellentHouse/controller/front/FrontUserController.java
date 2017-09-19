@@ -2,6 +2,7 @@ package edu.ynu.software.Rocket.excellentHouse.controller.front;
 
 import com.alibaba.fastjson.JSONObject;
 import edu.ynu.software.Rocket.excellentHouse.eneityAO.PremisesAO;
+import edu.ynu.software.Rocket.excellentHouse.eneityAO.UserAO;
 import edu.ynu.software.Rocket.excellentHouse.entity.Collection;
 import edu.ynu.software.Rocket.excellentHouse.entity.User;
 import edu.ynu.software.Rocket.excellentHouse.service.CollectionService;
@@ -132,7 +133,8 @@ public class FrontUserController {
             jsonObject.put("message", "email not pass");
         }
         else if (user.getPassWord().equals(password)) {
-            session.setAttribute("user",user);
+            UserAO userAO = userService.selectById(user.getUserId());
+            session.setAttribute("user",userAO);
             jsonObject.put("result","success");
         }
         else {
@@ -142,6 +144,26 @@ public class FrontUserController {
 
         response.getWriter().print(jsonObject.toString());
     }
+
+    @ResponseBody
+    @RequestMapping(value = "/logout", method = RequestMethod.POST)
+    public void logout(HttpSession session, HttpServletResponse response) throws IOException{
+        JSONObject jsonObject = new JSONObject();
+
+        session.removeAttribute("user");
+
+        try {
+
+            jsonObject.put("result", "success");
+            response.getWriter().print(jsonObject.toString());
+        }
+        catch (Exception e) {
+
+            jsonObject.put("result", "fail");
+            response.getWriter().print(jsonObject.toString());
+        }
+    }
+
 
     @ResponseBody
     @RequestMapping(value = "/home", method = RequestMethod.GET)
@@ -157,13 +179,13 @@ public class FrontUserController {
     public ModelAndView userCollectedPremises(HttpServletRequest request, HttpSession session) {
         ModelAndView mav = new ModelAndView();
 
-        User user = new User();
-        user = (User) session.getAttribute("user");
+        UserAO userAO = new UserAO();
+        userAO = (UserAO) session.getAttribute("user");
 
         List<PremisesAO> premisesAOList = new ArrayList<PremisesAO>();
         List<Collection> collectionList = new ArrayList<Collection>();
 
-        collectionList = collectionService.getUserCollection(user.getUserId(), "楼盘");
+        collectionList = collectionService.getUserCollection(userAO.getEntity().getUserId(), "楼盘");
         for (Collection collection : collectionList) {
             PremisesAO premisesAO = new PremisesAO();
             premisesAO = premisesService.selectByPremisesId(collection.getEntityId());
@@ -202,6 +224,7 @@ public class FrontUserController {
         return mav;
     }
 
+    @ResponseBody
     @RequestMapping(value = "/collect", method = RequestMethod.POST)
     public void collect(HttpServletRequest request, HttpServletResponse response, HttpSession session) throws IOException,SQLException {
         JSONObject jsonObject = new JSONObject();
@@ -228,6 +251,7 @@ public class FrontUserController {
         }
     }
 
+    @ResponseBody
     @RequestMapping(value = "/deleteCollection", method = RequestMethod.POST)
     public void deleteCollection(HttpServletRequest request, HttpServletResponse response, HttpSession session) throws IOException,SQLException {
         JSONObject jsonObject = new JSONObject();
@@ -250,5 +274,11 @@ public class FrontUserController {
             jsonObject.put("error_info", e.getMessage());
             response.getWriter().print(jsonObject.toString());
         }
+    }
+
+    @ResponseBody
+    @RequestMapping(value = "newHouse", method = RequestMethod.POST)
+    public void newHouse(HttpServletRequest request, HttpServletResponse response, HttpSession session, String type) {
+
     }
 }

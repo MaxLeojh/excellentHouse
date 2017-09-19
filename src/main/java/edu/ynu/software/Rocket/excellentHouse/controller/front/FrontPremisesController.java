@@ -1,6 +1,7 @@
 package edu.ynu.software.Rocket.excellentHouse.controller.front;
 
 import edu.ynu.software.Rocket.excellentHouse.eneityAO.PremisesAO;
+import edu.ynu.software.Rocket.excellentHouse.eneityAO.UserAO;
 import edu.ynu.software.Rocket.excellentHouse.entity.*;
 import edu.ynu.software.Rocket.excellentHouse.service.*;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -58,9 +59,9 @@ public class FrontPremisesController {
 
         //判断用户是否收藏
         Boolean isCollected = false;
-        User user = (User) session.getAttribute("user");
-        if (user != null) {
-            List<Collection> collectionList = collectionService.selectByIdAndType(user.getUserId(), premisesId, "楼盘");
+        UserAO userAO = (UserAO) session.getAttribute("user");
+        if (userAO != null) {
+            List<Collection> collectionList = collectionService.selectByIdAndType(userAO.getEntity().getUserId(), premisesId, "楼盘");
             if (collectionList.size() == 1) {
                isCollected = true;
             }

@@ -18,15 +18,23 @@
             <!--个人信息-->
             <div class="col-md-4 col-sm-7 col-xs-7" style="float: right">
                 <c:choose>
-                    <c:when test="${user.userId > 0}">
+                    <c:when test="${user.entity.userId > 0}">
                         <div class="contact-in-header clearfix">
                             <div class="col-md-6 col-sm-6 col-xs-6 avatar_div">
-                                <a href="/user/home"><img class=" avatar" src="../assets/images/avatar.png"></a>
+                                <c:choose>
+                                    <c:when test="${user.pictureList.size() == 0}">
+                                        <a href="/user/home"><img class=" avatar" src="../assets/images/avatar.png"></a>
+                                    </c:when>
+                                    <c:otherwise>
+                                        <a href="/user/home"><img class=" avatar" src="${user.pictureList.get(0).pictureAddress}"></a>
+                                    </c:otherwise>
+                                </c:choose>
+
                             </div>
 
                             <span class="head-username col-md-6 col-sm-6 col-xs-6" >
-                                <a id="userName" href="/user/home" data-id="${user.userId}">${user.name}</a>
-                                <a class="logout" >注销</a>
+                                <a id="userName" href="/user/home" data-id="${user.entity.userId}">${user.entity.name}</a>
+                                <a id="logout" class="logout" data-id="${user.entity.userId}">注销</a>
                             </span>
                         </div>
                     </c:when>

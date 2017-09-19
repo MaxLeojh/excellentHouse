@@ -41,7 +41,7 @@ public class ManageUserController {
         userAOList = userService.selectAllUserAO();
         mav.addObject("userAOList", userAOList);
 
-        mav.setViewName("3");
+        mav.setViewName("mUserList");
         return mav;
     }
 
@@ -120,11 +120,13 @@ public class ManageUserController {
         JSONObject jsonObject = new JSONObject();
 
         try {
-
+            Integer result = userService.deleteUser(userId);
+            jsonObject.put("result", "success");
             response.getWriter().print(jsonObject.toString());
         }
         catch (Exception e) {
-
+            jsonObject.put("result", "fail");
+            jsonObject.put("error_info", e.getMessage());
             response.getWriter().print(jsonObject.toString());
         }
     }

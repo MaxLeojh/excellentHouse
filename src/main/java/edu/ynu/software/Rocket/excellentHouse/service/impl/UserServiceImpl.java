@@ -83,6 +83,8 @@ public class UserServiceImpl implements UserService {
     public List<UserAO> selectAllUserAO() {
         List<UserAO> userAOList = new ArrayList<UserAO>();
         List<User> userList = new ArrayList<User>();
+        UserExample userExample = new UserExample();
+        userList = userMapper.selectByExample(userExample);
 
         for (User user : userList) {
             UserAO userAO = new UserAO();
@@ -94,6 +96,11 @@ public class UserServiceImpl implements UserService {
     }
 
     public Integer deleteUser(Integer userId) {
-        return null;
+        User user = new User();
+        user = userMapper.selectByPrimaryKey(userId);
+        user.setIsVaild(false);
+        Integer back = userMapper.updateByPrimaryKey(user);
+
+        return back;
     }
 }

@@ -4,9 +4,15 @@
 //增加收藏关系
 $(function () {
     $("#collect").click(function () {
+
         var userId = $("#userName").attr("data-id");
         var entityId = $("#premisesName").attr("data-id");
         var entityType = $("#premisesName").attr("data-type");
+
+        if (userId == null) {
+            alert("请先登录！");
+            return;
+        }
 
         var data = {
             "userId" : userId,
@@ -35,7 +41,7 @@ $(function () {
 
 //删除收藏关系
 $(function () {
-    $("#deleteCollection").click(function () {
+    $(".deleteCollection").click(function () {
         var userId = $("#userName").attr("data-id");
         var entityId = $(this).attr("data-id");
         var entityType = $(this).attr("data-type");
@@ -58,11 +64,11 @@ $(function () {
                     alert("删除收藏成功");
                     // document.getElementById("collect").style.display="none";
                     // document.getElementById("hasCollect").style.display="inline";
-                     alert("button.parents.val = " + button.parents().attr("class"));
-                    // button.parents().fadeOut();
-                    var p=button.parents();
+                    // alert("button.parents.val = " + button.parents().attr("class"));
+                    button.parent().parent().remove();
+                    // var p=button.parents();
                     // button.parents().style.visibility="hidden";
-                    p.fadeOut();
+                    // p.fadeOut();
                 }else{
                     alert("删除收藏失败..." + data.error_info);
                 }

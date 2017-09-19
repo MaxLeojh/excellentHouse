@@ -159,10 +159,10 @@
                                             <span><i class="fa fa-bathtub"></i> 3 Baths</span>
                                             <span><i class="fa fa-cab"></i> Yes</span>
                                         </div>
-                                        <div>
+                                        <div >
                                             <p>${houseType.introduction}</p>
                                         </div>
-                                        <div>
+                                        <div >
                                             <cite class="author-name">联系卖家 <a href="#">饶宇皓</a></cite>
                                             <span class="phone"><i class="fa fa-phone"></i> 123</span>
                                         </div>
@@ -350,7 +350,7 @@
                                         <fieldset class="clearfix">
                                             <div>
                                                 <label for="main-location">All Location</label>
-                                                <select name="location">
+                                                <select name="location" >
                                                     <option value="">All Cities</option>
                                                     <option value="chicago"> Chicago</option>
                                                     <option value="los-angeles"> Los Angeles</option>

@@ -8,7 +8,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>登录-优购房</title>
+    <title>优购房-用户登录</title>
 </head>
 <body>
 <input id="IdStr" type="text" class="form-control" placeholder="用户名/邮箱/手机号">
