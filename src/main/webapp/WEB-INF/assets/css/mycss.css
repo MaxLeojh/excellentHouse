@@ -19,7 +19,7 @@
     background-color: #62b2f4;
     width: 100%;
     border: 1px solid #ddd;
-    background-image: url(../images/my/banner.png);
+    background-image: url(../images/my/banner.jpg);
     background-repeat: no-repeat;
     background-position: center;
     background-position-y: 10px;
@@ -50,7 +50,6 @@
     min-width: 1px;
 }
 .my_layout{
-
     padding-top: 0px;
  margin-bottom: 0px;
     padding-bottom: 0px;
@@ -73,7 +72,6 @@
 }
 #my_nar > div.collapse.navbar-collapse > ul > li> a:hover{
     color: #2a67cd;
-
 }
 
 #my_nar{
@@ -90,11 +88,26 @@
     padding-left: 30px;padding-right: 30px;
     margin-top: 30px;
 }
+.input-comment{
+    margin-left:20px;
+  margin-top:15px;
+}
+.comment-son{
+    position: relative;
+    margin-top: 10px;
+    margin-left: 20px;
+}
 .username{
     margin-top: 50px;
 }
 .head-username{
     margin-top: 5%;
+}
+.comment{
+    margin-top: 2%;
+}
+.comment-parent-group{
+    display: none;
 }
 .password{
     margin-top: 30px;
@@ -174,6 +187,27 @@
     margin-left:-2%;
 
 }
+.my-textarea{
+    resize: none;
+}
+.comment-textarea{
+    resize: none;
+    margin-left: 12%;
+    width: 88%;
+    position: relative;
+}
+.comment-parent{
+    resize: none;
+    margin-top: 10px;
+}
+.submit-comment{
+    float: right;
+    color: white;
+    background-color: #2a67cd;
+    margin-top: 10px;
+    margin-bottom: 10px;
+   position: relative;
+}
 .input-name{
     margin-top: 3px;
 }
@@ -207,6 +241,9 @@
 .my-nav{
     width: 70%;
     margin-left: 15%;
+}
+.my-nav-group{
+    background-color: white;
 }
 .my-icon{
     font-size: 100%;

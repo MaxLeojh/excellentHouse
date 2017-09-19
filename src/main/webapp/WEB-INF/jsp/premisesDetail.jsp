@@ -39,7 +39,7 @@
 
 <div id="property-single">
     <%--楼盘图片展示--%>
-    <div id="main-slider" class="my-slide"  >
+    <div id="main-slider" class="my-slide">
         <c:forEach items="${premisesAO.pictureList}" var="picture">
             <div class="slide my-slide"><img class="slide-img" src="${picture.pictureAddress}" alt="Slide"></div>
         </c:forEach>
@@ -58,14 +58,18 @@
                 <section class="property-meta-wrapper common">
 
                     <div class="entry-title clearfix">
-                            <h4 class="pull-left" id="premisesName" data-id="${premisesAO.entity.id}" data-type="楼盘">${premisesAO.entity.name}</h4>
+                        <h4 class="pull-left" id="premisesName" data-id="${premisesAO.entity.id}"
+                            data-type="楼盘">${premisesAO.entity.name}</h4>
                         <c:choose>
                             <c:when test="${isCollected == true}">
-                                <button id="hasCollect" class="pull-right ">已收藏 <i  class="iconfont icon-iconfontlike " ></i></button>
+                                <button id="hasCollect" class="pull-right ">已收藏 <i class="iconfont icon-xihuan "></i>
+                                </button>
                             </c:when>
                             <c:otherwise>
-                                <button id="collect" class="pull-right ">收藏 <i  class="iconfont icon-xihuan " ></i></button>
-                                <button id="hasCollect" class="pull-right " style="display: none">已收藏 <i  class="iconfont icon-iconfontlike " ></i></button>
+                                <button id="collect" class="pull-right ">收藏 <i class="iconfont icon-xihuan "></i>
+                                </button>
+                                <button id="hasCollect" class="pull-right " style="display: none">已收藏 <i
+                                        class="iconfont icon-iconfontlike "></i></button>
                             </c:otherwise>
                         </c:choose>
 
@@ -230,27 +234,101 @@
                     </div>
                 </section>
 
-                <%--评论--%>
+                <%--论坛--%>
                 <section class="property-nearby-places common">
-                    <h4 class="entry-title">评论</h4>
-                    <form role="form">
+                    <h4 class="entry-title">论坛</h4>
+                    <form class="row" role="form">
                         <div class="form-group">
-                            <label >输入你的评论：</label>
-                            <textarea class="form-control" rows="3"></textarea>
+                            <label>输入你的评论：</label>
+                            <textarea class="form-control my-textarea" maxlength="200" rows="5"></textarea>
+                            <button class="btn submit-comment">提交</button>
                         </div>
                     </form>
-                    <div class="contact-in-header clearfix">
-                        <div class="col-md-6 col-sm-6 avatar_div">
-                            <img class=" avatar" src="../assets/images/avatar.png">
+
+                    <div class="">
+                            <div class="row">
+                                <div class="col-md-4 col-sm-4 avatar_div">
+                                    <img class=" avatar" src="../assets/images/avatar.png">
+                                </div>
+                                <span class="comment col-md-6 col-sm-6">
+                                 wzc:
+                                <strong>评论*******</strong>
+                                     <a id="btn-parent-comment" class="iconfont icon-pinglun" href="#comment-parent-group" data-toggle="collapse">评论</a>
+                                </span>
+                            </div>
+
+                            <div class="row comment-son ">
+                                <div class="row">
+                                    <div class="col-md-5 col-sm-5 avatar_div">
+                                        <img class=" avatar" src="../assets/images/avatar.png">
+                                    </div>
+                                    <span class="comment col-md-6 col-sm-6">
+                                        <a>饶宇皓</a><span>回复</span><a>wzc</a>
+                                        <strong>回复的回复*******</strong>
+                                        <a class="btn-comment iconfont icon-pinglun"href="#comment-son" data-toggle="collapse">评论</a>
+                                   </span>
+                                    <div  id="comment-son" class="collapse" >
+                                        <textarea  class="form-control comment-textarea col-md-7" maxlength="200" rows="5" ></textarea>
+                                        <button class="btn submit-comment">提交</button>
+                                    </div>
+                                </div>
+
+
+                                <div class=" comment-son">
+                                    <div class="col-md-5 col-sm-5 avatar_div">
+                                        <img class=" avatar" src="../assets/images/avatar.png">
+                                    </div>
+                                    <span class="comment col-md-6 col-sm-6">
+                                 <a>饶宇皓</a><span>回复</span><a>wzc</a>
+                                 <strong>回复的回复*******</strong>
+                                    <a class="btn-comment iconfont icon-pinglun"href="#comment-son2" data-toggle="collapse">评论</a>
+                               </span>
+
+                                    <div  id=" comment-son2" class=" collapse" >
+                                        <textarea  class="form-control comment-textarea col-md-7" maxlength="200" rows="5" ></textarea>
+                                        <button class="btn submit-comment">提交</button>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="row comment-son">
+
+                                <div class="col-md-5 col-sm-5 avatar_div">
+                                    <img class=" avatar" src="../assets/images/avatar.png">
+                                </div>
+                                <span class="comment col-md-6 col-sm-6">
+                                 <a>饶宇皓</a><span>回复</span><a>wzc</a>
+                                 <strong>回复的回复*******</strong>
+                                    <a class="btn-comment iconfont icon-pinglun"href="#comment-son2" data-toggle="collapse">评论</a>
+                               </span>
+                                <%--<input class="input-comment form-control " type="text" placeholder="评论">--%>
+                                <div  id=" comment-son2" class=" collapse" >
+                                    <textarea  class="form-control comment-textarea col-md-7" maxlength="200" rows="5" ></textarea>
+                                    <button class="btn submit-comment">提交</button>
+                                </div>
+                            </div>
+
+                            <div class="row comment-son">
+                            <div class="col-md-5 col-sm-5 avatar_div">
+                                <img class=" avatar" src="../assets/images/avatar.png">
+                            </div>
+                            <span class="comment col-md-6 col-sm-6">
+                                 <a>饶宇皓</a><span>回复</span><a>wzc</a>
+                                 <strong>回复的回复*******</strong>
+                                    <a class="btn-comment iconfont icon-pinglun"href="#comment-son2" data-toggle="collapse">评论</a>
+                               </span>
+                            <%--<input class="input-comment form-control " type="text" placeholder="评论">--%>
+                            <div  id="comment-son2" class="collapse" >
+                                <textarea  class="form-control comment-textarea col-md-7" maxlength="200" rows="5" ></textarea>
+                                <button class="btn submit-comment">提交</button>
+                            </div>
                         </div>
-                        <span class="col-md-6 col-sm-6">
-                           wzc
-                           <br>
-                         <strong>主题*******</strong>
-                        </span>
-                        <a>
-                            评论
-                        </a>
+
+                        <div id="comment-parent-group" class="comment-parent-group collapse" >
+                            <textarea  class="form-control comment-parent " maxlength="200" rows="1" ></textarea>
+                            <button class="btn submit-comment">提交</button>
+                        </div>
                     </div>
                 </section>
             </div>
@@ -830,7 +908,29 @@
 <!--<script src="http://ditu.google.cn/maps/api/js?key=AIzaSyD2MtZynhsvwI2B40juK6SifR_OSyj4aBA&libraries=places"></script>-->
 <script src="../plugins/whats-nearby/source/WhatsNearby.js"></script>
 <script src="../assets/js/theme.js"></script>
+
 <script src="../js/collection.js"></script>
-<script src="../js/user.js"></script>
+<script>
+//    获得焦距变大
+    $(function() {
+        $(".comment-parent-group").focus(function(){
+            this.rows=5;
+        });
+    });
+//    点击子元素
+    $(function() {
+        $(".btn-comment").click(function(){
+
+        });
+    });
+//    点击父元素
+    $(function() {
+        $("#btn-parent-comment").click(function(){
+
+
+        });
+    });
+
+</script>
 </body>
 </html>

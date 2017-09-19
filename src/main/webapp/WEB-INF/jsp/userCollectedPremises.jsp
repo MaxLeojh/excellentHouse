@@ -57,7 +57,24 @@
 <jsp:include page="frontHead.jsp"/>
 <div id="fh5co-page">
     <a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle"><i></i></a>
-    <jsp:include page="userNavigation.jsp"/>
+    <aside  class="my-nav-group "id="fh5co-aside" role="complementary" >
+        <h1 id="fh5co-logo"><a href="/user/home">个人中心</a></h1>
+        <nav class="my-nav" id="fh5co-main-menu" role="navigation">
+            <ul>
+                <li  class=" panel panel-default "><a href="/user/home">我的信息</a></li>
+                <li class=" panel panel-default"id="myCollapsibleExample"><a href="#demo" data-toggle="collapse">收藏</a>
+                    <ul id="demo" class="collapse in">
+                        <li class=" fh5co-active"><a href="/user/collectedPremises">楼盘收藏</a></li>
+                        <li><a href="/user/collectedHouse">二手房收藏</a></li>
+                        <li><a href="/user/collectedHouse">租房收藏</a></li>
+                        <li><a href="/user/collectedDecoInstance">装修收藏</a></li>
+                    </ul>
+                </li>
+                <li class=" panel panel-default " ><a href="/user/house">我的二手房</a></li>
+                <li class=" panel panel-default"><a href="/user/house">我的租房</a></li>
+            </ul>
+        </nav>
+    </aside>
 
     <div id="fh5co-main">
         <div class="fh5co-narrow-content">
@@ -69,8 +86,10 @@
                     </div>
                 </c:when>
                 <c:otherwise>
+
+                    <div class="row row-bottom-padded-md">
                     <c:forEach items="${premisesAOList}" var="premises">
-                        <div class="row row-bottom-padded-md">
+
                             <div class="col-md-3 col-sm-6 col-padding animate-box" data-animate-effect="fadeInLeft">
                                 <div class="blog-entry">
                                     <a href="#" class="blog-img"><img src="../assets/images/myImages/1.jpg" class="img-responsive" alt="加载失败啦"></a>
@@ -81,8 +100,9 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
+
                     </c:forEach>
+                    </div>
                 </c:otherwise>
             </c:choose>
         </div>
