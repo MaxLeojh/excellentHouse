@@ -298,12 +298,12 @@
         data.img = src;
         data.jid = $('#jid').val();
         $.ajax({
-            url: "upload-logo.php",
+            url: "/user/updatePic",
             data: data,
             type: "POST",
             dataType: 'json',
             success: function(re) {
-                if(re.status == '1') {
+                if(re.result == 'success') {
                     $('.user_pic img').attr('src',src );
                 }
             }

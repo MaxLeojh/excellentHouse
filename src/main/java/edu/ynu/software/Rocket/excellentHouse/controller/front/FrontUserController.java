@@ -15,11 +15,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import java.io.File;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -280,5 +282,18 @@ public class FrontUserController {
     @RequestMapping(value = "newHouse", method = RequestMethod.POST)
     public void newHouse(HttpServletRequest request, HttpServletResponse response, HttpSession session, String type) {
 
+    }
+
+    @ResponseBody
+    @RequestMapping(value = "updatePic", method = RequestMethod.POST)
+    public void updatePic(HttpServletRequest request, HttpServletResponse response, HttpSession session) throws IOException{
+        JSONObject jsonObject = new JSONObject();
+
+//        File file2 = request.;
+
+//        file.getOriginalFilename();
+
+        jsonObject.put("result", "success");
+        response.getWriter().print(jsonObject.toString());
     }
 }
