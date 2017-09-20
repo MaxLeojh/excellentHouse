@@ -1,6 +1,8 @@
 package edu.ynu.software.Rocket.excellentHouse.controller.front;
 
+import edu.ynu.software.Rocket.excellentHouse.eneityAO.DecoInstanceAO;
 import edu.ynu.software.Rocket.excellentHouse.eneityAO.HouseAO;
+import edu.ynu.software.Rocket.excellentHouse.eneityAO.PremisesAO;
 import edu.ynu.software.Rocket.excellentHouse.eneityAO.UserAO;
 import edu.ynu.software.Rocket.excellentHouse.entity.DecoInstance;
 import edu.ynu.software.Rocket.excellentHouse.entity.House;
@@ -50,8 +52,9 @@ public class FrontIndexController {
         }
 
 //        楼盘
-        List<Premises> premisesList = premisesService.getAllPremises();
+        List<PremisesAO> premisesList = premisesService.getAllPremisesAO();
         mav.addObject("premisesList", premisesList);
+
 
 //        二手房
         List<HouseAO> secondHandList = houseService.getHouseAOByKind("二手房");
@@ -62,7 +65,7 @@ public class FrontIndexController {
         mav.addObject("rentHouseList", rentHouseList);
 
 //        装修案例展示
-        List<DecoInstance> decoInstanceList = decoInstanceService.getAllDecoIntance();
+        List<DecoInstanceAO> decoInstanceList = decoInstanceService.getAllDecoIntanceAO();
         mav.addObject("decoInstanceList", decoInstanceList);
 
 

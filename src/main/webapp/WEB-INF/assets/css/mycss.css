@@ -10,6 +10,13 @@
 .img-box{
     margin-top: 10px;
 }
+
+.zoom{
+    widmy_layoutth:100%;
+    height: 260px;
+    width: 360px;
+}
+
 .my-logo{
     margin-top: 10px;
     margin-left: 30px;
@@ -244,7 +251,6 @@
     margin-left: 15%;
 }
 .my-nav-group{
-
     background-color: white;
 }
 .my-icon{
