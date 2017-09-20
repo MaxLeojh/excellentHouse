@@ -5,8 +5,10 @@ import edu.ynu.software.Rocket.excellentHouse.eneityAO.DecoInstanceAO;
 import edu.ynu.software.Rocket.excellentHouse.eneityAO.DesignerAO;
 import edu.ynu.software.Rocket.excellentHouse.entity.DecoInstance;
 import edu.ynu.software.Rocket.excellentHouse.entity.DecoInstanceExample;
+import edu.ynu.software.Rocket.excellentHouse.entity.Picture;
 import edu.ynu.software.Rocket.excellentHouse.service.DecoInstanceService;
 import edu.ynu.software.Rocket.excellentHouse.service.DesignerService;
+import edu.ynu.software.Rocket.excellentHouse.service.PictureService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -21,6 +23,9 @@ public class DecoInstanceServiceImpl implements DecoInstanceService {
 
     @Autowired
     DecoInstanceMapper decoInstanceMapper;
+
+    @Autowired
+    PictureService pictureService;
 
     @Autowired
     DesignerService designerService;
@@ -52,6 +57,25 @@ public class DecoInstanceServiceImpl implements DecoInstanceService {
         return decoInstanceAOList;
     }
 
+    public List<DecoInstanceAO> getDecoInstanceList(Integer limit, Integer offset) {
+        List<DecoInstanceAO> decoInstanceAOList = new ArrayList<DecoInstanceAO>();
+        List<DecoInstance> decoInstanceList = new ArrayList<DecoInstance>();
+
+        DecoInstanceExample example = new DecoInstanceExample();
+        example.setLimit(limit);
+        example.setOffset(offset);
+        decoInstanceList = decoInstanceMapper.selectByExample(example);
+
+        //填充AO
+        for (DecoInstance instance : decoInstanceList) {
+            DecoInstanceAO decoInstanceAO = new DecoInstanceAO();
+            decoInstanceAO = selectById(instance.getId());
+            decoInstanceAOList.add(decoInstanceAO);
+        }
+
+        return decoInstanceAOList;
+    }
+
     public DecoInstanceAO selectByDecoInstanceId(Integer decoInstanceId) {
         DecoInstanceAO decoInstanceAO = new DecoInstanceAO();
         DecoInstance decoInstance = new DecoInstance();
@@ -62,6 +86,27 @@ public class DecoInstanceServiceImpl implements DecoInstanceService {
         DesignerAO designerAO = new DesignerAO();
         designerAO = designerService.selectById(decoInstance.getDesignerId());
         decoInstanceAO.setDesignerAO(designerAO);
+
+        return decoInstanceAO;
+    }
+
+    public DecoInstanceAO selectById(Integer decoInstanceId) {
+        DecoInstanceAO decoInstanceAO = new DecoInstanceAO();
+        DecoInstance decoInstance = new DecoInstance();
+
+        //实体
+        decoInstance = decoInstanceMapper.selectByPrimaryKey(decoInstanceId);
+        decoInstanceAO.setEntity(decoInstance);
+
+        //设计师
+        DesignerAO designerAO = new DesignerAO();
+        designerAO = designerService.selectById(decoInstance.getDesignerId());
+        decoInstanceAO.setDesignerAO(designerAO);
+
+        //图片
+        List<Picture> pictureList = new ArrayList<Picture>();
+        pictureList = pictureService.selectByEntityIdAndType(decoInstanceId, "装修案例");
+        decoInstanceAO.setPictureList(pictureList);
 
         return decoInstanceAO;
     }

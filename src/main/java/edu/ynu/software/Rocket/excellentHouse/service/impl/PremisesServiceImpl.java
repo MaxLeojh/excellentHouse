@@ -19,7 +19,6 @@ import java.util.List;
  */
 @Service
 public class PremisesServiceImpl implements PremisesService{
-
     @Autowired
     PremisesMapper premisesMapper;
 
@@ -59,6 +58,25 @@ public class PremisesServiceImpl implements PremisesService{
         List<Premises> premisesList = new ArrayList<Premises>();
 
         PremisesExample example = new PremisesExample();
+        premisesList = premisesMapper.selectByExample(example);
+
+//        填充PremisesAO
+        for (Premises premises : premisesList) {
+            PremisesAO premisesAO = new PremisesAO();
+            premisesAO = selectByPremisesId(premises.getId());
+            premisesAOList.add(premisesAO);
+        }
+
+        return premisesAOList;
+    }
+
+    public List<PremisesAO> getPremisesAOList(Integer limit, Integer offset) {
+        List<PremisesAO> premisesAOList = new ArrayList<PremisesAO>();
+        List<Premises> premisesList = new ArrayList<Premises>();
+
+        PremisesExample example = new PremisesExample();
+        example.setLimit(limit);
+        example.setOffset(offset);
         premisesList = premisesMapper.selectByExample(example);
 
 //        填充PremisesAO

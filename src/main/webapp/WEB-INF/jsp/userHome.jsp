@@ -311,6 +311,7 @@
     }
 </script>
 <!--修改头像end-->
+<script src="../js/user.js"></script>
 </body>
 </html>
 

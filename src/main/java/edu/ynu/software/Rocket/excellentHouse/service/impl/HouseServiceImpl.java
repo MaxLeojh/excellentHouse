@@ -83,6 +83,25 @@ public class HouseServiceImpl implements HouseService{
         return houseAOList;
     }
 
+    public List<HouseAO> getHouseAOListByKind(String kind, Integer limit, Integer offset) {
+        List<HouseAO> houseAOList = new ArrayList<HouseAO>();
+        List<House> houseList = new ArrayList<House>();
+
+        HouseExample example = new HouseExample();
+        example.createCriteria().andKindEqualTo(kind);
+        example.setLimit(limit);
+        example.setOffset(offset);
+        houseList = houseMapper.selectByExample(example);
+
+        for (House house : houseList) {
+            HouseAO houseAO = new HouseAO();
+            houseAO = selectById(house.getId());
+            houseAOList.add(houseAO);
+        }
+
+        return houseAOList;
+    }
+
     public HouseAO selectById(Integer houseId) {
         HouseAO houseAO = new HouseAO();
         House house = new House();
@@ -91,7 +110,7 @@ public class HouseServiceImpl implements HouseService{
         house = houseMapper.selectByPrimaryKey(houseId);
         houseAO.setEntity(house);
 
-        //用户
+        //用户(拥有者)
         UserAO userAO = new UserAO();
         userAO = userService.selectById(house.getUserId());
         houseAO.setUserAO(userAO);

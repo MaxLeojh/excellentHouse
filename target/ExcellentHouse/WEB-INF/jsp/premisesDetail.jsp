@@ -875,6 +875,7 @@
 
 <script src="../js/collection.js"></script>
 <script src="../js/comment.js"></script>
+<script src="../js/user.js"></script>
 <script>
 //    获得焦距变大
     $(function() {

@@ -13,6 +13,8 @@ public interface PremisesService {
 
     List<PremisesAO> getAllPremisesAO();
 
+    List<PremisesAO> getPremisesAOList(Integer limit, Integer offset);
+
     Premises selectById(Integer premisesId);
 
     PremisesAO selectByPremisesId(Integer premisesId);

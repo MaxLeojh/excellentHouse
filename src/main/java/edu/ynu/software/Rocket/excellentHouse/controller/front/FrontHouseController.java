@@ -24,6 +24,9 @@ public class FrontHouseController {
     @Autowired
     HouseService houseService;
 
+    /**
+     * House列表
+     */
     @RequestMapping(value = "list", method = RequestMethod.GET)
     public ModelAndView list(HttpServletRequest request, HttpSession session, String kind) {
         ModelAndView mav = new ModelAndView();
@@ -37,6 +40,9 @@ public class FrontHouseController {
         return mav;
     }
 
+    /**
+     * House详情
+     */
     @RequestMapping(value = "detail", method = RequestMethod.GET)
     public ModelAndView detail(HttpServletRequest request, HttpSession session, Integer houseId) {
         ModelAndView mav = new ModelAndView();

@@ -38,6 +38,9 @@ public class FrontPremisesController {
     @Autowired
     CollectionService collectionService;
 
+    /**
+     * 楼盘列表
+     */
     @RequestMapping(value = "list", method = RequestMethod.GET)
     public ModelAndView list(HttpServletRequest request, HttpSession session) {
         ModelAndView mav = new ModelAndView();
@@ -50,6 +53,9 @@ public class FrontPremisesController {
         return mav;
     }
 
+    /**
+     * 楼盘详情
+     */
     @RequestMapping(value = "detail", method = RequestMethod.GET)
     public ModelAndView index(HttpServletRequest request, HttpSession session, Integer premisesId){
         ModelAndView mav = new ModelAndView();

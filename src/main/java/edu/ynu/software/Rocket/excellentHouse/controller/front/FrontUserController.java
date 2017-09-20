@@ -49,6 +49,9 @@ public class FrontUserController {
 
     String verCode = "2333";
 
+    /**
+     * 跳转到注册页
+     */
     @RequestMapping("/toRegister")
     @ResponseBody
     public ModelAndView toRegister(){
@@ -66,6 +69,9 @@ public class FrontUserController {
     4.verification code
      */
 
+    /**
+     * 注册
+     */
     @ResponseBody
     @RequestMapping(value = "/register", method = RequestMethod.POST)
     public void register(String userName, String Email, String passWord, String verificationCode, HttpSession session, HttpServletResponse response) throws Exception {
@@ -102,6 +108,9 @@ public class FrontUserController {
 
     }
 
+    /**
+     * 邮箱确认
+     */
     @ResponseBody
     @RequestMapping(value = "/emailConfirm")
     public void emailConfirm(@RequestParam("code") String code){
@@ -112,6 +121,9 @@ public class FrontUserController {
         userService.update(user);
     }
 
+    /**
+     * 跳转到登录页
+     */
     @ResponseBody
     @RequestMapping("/toLogin")
     public ModelAndView toLogin(){
@@ -120,6 +132,9 @@ public class FrontUserController {
         return modelAndView;
     }
 
+    /**
+     * 登陆
+     */
     @ResponseBody
     @RequestMapping(value = "/login", method = RequestMethod.POST)
     public void login(String email, String password, HttpSession session, HttpServletResponse response) throws IOException {
@@ -147,6 +162,9 @@ public class FrontUserController {
         response.getWriter().print(jsonObject.toString());
     }
 
+    /**
+     * 注销
+     */
     @ResponseBody
     @RequestMapping(value = "/logout", method = RequestMethod.POST)
     public void logout(HttpSession session, HttpServletResponse response) throws IOException{
@@ -166,6 +184,9 @@ public class FrontUserController {
         }
     }
 
+    /**
+     * 个人主页
+     */
     @ResponseBody
     @RequestMapping(value = "/home", method = RequestMethod.GET)
     public ModelAndView userHome(HttpServletRequest request, HttpSession session) {
@@ -175,6 +196,9 @@ public class FrontUserController {
         return mav;
     }
 
+    /**
+     * 收藏的楼盘
+     */
     @ResponseBody
     @RequestMapping(value = "/collectedPremises", method = RequestMethod.GET)
     public ModelAndView userCollectedPremises(HttpServletRequest request, HttpSession session) {
@@ -198,6 +222,9 @@ public class FrontUserController {
         return mav;
     }
 
+    /**
+     * 收藏的House
+     */
     @ResponseBody
     @RequestMapping(value = "/collectedHouse", method = RequestMethod.GET)
     public ModelAndView collectedHouse(HttpServletRequest request, HttpSession session) {
@@ -207,6 +234,9 @@ public class FrontUserController {
         return mav;
     }
 
+    /**
+     * 收藏的装修案例
+     */
     @ResponseBody
     @RequestMapping(value = "/collectedDecoInstance", method = RequestMethod.GET)
     public ModelAndView collectedDecoInstance(HttpServletRequest request, HttpSession session) {
@@ -216,6 +246,9 @@ public class FrontUserController {
         return mav;
     }
 
+    /**
+     * 个人出售或出租的House
+     */
     @ResponseBody
     @RequestMapping(value = "/house", method = RequestMethod.GET)
     public ModelAndView house(HttpServletRequest request, HttpSession session) {
@@ -225,6 +258,9 @@ public class FrontUserController {
         return mav;
     }
 
+    /**
+     * 详情页上的收藏
+     */
     @ResponseBody
     @RequestMapping(value = "/collect", method = RequestMethod.POST)
     public void collect(HttpServletRequest request, HttpServletResponse response, HttpSession session) throws IOException,SQLException {
@@ -252,6 +288,9 @@ public class FrontUserController {
         }
     }
 
+    /**
+     * 删除收藏
+     */
     @ResponseBody
     @RequestMapping(value = "/deleteCollection", method = RequestMethod.POST)
     public void deleteCollection(HttpServletRequest request, HttpServletResponse response, HttpSession session) throws IOException,SQLException {
@@ -277,12 +316,18 @@ public class FrontUserController {
         }
     }
 
+    /**
+     * 发布House出售或出租
+     */
     @ResponseBody
     @RequestMapping(value = "newHouse", method = RequestMethod.POST)
     public void newHouse(HttpServletRequest request, HttpServletResponse response, HttpSession session, String type) {
 
     }
 
+    /**
+     * 更新头像
+     */
     @ResponseBody
     @RequestMapping(value = "updatePic", method = RequestMethod.POST)
     public void updatePic(HttpServletRequest request, HttpServletResponse response, HttpSession session) throws IOException{
