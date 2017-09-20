@@ -237,13 +237,14 @@
                 <%--论坛--%>
                 <section class="property-nearby-places common">
                     <h4 class="entry-title">论坛</h4>
-                    <form class="row" role="form">
+                    <div class="row">
                         <div class="form-group">
                             <label>输入你的评论：</label>
                             <textarea class="form-control my-textarea" maxlength="200" rows="5"></textarea>
                             <button class="btn submit-comment">提交</button>
+
                         </div>
-                    </form>
+                    </div>
 
                     <div class="">
                             <div class="row">
@@ -269,7 +270,7 @@
                                    </span>
                                     <div  id="comment-son" class="collapse" >
                                         <textarea  class="form-control comment-textarea col-md-7" maxlength="200" rows="5" ></textarea>
-                                        <button class="btn submit-comment">提交</button>
+                                        <button class="btn ">提交</button>
                                     </div>
                                 </div>
 

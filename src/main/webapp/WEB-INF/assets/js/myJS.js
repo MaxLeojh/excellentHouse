@@ -70,3 +70,4 @@ function check_mobile(str)
         return false;
     }
 }
+
