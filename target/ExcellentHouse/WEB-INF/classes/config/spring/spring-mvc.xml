@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context.xsd
+       http://www.springframework.org/schema/mvc
+       http://www.springframework.org/schema/mvc/spring-mvc.xsd">
+
+    <description>Spring-MVC config</description>
+
+    <!-- auto scan controller-->
+    <context:component-scan base-package="edu.ynu.software.Rocket.excellentHouse.controller"/>
+
+    <!--避免IE执行AJAX时，返回JSON出现下载文件 -->
+    <bean id="mappingJacksonHttpMessageConverter"
+          class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
+        <property name="supportedMediaTypes">
+            <list>
+                <value>text/html;charset=UTF-8</value>
+            </list>
+        </property>
+    </bean>
+
+    <!-- 启动SpringMVC的注解功能，完成请求和注解POJO的映射 -->
+    <bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter">
+        <property name="messageConverters">
+            <list>
+                <ref bean="mappingJacksonHttpMessageConverter"/> <!-- JSON转换器 -->
+            </list>
+        </property>
+    </bean>
+
+    <!-- 打开注解 -->
+    <mvc:annotation-driven/>
+
+    <!-- 对静态资源文件的访问 -->
+    <!--<mvc:resources location="/WEB-INF/jsp/assets/" mapping="/assets/**"/>-->
+    <mvc:resources location="/WEB-INF/images/" mapping="/images/**"/>
+    <mvc:resources location="/WEB-INF/css/" mapping="/css/**"/>
+    <mvc:resources location="/WEB-INF/fonts/" mapping="/fonts/**"/>
+    <mvc:resources location="/WEB-INF/js/" mapping="/js/**"/>
+    <mvc:resources location="/WEB-INF/videos/" mapping="/videos/**"/>
+    <mvc:resources location="/WEB-INF/video/" mapping="/video/**"/>
+    <mvc:resources location="/WEB-INF/assets/" mapping="/assets/**"/>
+    <mvc:resources location="/WEB-INF/plugins/" mapping="/plugins/**"/>
+    <mvc:resources location="/WEB-INF/vendors/" mapping="/vendors/**"/>
+    <mvc:resources location="/WEB-INF/production/" mapping="/production/**"/>
+    <mvc:resources location="/WEB-INF/build/" mapping="/build/**"/>
+
+
+
+    <!-- 有关首页的 -->
+    <mvc:default-servlet-handler/>
+
+    <mvc:annotation-driven />
+
+    <!-- 当请求应用程序首页时，将执行/hello请求，还可以设定成redirect -->
+    <mvc:view-controller path="/" view-name="forward:/index/show" />
+
+    <!-- 定义跳转的文件的前后缀 ，视图模式配置 -->
+    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <!--<property name="prefix" value="/WEB-INF/ftl/"/>-->
+        <property name="prefix" value="/WEB-INF/jsp/"/>
+        <!--<property name="prefix" value="/WEB-INF/HTML/"/>-->
+        <!--<property name="suffix" value=".ftl"/>-->
+        <property name="suffix" value=".jsp"/>
+        <!--<property name="suffix" value=".html"/>-->
+    </bean>
+
+    <!-- 文件上传配置 -->
+    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+        <!-- 默认编码 -->
+        <property name="defaultEncoding" value="UTF-8"/>
+        <!-- 上传文件大小限制为31M，31*1024*1024 -->
+        <property name="maxUploadSize" value="32505856"/>
+        <!-- 内存中的最大值 -->
+        <property name="maxInMemorySize" value="4096"/>
+    </bean>
+
+</beans>

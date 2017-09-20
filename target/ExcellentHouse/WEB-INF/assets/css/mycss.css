@@ -1,0 +1,259 @@
+.avatar{
+  widmy_layoutth: 100%;
+    height: 100%;
+}
+
+.zoom{
+    widmy_layoutth:100%;
+    height: 260px;
+    width: 360px;
+}
+
+.my-logo{
+    margin-top: 10px;
+    margin-left: 30px;
+}
+.content{
+    position: absolute;
+    margin-top: 15px;
+    background-color: #62b2f4;
+    width: 100%;
+    border: 1px solid #ddd;
+    background-image: url(../images/my/banner.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-position-y: 10px;
+}
+.loginDiv
+{
+    background-color: #fff;
+    margin-top: 67px;
+    margin-bottom: 75px;
+    width:373px;
+    height: 458px;
+    margin-right: 50px;
+    float: right;
+
+}
+.am-g {
+    margin: 0 auto;
+    width: 100%
+}
+.avatar_div{
+    width: 70px;
+    height: 40px;
+}
+.mymenu{
+    margin-left: -50px;
+   border:none;
+    width: 2px;
+    min-width: 1px;
+}
+.my_layout{
+    padding-top: 0px;
+ margin-bottom: 0px;
+    padding-bottom: 0px;
+}
+.my_button{
+    font-size: 16px;
+    font-weight: 600;
+    padding: 16.5px 30px;
+    border-radius: 0;
+    border: none;
+    margin-top: -60px;
+    color: #333;
+    background: #fff;
+    position: absolute;
+    outline: none;
+}
+.nav > li:hover .dropdown-menu {
+    display: block;
+    animation-duration: 4s;
+}
+#my_nar > div.collapse.navbar-collapse > ul > li> a:hover{
+    color: #2a67cd;
+}
+
+#my_nar{
+    text-transform: uppercase;
+    background: none;
+    border: none;
+    font-family: 'Montserrat', sans-serif;
+    margin-top: 5px;
+}
+.my_active{
+   color: #5bc0de;
+}
+.login-info{
+    padding-left: 30px;padding-right: 30px;
+    margin-top: 30px;
+}
+.input-comment{
+    margin-left:20px;
+  margin-top:15px;
+}
+.comment-son{
+    position: relative;
+    margin-top: 10px;
+    margin-left: 20px;
+}
+.username{
+    margin-top: 50px;
+}
+.head-username{
+    margin-top: 5%;
+}
+.comment{
+    margin-top: 2%;
+}
+.comment-parent-group{
+    display: none;
+}
+.password{
+    margin-top: 30px;
+}
+.login-btn{
+   margin-top: 50px;
+   width: 100%;
+}
+.login-bottom{
+ width: 100%;
+    margin-top: 15px;
+    font-size: 12px;
+    color: #333333;
+}
+.register{
+    float: right;
+}
+.login-all{
+    width:1200px;
+    margin:0 auto;
+    position: relative;
+    z-index: 999;
+}
+.not-login{
+    margin-top: 20px;
+    margin-left: 25%;
+}
+.house-name{
+    overflow : hidden;
+    text-overflow: ellipsis;
+    -moz-text-overflow: ellipsis;
+    white-space: nowrap;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    height:15px;
+    width: 200px;
+
+}
+.house-name :hover{
+    overflow: visible;
+
+}
+#collect{
+    background-color: white;
+    border: none;
+    outline:none;
+}
+#hasCollect{
+    background-color: white;
+    border: none;
+    outline:none;
+}
+.my-slide{
+
+    height:300px;
+    width: 100%;
+    margin:  auto
+}
+.slide-img{
+    margin: auto;
+}
+.logout{
+    color: red;
+    margin-left: 20px;
+}
+/*我的界面*/
+.my-avatar{
+    width: 100px;
+    height: 100px;
+    margin-top: 5%;
+    border-radius:50%
+}
+.up-img{
+    display: block;
+    margin-top: 10px;
+    margin-left:-2%;
+
+}
+.my-textarea{
+    resize: none;
+}
+.comment-textarea{
+    resize: none;
+    margin-left: 12%;
+    width: 88%;
+    position: relative;
+}
+.comment-parent{
+    resize: none;
+    margin-top: 10px;
+}
+.submit-comment{
+    float: right;
+    color: white;
+    background-color: #2a67cd;
+    margin-top: 10px;
+    margin-bottom: 10px;
+   position: relative;
+}
+.input-name{
+    margin-top: 3px;
+}
+.input-row{
+    margin-top: 5px;
+}
+.margin-2{
+    margin-top:2%;
+}
+.input-date{
+    margin-left: 12px;
+}
+.save-btn{
+    width: 15%;
+    margin-left:37%;
+
+}
+.delete{
+    float: right;
+}
+.my-price{
+    color: red;
+    font-size: 20px;
+}
+.my-info{
+    color: #6c98e2;
+}
+.my-img{
+    margin-top:7%;
+}
+.my-nav{
+    width: 70%;
+    margin-left: 15%;
+}
+.my-nav-group{
+    background-color: white;
+}
+.my-icon{
+    font-size: 100%;
+    margin-left: 50px;
+    transition: all 0.6s;
+}
+.my-icon:hover{
+    animation-name:flip;
+    color: #6c98e2;
+}
+.my-add-pic{
+    font-size: 100px;
+}
