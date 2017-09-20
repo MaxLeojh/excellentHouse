@@ -22,32 +22,30 @@ function xmTanUploadImg(obj) {
         reader.onload = function (e) {
             console.log("成功读取....");
 
-            var imgstr='<img style="width:100px;height:100px;" src="'+e.target.result+'"/>';
+            var imgstr='<img class="upload_img img-rounded" data-action="zoom" src="'+e.target.result+'"/>';
             var oimgbox=document.getElementById("imgboxid");
             var ndiv=document.createElement("div");
 
             var clear=document.createElement("div");
-            var  cssStr=" position: absolute; margin-left: 82px; margin-top:-95px;"
+            // var  cssStr=" position: absolute; margin-left: 130px; margin-top:-147px;"
 
 
             ndiv.innerHTML=imgstr;
             ndiv.className="img-div";
-            ndiv.className="col-lg-4";
+            // ndiv.classList.add("col-lg-2");
             oimgbox.appendChild(ndiv);
 
 
             clear.className="icon-cha";
             clear.classList.add("iconfont");
-            clear.classList.add("remove")
-            clear.style.cssText = cssStr;
+            clear.classList.add("remove");
+            // clear.style.cssText = cssStr;
+            clear.onclick= function(){
+                         var button = $(this);
+               button.parent().remove();
+            }
             ndiv.appendChild(clear);
         }
         reader.readAsDataURL(file);
     }
-    $(function() {
-        $(".remove").click(function(){
-            var button = $(this);
-            button.parent().remove();
-        });
-    });
 }
