@@ -1,0 +1,122 @@
+body
+{
+	background-color: #F8F8F8;
+	font-family: "微软雅黑";
+
+}
+
+.content{
+	background-color: #fff;
+	margin: 0px auto;
+	overflow: auto;
+	width: 1000px;
+	border: 1px solid #ddd;
+	position: relative;
+}
+.mycontent{
+
+	border: 1px solid #ddd;
+    background: white;
+	width: 1000px;
+}
+.am-tabs-nav{
+	font-weight: bold;
+}
+.am-form-field{
+background-color:#fff	
+}
+.logo
+{
+	margin: 0 auto;
+	width: 1000px;
+}
+input {
+	height: 62px;
+}
+
+.logo{
+	margin-top: 25px;
+}
+.head-riht{
+width: 999px;
+	margin: 0 auto;
+	font-size: 14px;
+}
+.login{
+float: right;color: #333333;
+}
+.setting{
+	margin-top: 59px;
+	margin-left: -20px;
+}
+.info1{
+	max-width: 95px; margin-left: 100px;
+}
+.info2{
+	vertical-align: middle;margin-top:-4px;
+}
+.info3{
+	max-width: 95px;margin-right: 100px;
+}
+.setting-username{
+margin-top: 37px;
+
+}
+.get-info{
+	width: 190px;    float: left;height: 62px;
+}
+.mycheckbox{
+	margin-left: 22%;
+	margin-top: 10px;
+}
+.agreebtn{
+	width: 100%;padding: 20px;border: 1px rgba(187, 187, 187, 0.5) solid;
+}
+.title{
+	width: 100%;
+	margin: auto;
+	text-align:center;
+	margin-top: 30px;
+}
+.my-input{
+	width: 40%;
+	margin: auto;
+	margin-top: 30px;
+	position: relative;
+}
+.regedit-btn{
+	width: 40%;
+	margin-left: 30%;
+	margin-top: 30px;
+	margin-bottom: 30px;
+}
+.mycheck{
+	position: absolute;
+    color: green;
+	margin-top: 15px;
+	margin-left: 10px;
+	display: none;
+}
+.my-error{
+	position: absolute;
+	color: red;
+	margin-top: 15px;
+	margin-left: 10px;
+	width: 200px;
+	display: none;
+}
+.regedit-error{
+	position: absolute;
+	color: red;
+	margin-top: -45px;
+	margin-left: 520px;
+	width: 200px;
+	display: none;
+}
+.regedit-check{
+	position: absolute;
+	color: green;
+	margin-top: -45px;
+	margin-left: 520px;
+	display: none;
+}

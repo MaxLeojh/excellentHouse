@@ -17,7 +17,7 @@ public class PremisesAO {
 
     private List<Picture> pictureList;
 
-    private List<Post> postList;
+    private List<PostAO> postAOList;
 
     public Premises getEntity() {
         return entity;
@@ -51,11 +51,11 @@ public class PremisesAO {
         this.pictureList = pictureList;
     }
 
-    public List<Post> getPostList() {
-        return postList;
+    public List<PostAO> getPostAOList() {
+        return postAOList;
     }
 
-    public void setPostList(List<Post> postList) {
-        this.postList = postList;
+    public void setPostAOList(List<PostAO> postAOList) {
+        this.postAOList = postAOList;
     }
 }
