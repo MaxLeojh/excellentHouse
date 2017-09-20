@@ -57,7 +57,7 @@
     <!--[if lt IE 9]>
     <script src="../assets/js/respond.min.js"></script>
     <![endif]-->
-
+    <script src="../assets/js/uploadPicture.js"></script>
 </head>
 <body>
 <jsp:include page="frontHead.jsp"/>
@@ -99,7 +99,10 @@
                 <div class="col-md-7 animate-box " data-animate-effect="fadeInLeft">
                     <h2 class="">租房
                         <small>说明</small>
+                        <button class="btn my-detete-btn">编辑</button>
+                        <button class="btn my-detete-btn">删除</button>
                     </h2>
+
                     <p>价格：<strong class="my-price">￥40000元
                         <small>/m²</small>
                     </strong></p>
@@ -129,10 +132,14 @@
                             <div class="col-md-9">
                                 <div class="fh5co-feature animate-box " data-animate-effect="fadeInLeft">
                                     <div class="row">
-                                        <div class="col-lg-offset-1 col-lg-4">
-                                            <span title="添加" class="my-add-pic iconfont icon-jiahao"></span>
-                                        </div>
+                                               <div class="row">
+                                                   <input class="my-upload-btn " type="file" id="xdaTanFileImg"  multiple="multiple"  name="fileAttach" onchange="xmTanUploadImg(this)"/>
+                                                   <div class="img-box" id="imgboxid">
 
+                                                   </div>
+
+                                               </div>
+                                            <%--<span title="添加" class="my-add-pic iconfont icon-jiahao"></span>--%>
                                         <div class="col-lg-7">
                                             <div class="row input-row" >
                                                 <span class="col-lg-5 input-name">小区名称：</span>

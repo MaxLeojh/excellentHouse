@@ -20,7 +20,7 @@
                 <c:choose>
                     <c:when test="${user.entity.userId > 0}">
                         <div class="contact-in-header clearfix">
-                            <div class="col-md-6 col-sm-6 col-xs-6 avatar_div">
+                            <div class="col-md-4 col-sm-6 col-xs-6 avatar_div">
                                 <c:choose>
                                     <c:when test="${user.pictureList.size() == 0}">
                                         <a href="/user/home"><img class=" avatar" src="../assets/images/avatar.png"></a>
