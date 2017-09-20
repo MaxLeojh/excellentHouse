@@ -4,11 +4,9 @@ import com.alibaba.fastjson.JSONObject;
 import edu.ynu.software.Rocket.excellentHouse.eneityAO.PremisesAO;
 import edu.ynu.software.Rocket.excellentHouse.eneityAO.UserAO;
 import edu.ynu.software.Rocket.excellentHouse.entity.Collection;
+import edu.ynu.software.Rocket.excellentHouse.entity.Picture;
 import edu.ynu.software.Rocket.excellentHouse.entity.User;
-import edu.ynu.software.Rocket.excellentHouse.service.CollectionService;
-import edu.ynu.software.Rocket.excellentHouse.service.EmailService;
-import edu.ynu.software.Rocket.excellentHouse.service.PremisesService;
-import edu.ynu.software.Rocket.excellentHouse.service.UserService;
+import edu.ynu.software.Rocket.excellentHouse.service.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,12 +15,12 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
+import sun.misc.BASE64Decoder;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import java.io.File;
-import java.io.IOException;
+import java.io.*;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
@@ -46,6 +44,9 @@ public class FrontUserController {
 
     @Autowired
     PremisesService premisesService;
+
+    @Autowired
+    PictureService pictureService;
 
     String verCode = "2333";
 
@@ -286,8 +287,18 @@ public class FrontUserController {
 
     @ResponseBody
     @RequestMapping(value = "updatePic", method = RequestMethod.POST)
-    public void updatePic(HttpServletRequest request, HttpServletResponse response, HttpSession session) throws IOException{
+    public void updatePic(String base64code,HttpServletRequest request, HttpServletResponse response, HttpSession session) throws IOException{
         JSONObject jsonObject = new JSONObject();
+        System.out.println(base64code);
+        Picture picture = new Picture();
+        UserAO userAO = (UserAO)session.getAttribute("userAO");
+        picture.setEntityId(userAO.getEntity().getUserId());
+        picture.setEntityType("用户");
+        picture.setIsVaild(true);
+        pictureService.insertPic(picture);
+
+        boolean flag = base64ToImg(base64code,"/home/maxleo/Data/pic/MyPic.jpg");
+        System.out.println(flag);
 
 //        File file2 = request.;
 
@@ -295,5 +306,21 @@ public class FrontUserController {
 
         jsonObject.put("result", "success");
         response.getWriter().print(jsonObject.toString());
+    }
+
+    public static boolean base64ToImg(String imgStr, String path) throws IOException {
+        if (imgStr == null) return false;
+        BASE64Decoder decoder = new BASE64Decoder();
+        byte[] img = decoder.decodeBuffer(imgStr);
+        for (int i = 0; i < img.length; i++) {
+            if (img[i] < 0){
+                img[i] += 256;
+            }
+        }
+        OutputStream out = new FileOutputStream(path);
+        out.write(img);
+        out.flush();
+        out.close();
+        return true;
     }
 }
