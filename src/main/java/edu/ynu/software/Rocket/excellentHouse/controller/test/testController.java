@@ -47,4 +47,11 @@ public class testController {
 
         response.getWriter().print(jsonObject.toString());
     }
+
+    @RequestMapping(value = "/newHousePage")
+    public ModelAndView newHousePage(){
+        ModelAndView mav = new ModelAndView("releaseHouse");
+        return mav;
+    }
+
 }

@@ -53,7 +53,7 @@
     <!--头部-->
     <header class="section-header text-center">
         <div class="container">
-            <h2 class="pull-left">共有${premisesAOList.size()}个选择</h2>
+            <h2 class="pull-left">共有${totalNum}个楼盘，当前处于${page}/${totalPage}页</h2>
             <div class="pull-right">
                 <div class="property-sorting pull-left">
                     <label for="property-sort-dropdown"> 排序 </label>
@@ -109,12 +109,34 @@
             </c:forEach>
         </div>
         <ul id="pagination" class="text-center clearfix">
-            <li class="disabled"><a href="#">上一页</a></li>
-            <li><a href="#">1</a></li>
-            <li><a href="#">3</a></li>
-            <li><a href="#">4</a></li>
-            <li><a href="#">下一页</a></li>
+            <c:choose>
+                <c:when test="${page == 1}">
+                    <li class="disabled"><a href="#">上一页</a></li>
+                </c:when>
+                <c:otherwise>
+                    <li><a href="/frontPremises/list?page=${page - 1}">上一页</a></li>
+                </c:otherwise>
+            </c:choose>
 
+            <c:forEach items="${pageList}" var="p">
+                <c:choose>
+                    <c:when test="${p == page}">
+                        <li class="disabled"><a href="/frontPremises/list?page=${p}">${p}</a></li>
+                    </c:when>
+                    <c:otherwise>
+                        <li><a href="/frontPremises/list?page=${p}">${p}</a></li>
+                    </c:otherwise>
+                </c:choose>
+            </c:forEach>
+
+            <c:choose>
+                <c:when test="${page == totalPage}">
+                    <li class="disabled"><a href="#">下一页</a></li>
+                </c:when>
+                <c:otherwise>
+                    <li><a href="/frontPremises/list?page=${page + 1}">下一页</a></li>
+                </c:otherwise>
+            </c:choose>
         </ul>
     </div>
 </section>
