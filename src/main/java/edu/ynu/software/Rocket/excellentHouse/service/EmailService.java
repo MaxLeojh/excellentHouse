@@ -8,6 +8,6 @@ import java.security.GeneralSecurityException;
  * Created by maxleo on 17-9-12.
  */
 public interface EmailService {
-    public void snedVerMail(String EmailAddr, String VerCode, String userName) throws Exception;
+    void snedVerMail(String EmailAddr, String VerCode, String userName) throws Exception;
 
 }

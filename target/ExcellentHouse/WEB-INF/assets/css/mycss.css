@@ -119,6 +119,11 @@
     width: 80%;
     word-wrap:break-word;
     margin-top: 2%;
+    border-bottom: 1px solid #ddd;
+}
+.house-info{
+
+    margin-top: 5%;
 }
 .comment-parent-group{
     display: none;
@@ -222,8 +227,22 @@
     margin-bottom: 10px;
    position: relative;
 }
+.input-sex{
+    disabled:true;
+}
 .input-name{
     margin-top: 3px;
+}
+.input-info{
+    background-color:white;
+    border: none;
+}
+.input-emil{
+    background-color:white;
+    border: none;
+}
+.my-panel{
+    padding:20px 0px 20px 0px;
 }
 .input-row{
     margin-top: 5px;
@@ -252,6 +271,7 @@
 }
 .my-img{
     margin-top:7%;
+    margin-bottom:7%;
 }
 .my-nav{
     width: 70%;
@@ -273,6 +293,8 @@
     font-size: 100px;
 }
 .my-detete-btn{
+    outline:none;
+    color: black;
     background-color: white;
     border: none;
     float: right;

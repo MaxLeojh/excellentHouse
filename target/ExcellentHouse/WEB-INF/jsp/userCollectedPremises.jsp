@@ -55,6 +55,7 @@
 </head>
 <body>
 <jsp:include page="frontHead.jsp"/>
+<hr>
 <div id="fh5co-page">
     <a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle"><i></i></a>
     <aside  class="my-nav-group "id="fh5co-aside" role="complementary" >

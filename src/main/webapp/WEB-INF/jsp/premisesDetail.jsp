@@ -244,8 +244,8 @@
                                 <c:when test="${post.replyAOList.size() > 0}">
                                     <c:forEach items="${post.replyAOList}" var="reply">
                                         <div class="row comment-son">
-                                            <div class="col-md-5 col-sm-5 avatar_div" style="margin-top: 10%">
-                                                <img class=" avatar" src="${reply.userAO.pictureList.get(0).pictureAddress}">
+                                            <div class="col-md-5 col-sm-5 avatar_div" >
+                                                <img class=" avatar" src="${reply.userAO.pictureList.get(0).pictureAddress}" >
                                             </div>
                                             <span class="comment col-lg-9">
                                                 <c:choose>
@@ -260,6 +260,7 @@
                                                 <strong>${reply.entity.contains}</strong>
                                                 <a class="btn-comment iconfont icon-pinglun"href="#comment-son1${reply.entity.id}" data-toggle="collapse">回复</a>
                                             </span>
+
                                                 <%--<input class="input-comment form-control " type="text" placeholder="评论">--%>
                                             <div id="comment-son1${reply.entity.id}" class="collapse" >
                                                 <textarea id="replyContains"  class="form-control comment-textarea col-md-7" maxlength="200" rows="2" ></textarea>
@@ -581,7 +582,7 @@
                                             </div>
                                             <div>
                                                 <label for="property-max-price">Max Prices</label>
-                                                <select name="max-price" id="property-max-price">
+                                                <select name="max-price" >
                                                     <option value="any" selected="selected">Any</option>
                                                     <option value="5000">$5000</option>
                                                     <option value="10000">$10000</option>
