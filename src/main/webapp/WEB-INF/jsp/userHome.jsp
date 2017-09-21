@@ -1,4 +1,3 @@
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: August
@@ -361,7 +360,6 @@
 //    });
 </script>
 <!--修改头像end-->
-<script src="../js/user.js"></script>
 </body>
 </html>
 
