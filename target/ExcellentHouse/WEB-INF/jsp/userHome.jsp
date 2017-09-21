@@ -295,31 +295,70 @@
                 canvas.id = "mycanvas";
                 //生成base64图片数据
                 var dataUrl = canvas.toDataURL("image/jpeg");
-//                    saveFile(dataUrl,"11.jpeg");
-                var newImg = document.createElement("img");
-                document.getElementById("myAvatar").src=dataUrl
-                newImg.src = dataUrl;
-                imagesAjax(dataUrl)
-            }
-        });
-    })
+                var base64code = dataUrl.split(',')[1];
+                var data = {
+                    "base64code": base64code,
+                    "origan":dataUrl
+                };
 
-    function imagesAjax(src) {
-        var data = {};
-        data.img = src;
-        data.jid = $('#jid').val();
-        $.ajax({
-            url: "/user/updatePic",
-            data: data,
-            type: "POST",
-            dataType: 'json',
-            success: function(re) {
-                if(re.result == 'success') {
-                    $('.user_pic img').attr('src',src );
-                }
+                $.ajax({
+                    url: "/user/updatePic",
+                    data: data,
+                    type: "POST",
+                    dataType: 'json'
+                });
+
+                var newImg = document.createElement("img");
+                document.getElementById("myAvatar").src=dataUrl;
+                newImg.src = dataUrl;
+                imagesAjax(dataUrl);
             }
         });
-    }
+    });
+//
+//    function imagesAjax(src) {
+//        var data = {};
+//        data.img = src;
+//        data.jid = $('#jid').val();
+//        $.ajax({
+//            url: "/user/updatePic",
+//            data: data,
+//            type: "POST",
+//            dataType: 'json',
+//            success: function(re) {
+//                if(re.result == 'success') {
+//                    $('.user_pic img').attr('src',src );
+//                }
+//            }
+//        });
+//    }
+
+//    $(".avatar-save").on("click", function() {
+//        var img_lg = document.getElementById('imageHead');
+//        // 截图小的显示框内的内容
+//        html2canvas(img_lg, {
+//            allowTaint: true,
+//            taintTest: false,
+//            onrendered: function(canvas) {
+//                canvas.id = "mycanvas";
+//                //生成base64图片数据
+//                var origan = canvas.toDataURL("image/png");
+//                saveFile(origan,"1.png");
+//                var base64code = origan.split(',')[1];
+//                var data = {
+//                    "base64code": base64code,
+//                    "origan":origan
+//                };
+//
+//                $.ajax({
+//                    url: "/user/updatePic",
+//                    data: data,
+//                    type: "POST",
+//                    dataType: 'json'
+//                });
+//            }
+//        });
+//    });
 </script>
 <!--修改头像end-->
 <script src="../js/user.js"></script>

@@ -1,4 +1,3 @@
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: August
@@ -105,7 +104,10 @@
                 </c:choose>
                 <span title="添加" class="my-icon animated iconfont icon-jiahao" data-toggle="modal" data-target="#myModal">
 
-                </span>
+                <%--</span>--%>
+                <a title="添加" class="my-icon animated iconfont icon-jiahao" href="insertHouse.jsp" >
+
+                </a>
             </h2>
 
             <c:forEach items="${houseAOList}" var="house">
@@ -135,72 +137,84 @@
 
         </div>
 
-        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
-                            &times;
-                        </button>
-                        <h4 class="modal-title" id="myModalLabel">
-                            添加出租房
-                        </h4>
-                    </div>
-                    <!--模态框内容-->
-                    <div class="modal-body">
-                        <div class="row">
-                            <div class="col-md-9">
-                                <div class="fh5co-feature animate-box " data-animate-effect="fadeInLeft">
-                                    <div class="row">
-                                               <div class="row">
-                                                   <input class="my-upload-btn " type="file" id="xdaTanFileImg"  multiple="multiple"  name="fileAttach" onchange="xmTanUploadImg(this)"/>
-                                                   <div class="img-box" id="imgboxid">
+        <%--<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">--%>
+            <%--<div class="modal-dialog">--%>
+                <%--<div class="modal-content">--%>
+                    <%--<div class="modal-header">--%>
+                        <%--<button type="button" class="close" data-dismiss="modal" aria-hidden="true">--%>
+                            <%--&times;--%>
+                        <%--</button>--%>
+                        <%--<h4 class="modal-title" id="myModalLabel">--%>
+                            <%--添加出租房--%>
+                        <%--</h4>--%>
+                    <%--</div>--%>
+                    <%--<!--模态框内容-->--%>
+                    <%--<div class="modal-body">--%>
+                        <%--<div class="row">--%>
+                            <%--<div class="col-md-10">--%>
+                                <%--<div class="fh5co-feature animate-box " data-animate-effect="fadeInLeft">--%>
+                                    <%--<div class="row">--%>
+                                               <%--<div class="row">--%>
+                                                   <%--<input class="my-upload-btn " type="file" id="xdaTanFileImg"  multiple="multiple"  name="fileAttach" onchange="xmTanUploadImg(this)"/>--%>
+                                                   <%--<div class="img-box" id="imgboxid">--%>
 
-                                                   </div>
+                                                   <%--</div>--%>
 
-                                               </div>
-                                            <%--<span title="添加" class="my-add-pic iconfont icon-jiahao"></span>--%>
-                                        <div class="col-lg-7">
-                                            <div class="row input-row" >
-                                                <span class="col-lg-5 input-name">小区名称：</span>
-                                                <div class="col-lg-7 " >
-                                                    <input type="text" >
-                                                </div>
-                                            </div>
-                                            <div class="row input-row" >
-                                                <span class="col-lg-5 input-name">楼栋号：</span>
-                                                <div class="col-lg-7 " >
-                                                    <input type="text" >
-                                                </div>
-                                            </div>
-                                            <div class="row input-row" >
-                                                <span class="col-lg-5 input-name">面积：</span>
-                                                <div class="col-lg-7 " >
-                                                    <input type="text" >
-                                                </div>
-                                            </div>
-                                            <div class="row input-row" >
-                                                <span class="col-lg-5 input-name">联系方式：</span>
-                                                <div class="col-lg-7 " >
-                                                    <input type="text" >
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">关闭
-                        </button>
-                        <button type="button" class="btn btn-primary">
-                            保存
-                        </button>
-                    </div>
-                </div><!-- /.modal-content -->
-            </div><!-- /.modal -->
-        </div>
+                                               <%--</div>--%>
+                                            <%--&lt;%&ndash;<span title="添加" class="my-add-pic iconfont icon-jiahao"></span>&ndash;%&gt;--%>
+                                        <%--<div class="col-lg-7">--%>
+                                            <%--<div class="row input-row" >--%>
+                                                <%--<span class="col-lg-5 input-name">价格：</span>--%>
+                                                <%--<div class="col-lg-7 " >--%>
+                                                    <%--<input type="text" >--%>
+                                                <%--</div>--%>
+                                            <%--</div>--%>
+                                            <%--<div class="row input-row" >--%>
+                                                <%--<span class="col-lg-5 input-name">类型：</span>--%>
+                                                <%--<div class="col-lg-7 " >--%>
+                                                    <%--<input type="text" >--%>
+                                                <%--</div>--%>
+                                            <%--</div>--%>
+                                            <%--<div class="row input-row" >--%>
+                                                <%--<span class="col-lg-5 input-name">配备：</span>--%>
+                                                <%--<div class="col-lg-7 " >--%>
+                                                    <%--<input type="text" >--%>
+                                                <%--</div>--%>
+                                            <%--</div>--%>
+                                            <%--<div class="row input-row" >--%>
+                                                <%--<span class="col-lg-5 input-name">建筑类别：</span>--%>
+                                                <%--<div class="col-lg-7 " >--%>
+                                                    <%--<input type="text" >--%>
+                                                <%--</div>--%>
+                                            <%--</div>--%>
+                                            <%--<div class="row input-row" >--%>
+                                                <%--<span class="col-lg-5 input-name">售楼地址：</span>--%>
+                                                <%--<div class="col-lg-7 " >--%>
+                                                    <%--<input type="text" >--%>
+                                                <%--</div>--%>
+                                            <%--</div>--%>
+                                            <%--<div class="row input-row" >--%>
+                                                <%--<span class="col-lg-5 input-name">交通：</span>--%>
+                                                <%--<div class="col-lg-7 " >--%>
+                                                    <%--<input type="text" >--%>
+                                                <%--</div>--%>
+                                            <%--</div>--%>
+                                        <%--</div>--%>
+                                    <%--</div>--%>
+                                <%--</div>--%>
+                            <%--</div>--%>
+                        <%--</div>--%>
+                    <%--</div>--%>
+                    <%--<div class="modal-footer">--%>
+                        <%--<button type="button" class="btn btn-default" data-dismiss="modal">关闭--%>
+                        <%--</button>--%>
+                        <%--<button type="button" class="btn btn-primary">--%>
+                            <%--保存--%>
+                        <%--</button>--%>
+                    <%--</div>--%>
+                <%--</div><!-- /.modal-content -->--%>
+            <%--</div><!-- /.modal -->--%>
+        <%--</div>--%>
 
     </div>
 </div>
