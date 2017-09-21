@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3f33fa31-275b-4784-9b79-6ae9d96fca45" name="Default" comment="">
+    <list default="true" id="3f33fa31-275b-4784-9b79-6ae9d96fca45" name="Default" comment="pullSB2">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -51,8 +51,8 @@
       <file leaf-file-name="FrontDecoInstanceController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/edu/ynu/software/Rocket/excellentHouse/controller/front/FrontDecoInstanceController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="96">
-              <caret line="38" column="7" lean-forward="true" selection-start-line="38" selection-start-column="7" selection-end-line="38" selection-end-column="7" />
+            <state relative-caret-position="36">
+              <caret line="36" column="22" lean-forward="true" selection-start-line="36" selection-start-column="22" selection-end-line="36" selection-end-column="22" />
               <folding>
                 <element signature="method#list#0;class#FrontDecoInstanceController#0" expanded="false" />
                 <element signature="e#2071#2080#0" expanded="true" />
@@ -289,6 +289,32 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="ExcellentHouse" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ExcellentHouse" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ExcellentHouse" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WEB-INF" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -947,7 +973,7 @@
       <workItem from="1505960734382" duration="2839000" />
       <workItem from="1505964397853" duration="8074000" />
       <workItem from="1505985528636" duration="7000" />
-      <workItem from="1506015662673" duration="614000" />
+      <workItem from="1506015662673" duration="1066000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <created>1504750661762</created>
@@ -1229,11 +1255,18 @@
       <option name="project" value="LOCAL" />
       <updated>1506016131333</updated>
     </task>
-    <option name="localTasksCounter" value="41" />
+    <task id="LOCAL-00041" summary="pullSB2">
+      <created>1506016295299</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1506016295299</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="328520000" />
+    <option name="totallyTimeSpent" value="328972000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1332,7 +1365,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$" />
     </ignored-roots>
-    <MESSAGE value="分页插件使用失败，有空再试" />
     <MESSAGE value="前台页面部分整合" />
     <MESSAGE value="删了两行" />
     <MESSAGE value="新加了EntityAO" />
@@ -1357,7 +1389,8 @@
     <MESSAGE value="House 装修案例 收藏功能实现" />
     <MESSAGE value="House 装修案例 页的评论功能实现" />
     <MESSAGE value="pullSB" />
-    <option name="LAST_COMMIT_MESSAGE" value="pullSB" />
+    <MESSAGE value="pullSB2" />
+    <option name="LAST_COMMIT_MESSAGE" value="pullSB2" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1465,13 +1498,6 @@
       </provider>
     </entry>
     <entry file="dbDummy://dbtable:/55909600/613e8487-a46e-4880-939d-6c0f995f9b87/excellent_house.house" />
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/HTML/form_upload.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="925">
-          <caret line="37" column="0" lean-forward="false" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/HTML/test.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="375">
@@ -1683,10 +1709,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/HTML/form_upload.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1851">
+          <caret line="37" column="0" lean-forward="false" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/edu/ynu/software/Rocket/excellentHouse/controller/front/FrontDecoInstanceController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="38" column="7" lean-forward="true" selection-start-line="38" selection-start-column="7" selection-end-line="38" selection-end-column="7" />
+        <state relative-caret-position="36">
+          <caret line="36" column="22" lean-forward="true" selection-start-line="36" selection-start-column="22" selection-end-line="36" selection-end-column="22" />
           <folding>
             <element signature="method#list#0;class#FrontDecoInstanceController#0" expanded="false" />
             <element signature="e#2071#2080#0" expanded="true" />
