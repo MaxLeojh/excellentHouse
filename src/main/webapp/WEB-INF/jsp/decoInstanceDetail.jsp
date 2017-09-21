@@ -50,7 +50,24 @@
         <div class="row">
             <div class="col-lg-8 col-md-7">
                 <section class="property-meta-wrapper common">
-                    <h3 class="entry-title">${houseAO.entity.name}</h3>
+                    <div  class="entry-title clearfix">
+                        <h4 class="pull-left" id="entityName" data-id="${decoInstanceAO.entity.id}"
+                            data-type="装修案例">${decoInstanceAO.entity.name}</h4>
+                        <c:choose>
+                            <c:when test="${isCollected == true}">
+                                <button id="hasCollect" class="pull-right ">已收藏 <i class="iconfont icon-iconfontlike "></i>
+                                </button>
+                            </c:when>
+                            <c:otherwise>
+                                <button id="collect" class="pull-right ">收藏 <i class="iconfont icon-xihuan "></i>
+                                </button>
+                                <button id="hasCollect" class="pull-right " style="display: none">已收藏 <i
+                                        class="iconfont icon-iconfontlike "></i></button>
+                            </c:otherwise>
+                        </c:choose>
+
+                    </div>
+
                     <div class="property-single-meta">
                         <ul class="clearfix">
                             <li><span>预算：</span> ￥${decoInstanceAO.entity.budget}</li>
@@ -215,5 +232,6 @@
 <script src="../plugins/whats-nearby/source/WhatsNearby.js"></script>
 <script src="../assets/js/theme.js"></script>
 <script src="../js/user.js"></script>
+<script src="../js/collection.js"></script>
 </body>
 </html>

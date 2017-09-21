@@ -1,6 +1,7 @@
 package edu.ynu.software.Rocket.excellentHouse.controller.front;
 
 import com.alibaba.fastjson.JSONObject;
+import edu.ynu.software.Rocket.excellentHouse.eneityAO.DecoInstanceAO;
 import edu.ynu.software.Rocket.excellentHouse.eneityAO.HouseAO;
 import edu.ynu.software.Rocket.excellentHouse.eneityAO.PremisesAO;
 import edu.ynu.software.Rocket.excellentHouse.eneityAO.UserAO;
@@ -51,6 +52,9 @@ public class FrontUserController {
 
     @Autowired
     HouseService houseService;
+
+    @Autowired
+    DecoInstanceService decoInstanceService;
 
     String verCode = "2333";
 
@@ -242,6 +246,20 @@ public class FrontUserController {
     public ModelAndView collectedHouse(HttpServletRequest request, HttpSession session, String kind) {
         ModelAndView mav = new ModelAndView();
 
+        UserAO userAO = new UserAO();
+        userAO = (UserAO) session.getAttribute("user");
+
+        List<HouseAO> houseAOList = new ArrayList<HouseAO>();
+        List<Collection> collectionList = new ArrayList<Collection>();
+
+        collectionList = collectionService.getUserCollection(userAO.getEntity().getUserId(), kind);
+        for (Collection collection : collectionList) {
+            HouseAO houseAO = new HouseAO();
+            houseAO = houseService.selectById(collection.getEntityId());
+            houseAOList.add(houseAO);
+        }
+        mav.addObject("houseAOList", houseAOList);
+
         mav.addObject("kind", kind);
         mav.setViewName("userCollectedHouse");
         return mav;
@@ -254,6 +272,20 @@ public class FrontUserController {
     @RequestMapping(value = "/collectedDecoInstance", method = RequestMethod.GET)
     public ModelAndView collectedDecoInstance(HttpServletRequest request, HttpSession session) {
         ModelAndView mav = new ModelAndView();
+
+        UserAO userAO = new UserAO();
+        userAO = (UserAO) session.getAttribute("user");
+
+        List<DecoInstanceAO> decoInstanceAOList = new ArrayList<DecoInstanceAO>();
+        List<Collection> collectionList = new ArrayList<Collection>();
+
+        collectionList = collectionService.getUserCollection(userAO.getEntity().getUserId(), "装修案例");
+        for (Collection collection : collectionList) {
+            DecoInstanceAO decoInstanceAO = new DecoInstanceAO();
+            decoInstanceAO = decoInstanceService.selectByDecoInstanceId(collection.getEntityId());
+            decoInstanceAOList.add(decoInstanceAO);
+        }
+        mav.addObject("decoInstanceAOList", decoInstanceAOList);
 
         mav.setViewName("userCollectedDecoInstance");
         return mav;

@@ -1,7 +1,11 @@
 package edu.ynu.software.Rocket.excellentHouse.controller.front;
 
 import edu.ynu.software.Rocket.excellentHouse.eneityAO.DecoInstanceAO;
+import edu.ynu.software.Rocket.excellentHouse.eneityAO.UserAO;
+import edu.ynu.software.Rocket.excellentHouse.entity.Collection;
+import edu.ynu.software.Rocket.excellentHouse.service.CollectionService;
 import edu.ynu.software.Rocket.excellentHouse.service.DecoInstanceService;
+import edu.ynu.software.Rocket.excellentHouse.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -24,6 +28,11 @@ public class FrontDecoInstanceController {
     @Autowired
     DecoInstanceService decoInstanceService;
 
+    @Autowired
+    UserService userService;
+
+    @Autowired
+    CollectionService collectionService;
 
     Integer limit = 3;
 
@@ -73,8 +82,18 @@ public class FrontDecoInstanceController {
 
         DecoInstanceAO decoInstanceAO = new DecoInstanceAO();
         decoInstanceAO = decoInstanceService.selectByDecoInstanceId(decoInstanceId);
-        mav.addObject("decoInstanceAO", decoInstanceAO);
 
+        //判断用户是否收藏
+        Boolean isCollected = false;
+        UserAO userAO = (UserAO) session.getAttribute("user");
+        if (userAO != null) {
+            List<Collection> collectionList = collectionService.selectByIdAndType(userAO.getEntity().getUserId(), decoInstanceId, "装修案例");
+            if (collectionList.size() == 1) {
+                isCollected = true;
+            }
+        }
+        mav.addObject("isCollected", isCollected);
+        mav.addObject("decoInstanceAO", decoInstanceAO);
         mav.setViewName("decoInstanceDetail");
         return mav;
     }

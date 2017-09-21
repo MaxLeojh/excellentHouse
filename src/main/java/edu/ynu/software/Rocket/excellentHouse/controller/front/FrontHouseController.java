@@ -1,7 +1,11 @@
 package edu.ynu.software.Rocket.excellentHouse.controller.front;
 
 import edu.ynu.software.Rocket.excellentHouse.eneityAO.HouseAO;
+import edu.ynu.software.Rocket.excellentHouse.eneityAO.UserAO;
+import edu.ynu.software.Rocket.excellentHouse.entity.Collection;
+import edu.ynu.software.Rocket.excellentHouse.service.CollectionService;
 import edu.ynu.software.Rocket.excellentHouse.service.HouseService;
+import edu.ynu.software.Rocket.excellentHouse.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -23,6 +27,12 @@ public class FrontHouseController {
 
     @Autowired
     HouseService houseService;
+
+    @Autowired
+    UserService userService;
+
+    @Autowired
+    CollectionService collectionService;
 
     Integer limit = 3;
 
@@ -74,8 +84,18 @@ public class FrontHouseController {
 
         HouseAO houseAO = new HouseAO();
         houseAO = houseService.selectById(houseId);
-        mav.addObject("houseAO", houseAO);
 
+        Boolean isCollected = false;
+        UserAO userAO = (UserAO) session.getAttribute("user");
+        if (userAO != null) {
+            List<Collection> collectionList = collectionService.selectByIdAndType(userAO.getEntity().getUserId(), houseId, houseAO.getEntity().getKind());
+            if (collectionList.size() == 1) {
+                isCollected = true;
+            }
+        }
+
+        mav.addObject("isCollected", isCollected);
+        mav.addObject("houseAO", houseAO);
         mav.setViewName("houseDetail");
         return mav;
     }
