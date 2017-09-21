@@ -1,126 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3f33fa31-275b-4784-9b79-6ae9d96fca45" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/assets/css/Mymodal.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/assets/js/editInfo.js" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/edu/ynu/software/Rocket/excellentHouse/plugins/PaginationPlugin.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/ExcellentHouse/WEB-INF/classes/edu/ynu/software/Rocket/excellentHouse/plugins/PaginationPlugin.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/edu/ynu/software/Rocket/excellentHouse/plugins/PaginationPlugin.class" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ExcellentHouse/WEB-INF/classes/edu/ynu/software/Rocket/excellentHouse/controller/front/FrontCommentController.class" afterPath="$PROJECT_DIR$/target/ExcellentHouse/WEB-INF/classes/edu/ynu/software/Rocket/excellentHouse/controller/front/FrontCommentController.class" />
+    <list default="true" id="3f33fa31-275b-4784-9b79-6ae9d96fca45" name="Default" comment="pullSB">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ExcellentHouse/WEB-INF/classes/edu/ynu/software/Rocket/excellentHouse/controller/front/FrontDecoInstanceController.class" afterPath="$PROJECT_DIR$/target/ExcellentHouse/WEB-INF/classes/edu/ynu/software/Rocket/excellentHouse/controller/front/FrontDecoInstanceController.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ExcellentHouse/WEB-INF/classes/edu/ynu/software/Rocket/excellentHouse/controller/front/FrontHouseController.class" afterPath="$PROJECT_DIR$/target/ExcellentHouse/WEB-INF/classes/edu/ynu/software/Rocket/excellentHouse/controller/front/FrontHouseController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ExcellentHouse/WEB-INF/classes/edu/ynu/software/Rocket/excellentHouse/controller/front/FrontIndexController.class" afterPath="$PROJECT_DIR$/target/ExcellentHouse/WEB-INF/classes/edu/ynu/software/Rocket/excellentHouse/controller/front/FrontIndexController.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ExcellentHouse/WEB-INF/classes/edu/ynu/software/Rocket/excellentHouse/controller/front/FrontPremisesController.class" afterPath="$PROJECT_DIR$/target/ExcellentHouse/WEB-INF/classes/edu/ynu/software/Rocket/excellentHouse/controller/front/FrontPremisesController.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ExcellentHouse/WEB-INF/classes/edu/ynu/software/Rocket/excellentHouse/controller/front/FrontUserController.class" afterPath="$PROJECT_DIR$/target/ExcellentHouse/WEB-INF/classes/edu/ynu/software/Rocket/excellentHouse/controller/front/FrontUserController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ExcellentHouse/WEB-INF/classes/edu/ynu/software/Rocket/excellentHouse/controller/manage/AdminController.class" afterPath="$PROJECT_DIR$/target/ExcellentHouse/WEB-INF/classes/edu/ynu/software/Rocket/excellentHouse/controller/manage/AdminController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ExcellentHouse/WEB-INF/classes/edu/ynu/software/Rocket/excellentHouse/dao/PremisesMapper.class" afterPath="$PROJECT_DIR$/target/ExcellentHouse/WEB-INF/classes/edu/ynu/software/Rocket/excellentHouse/dao/PremisesMapper.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ExcellentHouse/WEB-INF/classes/edu/ynu/software/Rocket/excellentHouse/entity/DecoInstanceExample$Criteria.class" afterPath="$PROJECT_DIR$/target/ExcellentHouse/WEB-INF/classes/edu/ynu/software/Rocket/excellentHouse/entity/DecoInstanceExample$Criteria.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ExcellentHouse/WEB-INF/classes/edu/ynu/software/Rocket/excellentHouse/entity/DecoInstanceExample$Criterion.class" afterPath="$PROJECT_DIR$/target/ExcellentHouse/WEB-INF/classes/edu/ynu/software/Rocket/excellentHouse/entity/DecoInstanceExample$Criterion.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ExcellentHouse/WEB-INF/classes/edu/ynu/software/Rocket/excellentHouse/entity/DecoInstanceExample$GeneratedCriteria.class" afterPath="$PROJECT_DIR$/target/ExcellentHouse/WEB-INF/classes/edu/ynu/software/Rocket/excellentHouse/entity/DecoInstanceExample$GeneratedCriteria.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ExcellentHouse/WEB-INF/classes/edu/ynu/software/Rocket/excellentHouse/entity/DecoInstanceExample.class" afterPath="$PROJECT_DIR$/target/ExcellentHouse/WEB-INF/classes/edu/ynu/software/Rocket/excellentHouse/entity/DecoInstanceExample.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ExcellentHouse/WEB-INF/classes/edu/ynu/software/Rocket/excellentHouse/entity/HouseExample$Criteria.class" afterPath="$PROJECT_DIR$/target/ExcellentHouse/WEB-INF/classes/edu/ynu/software/Rocket/excellentHouse/entity/HouseExample$Criteria.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ExcellentHouse/WEB-INF/classes/edu/ynu/software/Rocket/excellentHouse/entity/HouseExample$Criterion.class" afterPath="$PROJECT_DIR$/target/ExcellentHouse/WEB-INF/classes/edu/ynu/software/Rocket/excellentHouse/entity/HouseExample$Criterion.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ExcellentHouse/WEB-INF/classes/edu/ynu/software/Rocket/excellentHouse/entity/HouseExample$GeneratedCriteria.class" afterPath="$PROJECT_DIR$/target/ExcellentHouse/WEB-INF/classes/edu/ynu/software/Rocket/excellentHouse/entity/HouseExample$GeneratedCriteria.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ExcellentHouse/WEB-INF/classes/edu/ynu/software/Rocket/excellentHouse/entity/HouseExample.class" afterPath="$PROJECT_DIR$/target/ExcellentHouse/WEB-INF/classes/edu/ynu/software/Rocket/excellentHouse/entity/HouseExample.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ExcellentHouse/WEB-INF/classes/edu/ynu/software/Rocket/excellentHouse/entity/Premises.class" afterPath="$PROJECT_DIR$/target/ExcellentHouse/WEB-INF/classes/edu/ynu/software/Rocket/excellentHouse/entity/Premises.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ExcellentHouse/WEB-INF/classes/edu/ynu/software/Rocket/excellentHouse/entity/PremisesExample$Criteria.class" afterPath="$PROJECT_DIR$/target/ExcellentHouse/WEB-INF/classes/edu/ynu/software/Rocket/excellentHouse/entity/PremisesExample$Criteria.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ExcellentHouse/WEB-INF/classes/edu/ynu/software/Rocket/excellentHouse/entity/PremisesExample$Criterion.class" afterPath="$PROJECT_DIR$/target/ExcellentHouse/WEB-INF/classes/edu/ynu/software/Rocket/excellentHouse/entity/PremisesExample$Criterion.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ExcellentHouse/WEB-INF/classes/edu/ynu/software/Rocket/excellentHouse/entity/PremisesExample$GeneratedCriteria.class" afterPath="$PROJECT_DIR$/target/ExcellentHouse/WEB-INF/classes/edu/ynu/software/Rocket/excellentHouse/entity/PremisesExample$GeneratedCriteria.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ExcellentHouse/WEB-INF/classes/edu/ynu/software/Rocket/excellentHouse/eneityAO/DecoInstanceAO.class" afterPath="$PROJECT_DIR$/target/ExcellentHouse/WEB-INF/classes/edu/ynu/software/Rocket/excellentHouse/eneityAO/DecoInstanceAO.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ExcellentHouse/WEB-INF/classes/edu/ynu/software/Rocket/excellentHouse/eneityAO/HouseAO.class" afterPath="$PROJECT_DIR$/target/ExcellentHouse/WEB-INF/classes/edu/ynu/software/Rocket/excellentHouse/eneityAO/HouseAO.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ExcellentHouse/WEB-INF/classes/edu/ynu/software/Rocket/excellentHouse/service/DecoInstanceService.class" afterPath="$PROJECT_DIR$/target/ExcellentHouse/WEB-INF/classes/edu/ynu/software/Rocket/excellentHouse/service/DecoInstanceService.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ExcellentHouse/WEB-INF/classes/edu/ynu/software/Rocket/excellentHouse/service/HouseService.class" afterPath="$PROJECT_DIR$/target/ExcellentHouse/WEB-INF/classes/edu/ynu/software/Rocket/excellentHouse/service/HouseService.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ExcellentHouse/WEB-INF/classes/edu/ynu/software/Rocket/excellentHouse/service/PremisesService.class" afterPath="$PROJECT_DIR$/target/ExcellentHouse/WEB-INF/classes/edu/ynu/software/Rocket/excellentHouse/service/PremisesService.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ExcellentHouse/WEB-INF/classes/edu/ynu/software/Rocket/excellentHouse/service/impl/DecoInstanceServiceImpl.class" afterPath="$PROJECT_DIR$/target/ExcellentHouse/WEB-INF/classes/edu/ynu/software/Rocket/excellentHouse/service/impl/DecoInstanceServiceImpl.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ExcellentHouse/WEB-INF/classes/edu/ynu/software/Rocket/excellentHouse/service/impl/HouseServiceImpl.class" afterPath="$PROJECT_DIR$/target/ExcellentHouse/WEB-INF/classes/edu/ynu/software/Rocket/excellentHouse/service/impl/HouseServiceImpl.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ExcellentHouse/WEB-INF/classes/edu/ynu/software/Rocket/excellentHouse/service/impl/PremisesServiceImpl.class" afterPath="$PROJECT_DIR$/target/ExcellentHouse/WEB-INF/classes/edu/ynu/software/Rocket/excellentHouse/service/impl/PremisesServiceImpl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/edu/ynu/software/Rocket/excellentHouse/controller/front/FrontCommentController.class" afterPath="$PROJECT_DIR$/target/classes/edu/ynu/software/Rocket/excellentHouse/controller/front/FrontCommentController.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/edu/ynu/software/Rocket/excellentHouse/controller/front/FrontDecoInstanceController.class" afterPath="$PROJECT_DIR$/target/classes/edu/ynu/software/Rocket/excellentHouse/controller/front/FrontDecoInstanceController.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/edu/ynu/software/Rocket/excellentHouse/controller/front/FrontHouseController.class" afterPath="$PROJECT_DIR$/target/classes/edu/ynu/software/Rocket/excellentHouse/controller/front/FrontHouseController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/edu/ynu/software/Rocket/excellentHouse/controller/front/FrontIndexController.class" afterPath="$PROJECT_DIR$/target/classes/edu/ynu/software/Rocket/excellentHouse/controller/front/FrontIndexController.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/edu/ynu/software/Rocket/excellentHouse/controller/front/FrontPremisesController.class" afterPath="$PROJECT_DIR$/target/classes/edu/ynu/software/Rocket/excellentHouse/controller/front/FrontPremisesController.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/edu/ynu/software/Rocket/excellentHouse/controller/front/FrontUserController.class" afterPath="$PROJECT_DIR$/target/classes/edu/ynu/software/Rocket/excellentHouse/controller/front/FrontUserController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/edu/ynu/software/Rocket/excellentHouse/controller/manage/AdminController.class" afterPath="$PROJECT_DIR$/target/classes/edu/ynu/software/Rocket/excellentHouse/controller/manage/AdminController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/edu/ynu/software/Rocket/excellentHouse/dao/PremisesMapper.class" afterPath="$PROJECT_DIR$/target/classes/edu/ynu/software/Rocket/excellentHouse/dao/PremisesMapper.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/edu/ynu/software/Rocket/excellentHouse/entity/DecoInstanceExample$Criteria.class" afterPath="$PROJECT_DIR$/target/classes/edu/ynu/software/Rocket/excellentHouse/entity/DecoInstanceExample$Criteria.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/edu/ynu/software/Rocket/excellentHouse/entity/DecoInstanceExample$Criterion.class" afterPath="$PROJECT_DIR$/target/classes/edu/ynu/software/Rocket/excellentHouse/entity/DecoInstanceExample$Criterion.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/edu/ynu/software/Rocket/excellentHouse/entity/DecoInstanceExample$GeneratedCriteria.class" afterPath="$PROJECT_DIR$/target/classes/edu/ynu/software/Rocket/excellentHouse/entity/DecoInstanceExample$GeneratedCriteria.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/edu/ynu/software/Rocket/excellentHouse/entity/DecoInstanceExample.class" afterPath="$PROJECT_DIR$/target/classes/edu/ynu/software/Rocket/excellentHouse/entity/DecoInstanceExample.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/edu/ynu/software/Rocket/excellentHouse/entity/HouseExample$Criteria.class" afterPath="$PROJECT_DIR$/target/classes/edu/ynu/software/Rocket/excellentHouse/entity/HouseExample$Criteria.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/edu/ynu/software/Rocket/excellentHouse/entity/HouseExample$Criterion.class" afterPath="$PROJECT_DIR$/target/classes/edu/ynu/software/Rocket/excellentHouse/entity/HouseExample$Criterion.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/edu/ynu/software/Rocket/excellentHouse/entity/HouseExample$GeneratedCriteria.class" afterPath="$PROJECT_DIR$/target/classes/edu/ynu/software/Rocket/excellentHouse/entity/HouseExample$GeneratedCriteria.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/edu/ynu/software/Rocket/excellentHouse/entity/HouseExample.class" afterPath="$PROJECT_DIR$/target/classes/edu/ynu/software/Rocket/excellentHouse/entity/HouseExample.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/edu/ynu/software/Rocket/excellentHouse/entity/Premises.class" afterPath="$PROJECT_DIR$/target/classes/edu/ynu/software/Rocket/excellentHouse/entity/Premises.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/edu/ynu/software/Rocket/excellentHouse/entity/PremisesExample$Criteria.class" afterPath="$PROJECT_DIR$/target/classes/edu/ynu/software/Rocket/excellentHouse/entity/PremisesExample$Criteria.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/edu/ynu/software/Rocket/excellentHouse/entity/PremisesExample$Criterion.class" afterPath="$PROJECT_DIR$/target/classes/edu/ynu/software/Rocket/excellentHouse/entity/PremisesExample$Criterion.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/edu/ynu/software/Rocket/excellentHouse/entity/PremisesExample$GeneratedCriteria.class" afterPath="$PROJECT_DIR$/target/classes/edu/ynu/software/Rocket/excellentHouse/entity/PremisesExample$GeneratedCriteria.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/edu/ynu/software/Rocket/excellentHouse/eneityAO/DecoInstanceAO.class" afterPath="$PROJECT_DIR$/target/classes/edu/ynu/software/Rocket/excellentHouse/eneityAO/DecoInstanceAO.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/edu/ynu/software/Rocket/excellentHouse/eneityAO/HouseAO.class" afterPath="$PROJECT_DIR$/target/classes/edu/ynu/software/Rocket/excellentHouse/eneityAO/HouseAO.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/edu/ynu/software/Rocket/excellentHouse/service/DecoInstanceService.class" afterPath="$PROJECT_DIR$/target/classes/edu/ynu/software/Rocket/excellentHouse/service/DecoInstanceService.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/edu/ynu/software/Rocket/excellentHouse/service/HouseService.class" afterPath="$PROJECT_DIR$/target/classes/edu/ynu/software/Rocket/excellentHouse/service/HouseService.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/edu/ynu/software/Rocket/excellentHouse/service/PremisesService.class" afterPath="$PROJECT_DIR$/target/classes/edu/ynu/software/Rocket/excellentHouse/service/PremisesService.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/edu/ynu/software/Rocket/excellentHouse/service/impl/DecoInstanceServiceImpl.class" afterPath="$PROJECT_DIR$/target/classes/edu/ynu/software/Rocket/excellentHouse/service/impl/DecoInstanceServiceImpl.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/edu/ynu/software/Rocket/excellentHouse/service/impl/HouseServiceImpl.class" afterPath="$PROJECT_DIR$/target/classes/edu/ynu/software/Rocket/excellentHouse/service/impl/HouseServiceImpl.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/edu/ynu/software/Rocket/excellentHouse/service/impl/PremisesServiceImpl.class" afterPath="$PROJECT_DIR$/target/classes/edu/ynu/software/Rocket/excellentHouse/service/impl/PremisesServiceImpl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/edu/ynu/software/Rocket/excellentHouse/controller/front/FrontCommentController.java" afterPath="$PROJECT_DIR$/src/main/java/edu/ynu/software/Rocket/excellentHouse/controller/front/FrontCommentController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/edu/ynu/software/Rocket/excellentHouse/controller/front/FrontDecoInstanceController.java" afterPath="$PROJECT_DIR$/src/main/java/edu/ynu/software/Rocket/excellentHouse/controller/front/FrontDecoInstanceController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/edu/ynu/software/Rocket/excellentHouse/controller/front/FrontHouseController.java" afterPath="$PROJECT_DIR$/src/main/java/edu/ynu/software/Rocket/excellentHouse/controller/front/FrontHouseController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/edu/ynu/software/Rocket/excellentHouse/controller/front/FrontIndexController.java" afterPath="$PROJECT_DIR$/src/main/java/edu/ynu/software/Rocket/excellentHouse/controller/front/FrontIndexController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/edu/ynu/software/Rocket/excellentHouse/controller/front/FrontPremisesController.java" afterPath="$PROJECT_DIR$/src/main/java/edu/ynu/software/Rocket/excellentHouse/controller/front/FrontPremisesController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/edu/ynu/software/Rocket/excellentHouse/controller/front/FrontUserController.java" afterPath="$PROJECT_DIR$/src/main/java/edu/ynu/software/Rocket/excellentHouse/controller/front/FrontUserController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/edu/ynu/software/Rocket/excellentHouse/controller/manage/AdminController.java" afterPath="$PROJECT_DIR$/src/main/java/edu/ynu/software/Rocket/excellentHouse/controller/manage/AdminController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/edu/ynu/software/Rocket/excellentHouse/dao/DecoInstanceMapper.java" afterPath="$PROJECT_DIR$/src/main/java/edu/ynu/software/Rocket/excellentHouse/dao/DecoInstanceMapper.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/edu/ynu/software/Rocket/excellentHouse/dao/HouseMapper.java" afterPath="$PROJECT_DIR$/src/main/java/edu/ynu/software/Rocket/excellentHouse/dao/HouseMapper.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/edu/ynu/software/Rocket/excellentHouse/dao/PremisesMapper.java" afterPath="$PROJECT_DIR$/src/main/java/edu/ynu/software/Rocket/excellentHouse/dao/PremisesMapper.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/edu/ynu/software/Rocket/excellentHouse/entity/DecoInstance.java" afterPath="$PROJECT_DIR$/src/main/java/edu/ynu/software/Rocket/excellentHouse/entity/DecoInstance.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/edu/ynu/software/Rocket/excellentHouse/entity/DecoInstanceExample.java" afterPath="$PROJECT_DIR$/src/main/java/edu/ynu/software/Rocket/excellentHouse/entity/DecoInstanceExample.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/edu/ynu/software/Rocket/excellentHouse/entity/House.java" afterPath="$PROJECT_DIR$/src/main/java/edu/ynu/software/Rocket/excellentHouse/entity/House.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/edu/ynu/software/Rocket/excellentHouse/entity/HouseExample.java" afterPath="$PROJECT_DIR$/src/main/java/edu/ynu/software/Rocket/excellentHouse/entity/HouseExample.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/edu/ynu/software/Rocket/excellentHouse/entity/Premises.java" afterPath="$PROJECT_DIR$/src/main/java/edu/ynu/software/Rocket/excellentHouse/entity/Premises.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/edu/ynu/software/Rocket/excellentHouse/entity/PremisesExample.java" afterPath="$PROJECT_DIR$/src/main/java/edu/ynu/software/Rocket/excellentHouse/entity/PremisesExample.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/edu/ynu/software/Rocket/excellentHouse/service/DecoInstanceService.java" afterPath="$PROJECT_DIR$/src/main/java/edu/ynu/software/Rocket/excellentHouse/service/DecoInstanceService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/edu/ynu/software/Rocket/excellentHouse/service/HouseService.java" afterPath="$PROJECT_DIR$/src/main/java/edu/ynu/software/Rocket/excellentHouse/service/HouseService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/edu/ynu/software/Rocket/excellentHouse/service/PremisesService.java" afterPath="$PROJECT_DIR$/src/main/java/edu/ynu/software/Rocket/excellentHouse/service/PremisesService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/edu/ynu/software/Rocket/excellentHouse/service/impl/DecoInstanceServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/edu/ynu/software/Rocket/excellentHouse/service/impl/DecoInstanceServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/edu/ynu/software/Rocket/excellentHouse/service/impl/HouseServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/edu/ynu/software/Rocket/excellentHouse/service/impl/HouseServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/edu/ynu/software/Rocket/excellentHouse/service/impl/PremisesServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/edu/ynu/software/Rocket/excellentHouse/service/impl/PremisesServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/edu/ynu/software/Rocket/excellentHouse/mapper/DecoInstanceMapper.xml" afterPath="$PROJECT_DIR$/src/main/resources/edu/ynu/software/Rocket/excellentHouse/mapper/DecoInstanceMapper.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/edu/ynu/software/Rocket/excellentHouse/mapper/HouseMapper.xml" afterPath="$PROJECT_DIR$/src/main/resources/edu/ynu/software/Rocket/excellentHouse/mapper/HouseMapper.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/edu/ynu/software/Rocket/excellentHouse/mapper/PremisesMapper.xml" afterPath="$PROJECT_DIR$/src/main/resources/edu/ynu/software/Rocket/excellentHouse/mapper/PremisesMapper.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/generator.properties" afterPath="$PROJECT_DIR$/src/main/resources/generator.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/assets/css/insertHouse.css" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/assets/css/insertHouse.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/assets/css/mycss.css" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/assets/css/mycss.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/js/comment.js" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/js/comment.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/frontAdvanceSearch.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/frontAdvanceSearch.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/frontFoot.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/frontFoot.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/frontHead.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/frontHead.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/index.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/index.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/premisesDetail.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/premisesDetail.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/register.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/register.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/userCollectedDecoInstance.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/userCollectedDecoInstance.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/userCollectedHouse.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/userCollectedHouse.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/userCollectedPremises.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/userCollectedPremises.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/userHome.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/userHome.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/userHouse.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/userHouse.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/userLogin.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/userLogin.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ExcellentHouse/WEB-INF/classes/edu/ynu/software/Rocket/excellentHouse/mapper/DecoInstanceMapper.xml" afterPath="$PROJECT_DIR$/target/ExcellentHouse/WEB-INF/classes/edu/ynu/software/Rocket/excellentHouse/mapper/DecoInstanceMapper.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ExcellentHouse/WEB-INF/classes/edu/ynu/software/Rocket/excellentHouse/mapper/HouseMapper.xml" afterPath="$PROJECT_DIR$/target/ExcellentHouse/WEB-INF/classes/edu/ynu/software/Rocket/excellentHouse/mapper/HouseMapper.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ExcellentHouse/WEB-INF/classes/config/jdbc.properties" afterPath="$PROJECT_DIR$/target/ExcellentHouse/WEB-INF/classes/config/jdbc.properties" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ExcellentHouse/WEB-INF/classes/edu/ynu/software/Rocket/excellentHouse/mapper/PremisesMapper.xml" afterPath="$PROJECT_DIR$/target/ExcellentHouse/WEB-INF/classes/edu/ynu/software/Rocket/excellentHouse/mapper/PremisesMapper.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ExcellentHouse/WEB-INF/classes/generator.properties" afterPath="$PROJECT_DIR$/target/ExcellentHouse/WEB-INF/classes/generator.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ExcellentHouse/WEB-INF/js/comment.js" afterPath="$PROJECT_DIR$/target/ExcellentHouse/WEB-INF/js/comment.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ExcellentHouse/WEB-INF/jsp/frontAdvanceSearch.jsp" afterPath="$PROJECT_DIR$/target/ExcellentHouse/WEB-INF/jsp/frontAdvanceSearch.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ExcellentHouse/WEB-INF/jsp/frontFoot.jsp" afterPath="$PROJECT_DIR$/target/ExcellentHouse/WEB-INF/jsp/frontFoot.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ExcellentHouse/WEB-INF/jsp/frontHead.jsp" afterPath="$PROJECT_DIR$/target/ExcellentHouse/WEB-INF/jsp/frontHead.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ExcellentHouse/WEB-INF/jsp/index.jsp" afterPath="$PROJECT_DIR$/target/ExcellentHouse/WEB-INF/jsp/index.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ExcellentHouse/WEB-INF/js/collection.js" afterPath="$PROJECT_DIR$/target/ExcellentHouse/WEB-INF/js/collection.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ExcellentHouse/WEB-INF/jsp/decoInstanceDetail.jsp" afterPath="$PROJECT_DIR$/target/ExcellentHouse/WEB-INF/jsp/decoInstanceDetail.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ExcellentHouse/WEB-INF/jsp/decoInstanceList.jsp" afterPath="$PROJECT_DIR$/target/ExcellentHouse/WEB-INF/jsp/decoInstanceList.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ExcellentHouse/WEB-INF/jsp/houseDetail.jsp" afterPath="$PROJECT_DIR$/target/ExcellentHouse/WEB-INF/jsp/houseDetail.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ExcellentHouse/WEB-INF/jsp/houseList.jsp" afterPath="$PROJECT_DIR$/target/ExcellentHouse/WEB-INF/jsp/houseList.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ExcellentHouse/WEB-INF/jsp/premisesDetail.jsp" afterPath="$PROJECT_DIR$/target/ExcellentHouse/WEB-INF/jsp/premisesDetail.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ExcellentHouse/WEB-INF/jsp/register.jsp" afterPath="$PROJECT_DIR$/target/ExcellentHouse/WEB-INF/jsp/register.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ExcellentHouse/WEB-INF/jsp/premisesList.jsp" afterPath="$PROJECT_DIR$/target/ExcellentHouse/WEB-INF/jsp/premisesList.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ExcellentHouse/WEB-INF/jsp/userCollectedDecoInstance.jsp" afterPath="$PROJECT_DIR$/target/ExcellentHouse/WEB-INF/jsp/userCollectedDecoInstance.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ExcellentHouse/WEB-INF/jsp/userCollectedHouse.jsp" afterPath="$PROJECT_DIR$/target/ExcellentHouse/WEB-INF/jsp/userCollectedHouse.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ExcellentHouse/WEB-INF/jsp/userCollectedPremises.jsp" afterPath="$PROJECT_DIR$/target/ExcellentHouse/WEB-INF/jsp/userCollectedPremises.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ExcellentHouse/WEB-INF/jsp/userHome.jsp" afterPath="$PROJECT_DIR$/target/ExcellentHouse/WEB-INF/jsp/userHome.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ExcellentHouse/WEB-INF/jsp/userHouse.jsp" afterPath="$PROJECT_DIR$/target/ExcellentHouse/WEB-INF/jsp/userHouse.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ExcellentHouse/WEB-INF/jsp/userLogin.jsp" afterPath="$PROJECT_DIR$/target/ExcellentHouse/WEB-INF/jsp/userLogin.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/edu/ynu/software/Rocket/excellentHouse/mapper/DecoInstanceMapper.xml" afterPath="$PROJECT_DIR$/target/classes/edu/ynu/software/Rocket/excellentHouse/mapper/DecoInstanceMapper.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/edu/ynu/software/Rocket/excellentHouse/mapper/HouseMapper.xml" afterPath="$PROJECT_DIR$/target/classes/edu/ynu/software/Rocket/excellentHouse/mapper/HouseMapper.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/config/jdbc.properties" afterPath="$PROJECT_DIR$/target/classes/config/jdbc.properties" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/edu/ynu/software/Rocket/excellentHouse/mapper/PremisesMapper.xml" afterPath="$PROJECT_DIR$/target/classes/edu/ynu/software/Rocket/excellentHouse/mapper/PremisesMapper.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/generator.properties" afterPath="$PROJECT_DIR$/target/classes/generator.properties" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -152,80 +71,41 @@
         <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
       </PATH_ELEMENT>
     </PATH>
-    <PATH>
-      <PATH_ELEMENT>
-        <option name="myItemId" />
-        <option name="myItemType" value="com.intellij.database.view.DatabaseStructure$Root" />
-      </PATH_ELEMENT>
-      <PATH_ELEMENT>
-        <option name="myItemId" value="excellent_house@localhost" />
-        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
-      </PATH_ELEMENT>
-      <PATH_ELEMENT>
-        <option name="myItemId" value="excellent_house" />
-        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
-      </PATH_ELEMENT>
-    </PATH>
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="amapAPI.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/HTML/amapAPI.html">
+      <file leaf-file-name="decoInstanceDetail.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/decoInstanceDetail.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="818">
-              <caret line="67" column="0" lean-forward="false" selection-start-line="3" selection-start-column="6" selection-end-line="67" selection-end-column="0" />
+            <state relative-caret-position="4620">
+              <caret line="154" column="26" lean-forward="false" selection-start-line="154" selection-start-column="25" selection-end-line="154" selection-end-column="26" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="excellent_house.premises" pinned="false" current-in-tab="false">
-        <entry file="dbDummy://dbtable:/55909600/613e8487-a46e-4880-939d-6c0f995f9b87/excellent_house.premises">
-          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-            <state>
-              <filtering enabled="true" />
-            </state>
-          </provider>
-          <provider editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="form_upload.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/HTML/form_upload.html">
+      <file leaf-file-name="FrontDecoInstanceController.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/edu/ynu/software/Rocket/excellentHouse/controller/front/FrontDecoInstanceController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="925">
-              <caret line="37" column="0" lean-forward="false" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CommonServiceImpl.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/edu/ynu/software/Rocket/excellentHouse/service/impl/CommonServiceImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="425">
-              <caret line="21" column="23" lean-forward="false" selection-start-line="21" selection-start-column="23" selection-end-line="21" selection-end-column="23" />
+            <state relative-caret-position="276">
+              <caret line="75" column="7" lean-forward="true" selection-start-line="75" selection-start-column="7" selection-end-line="75" selection-end-column="7" />
               <folding>
-                <element signature="imports" expanded="false" />
-                <element signature="e#1859#1860#0" expanded="false" />
-                <element signature="e#1883#1884#0" expanded="false" />
+                <element signature="method#list#0;class#FrontDecoInstanceController#0" expanded="false" />
+                <element signature="e#2071#2080#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="testController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/edu/ynu/software/Rocket/excellentHouse/controller/test/testController.java">
+      <file leaf-file-name="DecoInstanceServiceImpl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/edu/ynu/software/Rocket/excellentHouse/service/impl/DecoInstanceServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="525">
-              <caret line="35" column="17" lean-forward="false" selection-start-line="35" selection-start-column="17" selection-end-line="35" selection-end-column="17" />
+            <state relative-caret-position="2460">
+              <caret line="94" column="31" lean-forward="false" selection-start-line="94" selection-start-column="31" selection-end-line="94" selection-end-column="31" />
               <folding>
                 <element signature="imports" expanded="false" />
+                <element signature="method#selectById#0;class#DecoInstanceServiceImpl#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -247,11 +127,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>tian</find>
-      <find>tianjia</find>
-      <find>tianjiachu</find>
-      <find>tianjiachuzu</find>
-      <find>tianjiachuzuf</find>
       <find>添加chuzuf</find>
       <find>添加出租房</find>
       <find>zoom</find>
@@ -277,6 +152,11 @@
       <find>session</find>
       <find>g</find>
       <find>gene</find>
+      <find>排序</find>
+      <find>收藏</find>
+      <find>删除</find>
+      <find>楼盘</find>
+      <find>selectByDecoInstanceId</find>
     </findStrings>
     <dirStrings>
       <dir>D:\August\idea\program\ExcellentHouse\src\main\resources\config</dir>
@@ -299,27 +179,8 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/assets/js/myJS.js" />
-        <option value="$PROJECT_DIR$/src/main/java/edu/ynu/software/Rocket/excellentHouse/service/CollectionService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/edu/ynu/software/Rocket/excellentHouse/service/impl/CollectionServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/generatorConfig.xml" />
-        <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/edu/ynu/software/Rocket/excellentHouse/service/UserService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/edu/ynu/software/Rocket/excellentHouse/service/impl/UserServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/js/user.js" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/decoInstanceDetail.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/decoInstanceList.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/houseDetail.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/houseList.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/premisesList.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/userCollectedDecoInstance.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/userCollectedHouse.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/userHouse.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/HTML/myHome.html" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/frontHead.jsp" />
-        <option value="$PROJECT_DIR$/src/main/java/edu/ynu/software/Rocket/excellentHouse/controller/front/FrontPremisesController.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/userCollectedPremises.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/js/collection.js" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/userLogin.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/edu/ynu/software/Rocket/excellentHouse/service/AdminService.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/ynu/software/Rocket/excellentHouse/service/impl/AdminServiceImpl.java" />
@@ -333,15 +194,12 @@
         <option value="$PROJECT_DIR$/src/main/java/edu/ynu/software/Rocket/excellentHouse/eneityAO/PostAO.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/ynu/software/Rocket/excellentHouse/eneityAO/ReplyAO.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/ynu/software/Rocket/excellentHouse/eneityAO/PremisesAO.java" />
-        <option value="$PROJECT_DIR$/src/main/java/edu/ynu/software/Rocket/excellentHouse/service/impl/PremisesServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/ynu/software/Rocket/excellentHouse/service/PostService.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/ynu/software/Rocket/excellentHouse/service/impl/PostServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/ynu/software/Rocket/excellentHouse/service/ReplyService.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/ynu/software/Rocket/excellentHouse/service/impl/ReplyServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/edu/ynu/software/Rocket/excellentHouse/controller/front/FrontUserController.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/ynu/software/Rocket/excellentHouse/controller/front/FrontCommentController.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/js/comment.js" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/premisesDetail.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/edu/ynu/software/Rocket/excellentHouse/controller/front/testController.java" />
         <option value="$PROJECT_DIR$/src/main/resources/config/jdbc.properties" />
         <option value="$PROJECT_DIR$/src/main/resources/generator.properties" />
@@ -350,6 +208,28 @@
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/HTML/form_upload.html" />
         <option value="$PROJECT_DIR$/src/main/java/edu/ynu/software/Rocket/excellentHouse/controller/test/testController.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/ynu/software/Rocket/excellentHouse/service/impl/CommonServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/ynu/software/Rocket/excellentHouse/service/impl/PremisesServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/ynu/software/Rocket/excellentHouse/controller/front/FrontPremisesController.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/premisesList.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/ynu/software/Rocket/excellentHouse/service/HouseService.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/houseList.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/ynu/software/Rocket/excellentHouse/service/PremisesService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/ynu/software/Rocket/excellentHouse/service/DecoInstanceService.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/decoInstanceList.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/ynu/software/Rocket/excellentHouse/controller/front/FrontHouseController.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/premisesDetail.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/js/collection.js" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/userCollectedPremises.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/userCollectedHouse.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/userCollectedDecoInstance.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/ynu/software/Rocket/excellentHouse/controller/front/FrontUserController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/ynu/software/Rocket/excellentHouse/eneityAO/HouseAO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/ynu/software/Rocket/excellentHouse/service/impl/HouseServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/houseDetail.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/ynu/software/Rocket/excellentHouse/eneityAO/DecoInstanceAO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/ynu/software/Rocket/excellentHouse/service/impl/DecoInstanceServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/decoInstanceDetail.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/ynu/software/Rocket/excellentHouse/controller/front/FrontDecoInstanceController.java" />
       </list>
     </option>
   </component>
@@ -374,7 +254,7 @@
           <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$RootNode" />
         </PATH_ELEMENT>
         <PATH_ELEMENT>
-          <option name="myItemId" value="starryNight Maven Webapp" />
+          <option name="myItemId" value="excellentHouse Maven Webapp" />
           <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$ProjectNode" />
         </PATH_ELEMENT>
       </PATH>
@@ -384,7 +264,7 @@
           <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$RootNode" />
         </PATH_ELEMENT>
         <PATH_ELEMENT>
-          <option name="myItemId" value="starryNight Maven Webapp" />
+          <option name="myItemId" value="excellentHouse Maven Webapp" />
           <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$ProjectNode" />
         </PATH_ELEMENT>
         <PATH_ELEMENT>
@@ -398,7 +278,7 @@
           <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$RootNode" />
         </PATH_ELEMENT>
         <PATH_ELEMENT>
-          <option name="myItemId" value="starryNight Maven Webapp" />
+          <option name="myItemId" value="excellentHouse Maven Webapp" />
           <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$ProjectNode" />
         </PATH_ELEMENT>
         <PATH_ELEMENT>
@@ -413,10 +293,10 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1920" />
-    <option name="y" value="-4" />
-    <option name="width" value="1680" />
-    <option name="height" value="1054" />
+    <option name="x" value="-9" />
+    <option name="y" value="-9" />
+    <option name="width" value="1938" />
+    <option name="height" value="1098" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -437,26 +317,25 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="excellentHouse" />
+              <option name="myItemId" value="ExcellentHouse" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="excellentHouse" />
+              <option name="myItemId" value="ExcellentHouse" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="excellentHouse" />
+              <option name="myItemId" value="ExcellentHouse" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="excellentHouse" />
+              <option name="myItemId" value="ExcellentHouse" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -467,160 +346,14 @@
               <option name="myItemId" value="main" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="webapp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WEB-INF" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="excellentHouse" />
+              <option name="myItemId" value="ExcellentHouse" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="excellentHouse" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="webapp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WEB-INF" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="jsp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="excellentHouse" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="excellentHouse" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="webapp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WEB-INF" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="HTML" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="excellentHouse" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="excellentHouse" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="webapp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WEB-INF" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="backstage" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="excellentHouse" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="excellentHouse" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="excellentHouse" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="excellentHouse" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="config" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="excellentHouse" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="excellentHouse" />
+              <option name="myItemId" value="ExcellentHouse" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -638,75 +371,11 @@
           </PATH>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="excellentHouse" />
+              <option name="myItemId" value="ExcellentHouse" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="excellentHouse" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="excellentHouse" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="service" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="excellentHouse" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="excellentHouse" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="excellentHouse" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="service" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="impl" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="excellentHouse" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="excellentHouse" />
+              <option name="myItemId" value="ExcellentHouse" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -728,11 +397,11 @@
           </PATH>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="excellentHouse" />
+              <option name="myItemId" value="ExcellentHouse" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="excellentHouse" />
+              <option name="myItemId" value="ExcellentHouse" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -752,116 +421,15 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="controller" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="test" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="excellentHouse" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="excellentHouse" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="excellentHouse" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="controller" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="manage" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="excellentHouse" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="excellentHouse" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="excellentHouse" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="controller" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="front" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="excellentHouse" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="excellentHouse" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="excellentHouse" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="common" />
+              <option name="myItemId" value="eneityAO" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
       <pane id="Scope" />
+      <pane id="Scratches" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -878,24 +446,24 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
-      <recent name="edu.ynu.software.Rocket.excellentHouse" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\August\idea\program\ExcellentHouse\src\main\webapp\WEB-INF\images\user" />
-      <recent name="D:\August\idea\program\ExcellentHouse\src\main\webapp\WEB-INF\images\premises" />
-      <recent name="D:\August\idea\program\ExcellentHouse\src\main\webapp\WEB-INF\ftl" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\August\idea\program\ExcellentHouse\src\main\webapp\WEB-INF\lib" />
+      <recent name="D:\August\idea\program\ExcellentHouse\src\main\resources\edu\ynu\software\Rocket\excellentHouse\mapper" />
+      <recent name="D:\August\idea\program\ExcellentHouse\src\main\webapp\WEB-INF\HTML" />
       <recent name="D:\August\idea\program\ExcellentHouse\src\main\webapp\WEB-INF" />
       <recent name="D:\August\idea\program\ExcellentHouse\src\main\webapp\WEB-INF\jsp" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="edu.ynu.software.Rocket.excellentHouse" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="edu.ynu.software.Rocket.excellentHouse.dao.customized" />
       <recent name="edu.ynu.software.Rocket.excellentHouse.entity.AO" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\August\idea\program\ExcellentHouse\src\main\webapp\WEB-INF\lib" />
-      <recent name="D:\August\idea\program\ExcellentHouse\src\main\resources\edu\ynu\software\Rocket\excellentHouse\mapper" />
-      <recent name="D:\August\idea\program\ExcellentHouse\src\main\webapp\WEB-INF\HTML" />
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\August\idea\program\ExcellentHouse\src\main\webapp\WEB-INF\images\user" />
+      <recent name="D:\August\idea\program\ExcellentHouse\src\main\webapp\WEB-INF\images\premises" />
+      <recent name="D:\August\idea\program\ExcellentHouse\src\main\webapp\WEB-INF\ftl" />
       <recent name="D:\August\idea\program\ExcellentHouse\src\main\webapp\WEB-INF" />
       <recent name="D:\August\idea\program\ExcellentHouse\src\main\webapp\WEB-INF\jsp" />
     </key>
@@ -912,7 +480,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Tomcat Server.Tomcat 8.5.15">
+  <component name="RunManager" selected="Tomcat Server.Tomcat_one">
     <configuration default="false" name="Sendmail" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -1353,11 +921,10 @@
     <configuration default="true" type="osgi.bnd.run" factoryName="Test Launcher (JUnit)">
       <method />
     </configuration>
-    <configuration default="false" name="Tomcat 8.5.15" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 8.5.15" ALTERNATIVE_JRE_ENABLED="false">
+    <configuration default="false" name="Tomcat_one" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 8.0.01" ALTERNATIVE_JRE_ENABLED="false">
       <option name="BROWSER_ID" value="98ca6316-2f89-46d9-a9e5-fa9e2b0625b3" />
       <option name="UPDATE_ON_FRAME_DEACTIVATION" value="true" />
       <option name="UPDATE_CLASSES_ON_FRAME_DEACTIVATION" value="true" />
-      <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
         <artifact name="ExcellentHouse:war exploded">
           <settings>
@@ -1429,7 +996,7 @@
       </method>
     </configuration>
     <list size="2">
-      <item index="0" class="java.lang.String" itemvalue="Tomcat Server.Tomcat 8.5.15" />
+      <item index="0" class="java.lang.String" itemvalue="Tomcat Server.Tomcat_one" />
       <item index="1" class="java.lang.String" itemvalue="Application.Sendmail" />
     </list>
     <recent_temporary>
@@ -1495,6 +1062,7 @@
       <workItem from="1505960734382" duration="2839000" />
       <workItem from="1505964397853" duration="8074000" />
       <workItem from="1505985528636" duration="7000" />
+      <workItem from="1506015662673" duration="445000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <created>1504750661762</created>
@@ -1741,11 +1309,39 @@
       <option name="project" value="LOCAL" />
       <updated>1505964437061</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="楼盘的分页恢复">
+      <created>1506005991979</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1506005991979</updated>
+    </task>
+    <task id="LOCAL-00037" summary="House 装修案例 List 分页实现">
+      <created>1506008919918</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1506008919918</updated>
+    </task>
+    <task id="LOCAL-00038" summary="House 装修案例 收藏功能实现">
+      <created>1506012321680</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1506012321680</updated>
+    </task>
+    <task id="LOCAL-00039" summary="House 装修案例 页的评论功能实现">
+      <created>1506014887225</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1506014887225</updated>
+    </task>
+    <option name="localTasksCounter" value="40" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="319361000" />
+    <option name="totallyTimeSpent" value="328351000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1757,7 +1353,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="1920" y="-4" width="1680" height="1054" extended-state="6" />
+    <frame x="-9" y="-9" width="1938" height="1098" extended-state="6" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1768,7 +1364,7 @@
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12071078" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.12070815" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="JSF" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.49472097" order="2" side_tool="false" content_ui="tabs" />
@@ -1783,7 +1379,7 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2880259" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27083334" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2746781" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
@@ -1797,45 +1393,6 @@
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24570815" sideWeight="0.50527906" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2540193" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
-    <layout-to-restore>
-      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290461" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32939914" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
-      <window_info id="CDI" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12071078" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="JSF" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.49472097" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3504823" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290461" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2588997" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.07551241" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2880259" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24570815" sideWeight="0.50527906" order="0" side_tool="true" content_ui="tabs" />
-      <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26715687" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2540193" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="processedProjectFiles" value="true" />
@@ -1883,10 +1440,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$" />
     </ignored-roots>
-    <MESSAGE value="自定义UserMapper尝试" />
-    <MESSAGE value="获取User插入后的Id" />
-    <MESSAGE value="准备pull List 和 Detail 类之前的commit" />
-    <MESSAGE value="Merge branch 'master' of https://github.com/MaxLeojh/excellentHouse&#10;&#10;# Conflicts:&#10;#&#9;.idea/dataSources.xml&#10;#&#9;.idea/dataSources/d7a1e807-1b7d-43d1-bbce-61d1e9d110f6.xml&#10;#&#9;src/main/java/edu/ynu/software/Rocket/excellentHouse/dao/UserMapper.java&#10;#&#9;src/main/java/edu/ynu/software/Rocket/excellentHouse/entity/User.java&#10;#&#9;src/main/java/edu/ynu/software/Rocket/excellentHouse/entity/UserExample.java&#10;#&#9;src/main/resources/edu/ynu/software/Rocket/excellentHouse/mapper/UserMapper.xml&#10;#&#9;src/main/webapp/WEB-INF/jsp/index.jsp" />
     <MESSAGE value="加入Mybatis分页插件" />
     <MESSAGE value="分页插件使用失败，有空再试" />
     <MESSAGE value="前台页面部分整合" />
@@ -1908,11 +1461,23 @@
     <MESSAGE value="某次commit" />
     <MESSAGE value="Merge branch 'master' of https://github.com/MaxLeojh/excellentHouse&#10;&#10;# Conflicts:&#10;#&#9;src/main/resources/generator.properties&#10;#&#9;src/main/webapp/WEB-INF/jsp/userHouse.jsp" />
     <MESSAGE value="Merge branch 'master' of https://github.com/MaxLeojh/excellentHouse&#10;&#10;# Conflicts:&#10;#&#9;.idea/dataSources.local.xml&#10;#&#9;.idea/dataSources.xml&#10;#&#9;.idea/workspace.xml&#10;#&#9;target/ExcellentHouse/META-INF/MANIFEST.MF&#10;#&#9;target/ExcellentHouse/WEB-INF/classes/config/jdbc.properties&#10;#&#9;target/classes/config/jdbc.properties" />
-    <option name="LAST_COMMIT_MESSAGE" value="Merge branch 'master' of https://github.com/MaxLeojh/excellentHouse&#10;&#10;# Conflicts:&#10;#&#9;.idea/dataSources.local.xml&#10;#&#9;.idea/dataSources.xml&#10;#&#9;.idea/workspace.xml&#10;#&#9;target/ExcellentHouse/META-INF/MANIFEST.MF&#10;#&#9;target/ExcellentHouse/WEB-INF/classes/config/jdbc.properties&#10;#&#9;target/classes/config/jdbc.properties" />
+    <MESSAGE value="楼盘的分页恢复" />
+    <MESSAGE value="House 装修案例 List 分页实现" />
+    <MESSAGE value="House 装修案例 收藏功能实现" />
+    <MESSAGE value="House 装修案例 页的评论功能实现" />
+    <option name="LAST_COMMIT_MESSAGE" value="House 装修案例 页的评论功能实现" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="55" />
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/edu/ynu/software/Rocket/excellentHouse/controller/front/FrontUserController.java</url>
+          <line>283</line>
+          <properties />
+          <option name="timeStamp" value="57" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="60" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1921,128 +1486,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/ynu/software/Rocket/excellentHouse/eneityAO/ReplyAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="12" column="30" lean-forward="false" selection-start-line="12" selection-start-column="30" selection-end-line="12" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/assets/js/theme.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1115">
-          <caret line="130" column="5" lean-forward="true" selection-start-line="130" selection-start-column="5" selection-end-line="130" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/js/user.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/ynu/software/Rocket/excellentHouse/eneityAO/PremisesAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1050">
-          <caret line="53" column="41" lean-forward="false" selection-start-line="53" selection-start-column="41" selection-end-line="53" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/ynu/software/Rocket/excellentHouse/controller/front/FrontIndexController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="141">
-          <caret line="28" column="11" lean-forward="true" selection-start-line="28" selection-start-column="11" selection-end-line="28" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/ynu/software/Rocket/excellentHouse/service/PictureService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="9" column="33" lean-forward="true" selection-start-line="9" selection-start-column="33" selection-end-line="9" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/ynu/software/Rocket/excellentHouse/service/impl/PremisesServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="146">
-          <caret line="85" column="0" lean-forward="false" selection-start-line="85" selection-start-column="0" selection-end-line="85" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/config/mybatis/spring-mybatis.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/generatorConfig.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="690">
-          <caret line="122" column="80" lean-forward="true" selection-start-line="122" selection-start-column="80" selection-end-line="122" selection-end-column="80" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/98405274/91bfe58c-75ef-4c5d-8408-eaa85712352e/excellent_house.admin" />
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/js/collection.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="3" column="8" lean-forward="true" selection-start-line="3" selection-start-column="8" selection-end-line="3" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/ynu/software/Rocket/excellentHouse/dao/PostMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="5" lean-forward="false" selection-start-line="0" selection-start-column="5" selection-end-line="0" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/ynu/software/Rocket/excellentHouse/service/impl/ReplyServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="474">
-          <caret line="69" column="27" lean-forward="true" selection-start-line="69" selection-start-column="27" selection-end-line="69" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/ynu/software/Rocket/excellentHouse/service/impl/PostServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="634">
-          <caret line="78" column="37" lean-forward="false" selection-start-line="78" selection-start-column="37" selection-end-line="78" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/ynu/software/Rocket/excellentHouse/service/ReplyService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="13" column="39" lean-forward="true" selection-start-line="13" selection-start-column="39" selection-end-line="13" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/ynu/software/Rocket/excellentHouse/service/PostService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="18" column="37" lean-forward="true" selection-start-line="18" selection-start-column="37" selection-end-line="18" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/assets/css/mycss.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="331">
-          <caret line="109" column="18" lean-forward="true" selection-start-line="109" selection-start-column="18" selection-end-line="109" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/4.3.8.RELEASE/spring-web-4.3.8.RELEASE.jar!/org/springframework/web/method/support/InvocableHandlerMethod.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="159">
-          <caret line="123" column="0" lean-forward="false" selection-start-line="123" selection-start-column="0" selection-end-line="123" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/98405274/91bfe58c-75ef-4c5d-8408-eaa85712352e/excellent_house.house" />
     <entry file="dbDummy://dbtable:/98405274/91bfe58c-75ef-4c5d-8408-eaa85712352e/excellent_house.school" />
     <entry file="dbDummy://dbtable:/98405274/91bfe58c-75ef-4c5d-8408-eaa85712352e/excellent_house.reply" />
     <entry file="dbDummy://dbtable:/98405274/91bfe58c-75ef-4c5d-8408-eaa85712352e/excellent_house.user" />
@@ -2061,34 +1504,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/ynu/software/Rocket/excellentHouse/controller/front/FrontPremisesController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="58" column="0" lean-forward="true" selection-start-line="58" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/premisesDetail.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="262">
-          <caret line="259" column="38" lean-forward="true" selection-start-line="259" selection-start-column="38" selection-end-line="259" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
     <entry file="dbDummy://dbtable:/98405274/91bfe58c-75ef-4c5d-8408-eaa85712352e/excellent_house.picture" />
     <entry file="file://$PROJECT_DIR$/src/main/java/edu/ynu/software/Rocket/excellentHouse/controller/front/testController.java" />
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/613e8487-a46e-4880-939d-6c0f995f9b87/console.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/613e8487-a46e-4880-939d-6c0f995f9b87/console.sql" />
     <entry file="file://$PROJECT_DIR$/src/main/resources/config/spring/spring-mvc.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1000">
           <caret line="40" column="39" lean-forward="false" selection-start-line="40" selection-start-column="39" selection-end-line="40" selection-end-column="39" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2096,28 +1518,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="100">
           <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/insertHouse.jsp" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/ynu/software/Rocket/excellentHouse/controller/front/FrontUserController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3175">
-          <caret line="150" column="17" lean-forward="false" selection-start-line="150" selection-start-column="17" selection-end-line="150" selection-end-column="17" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#6206#6218#0" expanded="false" />
-            <element signature="e#6277#6289#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/generator.properties">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
           <caret line="12" column="28" lean-forward="false" selection-start-line="12" selection-start-column="28" selection-end-line="12" selection-end-column="28" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2125,7 +1533,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
           <caret line="6" column="25" lean-forward="false" selection-start-line="6" selection-start-column="25" selection-end-line="6" selection-end-column="25" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2133,7 +1540,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="657">
           <caret line="78" column="9" lean-forward="true" selection-start-line="45" selection-start-column="0" selection-end-line="78" selection-end-column="9" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2141,7 +1547,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
           <caret line="6" column="54" lean-forward="false" selection-start-line="6" selection-start-column="54" selection-end-line="6" selection-end-column="54" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2157,7 +1562,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-168">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2168,23 +1572,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="dbDummy://dbtable:/55909600/613e8487-a46e-4880-939d-6c0f995f9b87/excellent_house.house">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="dbDummy://dbtable:/55909600/613e8487-a46e-4880-939d-6c0f995f9b87/excellent_house.house" />
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/HTML/form_upload.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="925">
           <caret line="37" column="0" lean-forward="false" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2192,7 +1584,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="375">
           <caret line="15" column="10" lean-forward="false" selection-start-line="15" selection-start-column="10" selection-end-line="15" selection-end-column="10" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2200,28 +1591,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="200">
           <caret line="8" column="0" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="dbDummy://dbtable:/55909600/613e8487-a46e-4880-939d-6c0f995f9b87/excellent_house.premises">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="dbDummy://dbtable:/55909600/613e8487-a46e-4880-939d-6c0f995f9b87/excellent_house.premises" />
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/HTML/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="140">
           <caret line="954" column="0" lean-forward="false" selection-start-line="954" selection-start-column="0" selection-end-line="954" selection-end-column="50" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2229,33 +1606,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="425">
           <caret line="21" column="23" lean-forward="false" selection-start-line="21" selection-start-column="23" selection-end-line="21" selection-end-column="23" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#1859#1860#0" expanded="false" />
-            <element signature="e#1883#1884#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="dbDummy://dbtable:/55909600/613e8487-a46e-4880-939d-6c0f995f9b87/excellent_house.addressbase">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="dbDummy://dbtable:/55909600/613e8487-a46e-4880-939d-6c0f995f9b87/excellent_house.addressbase" />
     <entry file="file://$PROJECT_DIR$/src/main/java/edu/ynu/software/Rocket/excellentHouse/controller/test/testController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="525">
           <caret line="35" column="17" lean-forward="false" selection-start-line="35" selection-start-column="17" selection-end-line="35" selection-end-column="17" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2263,7 +1621,183 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="818">
           <caret line="67" column="0" lean-forward="false" selection-start-line="3" selection-start-column="6" selection-end-line="67" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/ynu/software/Rocket/excellentHouse/service/HouseService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="11" column="29" lean-forward="false" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/houseList.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="148" column="25" lean-forward="true" selection-start-line="148" selection-start-column="25" selection-end-line="148" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/ynu/software/Rocket/excellentHouse/service/PremisesService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="600">
+          <caret line="23" column="25" lean-forward="false" selection-start-line="23" selection-start-column="4" selection-end-line="23" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/premisesList.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="174">
+          <caret line="128" column="27" lean-forward="true" selection-start-line="128" selection-start-column="27" selection-end-line="128" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/decoInstanceList.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="534">
+          <caret line="129" column="24" lean-forward="true" selection-start-line="129" selection-start-column="24" selection-end-line="129" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/js/collection.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-840">
+          <caret line="8" column="56" lean-forward="true" selection-start-line="8" selection-start-column="56" selection-end-line="8" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/userCollectedHouse.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="564">
+          <caret line="159" column="43" lean-forward="true" selection-start-line="159" selection-start-column="43" selection-end-line="159" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/ynu/software/Rocket/excellentHouse/controller/front/FrontPremisesController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="546">
+          <caret line="101" column="50" lean-forward="true" selection-start-line="101" selection-start-column="8" selection-end-line="101" selection-end-column="50" />
+          <folding>
+            <element signature="e#1574#1586#0" expanded="false" />
+            <element signature="e#2014#2023#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/userCollectedPremises.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="217">
+          <caret line="85" column="34" lean-forward="false" selection-start-line="85" selection-start-column="24" selection-end-line="85" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/userCollectedDecoInstance.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1781">
+          <caret line="88" column="29" lean-forward="true" selection-start-line="88" selection-start-column="29" selection-end-line="88" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/ynu/software/Rocket/excellentHouse/controller/front/FrontUserController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="273" column="41" lean-forward="true" selection-start-line="273" selection-start-column="41" selection-end-line="273" selection-end-column="41" />
+          <folding>
+            <element signature="e#7912#7921#0" expanded="true" />
+            <element signature="e#7980#7992#0" expanded="true" />
+            <element signature="e#8915#8931#0" expanded="true" />
+            <element signature="e#8990#9002#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/ynu/software/Rocket/excellentHouse/eneityAO/HouseAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="689">
+          <caret line="45" column="5" lean-forward="true" selection-start-line="45" selection-start-column="5" selection-end-line="45" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/ynu/software/Rocket/excellentHouse/service/impl/HouseServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1290">
+          <caret line="152" column="42" lean-forward="true" selection-start-line="152" selection-start-column="42" selection-end-line="152" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/houseDetail.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="281">
+          <caret line="310" column="31" lean-forward="false" selection-start-line="310" selection-start-column="31" selection-end-line="310" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/ynu/software/Rocket/excellentHouse/controller/front/FrontHouseController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="304">
+          <caret line="85" column="51" lean-forward="true" selection-start-line="85" selection-start-column="51" selection-end-line="85" selection-end-column="51" />
+          <folding>
+            <element signature="method#list#0;class#FrontHouseController#0" expanded="false" />
+            <element signature="e#2068#2077#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/premisesDetail.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="81">
+          <caret line="218" column="16" lean-forward="false" selection-start-line="218" selection-start-column="16" selection-end-line="282" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/ynu/software/Rocket/excellentHouse/eneityAO/DecoInstanceAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="35" column="5" lean-forward="false" selection-start-line="33" selection-start-column="41" selection-end-line="35" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/ynu/software/Rocket/excellentHouse/service/impl/PremisesServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2004">
+          <caret line="28" column="36" lean-forward="false" selection-start-line="28" selection-start-column="36" selection-end-line="28" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/ynu/software/Rocket/excellentHouse/service/DecoInstanceService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="10" column="36" lean-forward="false" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/decoInstanceDetail.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4620">
+          <caret line="154" column="26" lean-forward="false" selection-start-line="154" selection-start-column="25" selection-end-line="154" selection-end-column="26" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/ynu/software/Rocket/excellentHouse/service/impl/DecoInstanceServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2460">
+          <caret line="94" column="31" lean-forward="false" selection-start-line="94" selection-start-column="31" selection-end-line="94" selection-end-column="31" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="method#selectById#0;class#DecoInstanceServiceImpl#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/ynu/software/Rocket/excellentHouse/controller/front/FrontDecoInstanceController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="276">
+          <caret line="75" column="7" lean-forward="true" selection-start-line="75" selection-start-column="7" selection-end-line="75" selection-end-column="7" />
+          <folding>
+            <element signature="method#list#0;class#FrontDecoInstanceController#0" expanded="false" />
+            <element signature="e#2071#2080#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
