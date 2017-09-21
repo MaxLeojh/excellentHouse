@@ -16,6 +16,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
+ * 管理员Controller
  * Created by August on 2017/9/19.
  */
 @Controller
@@ -25,6 +26,9 @@ public class AdminController {
     @Autowired
     AdminService adminService;
 
+    /**
+     * 跳转到登录
+     */
     @RequestMapping(value = "toLogin", method = RequestMethod.GET)
     public ModelAndView toLogin() {
         ModelAndView mav = new ModelAndView();
@@ -33,6 +37,9 @@ public class AdminController {
         return mav;
     }
 
+    /**
+     * 管理员登录
+     */
     @RequestMapping(value = "login", method = RequestMethod.POST)
     public void login(String name, String password, HttpSession session, HttpServletResponse response) throws IOException {
         JSONObject jsonObject = new JSONObject();

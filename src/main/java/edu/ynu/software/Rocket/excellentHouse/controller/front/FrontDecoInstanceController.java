@@ -23,6 +23,9 @@ public class FrontDecoInstanceController {
     @Autowired
     DecoInstanceService decoInstanceService;
 
+    /**
+     * 装修案例列表
+     */
     @RequestMapping(value = "list", method = RequestMethod.GET)
     public ModelAndView list(HttpServletRequest request, HttpSession session) {
         ModelAndView mav = new ModelAndView();
@@ -34,6 +37,9 @@ public class FrontDecoInstanceController {
         return mav;
     }
 
+    /**
+     * 装修案例详情
+     */
     @RequestMapping(value = "detail", method = RequestMethod.GET)
     public ModelAndView detail(HttpServletRequest request, HttpSession session, Integer decoInstanceId) {
         ModelAndView mav = new ModelAndView();

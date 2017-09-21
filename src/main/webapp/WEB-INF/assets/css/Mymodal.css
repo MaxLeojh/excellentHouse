@@ -1,0 +1,13 @@
+.modal-left{
+    width: 80%;
+    background-color: red;
+    float: left;
+}
+.modal-right{
+    width: 20%;
+    background-color: #0a628f;
+    float: right;
+}
+.my-modal-dialog{
+   width:1100px;
+}

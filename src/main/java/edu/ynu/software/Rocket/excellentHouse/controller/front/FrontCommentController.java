@@ -30,6 +30,9 @@ public class FrontCommentController {
     @Autowired
     ReplyService replyService;
 
+    /**
+     * 评论
+     */
     @ResponseBody
     @RequestMapping(value = "post", method = RequestMethod.POST)
     public void post(HttpServletRequest request, HttpServletResponse response, HttpSession session) throws IOException,SQLException {
@@ -59,6 +62,9 @@ public class FrontCommentController {
         }
     }
 
+    /**
+     * 回复
+     */
     @ResponseBody
     @RequestMapping(value = "reply", method = RequestMethod.POST)
     public void reply(HttpServletRequest request, HttpServletResponse response, HttpSession session, Integer replyId) throws IOException,SQLException {

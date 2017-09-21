@@ -67,7 +67,7 @@
                             data-type="楼盘">${premisesAO.entity.name}</h4>
                         <c:choose>
                             <c:when test="${isCollected == true}">
-                                <button id="hasCollect" class="pull-right ">已收藏 <i class="iconfont icon-xihuan "></i>
+                                <button id="hasCollect" class="pull-right ">已收藏 <i class="iconfont icon-iconfontlike "></i>
                                 </button>
                             </c:when>
                             <c:otherwise>
@@ -244,8 +244,8 @@
                                 <c:when test="${post.replyAOList.size() > 0}">
                                     <c:forEach items="${post.replyAOList}" var="reply">
                                         <div class="row comment-son">
-                                            <div class="col-md-5 col-sm-5 avatar_div" style="margin-top: 10%">
-                                                <img class=" avatar" src="${reply.userAO.pictureList.get(0).pictureAddress}">
+                                            <div class="col-md-5 col-sm-5 avatar_div" >
+                                                <img class=" avatar" src="${reply.userAO.pictureList.get(0).pictureAddress}" >
                                             </div>
                                             <span class="comment col-lg-9">
                                                 <c:choose>
@@ -581,7 +581,7 @@
                                             </div>
                                             <div>
                                                 <label for="property-max-price">Max Prices</label>
-                                                <select name="max-price" id="property-max-price">
+                                                <select name="max-price" >
                                                     <option value="any" selected="selected">Any</option>
                                                     <option value="5000">$5000</option>
                                                     <option value="10000">$10000</option>
@@ -860,6 +860,7 @@
 
 <script src="../js/collection.js"></script>
 <script src="../js/comment.js"></script>
+<script src="../js/user.js"></script>
 <script>
 //    获得焦距变大
     $(function() {

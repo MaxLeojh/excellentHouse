@@ -222,8 +222,19 @@
     margin-bottom: 10px;
    position: relative;
 }
+.input-sex{
+    disabled:true;
+}
 .input-name{
     margin-top: 3px;
+}
+.input-info{
+    background-color: #f5f5f5;
+    border: none;
+}
+.input-emil{
+    background-color: #f5f5f5;
+    border: none;
 }
 .input-row{
     margin-top: 5px;

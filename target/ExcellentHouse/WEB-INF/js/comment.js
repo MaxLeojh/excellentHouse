@@ -37,7 +37,7 @@ $(function () {
             success:function (data) {
                 if(data.result == "success"){
                     alert("评论成功");
-                    // window.location.href = 'frontPremises/detail?premisesId='+entityId;
+                    window.location.reload();
                 }else{
                     alert("评论失败...");
                 }
@@ -81,7 +81,7 @@ $(function () {
             success:function (data) {
                 if(data.result == "success"){
                     alert("回复成功");
-                    // window.location.href = 'frontPremises/detail?premisesId='+entityId;
+                    window.location.reload();
                 }else{
                     alert("回复失败...");
                 }
@@ -127,7 +127,7 @@ $(function () {
             success:function (data) {
                 if(data.result == "success"){
                     alert("回复成功");
-                    // window.location.href = 'frontPremises/detail?premisesId='+entityId;
+                    window.location.reload();
                 }else{
                     alert("回复失败...");
                 }

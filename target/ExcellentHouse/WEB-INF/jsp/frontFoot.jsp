@@ -26,7 +26,7 @@
                 </div>
                 <div class="col-md-4 col-sm-6">
                     <section class="widget twitter-widget clearfix">
-                        <h4 class="title">更多</h4>
+                        <%--<h4 class="title">更多</h4>--%>
 
                     </section>
                 </div>
@@ -35,10 +35,10 @@
                         <h4 class="title">联系我们</h4>
                         <ul>
                             <li><i class="fa fa-map-marker"></i> 云南大学</li>
-                            <li><i class="fa fa-phone"></i> 123</li>
-                            <li><i class="fa fa-envelope"></i> 123@</li>
-                            <li><i class="fa fa-fax"></i> +1111</li>
-                            <li><i class="fa fa-clock-o"></i>24小时为您服务</li>
+                            <li><i class="fa fa-phone"></i> 114 </li>
+                            <li><i class="fa fa-envelope"></i> 45155808@qq.com </li>
+                            <li><i class="fa fa-fax"></i> 90909 </li>
+                            <li><i class="fa fa-clock-o"></i> 24小时为您服务 </li>
                         </ul>
                     </section>
                 </div>

@@ -64,13 +64,13 @@
                 <li class=" panel panel-default"id="myCollapsibleExample"><a href="#demo" data-toggle="collapse">收藏</a>
                     <ul id="demo" class="collapse in">
                         <li ><a href="/user/collectedPremises">楼盘收藏</a></li>
-                        <li><a href="/user/collectedHouse">二手房收藏</a></li>
-                        <li ><a href="/user/collectedHouse">租房收藏</a></li>
+                        <li><a href="/user/collectedHouse?kind=二手房">二手房收藏</a></li>
+                        <li><a href="/user/collectedHouse?kind=出租房">租房收藏</a></li>
                         <li class=" fh5co-active"><a href="/user/collectedDecoInstance">装修收藏</a></li>
                     </ul>
                 </li>
-                <li class=" panel panel-default " ><a href="/user/house">我的二手房</a></li>
-                <li class=" panel panel-default"><a href="/user/house">我的租房</a></li>
+                <li class=" panel panel-default " ><a href="/user/house?kind=二手房">我的二手房</a></li>
+                <li class=" panel panel-default"><a href="/user/house?kind=出租房">我的租房</a></li>
             </ul>
         </nav>
     </aside>
