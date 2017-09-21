@@ -10,6 +10,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title>楼盘详情</title>
+    <%--AMap links--%>
+    <script src="http://cache.amap.com/lbs/static/es5.min.js"></script>
+    <script src="http://webapi.amap.com/maps?v=1.4.0&key=1854618ef1f4bcf1198f778eebf9ce81"></script>
+    <script type="text/javascript" src="http://cache.amap.com/lbs/static/addToolbar.js"></script>
+
 
     <!-- Styles -->
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Poppins:400,600" rel="stylesheet">
@@ -98,31 +103,8 @@
 
                 <%--暂时不确定放什么--%>
                 <section class="property-single-features common clearfix">
-                    <h4 class="entry-title">没想好放什么</h4>
-                    <ul class="property-single-features-list clearfix">
-                        <li>Air Conditioning</li>
-                        <li>Cable TV</li>
-                        <li>Cot</li>
-                        <li class="disabled">Fan</li>
-                        <li>Lift</li>
-                        <li>Parking</li>
-                        <li>Separate Shower</li>
-                        <li>Office/den</li>
-                        <li class="disabled">Air Conditioning</li>
-                        <li>Cable TV</li>
-                        <li>Cot</li>
-                        <li>Fan</li>
-                        <li>Lift</li>
-                        <li class="disabled">Parking</li>
-                        <li>Cot</li>
-                        <li>Fan</li>
-                        <li>Lift</li>
-                        <li>Parking</li>
-                        <li>Separate Shower</li>
-                        <li class="disabled">Office/den</li>
-                        <li>Air Conditioning</li>
-                        <li>Cable TV</li>
-                    </ul>
+                    <h4 class="entry-title">位置</h4>
+                    <div id="AMapContainer" style="height: 500px"></div>
                 </section>
 
                 <%--售房类型--%>
@@ -245,8 +227,9 @@
                         </div>
                     </div>
 
-                    <div class="">
+
                         <c:forEach items="${premisesAO.postAOList}" var="post">
+                            <div class="panel panel-default content-group">
                             <div class="row">
                                 <div class="col-md-4 col-sm-4 avatar_div">
                                     <img class=" avatar" src="${post.userAO.pictureList.get(0).pictureAddress}">
@@ -261,10 +244,10 @@
                                 <c:when test="${post.replyAOList.size() > 0}">
                                     <c:forEach items="${post.replyAOList}" var="reply">
                                         <div class="row comment-son">
-                                            <div class="col-md-5 col-sm-5 avatar_div">
+                                            <div class="col-md-5 col-sm-5 avatar_div" style="margin-top: 10%">
                                                 <img class=" avatar" src="${reply.userAO.pictureList.get(0).pictureAddress}">
                                             </div>
-                                            <span class="comment col-md-6 col-sm-6">
+                                            <span class="comment col-lg-9">
                                                 <c:choose>
                                                     <c:when test="${reply.RR != null}">
                                                         <a>${reply.userAO.entity.name}</a><span> 回复 </span><a>${reply.RR.userAO.entity.name}</a> :
@@ -273,6 +256,7 @@
                                                         <a>${reply.userAO.entity.name}</a> :
                                                     </c:otherwise>
                                                 </c:choose>
+                                                <br>
                                                 <strong>${reply.entity.contains}</strong>
                                                 <a class="btn-comment iconfont icon-pinglun"href="#comment-son1${reply.entity.id}" data-toggle="collapse">回复</a>
                                             </span>
@@ -292,8 +276,9 @@
                                 <textarea id="replyInfo"  class="form-control comment-parent" maxlength="200" rows="2" ></textarea>
                                 <button class="btn submit-comment submitReply" data-id="${post.entity.id}">提交</button>
                             </div>
-                        </c:forEach>
                     </div>
+                        </c:forEach>
+
                 </section>
             </div>
 
@@ -895,6 +880,21 @@
 
         });
     });
+
+</script>
+
+<script>
+    var map = new AMap.Map('AMapContainer', {
+        resizeEnable: true,
+        zoom:12,
+        center: [102.854432,24.826498]
+    });
+    marker = new AMap.Marker({
+        position:[102.854432,24.826498]
+    });
+    marker.setMap(map);
+
+
 
 </script>
 </body>
