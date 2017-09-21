@@ -16,5 +16,7 @@ public interface HouseService {
 
     List<HouseAO> getHouseAOListByKind(String kind, Integer limit, Integer offset);
 
+    List<HouseAO> getHouseAOListByUserIdAndKind(Integer userId, String kind);
+
     HouseAO selectById(Integer houseId);
 }

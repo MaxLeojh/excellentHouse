@@ -34,7 +34,7 @@
 
                             <span class="head-username col-md-6 col-sm-6 col-xs-6" >
                                 <a id="userName" href="/user/home" data-id="${user.entity.userId}">${user.entity.name}</a>
-                                <a id="logout" class="logout" data-id="${user.entity.userId}">注销</a>
+                                <a id="logout" href="/" class="logout" data-id="${user.entity.userId}">注销</a>
                             </span>
                         </div>
                     </c:when>

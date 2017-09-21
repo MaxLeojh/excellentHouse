@@ -102,6 +102,23 @@ public class HouseServiceImpl implements HouseService{
         return houseAOList;
     }
 
+    public List<HouseAO> getHouseAOListByUserIdAndKind(Integer userId, String kind) {
+        List<HouseAO> houseAOList = new ArrayList<HouseAO>();
+        List<House> houseList = new ArrayList<House>();
+
+        HouseExample example = new HouseExample();
+        example.createCriteria().andUserIdEqualTo(userId).andKindEqualTo(kind);
+        houseList = houseMapper.selectByExample(example);
+
+        for (House house : houseList) {
+            HouseAO houseAO = new HouseAO();
+            houseAO = selectById(house.getId());
+            houseAOList.add(houseAO);
+        }
+
+        return houseAOList;
+    }
+
     public HouseAO selectById(Integer houseId) {
         HouseAO houseAO = new HouseAO();
         House house = new House();

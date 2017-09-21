@@ -1,14 +1,12 @@
 package edu.ynu.software.Rocket.excellentHouse.controller.front;
 
 import com.alibaba.fastjson.JSONObject;
+import edu.ynu.software.Rocket.excellentHouse.eneityAO.HouseAO;
 import edu.ynu.software.Rocket.excellentHouse.eneityAO.PremisesAO;
 import edu.ynu.software.Rocket.excellentHouse.eneityAO.UserAO;
 import edu.ynu.software.Rocket.excellentHouse.entity.Collection;
 import edu.ynu.software.Rocket.excellentHouse.entity.User;
-import edu.ynu.software.Rocket.excellentHouse.service.CollectionService;
-import edu.ynu.software.Rocket.excellentHouse.service.EmailService;
-import edu.ynu.software.Rocket.excellentHouse.service.PremisesService;
-import edu.ynu.software.Rocket.excellentHouse.service.UserService;
+import edu.ynu.software.Rocket.excellentHouse.service.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -46,6 +44,9 @@ public class FrontUserController {
 
     @Autowired
     PremisesService premisesService;
+
+    @Autowired
+    HouseService houseService;
 
     String verCode = "2333";
 
@@ -192,6 +193,9 @@ public class FrontUserController {
     public ModelAndView userHome(HttpServletRequest request, HttpSession session) {
         ModelAndView mav = new ModelAndView();
 
+        UserAO userAO = new UserAO();
+        userAO = (UserAO) session.getAttribute("user");
+        mav.addObject("user", userAO);
         mav.setViewName("userHome");
         return mav;
     }
@@ -227,9 +231,10 @@ public class FrontUserController {
      */
     @ResponseBody
     @RequestMapping(value = "/collectedHouse", method = RequestMethod.GET)
-    public ModelAndView collectedHouse(HttpServletRequest request, HttpSession session) {
+    public ModelAndView collectedHouse(HttpServletRequest request, HttpSession session, String kind) {
         ModelAndView mav = new ModelAndView();
 
+        mav.addObject("kind", kind);
         mav.setViewName("userCollectedHouse");
         return mav;
     }
@@ -251,15 +256,19 @@ public class FrontUserController {
      */
     @ResponseBody
     @RequestMapping(value = "/house", method = RequestMethod.GET)
-    public ModelAndView house(HttpServletRequest request, HttpSession session) {
+    public ModelAndView house(HttpServletRequest request, HttpSession session, String kind) {
         ModelAndView mav = new ModelAndView();
 
+        UserAO userAO = (UserAO) session.getAttribute("user");
+        List<HouseAO> houseAOList = houseService.getHouseAOListByUserIdAndKind(userAO.getEntity().getUserId(), kind);
+        mav.addObject("houseAOList", houseAOList);
+        mav.addObject("kind", kind);
         mav.setViewName("userHouse");
         return mav;
     }
 
     /**
-     * 详情页上的收藏
+     * 实体详情页上的收藏
      */
     @ResponseBody
     @RequestMapping(value = "/collect", method = RequestMethod.POST)

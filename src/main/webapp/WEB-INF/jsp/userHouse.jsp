@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: August
@@ -67,17 +68,26 @@
         <h1 id="fh5co-logo"><a href="/user/home">个人中心</a></h1>
         <nav class="my-nav" id="fh5co-main-menu" role="navigation">
             <ul>
-                <li  class=" panel panel-default "><a href="/user/home">我的信息</a></li>
+                <li  class=" panel panel-default"><a href="/user/home">我的信息</a></li>
                 <li class=" panel panel-default"id="myCollapsibleExample"><a href="#demo" data-toggle="collapse">收藏</a>
                     <ul id="demo" class="collapse ">
                         <li><a href="/user/collectedPremises">楼盘收藏</a></li>
-                        <li><a href="/user/collectedHouse">二手房收藏</a></li>
-                        <li><a href="/user/collectedHouse">租房收藏</a></li>
+                        <li><a href="/user/collectedHouse?kind=二手房">二手房收藏</a></li>
+                        <li><a href="/user/collectedHouse?kind=出租房">租房收藏</a></li>
                         <li><a href="/user/collectedDecoInstance">装修收藏</a></li>
                     </ul>
                 </li>
-                <li class=" panel panel-default " ><a href="/user/house">我的二手房</a></li>
-                <li class=" panel panel-default fh5co-active"><a href="/user/house">我的租房</a></li>
+                <c:choose>
+                    <c:when test="${kind == '出租房'}">
+                        <li class=" panel panel-default " ><a href="/user/house?kind=二手房">我的二手房</a></li>
+                        <li class=" panel panel-default fh5co-active"><a href="/user/house?kind=出租房">我的租房</a></li>
+                    </c:when>
+                    <c:otherwise>
+                        <li class=" panel panel-default fh5co-active" ><a href="/user/house?kind=二手房">我的二手房</a></li>
+                        <li class=" panel panel-default"><a href="/user/house?kind=出租房">我的租房</a></li>
+                    </c:otherwise>
+                </c:choose>
+
             </ul>
         </nav>
     </aside>
@@ -85,34 +95,44 @@
     <div id="fh5co-main">
         <div class="fh5co-narrow-content">
             <h2 class=" animate-box" data-animate-effect="fadeInLeft">
-                我的出租
+                <c:choose>
+                    <c:when test="${kind = '出租房'}">
+                        我的出租
+                    </c:when>
+                    <c:otherwise>
+                        我的出售
+                        </c:otherwise>
+                </c:choose>
                 <span title="添加" class="my-icon animated iconfont icon-jiahao" data-toggle="modal" data-target="#myModal">
 
                 </span>
             </h2>
 
-            <div class="row animate-box panel panel-default col-padding">
-                <div class="col-md-5 animate-box" data-animate-effect="fadeInLeft">
-                    <img class="img-responsive my-img" src="../assets/images/myImages/img_bg_1.jpg"
-                         alt="Free HTML5 Bootstrap Template by FreeHTML5.co">
-                </div>
-                <div class="col-md-7 animate-box " data-animate-effect="fadeInLeft">
-                    <h2 class="">租房
-                        <small>说明</small>
-                        <button class="btn my-detete-btn">编辑</button>
-                        <button class="btn my-detete-btn">删除</button>
-                    </h2>
+            <c:forEach items="${houseAOList}" var="house">
+                <div class="row animate-box panel panel-default col-padding">
+                    <div class="col-md-5 animate-box" data-animate-effect="fadeInLeft">
+                        <img class="img-responsive my-img" src="../assets/images/myImages/img_bg_1.jpg"
+                             alt="Free HTML5 Bootstrap Template by FreeHTML5.co">
+                    </div>
+                    <div class="col-md-7 animate-box " data-animate-effect="fadeInLeft">
+                        <h2 class="">${house.entity.name}
+                            <%--<small>说明</small>--%>
+                            <button class="btn my-detete-btn">删除</button>
+                            <button class="btn my-detete-btn">编辑</button>
+                        </h2>
 
-                    <p>价格：<strong class="my-price">￥40000元
-                        <small>/m²</small>
-                    </strong></p>
-                    <p>类型：<span class="my-info">一室一厅</span></p>
-                    <p>配备：<span class="my-info">标准大跃层四室两厅两卫 精装修带着全套家具家电</span></p>
-                    <p>建筑类别： <span class="my-info">板楼 小高层 高层</span></p>
-                    <p>售楼地址：<span class="my-info">嘉松中路沈泾塘支路</span></p>
-                    <p>交通：<span class="my-info">临近地铁</span></p>
+                        <p>价格：<strong class="my-price">￥${house.entity.housePrice}
+                            <small>/m²</small>
+                        </strong></p>
+                        <p>类型：<span class="my-info">${house.type.bedroomNum}室${house.type.hallNum}厅</span></p>
+                        <p>介绍：<span class="my-info">${house.entity.introduction}</span></p>
+                        <%--<p>建筑类别： <span class="my-info">板楼 小高层 高层</span></p>--%>
+                        <p>地址：<span class="my-info">地址施工中</span></p>
+                        <%--<p>交通：<span class="my-info">临近地铁</span></p>--%>
+                    </div>
                 </div>
-            </div>
+            </c:forEach>
+
         </div>
 
         <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
