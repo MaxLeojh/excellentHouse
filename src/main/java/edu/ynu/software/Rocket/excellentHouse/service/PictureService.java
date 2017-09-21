@@ -9,4 +9,8 @@ import java.util.List;
  */
 public interface PictureService {
     public List<Picture> selectByEntityIdAndType(Integer entityId, String entityType);
+
+    public int insertPic(Picture record);
+
+    public int updatePic(Picture record);
 }

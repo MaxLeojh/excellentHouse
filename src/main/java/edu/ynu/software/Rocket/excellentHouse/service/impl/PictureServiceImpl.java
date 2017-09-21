@@ -28,4 +28,14 @@ public class PictureServiceImpl implements PictureService {
 
         return pictureList;
     }
+
+    public int insertPic(Picture record) {
+        return pictureMapper.insert(record);
+    }
+
+    public int updatePic(Picture record) {
+        return pictureMapper.updateByPrimaryKey(record);
+    }
+
+
 }

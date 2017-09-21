@@ -5,7 +5,7 @@
   <artifactId>excellent</artifactId>
   <packaging>war</packaging>
   <version>1.0-SNAPSHOT</version>
-  <name>starryNight Maven Webapp</name>
+  <name>excellentHouse Maven Webapp</name>
   <url>http://maven.apache.org</url>
 
   <properties>
