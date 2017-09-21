@@ -38,17 +38,43 @@ public class FrontPremisesController {
     @Autowired
     CollectionService collectionService;
 
+
+    Integer limit = 1;
+
     /**
      * 楼盘列表
      */
     @RequestMapping(value = "list", method = RequestMethod.GET)
-    public ModelAndView list(HttpServletRequest request, HttpSession session) {
+    public ModelAndView list(HttpServletRequest request, HttpSession session, Integer page) {
         ModelAndView mav = new ModelAndView();
 
+        Integer offset = 0;
+        if (page == null) {
+            page = 1;
+        }
+        offset = (page - 1) * limit;
+
         List<PremisesAO> premisesAOList = new ArrayList<PremisesAO>();
-        premisesAOList = premisesService.getAllPremisesAO();
+        premisesAOList = premisesService.getPremisesAOList(limit, offset);
         mav.addObject("premisesAOList", premisesAOList);
 
+        //分页处理
+        Integer totalNum = premisesService.countTotal();
+        Integer totalPage = 0;
+
+        if (totalNum % limit == 0)
+            totalPage = (totalNum / limit);
+        else
+            totalPage = (totalNum / limit) + 1;
+
+        List<Integer> pageList = new ArrayList<Integer>();
+        for (int i = 1; i <= totalPage; i++) {
+            pageList.add(i);
+        }
+        mav.addObject("totalNum", totalNum);
+        mav.addObject("page", page);
+        mav.addObject("totalPage", totalPage);
+        mav.addObject("pageList", pageList);
         mav.setViewName("premisesList");
         return mav;
     }
