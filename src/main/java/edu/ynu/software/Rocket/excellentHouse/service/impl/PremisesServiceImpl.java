@@ -132,4 +132,9 @@ public class PremisesServiceImpl implements PremisesService{
 
         return premisesList;
     }
+
+    public Integer countTotal() {
+        PremisesExample example = new PremisesExample();
+        return premisesMapper.countByExample(example);
+    }
 }
