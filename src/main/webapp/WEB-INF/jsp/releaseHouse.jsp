@@ -30,7 +30,7 @@
 <body>
 <div class="row">
     <div class="panel panel-default">
-        <form action="http://localhost:8080/file/upload" method="post" enctype="multipart/form-data">
+        <form id="newHouse" action="http://localhost:8080/frontHouse/insert" method="post" enctype="multipart/form-data">
             <div class="panel-heading">
                 <h2 class="title panel-title">
                     发布房源
@@ -47,46 +47,58 @@
 
                     </div>
                 </div>
+                <div class="my-input-group  " >
+                    <div class="form-group-lg">
+                        <label class="my-label text-right">种类</label>
+                        <input name="kind" type="text" class="input my-input" value="${kind}">
+                    </div>
+                </div>
                 <div class="my-input-group  ">
                     <div class="form-group-lg">
-                        <label class="my-label text-right">小区名称</label>
-                        <input type="text" class="input my-input">
+                        <label class="my-label text-right">名称</label>
+                        <input name="name" type="text" class="input my-input">
                     </div>
                 </div>
                 <div class="my-input-group text-center ">
                     <div class="form-group-lg">
-                        <label class="my-label text-right">户型</label>
+                        <label  class="my-label text-right">户型</label>
                         <input type="text" class="input my-input" >
                     </div>
                 </div>
                 <div class="my-input-group text-center ">
                     <div class="form-group-lg">
                         <label class="my-label text-right">楼层</label>
-                        <input type="text" class="input my-input" >
+                        <input name="floor" type="text" class="input my-input" >
                     </div>
                 </div>
                 <div class="my-input-group text-center ">
                     <div class="form-group-lg">
                         <label class="my-label text-right">建筑面积</label>
-                        <input type="text" class="input my-input" >
+                        <input name="area" type="text" class="input my-input" >
                     </div>
                 </div>
                 <div class="my-input-group text-center ">
                     <div class="form-group-lg">
                         <label class="my-label text-right">售价</label>
-                        <input type="text" class="input my-input" >
+                        <input name="price" type="text" class="input my-input" >
                     </div>
                 </div>
                 <div class="my-input-group text-center ">
                     <div class="form-group-lg">
-                        <label class="my-label text-right">姓名</label>
-                        <input type="text" class="input my-input" >
+                        <label class="my-label text-right">联系人姓名</label>
+                        <input name="contactName" type="text" class="input my-input" >
                     </div>
                 </div>
                 <div class="my-input-group text-center ">
                     <div class="form-group-lg">
                         <label class="my-label text-right">联系方式</label>
-                        <input type="text" class="input my-input" >
+                        <input name="contactPhone" type="text" class="input my-input" >
+                    </div>
+                </div>
+                <div class="my-input-group text-center ">
+                    <div class="form-group-lg">
+                        <label class="my-label text-right">简介</label>
+                        <input name="introduction" type="text" class="input my-input" >
                     </div>
                 </div>
 
@@ -105,7 +117,7 @@
                         <select class="my-select" id="street_code" name="street_code">
                             <option value="">请选择</option>
                         </select>
-                        <button type="button" class="btn btn-default" data-toggle="modal" data-target="#myModal">按钮</button>
+                        <button type="button" class="btn btn-default" data-toggle="modal" data-target="#myModal">地图选点</button>
                         <input id="corn" type="text" name="lnglat">
                         <!-- 模态框（Modal） -->
                         <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -157,7 +169,7 @@
                 </div>
                 <div class="save-btn">
 
-                    <input class="center-block  btn btn-success" type="submit" value="确认发布">
+                    <input id="submit_confirm" class="center-block  btn btn-success" type="submit" value="确认发布">
 
                 </div>
             </div>
@@ -299,7 +311,38 @@
         }))
     });
 
+//    $(function () {
+//        $("#submit_confirm").click(function () {
+//            var form = new FormData(document.forms.namedItem("newHouse"));
+//
+//            if(1 == 2){
+//
+//            }
+//
+//            else{
+//                $.ajax({
+//                    type:'post',
+//                    url:'../frontHouse/insert/',
+//                    processData:false,
+//                    contentType:false,
+//                    data:form,
+//
+//                    success:function (data) {
+//                        if (data.result == "success") {
+//                            alert("发布成功");
+////                            top.location="../user/show";
+//                        }
+//                        else {
+//                            alert("发布失败");
+////                            top.location="../user/show";
+//                        }
+//                    }
+//                });
+//            }
+//        });
+//    });
 </script>
+
 
 </body>
 </html>

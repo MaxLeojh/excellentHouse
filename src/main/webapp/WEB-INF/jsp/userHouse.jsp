@@ -107,7 +107,7 @@
                 <%--<span title="添加" class="my-icon animated iconfont icon-jiahao" data-toggle="modal" data-target="#myModal">--%>
 
                 <%--</span>--%>
-                <a title="添加" class="my-icon animated iconfont icon-jiahao" href="/frontHouse/newHouse" >
+                <a title="添加" class="my-icon animated iconfont icon-jiahao" href="/frontHouse/newHouse?kind=${kind}" >
 
                 </a>
             </h2>

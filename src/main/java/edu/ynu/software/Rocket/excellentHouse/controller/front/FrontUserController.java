@@ -366,15 +366,6 @@ public class FrontUserController {
     }
 
     /**
-     * 发布House出售或出租
-     */
-    @ResponseBody
-    @RequestMapping(value = "newHouse", method = RequestMethod.POST)
-    public void newHouse(HttpServletRequest request, HttpServletResponse response, HttpSession session, String type) {
-
-    }
-
-    /**
      * 更新头像
      */
     @ResponseBody

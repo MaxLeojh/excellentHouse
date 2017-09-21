@@ -161,4 +161,8 @@ public class HouseServiceImpl implements HouseService{
         return houseMapper.countByExample(example);
     }
 
+    public Integer insert(House house) {
+        return houseMapper.insert(house);
+    }
+
 }

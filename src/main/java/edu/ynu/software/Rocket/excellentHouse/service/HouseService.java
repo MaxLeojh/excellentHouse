@@ -21,4 +21,6 @@ public interface HouseService {
     HouseAO selectById(Integer houseId);
 
     Integer countTotal(String kind);
+
+    Integer insert(House house);
 }
