@@ -102,12 +102,12 @@
                     </c:when>
                     <c:otherwise>
                         我的出售
-                        </c:otherwise>
+                    </c:otherwise>
                 </c:choose>
                 <%--<span title="添加" class="my-icon animated iconfont icon-jiahao" data-toggle="modal" data-target="#myModal">--%>
 
                 <%--</span>--%>
-                <a title="添加" class="my-icon animated iconfont icon-jiahao" href="insertHouse.jsp" >
+                <a title="添加" class="my-icon animated iconfont icon-jiahao" href="/frontHouse/newHouse" >
 
                 </a>
             </h2>

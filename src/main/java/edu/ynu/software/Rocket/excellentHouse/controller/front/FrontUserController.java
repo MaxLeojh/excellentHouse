@@ -388,12 +388,22 @@ public class FrontUserController {
         picture.setEntityId(userAO.getEntity().getUserId());
         picture.setEntityType("用户");
         picture.setIsVaild(true);
+
+        //删除原来的头像
+        Picture old = userAO.getPictureList().get(0);
+        old.setIsVaild(false);
+        pictureService.updatePic(old);
+
         pictureService.insertPic(picture);
         String address = "../images/user/"+picture.getId()+".jpg";
         picture.setPictureAddress(address);
         pictureService.updatePic(picture);
-        boolean flag = base64ToImg(base64code,"/home/maxleo/workspace/excellentHouse/src/main/webapp/WEB-INF/images/user/"+picture.getId()+".jpg");
+        boolean flag = base64ToImg(base64code,"D:/August/idea/program/ExcellentHouse/src/main/webapp/WEB-INF/images/user/"+picture.getId()+".jpg");
         System.out.println(flag);
+
+        //刷新session中的user
+        UserAO newUserAO = userService.selectById(userAO.getEntity().getUserId());
+        session.setAttribute("user", userAO);
 
 //        File file2 = request.;
 
@@ -402,6 +412,34 @@ public class FrontUserController {
         jsonObject.put("result", "success");
         response.getWriter().print(jsonObject.toString());
     }
+
+    /**
+     * 更新基本信息
+     */
+    @ResponseBody
+    @RequestMapping(value = "update", method = RequestMethod.POST)
+    public void update(String base64code,HttpServletRequest request, HttpServletResponse response, HttpSession session) throws IOException{
+        JSONObject jsonObject = new JSONObject();
+
+        String name = request.getParameter("name");
+        String phone = request.getParameter("phone");
+        Boolean sex = new Boolean(request.getParameter("sex"));
+
+        UserAO userAO = (UserAO)session.getAttribute("user");
+        userAO.getEntity().setName(name);
+        userAO.getEntity().setPhoneNumber(phone);
+        userAO.getEntity().setGender(sex);
+
+        userService.update(userAO.getEntity());
+
+        //刷新session中的user
+        UserAO newUserAO = userService.selectById(userAO.getEntity().getUserId());
+        session.setAttribute("user", userAO);
+
+        jsonObject.put("result", "success");
+        response.getWriter().print(jsonObject.toString());
+    }
+
 
     public static boolean base64ToImg(String imgStr, String path) throws IOException {
         if (imgStr == null) return false;

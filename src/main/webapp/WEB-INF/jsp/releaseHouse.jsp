@@ -1,3 +1,11 @@
+<%--
+  Created by IntelliJ IDEA.
+  User: maxleo
+  Date: 17-9-22
+  Time: 上午12:49
+  To change this template use File | Settings | File Templates.
+--%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -24,7 +32,7 @@
     <div class="panel panel-default">
         <div class="panel-heading">
             <h2 class="title panel-title">
-               发布房源
+                发布房源
             </h2>
         </div>
         <div class=" panel-body">
@@ -83,16 +91,16 @@
             <div class="my-input-group text-center ">
                 <div class="form-group-lg">
                     <label class="my-label text-right">地址</label>
-                        <select class="margin-left my-select" id="province_code" name="province_code" onchange="getCities()">
-                            <option value="">请选择</option>
-                        </select>
-                        <select class="my-select" id="city_code" name="city_code" onchange="getDistricts()">
-                            <option value="">请选择</option>
-                        </select>
-                        <select class="my-select" id="district_code" name="district_code" onchange="getStreets()">
-                            <option value="">请选择</option>
-                        </select>
-                        <select class="my-select" id="street_code" name="street_code">
+                    <select class="margin-left my-select" id="province_code" name="province_code" onchange="getCities()">
+                        <option value="">请选择</option>
+                    </select>
+                    <select class="my-select" id="city_code" name="city_code" onchange="getDistricts()">
+                        <option value="">请选择</option>
+                    </select>
+                    <select class="my-select" id="district_code" name="district_code" onchange="getStreets()">
+                        <option value="">请选择</option>
+                    </select>
+                    <select class="my-select" id="street_code" name="street_code">
                         <option value="">请选择</option>
                     </select>
                     <button class=" btn btn-default">按钮</button>
@@ -100,7 +108,7 @@
             </div>
             <div class="save-btn">
 
-                    <button class="center-block  btn btn-success">确认发布</button>
+                <button class="center-block  btn btn-success">确认发布</button>
 
             </div>
         </div>

@@ -2,9 +2,12 @@ package edu.ynu.software.Rocket.excellentHouse.service.impl;
 
 import edu.ynu.software.Rocket.excellentHouse.dao.AddressbaseMapper;
 import edu.ynu.software.Rocket.excellentHouse.entity.Addressbase;
+import edu.ynu.software.Rocket.excellentHouse.entity.AddressbaseExample;
 import edu.ynu.software.Rocket.excellentHouse.service.CommonService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 /**
  * Created by maxleo on 17-9-20.
@@ -45,5 +48,16 @@ public class CommonServiceImpl implements CommonService {
 
     public int locationToCode(String location) {
         return 0;
+    }
+
+    public Addressbase getAddress(int code) {
+        Addressbase addressbase = addressbaseMapper.selectByPrimaryKey(String.valueOf(code));
+        return addressbase;
+    }
+
+    public List<Addressbase> getSubAddress(int code) {
+        AddressbaseExample example = new AddressbaseExample();
+        example.createCriteria().andUpIdEqualTo(String.valueOf(code));
+        return addressbaseMapper.selectByExample(example);
     }
 }

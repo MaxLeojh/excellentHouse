@@ -99,4 +99,15 @@ public class FrontHouseController {
         mav.setViewName("houseDetail");
         return mav;
     }
+
+    /**
+     * 新建House
+     */
+    @RequestMapping(value = "newHouse", method = RequestMethod.GET)
+    public ModelAndView newHouse(HttpServletRequest request, HttpSession session) {
+        ModelAndView mav = new ModelAndView();
+
+        mav.setViewName("releaseHouse");
+        return mav;
+    }
 }

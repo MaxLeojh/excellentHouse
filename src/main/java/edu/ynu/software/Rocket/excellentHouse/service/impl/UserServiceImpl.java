@@ -103,4 +103,9 @@ public class UserServiceImpl implements UserService {
 
         return back;
     }
+
+    public UserAO edit(UserAO userAO) {
+        Integer back = userMapper.updateByPrimaryKey(userAO.getEntity());
+        return null;
+    }
 }
