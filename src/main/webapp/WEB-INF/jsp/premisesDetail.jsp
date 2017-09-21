@@ -227,8 +227,9 @@
                         </div>
                     </div>
 
-                    <div class="">
+
                         <c:forEach items="${premisesAO.postAOList}" var="post">
+                            <div class="panel panel-default content-group">
                             <div class="row">
                                 <div class="col-md-4 col-sm-4 avatar_div">
                                     <img class=" avatar" src="${post.userAO.pictureList.get(0).pictureAddress}">
@@ -243,10 +244,10 @@
                                 <c:when test="${post.replyAOList.size() > 0}">
                                     <c:forEach items="${post.replyAOList}" var="reply">
                                         <div class="row comment-son">
-                                            <div class="col-md-5 col-sm-5 avatar_div">
+                                            <div class="col-md-5 col-sm-5 avatar_div" style="margin-top: 10%">
                                                 <img class=" avatar" src="${reply.userAO.pictureList.get(0).pictureAddress}">
                                             </div>
-                                            <span class="comment col-md-6 col-sm-6">
+                                            <span class="comment col-lg-9">
                                                 <c:choose>
                                                     <c:when test="${reply.RR != null}">
                                                         <a>${reply.userAO.entity.name}</a><span> 回复 </span><a>${reply.RR.userAO.entity.name}</a> :
@@ -255,6 +256,7 @@
                                                         <a>${reply.userAO.entity.name}</a> :
                                                     </c:otherwise>
                                                 </c:choose>
+                                                <br>
                                                 <strong>${reply.entity.contains}</strong>
                                                 <a class="btn-comment iconfont icon-pinglun"href="#comment-son1${reply.entity.id}" data-toggle="collapse">回复</a>
                                             </span>
@@ -274,8 +276,9 @@
                                 <textarea id="replyInfo"  class="form-control comment-parent" maxlength="200" rows="2" ></textarea>
                                 <button class="btn submit-comment submitReply" data-id="${post.entity.id}">提交</button>
                             </div>
-                        </c:forEach>
                     </div>
+                        </c:forEach>
+
                 </section>
             </div>
 
@@ -306,7 +309,7 @@
                                             </div>
                                             <div>
                                                 <label for="property-sub-location">Sub Location</label>
-                                                <select name="sub-location" id="property-sub-location">
+                                                <select name="sub-location" >
                                                     <option value="">All Areas</option>
                                                     <option value="brickell"> Brickell</option>
                                                     <option value="brickyard"> Brickyard</option>
@@ -328,7 +331,7 @@
                                             </div>
                                             <div>
                                                 <label for="property-status">All Status</label>
-                                                <select id="property-status" name="status">
+                                                <select  name="status">
                                                     <option value="">All Status</option>
                                                     <option value="for-rent"> For Rent</option>
                                                     <option value="for-sale"> For Sale</option>
@@ -342,7 +345,7 @@
                                             </div>
                                             <div>
                                                 <label for="property-type">All Types</label>
-                                                <select id="property-type" name="type">
+                                                <select  name="type">
                                                     <option value="">All Types</option>
                                                     <option value="apartment"> Apartment</option>
                                                     <option value="condo"> Condo</option>
@@ -357,7 +360,7 @@
                                             </div>
                                             <div>
                                                 <label for="property-beds">No.Beds</label>
-                                                <select name="bedrooms" id="property-beds">
+                                                <select name="bedrooms">
                                                     <option value="">Beds</option>
                                                     <option value="1">1</option>
                                                     <option value="2">2</option>
@@ -374,7 +377,7 @@
                                             </div>
                                             <div>
                                                 <label for="property-baths">No.Baths</label>
-                                                <select name="bathrooms" id="property-baths">
+                                                <select name="bathrooms" >
                                                     <option value="">Bathrooms</option>
                                                     <option value="1">1</option>
                                                     <option value="2">2</option>
@@ -391,15 +394,15 @@
                                             </div>
                                             <div>
                                                 <label for="property-min-area">Min Area(sqft)</label>
-                                                <input type="text" name="min-area" id="property-min-area">
+                                                <input type="text" name="min-area">
                                             </div>
                                             <div>
                                                 <label for="property-max-area">Max Area(sqft)</label>
-                                                <input type="text" name="max-area" id="property-max-area">
+                                                <input type="text" name="max-area" >
                                             </div>
                                             <div>
                                                 <label for="property-min-price">Min Prices</label>
-                                                <select name="min-price" id="property-min-price">
+                                                <select name="min-price" >
                                                     <option value="any" selected="selected">Any</option>
                                                     <option value="1000">$1000</option>
                                                     <option value="5000">$5000</option>
@@ -423,7 +426,7 @@
                                             </div>
                                             <div>
                                                 <label for="property-max-price">Max Prices</label>
-                                                <select name="max-price" id="property-max-price">
+                                                <select name="max-price">
                                                     <option value="any" selected="selected">Any</option>
                                                     <option value="5000">$5000</option>
                                                     <option value="10000">$10000</option>
@@ -451,7 +454,7 @@
                                         <fieldset class="clearfix">
                                             <div>
                                                 <label for="main-location">All Location</label>
-                                                <select name="location" id="main-location">
+                                                <select name="location" >
                                                     <option value="">All Cities</option>
                                                     <option value="chicago"> Chicago</option>
                                                     <option value="los-angeles"> Los Angeles</option>
@@ -461,7 +464,7 @@
                                             </div>
                                             <div>
                                                 <label for="property-sub-location">Sub Location</label>
-                                                <select name="sub-location" id="property-sub-location">
+                                                <select name="sub-location">
                                                     <option value="">All Areas</option>
                                                     <option value="brickell"> Brickell</option>
                                                     <option value="brickyard"> Brickyard</option>
@@ -483,7 +486,7 @@
                                             </div>
                                             <div>
                                                 <label for="property-status">All Status</label>
-                                                <select id="property-status" name="status">
+                                                <select  name="status">
                                                     <option value="">All Status</option>
                                                     <option value="for-rent"> For Rent</option>
                                                     <option value="for-sale"> For Sale</option>
@@ -497,7 +500,7 @@
                                             </div>
                                             <div>
                                                 <label for="property-type">All Types</label>
-                                                <select id="property-type" name="type">
+                                                <select  name="type">
                                                     <option value="">All Types</option>
                                                     <option value="apartment"> Apartment</option>
                                                     <option value="condo"> Condo</option>
@@ -512,7 +515,7 @@
                                             </div>
                                             <div>
                                                 <label for="property-beds">No.Beds</label>
-                                                <select name="bedrooms" id="property-beds">
+                                                <select name="bedrooms" >
                                                     <option value="">Beds</option>
                                                     <option value="1">1</option>
                                                     <option value="2">2</option>
@@ -529,7 +532,7 @@
                                             </div>
                                             <div>
                                                 <label for="property-baths">No.Baths</label>
-                                                <select name="bathrooms" id="property-baths">
+                                                <select name="bathrooms">
                                                     <option value="">Bathrooms</option>
                                                     <option value="1">1</option>
                                                     <option value="2">2</option>
@@ -546,15 +549,15 @@
                                             </div>
                                             <div>
                                                 <label for="property-min-area">Min Area(sqft)</label>
-                                                <input type="text" name="min-area" id="property-min-area">
+                                                <input type="text" name="min-area" >
                                             </div>
                                             <div>
                                                 <label for="property-max-area">Max Area(sqft)</label>
-                                                <input type="text" name="max-area" id="property-max-area">
+                                                <input type="text" name="max-area" >
                                             </div>
                                             <div>
                                                 <label for="property-min-price">Min Prices</label>
-                                                <select name="min-price" id="property-min-price">
+                                                <select name="min-price" >
                                                     <option value="any" selected="selected">Any</option>
                                                     <option value="1000">$1000</option>
                                                     <option value="5000">$5000</option>

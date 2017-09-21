@@ -110,7 +110,7 @@
                                 <div class="row input-row" >
                                     <span class="col-lg-4 input-name">昵称：</span>
                                     <div class="col-lg-8 " >
-                                        <input type="text" placeholder="八月">
+                                        <input type="text"  placeholder="八月">
                                     </div>
 
                                 </div>

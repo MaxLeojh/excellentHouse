@@ -2,6 +2,10 @@
   widmy_layoutth: 100%;
     height: 100%;
 }
+.content-group{
+    padding: 20px;
+    margin-top: 10px;
+}
 .my-upload-btn{
     display: block;
     position: relative;
@@ -112,6 +116,8 @@
     margin-top: 5%;
 }
 .comment{
+    width: 80%;
+    word-wrap:break-word;
     margin-top: 2%;
 }
 .comment-parent-group{

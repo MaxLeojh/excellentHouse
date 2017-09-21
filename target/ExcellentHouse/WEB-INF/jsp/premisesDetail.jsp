@@ -227,8 +227,9 @@
                         </div>
                     </div>
 
-                    <div class="">
+
                         <c:forEach items="${premisesAO.postAOList}" var="post">
+                            <div class="panel panel-default content-group">
                             <div class="row">
                                 <div class="col-md-4 col-sm-4 avatar_div">
                                     <img class=" avatar" src="${post.userAO.pictureList.get(0).pictureAddress}">
@@ -243,10 +244,10 @@
                                 <c:when test="${post.replyAOList.size() > 0}">
                                     <c:forEach items="${post.replyAOList}" var="reply">
                                         <div class="row comment-son">
-                                            <div class="col-md-5 col-sm-5 avatar_div">
+                                            <div class="col-md-5 col-sm-5 avatar_div" style="margin-top: 10%">
                                                 <img class=" avatar" src="${reply.userAO.pictureList.get(0).pictureAddress}">
                                             </div>
-                                            <span class="comment col-md-6 col-sm-6">
+                                            <span class="comment col-lg-9">
                                                 <c:choose>
                                                     <c:when test="${reply.RR != null}">
                                                         <a>${reply.userAO.entity.name}</a><span> 回复 </span><a>${reply.RR.userAO.entity.name}</a> :
@@ -255,6 +256,7 @@
                                                         <a>${reply.userAO.entity.name}</a> :
                                                     </c:otherwise>
                                                 </c:choose>
+                                                <br>
                                                 <strong>${reply.entity.contains}</strong>
                                                 <a class="btn-comment iconfont icon-pinglun"href="#comment-son1${reply.entity.id}" data-toggle="collapse">回复</a>
                                             </span>
@@ -274,8 +276,9 @@
                                 <textarea id="replyInfo"  class="form-control comment-parent" maxlength="200" rows="2" ></textarea>
                                 <button class="btn submit-comment submitReply" data-id="${post.entity.id}">提交</button>
                             </div>
-                        </c:forEach>
                     </div>
+                        </c:forEach>
+
                 </section>
             </div>
 
