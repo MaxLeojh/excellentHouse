@@ -13,6 +13,7 @@ public class DecoInstanceAO {
     private DecoInstance entity;
     private DesignerAO designerAO;
     private List<Picture> pictureList;
+    private List<PostAO> postAOList;
 
     public DecoInstance getEntity() {
         return entity;
@@ -36,5 +37,13 @@ public class DecoInstanceAO {
 
     public void setPictureList(List<Picture> pictureList) {
         this.pictureList = pictureList;
+    }
+
+    public List<PostAO> getPostAOList() {
+        return postAOList;
+    }
+
+    public void setPostAOList(List<PostAO> postAOList) {
+        this.postAOList = postAOList;
     }
 }

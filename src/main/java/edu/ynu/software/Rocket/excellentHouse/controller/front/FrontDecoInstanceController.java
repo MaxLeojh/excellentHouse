@@ -81,13 +81,13 @@ public class FrontDecoInstanceController {
         ModelAndView mav = new ModelAndView();
 
         DecoInstanceAO decoInstanceAO = new DecoInstanceAO();
-        decoInstanceAO = decoInstanceService.selectByDecoInstanceId(decoInstanceId);
+        decoInstanceAO = decoInstanceService.selectById(decoInstanceId);
 
         //判断用户是否收藏
         Boolean isCollected = false;
         UserAO userAO = (UserAO) session.getAttribute("user");
         if (userAO != null) {
-            List<Collection> collectionList = collectionService.selectByIdAndType(userAO.getEntity().getUserId(), decoInstanceId, "装修案例");
+            List<Collection> collectionList = collectionService.selectByIdAndType(userAO.getEntity().getUserId(), decoInstanceId, "");
             if (collectionList.size() == 1) {
                 isCollected = true;
             }
