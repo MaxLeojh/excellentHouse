@@ -291,13 +291,16 @@ public class FrontUserController {
         JSONObject jsonObject = new JSONObject();
         System.out.println(base64code);
         Picture picture = new Picture();
-        UserAO userAO = (UserAO)session.getAttribute("userAO");
+        UserAO userAO = (UserAO)session.getAttribute("user");
+        System.out.println("------------------"+userAO.getEntity().getUserId());
         picture.setEntityId(userAO.getEntity().getUserId());
         picture.setEntityType("用户");
         picture.setIsVaild(true);
         pictureService.insertPic(picture);
-
-        boolean flag = base64ToImg(base64code,"/home/maxleo/Data/pic/MyPic.jpg");
+        String address = "../images/user/"+picture.getId()+".jpg";
+        picture.setPictureAddress(address);
+        pictureService.updatePic(picture);
+        boolean flag = base64ToImg(base64code,"/home/maxleo/workspace/excellentHouse/src/main/webapp/WEB-INF/images/user/"+picture.getId()+".jpg");
         System.out.println(flag);
 
 //        File file2 = request.;

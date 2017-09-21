@@ -118,6 +118,7 @@
         <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
+                    <form action="http://localhost:8080/file/upload" method="post" enctype="multipart/form-data">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
                             &times;
@@ -133,11 +134,8 @@
                                 <div class="fh5co-feature animate-box " data-animate-effect="fadeInLeft">
                                     <div class="row">
                                                <div class="row">
-                                                   <input class="my-upload-btn " type="file" id="xdaTanFileImg"  multiple="multiple"  name="fileAttach" onchange="xmTanUploadImg(this)"/>
-                                                   <div class="img-box" id="imgboxid">
-
-                                                   </div>
-
+                                                   <%--zheli xie shangchuan annniu--%>
+                                                       <input type="file" name="file" width="120px" multiple="multiple">
                                                </div>
                                             <%--<span title="添加" class="my-add-pic iconfont icon-jiahao"></span>--%>
                                         <div class="col-lg-7">
@@ -174,10 +172,9 @@
                     <div class="modal-footer">
                         <button type="button" class="btn btn-default" data-dismiss="modal">关闭
                         </button>
-                        <button type="button" class="btn btn-primary">
-                            保存
-                        </button>
+                        <input class="btn btn-primary" type="submit" value="上传">
                     </div>
+                    </form>
                 </div><!-- /.modal-content -->
             </div><!-- /.modal -->
         </div>
