@@ -26,7 +26,7 @@ $(function () {
             'entityId' : entityId,
             'entityType' : entityType,
             'contains' : contains
-        }
+        };
 
         $.ajax({
             type:'post',
@@ -45,7 +45,7 @@ $(function () {
 
         })
     })
-})
+});
 
 //提交Reply
 $(function () {
@@ -70,7 +70,7 @@ $(function () {
             'userId' : userId,
             'postId' : postId,
             'contains' : contains
-        }
+        };
 
         $.ajax({
             type:'post',
@@ -89,7 +89,7 @@ $(function () {
 
         })
     })
-})
+});
 
 //提交Reply的Reply
 $(function () {
@@ -116,7 +116,7 @@ $(function () {
             'postId' : postId,
             'replyId' : replyId,
             'contains' : contains
-        }
+        };
 
         $.ajax({
             type:'post',
@@ -135,4 +135,4 @@ $(function () {
 
         })
     })
-})
+});

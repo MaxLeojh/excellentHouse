@@ -120,7 +120,7 @@
                   identity: 自增主键  If true, then the column is flagged as an identity column and the generated <selectKey> element will be placed after the insert (for an identity column). If false, then the generated <selectKey> will be placed before the insert (typically for a sequence).
 
             -->
-            <!--<generatedKey column="" sqlStatement="" identity="" type=""/>-->
+            <generatedKey column="id" sqlStatement="MySql" type="post" identity="true"/>
 
 
             <!-- optional.

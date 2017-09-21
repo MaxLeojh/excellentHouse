@@ -10,11 +10,11 @@ import java.util.List;
  * Created by August on 2017/9/15.
  */
 public interface PostService {
-    public List<Post> seleceByEntityIdAndType(Integer entityId, String entityType);
+    List<Post> seleceByEntityIdAndType(Integer entityId, String entityType);
 
-    public PostAO getById(Integer postId);
+    PostAO getById(Integer postId);
 
-    public List<PostAO> selectByEntityIdAndType(Integer entityId, String entityType);
+    List<PostAO> selectByEntityIdAndType(Integer entityId, String entityType);
 
-    public Integer insert(Post post);
+    Integer insert(Post post);
 }

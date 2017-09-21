@@ -9,13 +9,13 @@ import java.util.List;
  * Created by August on 2017/9/4.
  */
 public interface UserService {
-    public List<User> selectAllUser();
-    public Integer insertUser(User user);
-    public User selectUserById(int id);
-    public Integer getLastInsert();
-    public int update(User user);
-    public User getUserByEmail(String email);
-    public UserAO selectById(Integer userId);
-    public List<UserAO> selectAllUserAO();
-    public Integer deleteUser(Integer userId);
+    List<User> selectAllUser();
+    Integer insertUser(User user);
+    User selectUserById(int id);
+    Integer getLastInsert();
+    int update(User user);
+    User getUserByEmail(String email);
+    UserAO selectById(Integer userId);
+    List<UserAO> selectAllUserAO();
+    Integer deleteUser(Integer userId);
 }
