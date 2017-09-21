@@ -167,7 +167,6 @@ public class FrontUserController {
         }
     }
 
-
     @ResponseBody
     @RequestMapping(value = "/home", method = RequestMethod.GET)
     public ModelAndView userHome(HttpServletRequest request, HttpSession session) {

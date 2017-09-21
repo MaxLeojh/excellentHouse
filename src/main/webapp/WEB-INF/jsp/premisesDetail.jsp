@@ -222,96 +222,59 @@
                     <div class="row">
                         <div class="form-group">
                             <label>输入你的评论：</label>
-                            <textarea class="form-control my-textarea" maxlength="200" rows="5"></textarea>
-                            <button class="btn submit-comment">提交</button>
-
+                            <textarea id="postInfo" class="form-control my-textarea" maxlength="200" rows="5"></textarea>
+                            <button id="submitPost" class="btn submit-comment" data-id="${premisesAO.entity.id}" data-type="楼盘">提交</button>
                         </div>
                     </div>
 
                     <div class="">
+                        <c:forEach items="${premisesAO.postAOList}" var="post">
                             <div class="row">
                                 <div class="col-md-4 col-sm-4 avatar_div">
-                                    <img class=" avatar" src="../assets/images/avatar.png">
+                                    <img class=" avatar" src="${post.userAO.pictureList.get(0).pictureAddress}">
                                 </div>
                                 <span class="comment col-md-6 col-sm-6">
-                                 wzc:
-                                <strong>评论*******</strong>
-                                     <a id="btn-parent-comment" class="iconfont icon-pinglun" href="#comment-parent-group" data-toggle="collapse">评论</a>
+                                 ${post.userAO.entity.name}:
+                                <strong>${post.entity.contains}</strong>
+                                     <a id="btn-parent-comment" class="iconfont icon-pinglun" href="#comment-parent-group${post.entity.id}" data-toggle="collapse">评论</a>
                                 </span>
                             </div>
+                            <c:choose>
+                                <c:when test="${post.replyAOList.size() > 0}">
+                                    <c:forEach items="${post.replyAOList}" var="reply">
+                                        <div class="row comment-son">
+                                            <div class="col-md-5 col-sm-5 avatar_div">
+                                                <img class=" avatar" src="${reply.userAO.pictureList.get(0).pictureAddress}">
+                                            </div>
+                                            <span class="comment col-md-6 col-sm-6">
+                                                <c:choose>
+                                                    <c:when test="${reply.RR != null}">
+                                                        <a>${reply.userAO.entity.name}</a><span> 回复 </span><a>${reply.RR.userAO.entity.name}</a> :
+                                                    </c:when>
+                                                    <c:otherwise>
+                                                        <a>${reply.userAO.entity.name}</a> :
+                                                    </c:otherwise>
+                                                </c:choose>
+                                                <strong>${reply.entity.contains}</strong>
+                                                <a class="btn-comment iconfont icon-pinglun"href="#comment-son1${reply.entity.id}" data-toggle="collapse">回复</a>
+                                            </span>
+                                                <%--<input class="input-comment form-control " type="text" placeholder="评论">--%>
+                                            <div id="comment-son1${reply.entity.id}" class="collapse" >
+                                                <textarea id="replyContains"  class="form-control comment-textarea col-md-7" maxlength="200" rows="2" ></textarea>
+                                                <button class="btn submit-comment submitReplyReply" data-postId="${post.entity.id}" data-id="${reply.entity.id}">提交</button>
+                                            </div>
+                                        </div>
+                                    </c:forEach>
+                                </c:when>
+                                <c:otherwise>
 
-                            <div class="row comment-son ">
-                                <div class="row">
-                                    <div class="col-md-5 col-sm-5 avatar_div">
-                                        <img class=" avatar" src="../assets/images/avatar.png">
-                                    </div>
-                                    <span class="comment col-md-6 col-sm-6">
-                                        <a>饶宇皓</a><span>回复</span><a>wzc</a>
-                                        <strong>回复的回复*******</strong>
-                                        <a class="btn-comment iconfont icon-pinglun"href="#comment-son" data-toggle="collapse">评论</a>
-                                   </span>
-                                    <div  id="comment-son" class="collapse" >
-                                        <textarea  class="form-control comment-textarea col-md-7" maxlength="200" rows="5" ></textarea>
-                                        <button class="btn ">提交</button>
-                                    </div>
-                                </div>
-
-
-                                <div class=" comment-son">
-                                    <div class="col-md-5 col-sm-5 avatar_div">
-                                        <img class=" avatar" src="../assets/images/avatar.png">
-                                    </div>
-                                    <span class="comment col-md-6 col-sm-6">
-                                 <a>饶宇皓</a><span>回复</span><a>wzc</a>
-                                 <strong>回复的回复*******</strong>
-                                    <a class="btn-comment iconfont icon-pinglun"href="#comment-son2" data-toggle="collapse">评论</a>
-                               </span>
-
-                                    <div  id=" comment-son2" class=" collapse" >
-                                        <textarea  class="form-control comment-textarea col-md-7" maxlength="200" rows="5" ></textarea>
-                                        <button class="btn submit-comment">提交</button>
-                                    </div>
-                                </div>
-
+                                </c:otherwise>
+                            </c:choose>
+                            <div id="comment-parent-group${post.entity.id}" class="row comment-parent-group collapse" >
+                                <textarea id="replyInfo"  class="form-control comment-parent" maxlength="200" rows="2" ></textarea>
+                                <button class="btn submit-comment submitReply" data-id="${post.entity.id}">提交</button>
                             </div>
-
-                            <div class="row comment-son">
-
-                                <div class="col-md-5 col-sm-5 avatar_div">
-                                    <img class=" avatar" src="../assets/images/avatar.png">
-                                </div>
-                                <span class="comment col-md-6 col-sm-6">
-                                 <a>饶宇皓</a><span>回复</span><a>wzc</a>
-                                 <strong>回复的回复*******</strong>
-                                    <a class="btn-comment iconfont icon-pinglun"href="#comment-son2" data-toggle="collapse">评论</a>
-                               </span>
-                                <%--<input class="input-comment form-control " type="text" placeholder="评论">--%>
-                                <div  id=" comment-son2" class=" collapse" >
-                                    <textarea  class="form-control comment-textarea col-md-7" maxlength="200" rows="5" ></textarea>
-                                    <button class="btn submit-comment">提交</button>
-                                </div>
-                            </div>
-
-                            <div class="row comment-son">
-                            <div class="col-md-5 col-sm-5 avatar_div">
-                                <img class=" avatar" src="../assets/images/avatar.png">
-                            </div>
-                            <span class="comment col-md-6 col-sm-6">
-                                 <a>饶宇皓</a><span>回复</span><a>wzc</a>
-                                 <strong>回复的回复*******</strong>
-                                    <a class="btn-comment iconfont icon-pinglun"href="#comment-son2" data-toggle="collapse">评论</a>
-                               </span>
-                            <%--<input class="input-comment form-control " type="text" placeholder="评论">--%>
-                            <div  id="comment-son2" class="collapse" >
-                                <textarea  class="form-control comment-textarea col-md-7" maxlength="200" rows="5" ></textarea>
-                                <button class="btn submit-comment">提交</button>
-                            </div>
-                        </div>
-
-                        <div id="comment-parent-group" class="comment-parent-group collapse" >
-                            <textarea  class="form-control comment-parent " maxlength="200" rows="1" ></textarea>
-                            <button class="btn submit-comment">提交</button>
-                        </div>
+                        </c:forEach>
                     </div>
                 </section>
             </div>
@@ -893,6 +856,7 @@
 <script src="../assets/js/theme.js"></script>
 
 <script src="../js/collection.js"></script>
+<script src="../js/comment.js"></script>
 <script>
 //    获得焦距变大
     $(function() {

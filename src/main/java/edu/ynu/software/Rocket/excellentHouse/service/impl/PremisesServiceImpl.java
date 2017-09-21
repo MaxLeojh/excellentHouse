@@ -1,6 +1,7 @@
 package edu.ynu.software.Rocket.excellentHouse.service.impl;
 
 import edu.ynu.software.Rocket.excellentHouse.dao.*;
+import edu.ynu.software.Rocket.excellentHouse.eneityAO.PostAO;
 import edu.ynu.software.Rocket.excellentHouse.eneityAO.PremisesAO;
 import edu.ynu.software.Rocket.excellentHouse.entity.*;
 import edu.ynu.software.Rocket.excellentHouse.service.HouseTypeService;
@@ -63,28 +64,7 @@ public class PremisesServiceImpl implements PremisesService{
 //        填充PremisesAO
         for (Premises premises : premisesList) {
             PremisesAO premisesAO = new PremisesAO();
-            premisesAO.setEntity(premises);
-
-//            公司
-            Company company = new Company();
-            company = companyMapper.selectByPrimaryKey(premises.getCompanyId());
-            premisesAO.setCompany(company);
-
-//            户型
-            List<HouseType> houseTypeList = new ArrayList<HouseType>();
-            houseTypeList = houseTypeService.selectByCompanyId(premises.getId());
-            premisesAO.setHouseTypeList(houseTypeList);
-
-//            图片
-            List<Picture> pictureList = new ArrayList<Picture>();
-            pictureList = pictureService.selectByEntityIdAndType(premises.getId(), "楼盘");
-            premisesAO.setPictureList(pictureList);
-
-//            评论
-            List<Post> postList = new ArrayList<Post>();
-            postList = postService.seleceByEntityIdAndType(premises.getId(), "楼盘");
-            premisesAO.setPostList(postList);
-
+            premisesAO = selectByPremisesId(premises.getId());
             premisesAOList.add(premisesAO);
         }
 
@@ -114,9 +94,9 @@ public class PremisesServiceImpl implements PremisesService{
         pictureList = pictureService.selectByEntityIdAndType(premises.getId(), "楼盘");
         premisesAO.setPictureList(pictureList);
 
-        List<Post> postList = new ArrayList<Post>();
-        postList = postService.seleceByEntityIdAndType(premises.getId(), "楼盘");
-        premisesAO.setPostList(postList);
+        List<PostAO> postAOList = new ArrayList<PostAO>();
+        postAOList = postService.selectByEntityIdAndType(premises.getId(), "楼盘");
+        premisesAO.setPostAOList(postAOList);
 
         return premisesAO;
     }
