@@ -55,14 +55,14 @@
         <div class="container">
             <h2 class="pull-left">共有${totalNum}个楼盘，当前处于${page}/${totalPage}页</h2>
             <div class="pull-right">
-                <div class="property-sorting pull-left">
-                    <label for="property-sort-dropdown"> 排序 </label>
-                    <select name="property-sort-dropdown" id="property-sort-dropdown">
-                        <option value="">默认</option>
-                        <option value="by_date">日期</option>
-                        <option value="by_price">价格</option>
-                    </select>
-                </div>
+                <%--<div class="property-sorting pull-left">--%>
+                    <%--<label for="property-sort-dropdown"> 排序 </label>--%>
+                    <%--<select name="property-sort-dropdown" id="property-sort-dropdown">--%>
+                        <%--<option value="">默认</option>--%>
+                        <%--<option value="by_date">日期</option>--%>
+                        <%--<option value="by_price">价格</option>--%>
+                    <%--</select>--%>
+                <%--</div>--%>
                 <p class="pull-left layout-view"> 展示方式 <i class="fa fa-th selected" data-layout="4"></i> <i
                         class="fa fa-th-large" data-layout="6"></i><i class="fa fa-list-ul" data-layout="12"></i></p>
             </div>

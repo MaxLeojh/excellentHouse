@@ -24,17 +24,42 @@ public class FrontHouseController {
     @Autowired
     HouseService houseService;
 
+    Integer limit = 3;
+
     /**
      * House列表
      */
     @RequestMapping(value = "list", method = RequestMethod.GET)
-    public ModelAndView list(HttpServletRequest request, HttpSession session, String kind) {
+    public ModelAndView list(HttpServletRequest request, HttpSession session, String kind, Integer page) {
         ModelAndView mav = new ModelAndView();
 
+        Integer offset = 0;
+        if (page == null) {
+            page = 1;
+        }
+        offset = (page - 1) * limit;
+
         List<HouseAO> houseAOList = new ArrayList<HouseAO>();
-        houseAOList = houseService.getHouseAOByKind(kind);
+        houseAOList = houseService.getHouseAOListByKind(kind, limit, offset);
         mav.addObject("houseAOList", houseAOList);
 
+        //分页处理
+        Integer totalNum = houseService.countTotal(kind);
+        Integer totalPage = 0;
+
+        if (totalNum % limit == 0)
+            totalPage = (totalNum / limit);
+        else
+            totalPage = (totalNum / limit) + 1;
+
+        List<Integer> pageList = new ArrayList<Integer>();
+        for (int i = 1; i <= totalPage; i++) {
+            pageList.add(i);
+        }
+        mav.addObject("totalNum", totalNum);
+        mav.addObject("page", page);
+        mav.addObject("totalPage", totalPage);
+        mav.addObject("pageList", pageList);
         mav.addObject("kind", kind);
         mav.setViewName("houseList");
         return mav;

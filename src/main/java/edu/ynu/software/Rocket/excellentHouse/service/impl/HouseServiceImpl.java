@@ -154,4 +154,10 @@ public class HouseServiceImpl implements HouseService{
         return houseAO;
     }
 
+    public Integer countTotal(String kind) {
+        HouseExample example = new HouseExample();
+        example.createCriteria().andKindEqualTo(kind);
+        return houseMapper.countByExample(example);
+    }
+
 }

@@ -110,4 +110,9 @@ public class DecoInstanceServiceImpl implements DecoInstanceService {
 
         return decoInstanceAO;
     }
+
+    public Integer countTotal() {
+        DecoInstanceExample example = new DecoInstanceExample();
+        return decoInstanceMapper.countByExample(example);
+    }
 }
