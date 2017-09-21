@@ -62,6 +62,7 @@
 </head>
 <body>
 <jsp:include page="frontHead.jsp"/>
+<hr>
 <div id="fh5co-page">
     <a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle"><i></i></a>
     <aside  class="my-nav-group " id="fh5co-aside" role="complementary">
@@ -103,7 +104,7 @@
                         我的出售
                         </c:otherwise>
                 </c:choose>
-                <span title="添加" class="my-icon animated iconfont icon-jiahao" data-toggle="modal" data-target="#myModal">
+                <%--<span title="添加" class="my-icon animated iconfont icon-jiahao" data-toggle="modal" data-target="#myModal">--%>
 
                 <%--</span>--%>
                 <a title="添加" class="my-icon animated iconfont icon-jiahao" href="insertHouse.jsp" >
@@ -117,12 +118,12 @@
                         <img class="img-responsive my-img" src="../assets/images/myImages/img_bg_1.jpg"
                              alt="Free HTML5 Bootstrap Template by FreeHTML5.co">
                     </div>
-                    <div class="col-md-7 animate-box " data-animate-effect="fadeInLeft">
-                        <h2 class="">${house.entity.name}
+                    <div class="house-info  col-md-7 animate-box " data-animate-effect="fadeInLeft">
+                        <h4 class="">${house.entity.name}
                             <%--<small>说明</small>--%>
-                            <button class="btn my-detete-btn">删除</button>
-                            <button class="btn my-detete-btn">编辑</button>
-                        </h2>
+                            <button class="my-detete-btn iconfont icon-shanchu01"></button>
+                            <button class="my-detete-btn iconfont icon-icon1"></button>
+                        </h4>
 
                         <p>价格：<strong class="my-price">￥${house.entity.housePrice}
                             <small>/m²</small>

@@ -26,13 +26,13 @@ body {
 }
 
 a {
-  color: #228896;
+  color: #6c98e1;
   -webkit-transition: 0.5s;
   -o-transition: 0.5s;
   transition: 0.5s;
 }
 a:hover, a:active, a:focus {
-  color: #228896;
+  color: blue;
   outline: none;
   text-decoration: none !important;
 }
@@ -76,17 +76,17 @@ figure figcaption {
 
 ::-webkit-selection {
   color: #fff;
-  background: #228896;
+  background:  #6c98e1;
 }
 
 ::-moz-selection {
   color: #fff;
-  background: #228896;
+  background:  #6c98e1;
 }
 
 ::selection {
   color: #fff;
-  background: #228896;
+  background: #6c98e1;
 }
 
 #fh5co-page {
@@ -180,7 +180,7 @@ figure figcaption {
   bottom: 7px;
   left: 10px;
   right: 10px;
-  background-color: #228896;
+  background-color:  #6c98e1;
   visibility: hidden;
   -webkit-transform: scaleX(0);
   -moz-transform: scaleX(0);
@@ -253,7 +253,7 @@ figure figcaption {
 #fh5co-aside .fh5co-footer ul li a:hover, #fh5co-aside .fh5co-footer ul li a:active, #fh5co-aside .fh5co-footer ul li a:focus {
   text-decoration: none;
   outline: none;
-  color: #228896;
+  color:  #6c98e1;
 }
 
 #fh5co-main {
@@ -346,7 +346,7 @@ figure figcaption {
 #fh5co-hero .flexslider .flex-control-nav li a.flex-active {
   cursor: pointer;
   background: transparent;
-  border: 2px solid #228896;
+  border: 2px solid  #6c98e1;
 }
 #fh5co-hero .flexslider .flex-direction-nav {
   display: none;
@@ -393,8 +393,8 @@ figure figcaption {
   font-weight: 300;
 }
 #fh5co-hero .flexslider .slider-text > .slider-text-inner h2 a {
-  color: rgba(34, 136, 150, 0.8);
-  border-bottom: 1px solid rgba(34, 136, 150, 0.7);
+  color: rgba(108, 152, 225, 0.8);
+  border-bottom: 1px solid rgba(108, 152, 225, 0.7);
 }
 #fh5co-hero .flexslider .slider-text > .slider-text-inner .heading-section {
   font-size: 50px;
@@ -621,7 +621,7 @@ body.offcanvas #fh5co-main, body.offcanvas .fh5co-nav-toggle {
 }
 
 .fh5co-heading-colored {
-  color: #228896;
+  color:  #6c98e1;
   font-size: 30px;
 }
 
@@ -681,7 +681,7 @@ body.offcanvas #fh5co-main, body.offcanvas .fh5co-nav-toggle {
 
 .fh5co-counter .fh5co-number {
   font-size: 100px;
-  color: #228896;
+  color: #6c98e1;
   font-weight: 400;
   margin: 0;
   padding: 0;
@@ -751,12 +751,12 @@ body.offcanvas #fh5co-main, body.offcanvas .fh5co-nav-toggle {
   }
 }
 .fh5co-social li a:hover {
-  color: #228896;
+  color: #6c98e1;
 }
 .fh5co-social li a:hover, .fh5co-social li a:active, .fh5co-social li a:focus {
   outline: none;
   text-decoration: none;
-  color: #228896;
+  color:  #6c98e1;
 }
 
 #map {
@@ -797,7 +797,7 @@ body.offcanvas #fh5co-main, body.offcanvas .fh5co-nav-toggle {
 .fh5co-feature .fh5co-icon i {
   display: table-cell;
   vertical-align: middle;
-  color: #228896;
+  color: #6c98e1;
   font-size: 40px;
   height: 100px;
 }
@@ -826,7 +826,7 @@ body.offcanvas #fh5co-main, body.offcanvas .fh5co-nav-toggle {
   margin-top: 30px;
 }
 .fh5co-feature.fh5co-feature-sm .fh5co-icon i {
-  color: #228896;
+  color: #6c98e1;
   font-size: 40px;
 }
 @media screen and (max-width: 1200px) {
@@ -886,21 +886,21 @@ body.offcanvas #fh5co-main, body.offcanvas .fh5co-nav-toggle {
 }
 
 .btn-primary {
-  background: #228896;
+  background: #6c98e1;
   color: #fff;
-  border: 2px solid #228896;
+  border: 2px solid #6c98e1;
 }
 .btn-primary:hover, .btn-primary:focus, .btn-primary:active {
-  background: #279bab !important;
-  border-color: #279bab !important;
+  background:  #6c98e1; !important;
+  border-color:  #6c98e1; !important;
 }
 .btn-primary.btn-outline {
   background: transparent;
-  color: #228896;
-  border: 2px solid #228896;
+  color: #6c98e1;
+  border: 2px solid  #6c98e1;
 }
 .btn-primary.btn-outline:hover, .btn-primary.btn-outline:focus, .btn-primary.btn-outline:active {
-  background: #228896;
+  background: #6c98e1;
   color: #fff;
 }
 
@@ -1010,7 +1010,7 @@ body.offcanvas #fh5co-main, body.offcanvas .fh5co-nav-toggle {
 .form-control:active, .form-control:focus {
   outline: none;
   box-shadow: none;
-  border-color: #228896;
+  border-color: #6c98e1;
 }
 
 #message {

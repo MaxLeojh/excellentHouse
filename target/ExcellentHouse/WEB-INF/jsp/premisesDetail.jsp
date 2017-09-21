@@ -260,6 +260,7 @@
                                                 <strong>${reply.entity.contains}</strong>
                                                 <a class="btn-comment iconfont icon-pinglun"href="#comment-son1${reply.entity.id}" data-toggle="collapse">回复</a>
                                             </span>
+
                                                 <%--<input class="input-comment form-control " type="text" placeholder="评论">--%>
                                             <div id="comment-son1${reply.entity.id}" class="collapse" >
                                                 <textarea id="replyContains"  class="form-control comment-textarea col-md-7" maxlength="200" rows="2" ></textarea>

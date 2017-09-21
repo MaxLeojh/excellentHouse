@@ -5,6 +5,13 @@ body{
    text-align: center;
     font-size: 40px;
 }
+.margin-left{
+    margin-left: 20px;
+}
+.my-select{
+
+    height: 30px;
+}
 .my-panel{
     width: 96%;
     margin-left: 2%;
