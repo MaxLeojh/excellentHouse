@@ -41,6 +41,13 @@ public class FrontIndexController {
     @Autowired
     DecoInstanceService decoInstanceService;
 
+    //首页显示的数量
+    Integer limit = 3; //page size limit
+    Integer offset = 0; //offset
+
+    /**
+     * 首页
+     */
     @RequestMapping(value = "/show")
     @ResponseBody
     public ModelAndView index(HttpSession session){
@@ -52,20 +59,19 @@ public class FrontIndexController {
         }
 
 //        楼盘
-        List<PremisesAO> premisesList = premisesService.getAllPremisesAO();
+        List<PremisesAO> premisesList = premisesService.getPremisesAOList(limit, offset);
         mav.addObject("premisesList", premisesList);
 
-
 //        二手房
-        List<HouseAO> secondHandList = houseService.getHouseAOByKind("二手房");
+        List<HouseAO> secondHandList = houseService.getHouseAOListByKind("二手房", limit, offset);
         mav.addObject("secondHandList",secondHandList);
 
 //        租房
-        List<HouseAO> rentHouseList = houseService.getHouseAOByKind("出租房");
+        List<HouseAO> rentHouseList = houseService.getHouseAOListByKind("出租房", limit, offset);
         mav.addObject("rentHouseList", rentHouseList);
 
 //        装修案例展示
-        List<DecoInstanceAO> decoInstanceList = decoInstanceService.getAllDecoIntanceAO();
+        List<DecoInstanceAO> decoInstanceList = decoInstanceService.getDecoInstanceList(limit, offset);
         mav.addObject("decoInstanceList", decoInstanceList);
 
 

@@ -81,7 +81,7 @@
                     <option value="500000">500000</option>
                 </select>
             </fieldset>
-            <button type="submit" class="btn btn-default btn-lg text-center">搜索 <br class="hidden-sm hidden-xs"> 房源
+            <button type="submit" class="btn btn-default btn-lg text-center">搜索
             </button>
         </form>
     </div>

@@ -5,6 +5,7 @@
   Time: 12:51
   To change this template use File | Settings | File Templates.
 --%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
 <!DOCTYPE html>
@@ -15,7 +16,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Home</title>
+    <title>个人中心</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="" />
     <meta name="keywords" content="" />
@@ -40,7 +41,8 @@
     <link rel="stylesheet" href="../assets/css/style.css">
 
     <link rel="stylesheet" href="../assets/css/mycss.css">
-
+    <script src="../assets/js/editInfo.js"></script>
+    <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.4.2.min.js"></script>
     <!--修改头像-->
     <!-- jQuery -->
     <script src="../assets/jquery.min.js"></script>
@@ -72,20 +74,23 @@
                 <li class=" panel panel-default"id="myCollapsibleExample"><a href="#demo" data-toggle="collapse">收藏</a>
                     <ul id="demo" class="collapse ">
                         <li><a href="/user/collectedPremises">楼盘收藏</a></li>
-                        <li><a href="/user/collectedHouse">二手房收藏</a></li>
-                        <li><a href="/user/collectedHouse">租房收藏</a></li>
+                        <li><a href="/user/collectedHouse?kind=二手房">二手房收藏</a></li>
+                        <li><a href="/user/collectedHouse?kind=出租房">租房收藏</a></li>
                         <li><a href="/user/collectedDecoInstance">装修收藏</a></li>
                     </ul>
                 </li>
-                <li class=" panel panel-default " ><a href="/user/house">我的二手房</a></li>
-                <li class=" panel panel-default "><a href="/user/house">我的租房</a></li>
+                <li class=" panel panel-default " ><a href="/user/house?kind=二手房">我的二手房</a></li>
+                <li class=" panel panel-default "><a href="/user/house?kind=出租房">我的租房</a></li>
             </ul>
         </nav>
     </aside>
 
     <div id="fh5co-main" >
         <div class="fh5co-narrow-content">
-            <h2 class="fh5co-heading animate-box" data-animate-effect="fadeInLeft">个人信息</h2>
+            <h5 class="">个人信息
+             <%--<span class="iconfont icon-icon1" onclick="btnClick(this)"></span>--%>
+
+            </h5>
             <hr >
             <!--基本信息-->
             <div class="row">
@@ -93,38 +98,55 @@
                     <div class="fh5co-feature animate-box " data-animate-effect="fadeInLeft">
                         <div class="row">
                             <div class="col-lg-offset-1 col-lg-3">
-                                <img id="myAvatar" class="my-avatar" src="../assets/images/avatar.png">
-                                <button type="button" class="btn btn-default up-img" data-toggle="modal" data-target="#avatar-modal">上传头像</button>
+                                <img id="myAvatar" class="my-avatar" src="${user.pictureList.get(0).pictureAddress}">
+                                <button type="button" class="btn btn-default up-img" data-toggle="modal" data-target="#avatar-modal">修改头像</button>
                             </div>
 
-                            <div class="col-lg-7">
+                            <div id="dvInput" class="col-lg-7">
                                 <div class="row input-row" >
                                     <span class="col-lg-4 input-name">用户名：</span>
-                                    <span class="col-lg-8" type="text" > 饶宇皓</span>
+                                     <%--<input class="input-info " type="text" readonly="false" value=${user.entity.name}>--%>
+
+                                   <input class="input-info "  type="text" readonly value=${user.entity.name}>
+
+                                    <%--<span class="col-lg-8" type="text" > ${user.entity.name}</span>--%>
                                 </div>
                                 <div class="row input-row" >
                                     <span class="col-lg-4 input-name">手机号：</span>
-                                    <span class="col-lg-4" type="text" > 18475786244</span>
-                                    <a class="col-lg-4">修改</a>
-                                </div>
-                                <div class="row input-row" >
-                                    <span class="col-lg-4 input-name">昵称：</span>
-                                    <div class="col-lg-8 " >
-                                        <input type="text"  placeholder="八月">
-                                    </div>
+                                    <%--<input class="input-info " type="text" disabled="disabled" value=${user.entity.phoneNumber}>--%>
 
+                                    <input class="input-info "  type="text" readonly value=${user.entity.phoneNumber}>
+                                    <%--<a class="col-lg-4">修改</a>--%>
                                 </div>
+                                <%--<div class="row input-row" >--%>
+                                    <%--<span class="col-lg-4 input-name">昵称：</span>--%>
+                                    <%--<div class="col-lg-8 " >--%>
+                                        <%--<input type="text" placeholder="八月">--%>
+                                    <%--</div>--%>
+                                <%--</div>--%>
                                 <div class="row input-row" >
                                     <span class="col-lg-4 input-name">邮箱：</span>
-                                    <span class="col-lg-4" type="text" > 18475786244@12</span>
-                                    <a class="col-lg-4">修改</a>
+                                    <input class="input-emil " type="text" disabled="disabled" value=${user.entity.email}>
+
+                                    <%--<a class="col-lg-4">修改</a>--%>
                                 </div>
                                 <div class="row input-row" >
                                     <span class="col-lg-4 input-name">性别：</span>
-                                    <div class="col-lg-8">
-                                        <label><input name="sex"checked type="radio"/>男   </label>
-                                        <label class="col-lg-offset-1"><input name="sex" type="radio"  />女</label>
-                                    </div>
+                                    <c:choose>
+                                        <c:when test="${user.entity.gender = true}">
+                                            <div class="col-lg-8">
+                                                <label><input class="input-sex" name="sex"checked type="radio"/>男   </label>
+                                                <label class="col-lg-offset-1"><input class="input-sex"name="sex" type="radio" disabled/>女</label>
+                                            </div>
+                                        </c:when>
+                                        <c:otherwise>
+                                            <div class="col-lg-8">
+                                                <label><input class="input-sex" name="sex" type="radio" disabled/>男   </label>
+                                                <label class="col-lg-offset-1"><input class="input-sex" name="sex" checked type="radio"  />女</label>
+                                            </div>
+                                        </c:otherwise>
+                                    </c:choose>
+
 
                                 </div>
                             </div>
@@ -134,33 +156,35 @@
             </div>
             <hr >
             <!--其他信息-->
-            <div class="row col-lg-offset-1">
-                <div class="fh5co-feature animate-box " data-animate-effect="fadeInLeft">
-                    <div class="row input-row" >
-                        <span class="col-lg-2 input-name">家庭住址：</span>
-                        <div class="col-lg-4" style="height: 10px" >
-                            <select class=" input-sm" style="font-size: 1px">
-                                <option value="">云南</option>
-                                <option value="">.云南</option>
-                            </select>
-                            <select class=" input-sm" style="font-size: 1px">
-                                <option value="">昆明</option>
-                                <option value="">.云南</option>
-                            </select>
-                            <select class=" input-sm" style="font-size: 1px">
-                                <option value="">云南大学</option>
-                                <option value="">.云南</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="row margin-2 " >
-                        <span class="col-lg-2 input-name">出生日期：</span>
-                        <input class="input-date" type="date" value="2015-09-24"/>
-                    </div>
-                </div>
-            </div>
+            <%--<div class="row col-lg-offset-1">--%>
+                <%--<div class="fh5co-feature animate-box " data-animate-effect="fadeInLeft">--%>
+                    <%--<div class="row input-row" >--%>
+                        <%--<span class="col-lg-2 input-name">家庭住址：</span>--%>
+                        <%--<div class="col-lg-4" style="height: 10px" >--%>
+                            <%--<select class=" input-sm" style="font-size: 1px">--%>
+                                <%--<option value="">云南</option>--%>
+                                <%--<option value="">.云南</option>--%>
+                            <%--</select>--%>
+                            <%--<select class=" input-sm" style="font-size: 1px">--%>
+                                <%--<option value="">昆明</option>--%>
+                                <%--<option value="">.云南</option>--%>
+                            <%--</select>--%>
+                            <%--<select class=" input-sm" style="font-size: 1px">--%>
+                                <%--<option value="">云南大学</option>--%>
+                                <%--<option value="">.云南</option>--%>
+                            <%--</select>--%>
+                        <%--</div>--%>
+                    <%--</div>--%>
+                    <%--<div class="row margin-2 " >--%>
+                        <%--<span class="col-lg-2 input-name">出生日期：</span>--%>
+                        <%--<input class="input-date" type="date" value="2015-09-24"/>--%>
+                    <%--</div>--%>
+                <%--</div>--%>
+            <%--</div>--%>
             <div class="fh5co-feature animate-box " data-animate-effect="fadeInLeft">
-                <button class="btn  save-btn">保存</button>
+                <%--<button class="btn  save-btn">修改</button>--%>
+
+                <input  class="btn btn-default  save-btn" type="button" value="编辑" onclick="btnClick(this)" />
             </div>
         </div>
     </div>

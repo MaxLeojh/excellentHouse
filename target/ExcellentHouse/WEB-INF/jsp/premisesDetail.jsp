@@ -67,7 +67,7 @@
                             data-type="楼盘">${premisesAO.entity.name}</h4>
                         <c:choose>
                             <c:when test="${isCollected == true}">
-                                <button id="hasCollect" class="pull-right ">已收藏 <i class="iconfont icon-xihuan "></i>
+                                <button id="hasCollect" class="pull-right ">已收藏 <i class="iconfont icon-iconfontlike "></i>
                                 </button>
                             </c:when>
                             <c:otherwise>
@@ -860,6 +860,7 @@
 
 <script src="../js/collection.js"></script>
 <script src="../js/comment.js"></script>
+<script src="../js/user.js"></script>
 <script>
 //    获得焦距变大
     $(function() {

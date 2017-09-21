@@ -8,14 +8,46 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>优购房-用户登录</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <link rel="stylesheet" href="../assets/css/mycss.css" />
+    <link rel="stylesheet" href="../assets/css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="../assets/fonts/iconfont.css">
+    <title>优购房登陆</title>
 </head>
+
 <body>
-<input id="IdStr" type="text" class="form-control" placeholder="用户名/邮箱/手机号">
-<br>
-<input id="passWord" type="password" class="form-control" placeholder="密码">
-<br>
-<button id="login" class="btn btn-default regedit-btn agreebtn">login</button>
+<div class="my-logo">
+    <a href="/"><img src="../assets/images/logo.png"/></a>
+</div>
+<div class="content">
+    <div class="login-all" >
+        <div class="loginDiv ">
+            <div class="login-info ">
+                <h4 >欢迎登录</h4>
+                <div class="input-group username">
+                    <span class="input-group-addon iconfont icon-yonghu"></span>
+                    <input id="IdStr" type="text" class="form-control " placeholder="邮箱/手机号/用户名" >
+                </div>
+                <div class="input-group password">
+                    <span class="input-group-addon  iconfont icon-suo "></span>
+                    <input id="passWord" type="password" class="form-control" placeholder="请输入密码" >
+                </div>
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox"> 自动登陆
+                    </label>
+                </div>
+                <button id="login" type="button" class="btn btn-default login-btn ">登陆</button>
+
+                <div class="login-bottom">
+                    <a>忘记登录密码</a>
+                    <a class="register" href="/user/toRegister" >免费注册</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 </body>
 <script src="../assets/js/jquery.min.js"></script>
 <script type="text/javascript">

@@ -21,10 +21,10 @@
 <body>
 <div class="container">
     <div class="logo">
-        <div class="logo"> <img src="../assets/images/logo.png" /> </div>
+        <div class="logo"><a href="/"><img src="../assets/images/logo.png" /></a></div>
     </div>
     <div  class="head-riht">
-        <span class="login">我已注册，马上<a href="login.html" >登录</a></span>
+        <span class="login">我已注册，马上<a href="/user/toLogin" >登录</a></span>
     </div>
 </div>
 

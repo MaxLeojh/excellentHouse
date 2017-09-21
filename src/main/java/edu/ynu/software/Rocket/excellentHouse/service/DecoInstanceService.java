@@ -13,5 +13,9 @@ public interface DecoInstanceService {
 
     List<DecoInstanceAO> getAllDecoIntanceAO();
 
+    List<DecoInstanceAO> getDecoInstanceList(Integer limit, Integer offset);
+
     DecoInstanceAO selectByDecoInstanceId(Integer decoInstanceId);
+
+    DecoInstanceAO selectById(Integer decoInstanceId);
 }

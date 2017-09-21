@@ -64,7 +64,7 @@
 <section id="home-property-listing">
     <header class="section-header home-section-header text-center">
         <div class="container">
-            <h2 class="wow slideInRight">楼盘</h2>
+            <a href="/frontPremises/list"><h2 class="wow slideInRight">楼盘</h2></a>
             <p class="wow slideInLeft">这里是楼盘的模块 <br>
                 以钱换钱了 </p>
         </div>
@@ -85,7 +85,7 @@
                                     <h6 class="entry-title"><a href="/frontPremises/detail?premisesId=${premises.entity.id}">${premises.entity.name}</a></h6>
                                     <span class="property-location"><i class="fa fa-map-marker"></i>坐标施工中</span>
                                 </div>
-                                <button class="btn btn-default btn-price pull-right btn-3d" data-hover="￥${premises.entity.averagePrice}"><strong>￥${premises.entity.averagePrice}</strong>
+                                <button class="btn btn-default btn-price pull-right btn-3d" data-hover="￥${premises.entity.averagePrice}/m<sup>2</sup>"><strong>￥${premises.entity.averagePrice}/m<sup>2</sup></strong>
                                 </button>
                             </header>
                             <%--<div class="property-meta clearfix">--%>
@@ -117,7 +117,7 @@
 <section id="home-property-for-rent-listing">
     <header class="section-header home-section-header text-center">
         <div class="container">
-            <h2 class="wow slideInLeft">二手房</h2>
+            <a href="/frontHouse/list?kind=二手房"><h2 class="wow slideInLeft">二手房</h2></a>
             <p class="wow slideInRight">这里是二手房模块 <br>
                 风拳流的奥义</p>
         </div>
@@ -162,7 +162,7 @@
 <section id="home-property-listing">
     <header class="section-header home-section-header text-center">
         <div class="container">
-            <h2 class="wow slideInLeft">租房</h2>
+            <a href="/frontHouse/list?kind=租房"><h2 class="wow slideInLeft">租房</h2></a>
             <p class="wow slideInRight">这里是租房模块 <br>
                 走过路过</p>
         </div>
@@ -214,7 +214,7 @@
 <section id="home-property-for-rent-listing">
     <header class="section-header home-section-header text-center">
         <div class="container">
-            <h2 class="wow slideInRight">装修</h2>
+            <a href="/frontDecoInstance/list"><h2 class="wow slideInRight">装修</h2></a>
             <p class="wow slideInLeft">这里是装修案例展示 <br>
                 装修技术哪家强？ </p>
         </div>
