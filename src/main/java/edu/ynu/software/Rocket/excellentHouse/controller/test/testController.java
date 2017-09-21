@@ -43,7 +43,7 @@ public class testController {
         jsonObject.put("result","success");
         jsonObject.put("location",location);
 
-        System.out.println(location);
+        System.out.println("---------------"+location);
 
         response.getWriter().print(jsonObject.toString());
     }
