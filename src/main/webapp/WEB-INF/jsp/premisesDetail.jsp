@@ -515,7 +515,7 @@
                                             </div>
                                             <div>
                                                 <label for="property-beds">No.Beds</label>
-                                                <select name="bedrooms" id="property-beds">
+                                                <select name="bedrooms" >
                                                     <option value="">Beds</option>
                                                     <option value="1">1</option>
                                                     <option value="2">2</option>
@@ -532,7 +532,7 @@
                                             </div>
                                             <div>
                                                 <label for="property-baths">No.Baths</label>
-                                                <select name="bathrooms" id="property-baths">
+                                                <select name="bathrooms">
                                                     <option value="">Bathrooms</option>
                                                     <option value="1">1</option>
                                                     <option value="2">2</option>
@@ -549,15 +549,15 @@
                                             </div>
                                             <div>
                                                 <label for="property-min-area">Min Area(sqft)</label>
-                                                <input type="text" name="min-area" id="property-min-area">
+                                                <input type="text" name="min-area" >
                                             </div>
                                             <div>
                                                 <label for="property-max-area">Max Area(sqft)</label>
-                                                <input type="text" name="max-area" id="property-max-area">
+                                                <input type="text" name="max-area" >
                                             </div>
                                             <div>
                                                 <label for="property-min-price">Min Prices</label>
-                                                <select name="min-price" id="property-min-price">
+                                                <select name="min-price" >
                                                     <option value="any" selected="selected">Any</option>
                                                     <option value="1000">$1000</option>
                                                     <option value="5000">$5000</option>
