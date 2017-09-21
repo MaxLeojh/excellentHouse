@@ -21,15 +21,25 @@ public class CommonServiceImpl implements CommonService {
 //        int city;
 //        int district;
 //        int street;
-        Addressbase street = addressbaseMapper.selectByPrimaryKey(String.valueOf(code));
-        Addressbase district = addressbaseMapper.selectByPrimaryKey(String.valueOf(street.getUpId()));
-        Addressbase city = addressbaseMapper.selectByPrimaryKey(String.valueOf(district.getUpId()));
-        Addressbase province = addressbaseMapper.selectByPrimaryKey(String.valueOf(city.getUpId()));
-        location += province.getCityName();
-        location += " ";
-        location += city.getCityName();
-        location += district.getCityName();
-        location += street.getCityName();
+//        Addressbase street = addressbaseMapper.selectByPrimaryKey(String.valueOf(code));
+//        street
+//        Addressbase district = addressbaseMapper.selectByPrimaryKey(String.valueOf(street.getUpId()));
+//        Addressbase city = addressbaseMapper.selectByPrimaryKey(String.valueOf(district.getUpId()));
+//        Addressbase province = addressbaseMapper.selectByPrimaryKey(String.valueOf(city.getUpId()));
+//        location += province.getCityName();
+//        location +=" ";
+//        location += city.getCityName();
+//        location +=" ";
+//        location += district.getCityName();
+//        location +=" ";
+//        location += street.getCityName();
+        Addressbase curCity = addressbaseMapper.selectByPrimaryKey(String.valueOf(code));
+        while (Integer.parseInt(curCity.getKindId())>0){
+            System.out.println(curCity.getCityId());
+            location = " "+location;
+            location = curCity.getCityName()+location;
+            curCity = addressbaseMapper.selectByPrimaryKey(String.valueOf(curCity.getUpId()));
+        }
         return location;
     }
 

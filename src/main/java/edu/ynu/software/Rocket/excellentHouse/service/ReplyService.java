@@ -9,7 +9,7 @@ import java.util.List;
  * Created by August on 2017/9/20.
  */
 public interface ReplyService {
-    public ReplyAO getById(Integer replyId);
-    public List<ReplyAO> selectByPremisesId(Integer premisesId);
-    public Integer insert(Reply reply);
+    ReplyAO getById(Integer replyId);
+    List<ReplyAO> selectByPremisesId(Integer premisesId);
+    Integer insert(Reply reply);
 }

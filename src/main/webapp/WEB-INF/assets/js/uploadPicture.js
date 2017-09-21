@@ -9,16 +9,16 @@ function xmTanUploadImg(obj) {
 
         reader.onloadstart = function (e) {
             console.log("开始读取....");
-        }
+        };
         reader.onprogress = function (e) {
             console.log("正在读取中....");
-        }
+        };
         reader.onabort = function (e) {
             console.log("中断读取....");
-        }
+        };
         reader.onerror = function (e) {
             console.log("读取异常....");
-        }
+        };
         reader.onload = function (e) {
             console.log("成功读取....");
 
@@ -43,9 +43,9 @@ function xmTanUploadImg(obj) {
             clear.onclick= function(){
                          var button = $(this);
                button.parent().remove();
-            }
+            };
             ndiv.appendChild(clear);
-        }
+        };
         reader.readAsDataURL(file);
     }
 }

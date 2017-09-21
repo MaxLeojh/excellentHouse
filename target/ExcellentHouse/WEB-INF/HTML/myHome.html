@@ -289,12 +289,12 @@
                     var dataUrl = canvas.toDataURL("image/jpeg");
 //                    saveFile(dataUrl,"11.jpeg");
                     var newImg = document.createElement("img");
-                    document.getElementById("myAvatar").src=dataUrl
+                    document.getElementById("myAvatar").src=dataUrl;
                     newImg.src = dataUrl;
                     imagesAjax(dataUrl)
                 }
             });
-        })
+        });
 
         function imagesAjax(src) {
             var data = {};

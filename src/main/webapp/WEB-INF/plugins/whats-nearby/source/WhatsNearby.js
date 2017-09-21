@@ -179,7 +179,7 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
                 backgroundColor: this.options.backgroundColor,
                 scrollwheel: this.options.scrollwheel,
                 draggable: this.options.draggable
-            }
+            };
             this.map = new google.maps.Map(this.elem, mapOptions);
 
             this.map.addListener("bounds_changed", function(){
@@ -362,8 +362,7 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
                         excluded = true;
                     }
                 }
-            };
-
+            }
             for (i = 0; i < this.options.excludeByKeywords.length; i++) {
                 if(place.name.toLowerCase().indexOf(this.options.excludeByKeywords[i].toLowerCase()) >= 0){
                     excluded = true;
@@ -461,7 +460,7 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
             );
 
             var worldCoordinateCenter = this.map.getProjection().fromLatLngToPoint(latlng);
-            var pixelOffset = new google.maps.Point((offsetx/scale) || 0,(offsety/scale) ||0)
+            var pixelOffset = new google.maps.Point((offsetx/scale) || 0,(offsety/scale) ||0);
 
             var worldCoordinateNewCenter = new google.maps.Point(
                 worldCoordinateCenter.x - pixelOffset.x,
