@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Gentelella Alela! | </title>
+    <title>楼盘管理</title>
 
     <!-- Bootstrap -->
     <link href="../vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -20,6 +20,7 @@
 
     <!-- Custom Theme Style -->
     <link href="../build/css/custom.min.css" rel="stylesheet">
+    <link href="../assets/css/backstage.css" rel="stylesheet">
 </head>
 
 <body class="nav-md">
@@ -293,7 +294,7 @@
                     <div class="col-md-12">
                         <div class="x_panel">
                             <div class="x_title">
-                                <h2>Projects</h2>
+                                <h2>楼盘</h2>
                                 <ul class="nav navbar-right panel_toolbox">
                                     <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                                     </li>
@@ -313,37 +314,33 @@
                             </div>
                             <div class="x_content">
 
-                                <p>Simple table with project listing with progress and editing options</p>
+                                <p>这是所有楼盘，共200套</p>
 
                                 <!-- start project list -->
-                                <table class="table">
+                                <table class="table text-center">
                                     <thead>
-                                    <tr>
-                                        <th style="width: 1%">#</th>
-                                        <th style="width: 20%">Project Name</th>
-                                        <th>Team Members</th>
-                                        <th>Project Progress</th>
-                                        <th>Status</th>
-                                        <th style="width: 15%">#Edit</th>
+                                    <tr >
+                                        <th >编号</th>
+                                        <th >名称</th>
+                                        <th>位置</th>
+                                        <th>面积/㎡</th>
+                                        <th>价格</th>
+                                        <th>联系方式</th>
+                                        <th>类型</th>
+                                        <th >操作</th>
                                     </tr>
                                     </thead>
                                     <tbody>
                                     <tr>
-                                        <td>#</td>
+                                        <td>1</td>
+                                        <td>楼房</td>
+                                        <td>100</td>
+                                        <td>100</td>
+                                        <td>1000</td>
+                                        <td>1848</td>
+                                        <td>毛坯房</td>
                                         <td>
-                                            kaslkaslkasll
-                                        </td>
-                                        <td>
-                                            shbshshss
-                                        </td>
-                                        <td>
-                                            dadada
-                                        </td>
-                                        <td>
-                                            ssssss
-                                        </td>
-                                        <td>
-                                            <a href="#" class="btn btn-primary btn-xs" data-toggle="modal" data-target=".modelided"><i class="fa fa-folder"></i> View </a>
+                                            <a href="#" class="btn btn-primary btn-xs" data-toggle="modal" data-target=".modelided"><i class="fa fa-folder"></i> 查看</a>
 
                                             <div class="modal fade modelided" tabindex="-1" role="dialog" aria-hidden="true">
                                                 <div class="modal-dialog modal-sm">
@@ -352,105 +349,44 @@
                                                         <div class="modal-header">
                                                             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span>
                                                             </button>
-                                                            <h4 class="modal-title" id="myModalLabel2">User details</h4>
+                                                            <h4 class="modal-title" >楼盘详情</h4>
                                                         </div>
                                                         <div class="modal-body" style="text-align: center">
                                                             <div class="profile_img">
-                                                                <div id="crop-avatar">
+                                                                <div >
                                                                     <!-- Current avatar -->
                                                                     <img class="img-responsive avatar-view" src="../production/images/picture.jpg" alt="Avatar" title="Change the avatar" style="margin: auto">
                                                                 </div>
                                                             </div>
-                                                            <h3>Samuel Doe</h3>
+                                                            <h3>楼房</h3>
 
                                                             <ul class="list-unstyled user_data">
-                                                                <li><i class="fa fa-map-marker user-profile-icon"></i> San Francisco, California, USA
+                                                                <li><i class="fa fa-map-marker user-profile-icon"></i> 呈贡
                                                                 </li>
 
                                                                 <li>
-                                                                    <i class="fa fa-briefcase user-profile-icon"></i> Software Engineer
+                                                                    <i class="fa fa-briefcase user-profile-icon"></i> 100/㎡
                                                                 </li>
 
                                                                 <li class="m-top-xs">
                                                                     <i class="fa fa-external-link user-profile-icon"></i>
-                                                                    <a href="http://www.kimlabs.com/profile/" target="_blank">www.kimlabs.com</a>
+                                                                    <a href="http://www.kimlabs.com/profile/" target="_blank">分享</a>
                                                                 </li>
                                                             </ul>
                                                         </div>
                                                         <div class="modal-footer">
-                                                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                                            <button type="button" class="btn btn-primary">Save changes</button>
+                                                            <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                                                            <button type="button" class="btn btn-primary">保存</button>
                                                         </div>
 
                                                     </div>
                                                 </div>
                                             </div>
 
-                                            <a href="#" class="btn btn-info btn-xs"><i class="fa fa-pencil"></i> Edit </a>
-                                            <a href="#" class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i> Delete </a>
+                                            <a href="#" class="btn btn-info btn-xs"><i class="fa fa-pencil"></i> 编辑 </a>
+                                            <a href="#" class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i> 删除 </a>
                                         </td>
                                     </tr>
-                                    <tr>
-                                        <td>#</td>
-                                        <td>
-                                            kaslkaslkasll
-                                        </td>
-                                        <td>
-                                            shbshshss
-                                        </td>
-                                        <td>
-                                            dadada
-                                        </td>
-                                        <td>
-                                            ssssss
-                                        </td>
-                                        <td>
-                                            <a href="#" class="btn btn-primary btn-xs"><i class="fa fa-folder"></i> View </a>
-                                            <a href="#" class="btn btn-info btn-xs"><i class="fa fa-pencil"></i> Edit </a>
-                                            <a href="#" class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i> Delete </a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>#</td>
-                                        <td>
-                                            kaslkaslkasll
-                                        </td>
-                                        <td>
-                                            shbshshss
-                                        </td>
-                                        <td>
-                                            dadada
-                                        </td>
-                                        <td>
-                                            ssssss
-                                        </td>
-                                        <td>
-                                            <a href="#" class="btn btn-primary btn-xs"><i class="fa fa-folder"></i> View </a>
-                                            <a href="#" class="btn btn-info btn-xs"><i class="fa fa-pencil"></i> Edit </a>
-                                            <a href="#" class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i> Delete </a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>#</td>
-                                        <td>
-                                            kaslkaslkasll
-                                        </td>
-                                        <td>
-                                            shbshshss
-                                        </td>
-                                        <td>
-                                            dadada
-                                        </td>
-                                        <td>
-                                            ssssss
-                                        </td>
-                                        <td>
-                                            <a href="#" class="btn btn-primary btn-xs"><i class="fa fa-folder"></i> View </a>
-                                            <a href="#" class="btn btn-info btn-xs"><i class="fa fa-pencil"></i> Edit </a>
-                                            <a href="#" class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i> Delete </a>
-                                        </td>
-                                    </tr>
-
                                     </tbody>
                                 </table>
                                 <!-- end project list -->
@@ -466,7 +402,7 @@
         <!-- footer content -->
         <footer>
             <div class="pull-right">
-                Gentelella - Bootstrap Admin Template by <a href="https://colorlib.com">Colorlib</a>
+               <a>优购房</a>
             </div>
             <div class="clearfix"></div>
         </footer>
