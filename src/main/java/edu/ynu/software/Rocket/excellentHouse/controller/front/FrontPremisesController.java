@@ -39,7 +39,7 @@ public class FrontPremisesController {
     CollectionService collectionService;
 
 
-    Integer limit = 1;
+    Integer limit = 3;
 
     /**
      * 楼盘列表

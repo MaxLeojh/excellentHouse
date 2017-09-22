@@ -19,6 +19,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.commons.CommonsMultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -35,6 +36,9 @@ import java.util.List;
 @Controller
 @RequestMapping("frontHouse")
 public class FrontHouseController {
+
+    @Autowired
+    private ServletContext servletContext;
 
     @Autowired
     HouseService houseService;
@@ -129,19 +133,6 @@ public class FrontHouseController {
     /**
      * 新建House
      */
-//    @ResponseBody
-//    @RequestMapping(value = "insert", method = RequestMethod.POST)
-//    public void insert(HttpServletRequest request, HttpServletResponse response, HttpSession session, String type) throws IOException{
-//        JSONObject jsonObject = new JSONObject();
-//
-//
-//        jsonObject.put("result", "success");
-//        response.getWriter().print(jsonObject.toString());
-//    }
-
-    /**
-     * 新建House
-     */
     @RequestMapping(value="/insert",method= RequestMethod.POST)
     @ResponseBody
     public ModelAndView insert(@RequestParam("file") CommonsMultipartFile files[], HttpServletRequest request, HttpSession session) throws IOException {
@@ -211,6 +202,13 @@ public class FrontHouseController {
 //            System.out.println(path+"+"+fileName);
             file.transferTo(dir);
 
+            //存服务器上
+//            String path_tomcat = servletContext.getRealPath("") + "WEB-INF/images/house/";
+//            File dir_tomcat = new File(path_tomcat,fileName);
+//            if(!dir_tomcat.exists()){
+//                dir_tomcat.mkdirs();
+//            }
+//            file.transferTo(dir_tomcat);
         }
 
         mav.setViewName("userHome");

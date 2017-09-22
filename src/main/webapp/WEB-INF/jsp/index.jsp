@@ -129,7 +129,7 @@
                     <div class="col-lg-4 col-md-6 layout-item-wrap">
                         <article class="property clearfix layout-item">
                             <figure class="feature-image">
-                                <a class="clearfix" href="single-property.html"> <img src="../assets/images/property/1.jpg"
+                                <a class="clearfix" href="single-property.html"> <img src="${house.pictureList.get(0).pictureAddress}"
                                                                                       alt="Property Image"></a>
 
                             </figure>
@@ -173,7 +173,7 @@
                 <div class="col-lg-4 col-sm-6 layout-item-wrap">
                     <article class="property layout-item clearfix">
                         <figure class="feature-image">
-                            <a class="clearfix zoom" href=""><img data-action="zoom" src="../assets/images/property/1.jpg" alt="图片丢了"></a>
+                            <a class="clearfix zoom" href=""><img data-action="zoom" src="${house.pictureList.get(0).pictureAddress}" alt="图片丢了"></a>
                             <span class="btn btn-warning btn-sale">热卖中</span>
                         </figure>
                         <div class="property-contents clearfix">
@@ -226,7 +226,7 @@
                     <div class="col-lg-4 col-md-6">
                         <article class="property clearfix">
                             <figure class="feature-image">
-                                <a class="clearfix" href="single-property.html"> <img src="../assets/images/property/1.jpg"
+                                <a class="clearfix" href="single-property.html"> <img src="${instance.pictureList.get(0).pictureAddress}"
                                                                                       alt="Property Image"></a>
                             </figure>
                             <div class="property-contents">
@@ -240,7 +240,7 @@
                                         <strong>￥${instance.entity.budget}万</strong></button>
                                 </header>
                                 <div class="property-meta clearfix">
-                                    暂时不知道放什么
+                                    <%--暂时不知道放什么--%>
                                         <%--<span><i class="fa fa-arrows-alt"></i> 3060 SqFt</span>--%>
                                         <%--<span><i class="fa fa-bed"></i> 3 Beds</span>--%>
                                         <%--<span><i class="fa fa-bathtub"></i> 3 Baths</span>--%>

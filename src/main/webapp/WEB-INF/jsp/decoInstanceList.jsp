@@ -76,7 +76,7 @@
                     <article class="property layout-item clearfix">
                         <figure class="feature-image">
                             <a class="clearfix zoom" href="single-property.html">
-                                <img data-action="zoom" src="../assets/images/property/1.jpg" alt="Property Image">
+                                <img data-action="zoom" src="${instance.pictureList.get(0).pictureAddress}" alt="Property Image">
                             </a>
                             <span class="btn btn-warning btn-sale">热销</span>
                         </figure>

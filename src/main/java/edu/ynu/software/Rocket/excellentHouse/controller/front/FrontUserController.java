@@ -19,6 +19,7 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 import sun.misc.BASE64Decoder;
 
+import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -34,6 +35,9 @@ import java.util.List;
 @Controller
 @RequestMapping("/user")
 public class FrontUserController {
+
+    @Autowired
+    private ServletContext servletContext;
 
     @Autowired
     UserService userService;
@@ -389,8 +393,13 @@ public class FrontUserController {
         String address = "../images/user/"+picture.getId()+".jpg";
         picture.setPictureAddress(address);
         pictureService.updatePic(picture);
+        //存本地
         boolean flag = base64ToImg(base64code,"D:/August/idea/program/ExcellentHouse/src/main/webapp/WEB-INF/images/user/"+picture.getId()+".jpg");
         System.out.println(flag);
+
+        //存服务器上
+//        String path_tomcat = servletContext.getRealPath("") + "WEB-INF/images/users/" + picture.getId() + ".jpg";
+//        base64ToImg(base64code,path_tomcat);
 
         //刷新session中的user
         UserAO newUserAO = userService.selectById(userAO.getEntity().getUserId());
