@@ -87,7 +87,14 @@
 
     <div id="fh5co-main">
         <div class="fh5co-narrow-content">
-            <h2 class="fh5co-heading animate-box" data-animate-effect="fadeInLeft">租房收藏</h2>
+            <c:choose>
+                <c:when test="${kind == '出租房'}">
+                    <h2 class="fh5co-heading animate-box" data-animate-effect="fadeInLeft">租房收藏</h2>
+                </c:when>
+                <c:otherwise>
+                    <h2 class="fh5co-heading animate-box" data-animate-effect="fadeInLeft">二手房收藏</h2>
+                </c:otherwise>
+            </c:choose>
             <c:choose>
                 <c:when test="${houseAOList.size() == 0}">
                     <div class="row row-bottom-padded-md">

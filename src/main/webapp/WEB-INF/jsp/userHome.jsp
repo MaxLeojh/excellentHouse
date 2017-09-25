@@ -135,16 +135,14 @@
                         <c:choose>
                             <c:when test="${user.entity.gender = true}">
                                 <div class="col-lg-8">
-                                    <label><input class="input-sex editSex" name="sex" checked type="radio"/>男 </label>
-                                    <label class="col-lg-offset-1"><input class="input-sex" name="sex" type="radio"
-                                                                          disabled/>女</label>
+                                    <label><input class="input-sex editSex" name="sex" checked type="radio" value="男"/>男 </label>
+                                    <label class="col-lg-offset-1"><input class="input-sex" name="sex" type="radio" value="女" disabled/>女</label>
                                 </div>
                             </c:when>
                             <c:otherwise>
                                 <div class="col-lg-8">
-                                    <label><input class="input-sex editSex" name="sex" type="radio" disabled/>男 </label>
-                                    <label class="col-lg-offset-1"><input class="input-sex" name="sex" checked
-                                                                          type="radio"/>女</label>
+                                    <label><input class="input-sex editSex" name="sex" type="radio" value="男" disabled/>男 </label>
+                                    <label class="col-lg-offset-1"><input class="input-sex" name="sex" checked type="radio" value="女"/>女</label>
                                 </div>
                             </c:otherwise>
                         </c:choose>

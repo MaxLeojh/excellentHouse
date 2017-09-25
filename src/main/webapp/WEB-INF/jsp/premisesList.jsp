@@ -160,6 +160,7 @@
 <script src="../plugins/whats-nearby/source/WhatsNearby.js"></script>
 <script src="../assets/js/theme.js"></script>
 <script src="../js/user.js"></script>
+<script src="../js/advancedSearch.js"></script>
 </body>
 </html>
 
