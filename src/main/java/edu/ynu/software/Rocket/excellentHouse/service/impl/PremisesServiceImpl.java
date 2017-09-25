@@ -4,10 +4,7 @@ import edu.ynu.software.Rocket.excellentHouse.dao.*;
 import edu.ynu.software.Rocket.excellentHouse.eneityAO.PostAO;
 import edu.ynu.software.Rocket.excellentHouse.eneityAO.PremisesAO;
 import edu.ynu.software.Rocket.excellentHouse.entity.*;
-import edu.ynu.software.Rocket.excellentHouse.service.HouseTypeService;
-import edu.ynu.software.Rocket.excellentHouse.service.PictureService;
-import edu.ynu.software.Rocket.excellentHouse.service.PostService;
-import edu.ynu.software.Rocket.excellentHouse.service.PremisesService;
+import edu.ynu.software.Rocket.excellentHouse.service.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -42,6 +39,9 @@ public class PremisesServiceImpl implements PremisesService{
 
     @Autowired
     PostService postService;
+
+    @Autowired
+    CommonService commonService;
 
 
     public List<Premises> getAllPremises() {
@@ -99,6 +99,10 @@ public class PremisesServiceImpl implements PremisesService{
         Premises premises = new Premises();
         premises = premisesMapper.selectByPrimaryKey(premisesId);
         premisesAO.setEntity(premises);
+
+        String location = "";
+        location = commonService.codeToLocation(new Integer(premises.getCityId()));
+        premisesAO.setLocation(location);
 
         Company company = new Company();
         company = companyMapper.selectByPrimaryKey(premises.getCompanyId());

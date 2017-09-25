@@ -41,11 +41,14 @@
 </div>
 <jsp:include page="frontHead.jsp"/>
 <div id="property-single">
-    <div id="main-slider">
-        <div class="slide"><img src="../assets/images/slider/1.jpg" alt="Slide"></div>
-        <div class="slide"><img src="../assets/images/slider/2.jpg" alt="Slide"></div>
-        <div class="slide"><img src="../assets/images/slider/3.jpg" alt="Slide"></div>
-        <div class="slide"><img src="../assets/images/slider/4.jpg" alt="Slide"></div>
+    <div id="main-slider" class="my-slide">
+        <c:forEach items="${houseAO.pictureList}" var="house">
+            <div class="slide my-slide"><img src="${house.pictureAddress}" alt="Slide"></div>
+        </c:forEach>
+        <%--<div class="slide"><img src="../assets/images/slider/1.jpg" alt="Slide"></div>--%>
+        <%--<div class="slide"><img src="../assets/images/slider/2.jpg" alt="Slide"></div>--%>
+        <%--<div class="slide"><img src="../assets/images/slider/3.jpg" alt="Slide"></div>--%>
+        <%--<div class="slide"><img src="../assets/images/slider/4.jpg" alt="Slide"></div>--%>
     </div>
     <div class="container">
         <div class="row">
@@ -81,16 +84,24 @@
 
                             <li><span>房屋概况：</span>住宅 | ${houseAO.type.bedroomNum}室${houseAO.type.hallNum}厅${houseAO.type.bathroomNum}卫 </li>
                             <li><span>小区：</span> 滇池卫城锦尚[西山区/滇池度假区]</li>
-                            <li><span>地  址 :</span> 地址施工中 </li>
+                            <li><span>地  址 :</span> ${houseAO.location} </li>
                         </ul>
                     </div>
                 </section>
+
                 <section class="property-contents common">
                     <div class="entry-title clearfix">
                         <h4 class="pull-left">描述 </h4><a class="pull-right print-btn" href="javascript:window.print()">打印信息 <i class="fa fa-print"></i></a>
                     </div>
                     <p> ${houseAO.entity.introduction} </p>
                 </section>
+
+                <%--高德地图--%>
+                <section class="property-single-features common clearfix">
+                    <h4 class="entry-title">位置</h4>
+                    <div id="AMapContainer" style="height: 500px" data-x="${houseAO.entity.locationX}" data-y="${houseAO.entity.locationY}"></div>
+                </section>
+
                 <section class="property-single-features common clearfix">
                     <h4 class="entry-title">配套设施</h4>
                     <ul class="property-single-features-list clearfix">
@@ -309,5 +320,48 @@
 <script src="../js/user.js"></script>
 <script src="../js/collection.js"></script>
 <script src="../js/comment.js"></script>
+<script>
+    //    获得焦距变大
+    $(function() {
+        $(".comment-parent-group").focus(function(){
+            this.rows=5;
+        });
+    });
+    //    点击子元素
+    $(function() {
+        $(".btn-comment").click(function(){
+
+        });
+    });
+    //    点击父元素
+    $(function() {
+        $("#btn-parent-comment").click(function(){
+
+
+        });
+    });
+
+</script>
+<script>
+    var location_x = $("#AMapContainer").attr("data-x");
+    var location_y = $("#AMapContainer").attr("data-y");
+
+    var map = new AMap.Map('AMapContainer', {
+        resizeEnable: true,
+        zoom:12,
+        center: [location_x, location_y]
+    });
+    marker = new AMap.Marker({
+        position:[location_x, location_y]
+    });
+    marker.setMap(map);
+
+
+
+</script>
+<%--AMap links--%>
+<script src="http://cache.amap.com/lbs/static/es5.min.js"></script>
+<script src="http://webapi.amap.com/maps?v=1.4.0&key=1854618ef1f4bcf1198f778eebf9ce81"></script>
+<script type="text/javascript" src="http://cache.amap.com/lbs/static/addToolbar.js"></script>
 </body>
 </html>

@@ -84,7 +84,8 @@
                             <header class="property-header clearfix">
                                 <div class="pull-left">
                                     <h6 class="entry-title"><a href="/frontDecoInstance/detail?decoInstanceId=${instance.entity.id}">${instance.entity.name}</a></h6>
-                                    <span class="property-location"><i class="fa fa-map-marker"></i>地址施工中</span>
+                                    <%--<span class="property-location"><i class="fa fa-map-marker"></i>地址施工中</span>--%>
+                                    <span>风格：${instance.entity.style}</span>
                                 </div>
                                 <button class="btn btn-default btn-price pull-right btn-3d" data-hover="￥${instance.entity.budget}">
                                     <strong>￥${instance.entity.budget}</strong></button>

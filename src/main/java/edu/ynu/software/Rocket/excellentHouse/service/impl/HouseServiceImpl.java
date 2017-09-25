@@ -8,6 +8,7 @@ import edu.ynu.software.Rocket.excellentHouse.eneityAO.HouseAO;
 import edu.ynu.software.Rocket.excellentHouse.eneityAO.PostAO;
 import edu.ynu.software.Rocket.excellentHouse.eneityAO.UserAO;
 import edu.ynu.software.Rocket.excellentHouse.entity.*;
+import edu.ynu.software.Rocket.excellentHouse.service.CommonService;
 import edu.ynu.software.Rocket.excellentHouse.service.HouseService;
 import edu.ynu.software.Rocket.excellentHouse.service.PostService;
 import edu.ynu.software.Rocket.excellentHouse.service.UserService;
@@ -40,6 +41,9 @@ public class HouseServiceImpl implements HouseService{
 
     @Autowired
     UserService userService;
+
+    @Autowired
+    CommonService commonService;
 
     public List<House> getAllHouse() {
         List<House> houseList = new ArrayList<House>();
@@ -129,6 +133,11 @@ public class HouseServiceImpl implements HouseService{
         //实体
         house = houseMapper.selectByPrimaryKey(houseId);
         houseAO.setEntity(house);
+
+        //位置
+        String location = "";
+        location  = commonService.codeToLocation(house.getCityId());
+        houseAO.setLocation(location);
 
         //用户(拥有者)
         UserAO userAO = new UserAO();

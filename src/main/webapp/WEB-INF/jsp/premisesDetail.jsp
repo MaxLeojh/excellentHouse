@@ -101,10 +101,10 @@
                     <p>${premisesAO.entity.introction}</p>
                 </section>
 
-                <%--暂时不确定放什么--%>
+                <%--高德地图--%>
                 <section class="property-single-features common clearfix">
                     <h4 class="entry-title">位置</h4>
-                    <div id="AMapContainer" style="height: 500px"></div>
+                    <div id="AMapContainer" style="height: 500px" data-x="${premisesAO.entity.locationX}" data-y="${premisesAO.entity.locationY}"></div>
                 </section>
 
                 <%--售房类型--%>
@@ -884,15 +884,17 @@
     });
 
 </script>
-
 <script>
+    var location_x = $("#AMapContainer").attr("data-x");
+    var location_y = $("#AMapContainer").attr("data-y");
+
     var map = new AMap.Map('AMapContainer', {
         resizeEnable: true,
         zoom:12,
-        center: [102.854432,24.826498]
+        center: [location_x, location_y]
     });
     marker = new AMap.Marker({
-        position:[102.854432,24.826498]
+        position:[location_x, location_y]
     });
     marker.setMap(map);
 

@@ -336,7 +336,16 @@
                     url: "/user/updatePic",
                     data: data,
                     type: "POST",
-                    dataType: 'json'
+                    dataType: 'json',
+
+                    success:function (data) {
+                        if (data.result == "success") {
+                            alert("success");
+                            window.location.reload();
+                        }else {
+//                            alert("fail, error : " + data.message);
+                        }
+                    }
                 });
 
                 var newImg = document.createElement("img");
@@ -391,6 +400,7 @@
     //        });
     //    });
 </script>
+<script src="../js/user.js"></script>
 <!--修改头像end-->
 </body>
 </html>

@@ -76,14 +76,14 @@
                     <article class="property layout-item clearfix">
                         <figure class="feature-image zoom">
                             <%--<a class="clearfix zoom" href=""><img data-action="zoom" src="../assets/images/property/1.jpg" alt="图片丢了"></a>--%>
-                            <a class="clearfix " href=""><img data-action="zoom" src="${premises.pictureList.get(0).pictureAddress}" alt="图片丢了"></a>
+                            <a class="clearfix"><img data-action="zoom" src="${premises.pictureList.get(0).pictureAddress}" alt="图片丢了"></a>
                             <span class="btn btn-warning btn-sale">热卖中</span>
                         </figure>
                         <div class="property-contents clearfix">
                             <header class="property-header clearfix">
                                 <div class="pull-left">
                                     <h6 class="entry-title"><a href="/frontPremises/detail?premisesId=${premises.entity.id}">${premises.entity.name}</a></h6>
-                                    <span class="property-location"><i class="fa fa-map-marker"></i>坐标施工中</span>
+                                    <span class="property-location"><i class="fa fa-map-marker"></i>${premises.location}</span>
                                 </div>
                                 <button class="btn btn-default btn-price pull-right btn-3d" data-hover="￥${premises.entity.averagePrice}/m<sup>2</sup>"><strong>￥${premises.entity.averagePrice}/m<sup>2</sup></strong>
                                 </button>
@@ -129,16 +129,14 @@
                     <div class="col-lg-4 col-md-6 layout-item-wrap">
                         <article class="property clearfix layout-item">
                             <figure class="feature-image">
-                                <a class="clearfix" href="single-property.html"> <img src="${house.pictureList.get(0).pictureAddress}"
-                                                                                      alt="Property Image"></a>
-
+                                <a class="clearfix" > <img data-action="zoom" src="${house.pictureList.get(0).pictureAddress}" alt="Property Image"></a>
                             </figure>
                             <div class="property-contents">
                                 <header class="property-header clearfix">
                                     <div class="pull-left">
                                         <h6 class="entry-title house-name"><a href="/frontHouse/detail?houseId=${house.entity.id}" title=${house.entity.name}>${house.entity.name}</a>
                                         </h6>
-                                        <span class="property-location"><i class="fa fa-map-marker"></i> 地址施工中 </span>
+                                        <span class="property-location"><i class="fa fa-map-marker"></i> ${house.location} </span>
                                     </div>
                                     <button class="btn btn-default btn-price pull-right btn-3d" data-hover="￥${house.entity.housePrice}万">
                                         <strong>￥${house.entity.housePrice}万</strong></button>
@@ -162,7 +160,7 @@
 <section id="home-property-listing">
     <header class="section-header home-section-header text-center">
         <div class="container">
-            <a href="/frontHouse/list?kind=租房"><h2 class="wow slideInLeft">租房</h2></a>
+            <a href="/frontHouse/list?kind=出租房"><h2 class="wow slideInLeft">租房</h2></a>
             <p class="wow slideInRight">这里是租房模块 <br>
                 走过路过</p>
         </div>
@@ -180,7 +178,7 @@
                             <header class="property-header clearfix">
                                 <div class="pull-left">
                                     <h6 class="entry-title house-name"><a href="/frontHouse/detail?houseId=${house.entity.id}">${house.entity.name}</a></h6>
-                                    <span class="property-location"><i class="fa fa-map-marker"></i>坐标施工中</span>
+                                    <span class="property-location"><i class="fa fa-map-marker"></i>${house.location}</span>
                                 </div>
                                 <button class="btn btn-default btn-price pull-right btn-3d" data-hover="￥${house.entity.housePrice}/月"><strong>￥${house.entity.housePrice}/月</strong>
                                 </button>
@@ -226,15 +224,15 @@
                     <div class="col-lg-4 col-md-6">
                         <article class="property clearfix">
                             <figure class="feature-image">
-                                <a class="clearfix" href="single-property.html"> <img src="${instance.pictureList.get(0).pictureAddress}"
-                                                                                      alt="Property Image"></a>
+                                <a class="clearfix"> <img data-action="zoom" src="${instance.pictureList.get(0).pictureAddress}" alt="Property Image"></a>
                             </figure>
                             <div class="property-contents">
                                 <header class="property-header clearfix">
                                     <div class="pull-left">
                                         <h6 class="entry-title"><a href="/frontDecoInstance/detail?decoInstanceId=${instance.entity.id}">${instance.entity.name}</a>
                                         </h6>
-                                        <span class="property-location"><i class="fa fa-map-marker"></i> 坐标施工中 </span>
+                                        <%--<span class="property-location"><i class="fa fa-map-marker"></i> 坐标施工中 </span>--%>
+                                        <span>风格：${instance.entity.style}</span>
                                     </div>
                                     <button class="btn btn-default btn-price pull-right btn-3d" data-hover="￥${instance.entity.budget}万">
                                         <strong>￥${instance.entity.budget}万</strong></button>

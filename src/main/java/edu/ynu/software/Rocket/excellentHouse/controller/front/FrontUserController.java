@@ -398,12 +398,12 @@ public class FrontUserController {
         System.out.println(flag);
 
         //存服务器上
-//        String path_tomcat = servletContext.getRealPath("") + "WEB-INF/images/users/" + picture.getId() + ".jpg";
-//        base64ToImg(base64code,path_tomcat);
+        String path_tomcat = servletContext.getRealPath("") + "WEB-INF/images/user/" + picture.getId() + ".jpg";
+        base64ToImg(base64code,path_tomcat);
 
         //刷新session中的user
         UserAO newUserAO = userService.selectById(userAO.getEntity().getUserId());
-        session.setAttribute("user", userAO);
+        session.setAttribute("user", newUserAO);
 
 //        File file2 = request.;
 
