@@ -99,6 +99,14 @@ public class FrontUserController {
             int status = userService.insertUser(user);
             if (status >0) {
                 user.setUserId(userService.getLastInsert());
+
+                //默认头像
+                Picture picture = new Picture();
+                picture.setEntityId(user.getUserId());
+                picture.setEntityType("用户");
+                picture.setPictureAddress("../production/images/user.png");
+                picture.setIsVaild(true);
+
                 String verCode = user.getUserId().toString();
                 emailService.snedVerMail(user.getEmail(),verCode,user.getName());
                 jsonObject.put("result","success");
@@ -158,7 +166,11 @@ public class FrontUserController {
         JSONObject jsonObject = new JSONObject();
 
         User user = userService.getUserByEmail(email);
-        if (user.getUserId() == null) {
+        if (user.getIsVaild() == false) {
+            jsonObject.put("result", "fail");
+            jsonObject.put("message", "the user is deleted");
+        }
+        else if (user.getUserId() == null) {
             jsonObject.put("result", "fail");
             jsonObject.put("message", "no user");
         }

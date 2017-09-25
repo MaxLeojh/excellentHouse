@@ -84,6 +84,7 @@ public class UserServiceImpl implements UserService {
         List<UserAO> userAOList = new ArrayList<UserAO>();
         List<User> userList = new ArrayList<User>();
         UserExample userExample = new UserExample();
+        userExample.createCriteria().andIsVaildEqualTo(true);
         userList = userMapper.selectByExample(userExample);
 
         for (User user : userList) {

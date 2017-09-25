@@ -341,7 +341,7 @@
                                     <c:forEach items="${userAOList}" var="user">
                                         <tr>
                                             <td>${user.entity.userId}</td>
-                                            <td><img src="../production/images/user.png" class="avatar"></td>
+                                            <td><img src="${user.pictureList.get(0).pictureAddress}" class="avatar"></td>
                                             <td>${user.entity.name}</td>
                                             <td>${user.entity.email}</td>
                                             <td>${user.entity.gender}</td>
@@ -353,8 +353,8 @@
                                             <td>
                                                 <%--<a class="edit" data-id="${user.entity.userId}" href="#"  style="color: #00aeef">Edit</a>--%>
                                                 <%--<a class="delete" data-id="${user.entity.userId}" href="#" style="color: red">Delete</a>--%>
-                                                    <a data-id="${user.entity.userId}" href="#" class="edit btn btn-info btn-xs"><i class="fa fa-pencil"></i> Edit </a>
-                                                    <a data-id="${user.entity.userId}" href="#" class="delete btn btn-danger btn-xs"><i class="fa fa-trash-o"></i> Delete </a>
+                                                    <a data-id="${user.entity.userId}" href="/manageUser/detail?userId=${user.entity.userId}" class="edit btn btn-info btn-xs"><i class="fa fa-pencil"></i> Edit </a>
+                                                    <a data-id="${user.entity.userId}" class="delete btn btn-danger btn-xs"><i class="fa fa-trash-o"></i> Delete </a>
                                             </td>
                                         </tr>
                                     </c:forEach>
@@ -436,24 +436,23 @@
 
         $(".delete").click(function () {
             var id = $(this).attr("data-id");
-
             if (1 == 2) {
 
             }
             else {
                 var data = {
-                    "userId": id
+                    "userId" : id
                 };
 
                 $.ajax({
                     type:'post',
-                    url:'/manageUser/edit',
+                    url:'/manageUser/delete',
                     dataType:'json',
                     data:data,
                     success:function (data) {
                         if (data.result == "success") {
                             alert("success");
-                            top.location = '/index/show';
+                            window.location.reload();
                         }else {
                             alert("fail");
                         }

@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: maxleo
@@ -327,11 +328,15 @@
                             </div>
                             <div class="x_content">
 
-                                <form action="http://localhost:8080/file/upload" method="post" enctype="multipart/form-data" class="form-horizontal form-label-left" novalidate>
+                                <form action="http://localhost:8080/manageUser/update" method="post" enctype="multipart/form-data" class="form-horizontal form-label-left" novalidate>
                                     <span class="section">IMG</span>
                                     <div class="item form-group ">
                                         <label class="col-md-3 col-sm-3 col-xs-12"></label>
-                                        <img id="myImg" src="../production/images/user.png" class="col-md-3 col-sm-3 col-xs-12">
+                                        <img id="myImg" src="${userAO.pictureList.get(0).pictureAddress}" class="col-md-3 col-sm-3 col-xs-12">
+                                    </div>
+                                    <div class="item form-group ">
+                                        <label class="col-md-3 col-sm-3 col-xs-12"></label>
+                                        <input name="userIdHolder" value="${userAO.entity.userId}" hidden>
                                     </div>
                                     <div class="item form-group">
                                         <label class="col-md-4 col-sm-4 col-xs-12"></label>
@@ -344,7 +349,7 @@
                                                 class="required">*</span>
                                         </label>
                                         <div class="col-md-6 col-sm-6 col-xs-12">
-                                            <input value="MaxLeo" id="name" class="form-control col-md-7 col-xs-12"
+                                            <input value="${userAO.entity.name}" id="name" class="form-control col-md-7 col-xs-12"
                                                    data-validate-length-range="6" data-validate-words="2" name="name"
                                                    placeholder="" required="required"
                                                    type="text">
@@ -355,45 +360,38 @@
                                                 class="required">*</span>
                                         </label>
                                         <div class="col-md-6 col-sm-6 col-xs-12">
-                                            <input value="" type="email" id="email" name="email" required="required"
-                                                   class="form-control col-md-7 col-xs-12">
-                                        </div>
-                                    </div>
-                                    <div class="item form-group">
-                                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="email">Confirm
-                                            Email <span class="required">*</span>
-                                        </label>
-                                        <div class="col-md-6 col-sm-6 col-xs-12">
-                                            <input type="email" id="email2" name="confirm_email"
-                                                   data-validate-linked="email" required="required"
-                                                   class="form-control col-md-7 col-xs-12">
+                                            <input value="${userAO.entity.email}" type="email" id="email" name="email" required="required"
+                                                   class="form-control col-md-7 col-xs-12" disabled>
                                         </div>
                                     </div>
                                     <div class="item form-group">
                                         <label class="control-label col-md-3 col-sm-3 col-xs-2">
                                             Gender *:
                                         </label>
-                                        <div class="col-md-6 col-sm-6 col-xs-12">
-                                            M:
-                                            <input type="radio" class="flat" name="gender" id="genderM" value="M" checked="" required /> F:
-                                            <input type="radio" class="flat" name="gender" id="genderF" value="F" />
-                                        </div>
+                                        <c:choose>
+                                            <c:when test="${userAO.entity.gender}">
+                                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                                    M:
+                                                    <input type="radio" class="flat" name="gender" value="M" checked="" required /> F:
+                                                    <input type="radio" class="flat" name="gender" value="F" />
+                                                </div>
+                                            </c:when>
+                                            <c:otherwise>
+                                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                                    M:
+                                                    <input type="radio" class="flat" name="gender" value="M"/> F:
+                                                    <input type="radio" class="flat" name="gender" value="F" checked="" required/>
+                                                </div>
+                                            </c:otherwise>
+                                        </c:choose>
+
                                     </div>
                                     <div class="item form-group">
                                         <label for="password" class="control-label col-md-3">Password</label>
                                         <div class="col-md-6 col-sm-6 col-xs-12">
-                                            <input id="password" type="password" name="password"
+                                            <input value="${userAO.entity.passWord}" id="password" type="password" name="password"
                                                    data-validate-length="6,8" class="form-control col-md-7 col-xs-12"
                                                    required="required">
-                                        </div>
-                                    </div>
-                                    <div class="item form-group">
-                                        <label for="password2" class="control-label col-md-3 col-sm-3 col-xs-12">Repeat
-                                            Password</label>
-                                        <div class="col-md-6 col-sm-6 col-xs-12">
-                                            <input id="password2" type="password" name="password2"
-                                                   data-validate-linked="password"
-                                                   class="form-control col-md-7 col-xs-12" required="required">
                                         </div>
                                     </div>
                                     <div class="item form-group">
@@ -401,7 +399,7 @@
                                             <span class="required">*</span>
                                         </label>
                                         <div class="col-md-6 col-sm-6 col-xs-12">
-                                            <input type="tel" id="telephone" name="phone" required="required"
+                                            <input value="${userAO.entity.phoneNumber}" type="tel" id="telephone" name="phone" required="required"
                                                    data-validate-length-range="8,20"
                                                    class="form-control col-md-7 col-xs-12">
                                         </div>
@@ -500,7 +498,6 @@
         }
     }
 </script>
-
 
 
 </body>

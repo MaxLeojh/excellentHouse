@@ -1,23 +1,21 @@
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: maxleo
-  Date: 17-9-18
-  Time: 下午9:45
+  Date: 17-9-25
+  Time: 下午7:38
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <!-- Meta, title, CSS, favicons, etc. -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>User List | Excellent House</title>
+    <title>Gentelella Alela! | </title>
 
     <!-- Bootstrap -->
     <link href="../vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -25,26 +23,35 @@
     <link href="../vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
     <!-- NProgress -->
     <link href="../vendors/nprogress/nprogress.css" rel="stylesheet">
+    <!-- bootstrap-wysiwyg -->
+    <link href="../vendors/google-code-prettify/bin/prettify.min.css" rel="stylesheet">
     <!-- iCheck -->
     <link href="../vendors/iCheck/skins/flat/green.css" rel="stylesheet">
-    Datatables
-    <link href="../vendors/datatables.net-bs/css/dataTables.bootstrap.min.css" rel="stylesheet">
-    <link href="../vendors/datatables.net-buttons-bs/css/buttons.bootstrap.min.css" rel="stylesheet">
-    <link href="../vendors/datatables.net-fixedheader-bs/css/fixedHeader.bootstrap.min.css" rel="stylesheet">
-    <link href="../vendors/datatables.net-responsive-bs/css/responsive.bootstrap.min.css" rel="stylesheet">
-    <link href="../vendors/datatables.net-scroller-bs/css/scroller.bootstrap.min.css" rel="stylesheet">
+    <!-- bootstrap-daterangepicker -->
+    <link href="../vendors/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet">
+    <!-- Select2 -->
+    <link href="../vendors/select2/dist/css/select2.min.css" rel="stylesheet">
+    <!-- Switchery -->
+    <link href="../vendors/switchery/dist/switchery.min.css" rel="stylesheet">
+    <!-- starrr -->
+    <link href="../vendors/starrr/dist/starrr.css" rel="stylesheet">
+    <!-- Ion.RangeSlider -->
+    <link href="../vendors/normalize-css/normalize.css" rel="stylesheet">
+    <link href="../vendors/ion.rangeSlider/css/ion.rangeSlider.css" rel="stylesheet">
+    <link href="../vendors/ion.rangeSlider/css/ion.rangeSlider.skinFlat.css" rel="stylesheet">
+    <!-- Bootstrap Colorpicker -->
+    <link href="../vendors/mjolnic-bootstrap-colorpicker/dist/css/bootstrap-colorpicker.min.css" rel="stylesheet">
+
+    <link href="../vendors/cropper/dist/cropper.min.css" rel="stylesheet">
 
     <!-- Custom Theme Style -->
     <link href="../build/css/custom.min.css" rel="stylesheet">
-    <style>
-        td {
-            font-size: medium;
-        }
-    </style>
 </head>
 
 <body class="nav-md">
+
 <div class="container body">
+
     <div class="main_container">
         <div class="col-md-3 left_col">
             <div class="left_col scroll-view">
@@ -304,64 +311,112 @@
             <div class="">
                 <div class="page-title">
                     <div class="title_left">
-                        <h3>Excellent House Users Management
-                        </h3>
+                        <h3>User Detail</h3>
                     </div>
+
                 </div>
-
                 <div class="clearfix"></div>
-
                 <div class="row">
                     <div class="col-md-12 col-sm-12 col-xs-12">
                         <div class="x_panel">
                             <div class="x_title">
-                                <h2>Users</h2>
+                                <h2>user 1
+                                    <small>normal user</small>
+                                </h2>
                                 <div class="clearfix"></div>
                             </div>
                             <div class="x_content">
-                                <table id="datatable" class="table table-striped table-bordered">
-                                    <thead>
-                                    <tr>
-                                        <th>user ID</th>
-                                        <th>IMG</th>
-                                        <th>user name</th>
-                                        <th>E-mail</th>
-                                        <th>gender</th>
-                                        <th>phone number</th>
-                                        <th>E-mail confirm</th>
-                                        <th>valid</th>
-                                        <th>state</th>
-                                        <th>create time</th>
-                                        <th style="width: 10%">Operation</th>
-                                    </tr>
-                                    </thead>
+
+                                <form action="http://localhost:8080/manageUser/insert" method="post" enctype="multipart/form-data" class="form-horizontal form-label-left" novalidate>
+                                    <span class="section">IMG</span>
+                                    <div class="item form-group ">
+                                        <label class="col-md-3 col-sm-3 col-xs-12"></label>
+                                        <img id="myImg" src="../production/images/user.png" class="col-md-3 col-sm-3 col-xs-12">
+                                    </div>
+                                    <div class="item form-group">
+                                        <label class="col-md-4 col-sm-4 col-xs-12"></label>
+                                        <input type="file" name="files" width="120px" onchange="changeIMG(event)">
+                                    </div>
+                                    <span class="section">Personal Info</span>
+
+                                    <div class="item form-group">
+                                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">Name <span
+                                                class="required">*</span>
+                                        </label>
+                                        <div class="col-md-6 col-sm-6 col-xs-12">
+                                            <input value="MaxLeo" id="name" class="form-control col-md-7 col-xs-12"
+                                                   data-validate-length-range="6" data-validate-words="2" name="name"
+                                                   placeholder="" required="required"
+                                                   type="text">
+                                        </div>
+                                    </div>
+                                    <div class="item form-group">
+                                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="email">Email <span
+                                                class="required">*</span>
+                                        </label>
+                                        <div class="col-md-6 col-sm-6 col-xs-12">
+                                            <input value="" type="email" id="email" name="email" required="required"
+                                                   class="form-control col-md-7 col-xs-12">
+                                        </div>
+                                    </div>
+                                    <div class="item form-group">
+                                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="email">Confirm
+                                            Email <span class="required">*</span>
+                                        </label>
+                                        <div class="col-md-6 col-sm-6 col-xs-12">
+                                            <input type="email" id="email2" name="confirm_email"
+                                                   data-validate-linked="email" required="required"
+                                                   class="form-control col-md-7 col-xs-12">
+                                        </div>
+                                    </div>
+                                    <div class="item form-group">
+                                        <label class="control-label col-md-3 col-sm-3 col-xs-2">
+                                            Gender *:
+                                        </label>
+                                        <div class="col-md-6 col-sm-6 col-xs-12">
+                                            M:
+                                            <input type="radio" class="flat" name="gender" id="genderM" value="M" checked="" required /> F:
+                                            <input type="radio" class="flat" name="gender" id="genderF" value="F" />
+                                        </div>
+                                    </div>
+                                    <div class="item form-group">
+                                        <label for="password" class="control-label col-md-3">Password</label>
+                                        <div class="col-md-6 col-sm-6 col-xs-12">
+                                            <input id="password" type="password" name="password"
+                                                   data-validate-length="6,8" class="form-control col-md-7 col-xs-12"
+                                                   required="required">
+                                        </div>
+                                    </div>
+                                    <div class="item form-group">
+                                        <label for="password2" class="control-label col-md-3 col-sm-3 col-xs-12">Repeat
+                                            Password</label>
+                                        <div class="col-md-6 col-sm-6 col-xs-12">
+                                            <input id="password2" type="password" name="Repeat_password"
+                                                   data-validate-linked="password"
+                                                   class="form-control col-md-7 col-xs-12" required="required">
+                                        </div>
+                                    </div>
+                                    <div class="item form-group">
+                                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="telephone">Telephone
+                                            <span class="required">*</span>
+                                        </label>
+                                        <div class="col-md-6 col-sm-6 col-xs-12">
+                                            <input type="tel" id="telephone" name="phone" required="required"
+                                                   data-validate-length-range="8,20"
+                                                   class="form-control col-md-7 col-xs-12">
+                                        </div>
+                                    </div>
 
 
-                                    <tbody>
-                                    <c:forEach items="${userAOList}" var="user">
-                                        <tr>
-                                            <td>${user.entity.userId}</td>
-                                            <td><img src="${user.pictureList.get(0).pictureAddress}" class="avatar"></td>
-                                            <td>${user.entity.name}</td>
-                                            <td>${user.entity.email}</td>
-                                            <td>${user.entity.gender}</td>
-                                            <td>${user.entity.phoneNumber}</td>
-                                            <td>${user.entity.isEmailConfirm}</td>
-                                            <td>${user.entity.isVaild}</td>
-                                            <td>${user.entity.state}</td>
-                                            <td>${user.entity.createTime}</td>
-                                            <td>
-                                                <%--<a class="edit" data-id="${user.entity.userId}" href="#"  style="color: #00aeef">Edit</a>--%>
-                                                <%--<a class="delete" data-id="${user.entity.userId}" href="#" style="color: red">Delete</a>--%>
-                                                    <a data-id="${user.entity.userId}" href="/manageUser/detail?userId=${user.entity.userId}" class="edit btn btn-info btn-xs"><i class="fa fa-pencil"></i> Edit </a>
-                                                    <a data-id="${user.entity.userId}" class="delete btn btn-danger btn-xs"><i class="fa fa-trash-o"></i> Delete </a>
-                                            </td>
-                                        </tr>
-                                    </c:forEach>
+                                    <div class="ln_solid"></div>
+                                    <div class="form-group">
+                                        <div class="col-md-6 col-md-offset-3">
+                                            <button type="submit" class="btn btn-primary">Cancel</button>
+                                            <button id="send" type="submit" class="btn btn-success">Submit</button>
+                                        </div>
+                                    </div>
+                                </form>
 
-
-                                    </tbody>
-                                </table>
                             </div>
                         </div>
                     </div>
@@ -379,6 +434,7 @@
         </footer>
         <!-- /footer content -->
     </div>
+
 </div>
 
 <!-- jQuery -->
@@ -389,79 +445,63 @@
 <script src="../vendors/fastclick/lib/fastclick.js"></script>
 <!-- NProgress -->
 <script src="../vendors/nprogress/nprogress.js"></script>
+<!-- validator -->
+<script src="../vendors/validator/validator.js"></script>
+<!-- bootstrap-daterangepicker -->
+<script src="../vendors/moment/min/moment.min.js"></script>
+<script src="../vendors/bootstrap-daterangepicker/daterangepicker.js"></script>
+<!-- bootstrap-progressbar -->
+<script src="../vendors/bootstrap-progressbar/bootstrap-progressbar.min.js"></script>
 <!-- iCheck -->
 <script src="../vendors/iCheck/icheck.min.js"></script>
-<!-- Datatables -->
-<script src="../vendors/datatables.net/js/jquery.dataTables.min.js"></script>
-<script src="../vendors/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
-<script src="../vendors/datatables.net-buttons/js/dataTables.buttons.min.js"></script>
-<script src="../vendors/datatables.net-buttons-bs/js/buttons.bootstrap.min.js"></script>
-<script src="../vendors/datatables.net-buttons/js/buttons.flash.min.js"></script>
-<script src="../vendors/datatables.net-buttons/js/buttons.html5.min.js"></script>
-<script src="../vendors/datatables.net-buttons/js/buttons.print.min.js"></script>
-<script src="../vendors/datatables.net-fixedheader/js/dataTables.fixedHeader.min.js"></script>
-<script src="../vendors/datatables.net-keytable/js/dataTables.keyTable.min.js"></script>
-<script src="../vendors/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
-<script src="../vendors/datatables.net-responsive-bs/js/responsive.bootstrap.js"></script>
-<script src="../vendors/datatables.net-scroller/js/dataTables.scroller.min.js"></script>
-<script src="../vendors/jszip/dist/jszip.min.js"></script>
-<script src="../vendors/pdfmake/build/pdfmake.min.js"></script>
-<script src="../vendors/pdfmake/build/vfs_fonts.js"></script>
+<!-- Ion.RangeSlider -->
+<script src="../vendors/ion.rangeSlider/js/ion.rangeSlider.min.js"></script>
+<!-- Bootstrap Colorpicker -->
+<script src="../vendors/mjolnic-bootstrap-colorpicker/dist/js/bootstrap-colorpicker.min.js"></script>
+<!-- jquery.inputmask -->
+<script src="../vendors/jquery.inputmask/dist/min/jquery.inputmask.bundle.min.js"></script>
+<!-- jQuery Knob -->
+<script src="../vendors/jquery-knob/dist/jquery.knob.min.js"></script>
+<!-- Cropper -->
+<script src="../vendors/cropper/dist/cropper.min.js"></script>
+<!-- bootstrap-wysiwyg -->
+<script src="../vendors/bootstrap-wysiwyg/js/bootstrap-wysiwyg.min.js"></script>
+<script src="../vendors/jquery.hotkeys/jquery.hotkeys.js"></script>
+<script src="../vendors/google-code-prettify/src/prettify.js"></script>
+<!-- jQuery Tags Input -->
+<script src="../vendors/jquery.tagsinput/src/jquery.tagsinput.js"></script>
+<!-- Switchery -->
+<script src="../vendors/switchery/dist/switchery.min.js"></script>
+<!-- Select2 -->
+<script src="../vendors/select2/dist/js/select2.full.min.js"></script>
+<!-- Parsley -->
+<script src="../vendors/parsleyjs/dist/parsley.min.js"></script>
+<!-- Autosize -->
+<script src="../vendors/autosize/dist/autosize.min.js"></script>
+<!-- jQuery autocomplete -->
+<script src="../vendors/devbridge-autocomplete/dist/jquery.autocomplete.min.js"></script>
+<!-- starrr -->
+<script src="../vendors/starrr/dist/starrr.js"></script>
 
 <!-- Custom Theme Scripts -->
 <script src="../build/js/custom.min.js"></script>
 
+
 <script type="text/javascript">
-    $(function () {
-
-        $(".edit").click(function () {
-            var id = $(this).attr("data-id");
-
-            if (1 == 2) {
-
+    function changeIMG(e){
+        for (var i = 0; i < e.target.files.length; i++) {
+            var file = e.target.files.item(i);
+            //实例化FileReader API
+            var freader = new FileReader();
+            freader.readAsDataURL(file);
+            freader.onload = function(e) {
+                $("#myImg").attr("src",e.target.result);
             }
-            else {
-                var data = {
-                    "userId": id
-                };
-
-                $.ajax({
-                    type:'post',
-                    url:'/manageUser/edit',
-                    dataType:'json',
-                    data:data
-                });
-            }
-        });
-
-        $(".delete").click(function () {
-            var id = $(this).attr("data-id");
-            if (1 == 2) {
-
-            }
-            else {
-                var data = {
-                    "userId" : id
-                };
-
-                $.ajax({
-                    type:'post',
-                    url:'/manageUser/delete',
-                    dataType:'json',
-                    data:data,
-                    success:function (data) {
-                        if (data.result == "success") {
-                            alert("success");
-                            window.location.reload();
-                        }else {
-                            alert("fail");
-                        }
-                    }
-                });
-            }
-        });
-    })
+        }
+    }
 </script>
+
+
 
 </body>
 </html>
