@@ -107,7 +107,7 @@
                         <span class="col-lg-4 input-name">用户名：</span>
                         <%--<input class="input-info " type="text" readonly="false" value=${user.entity.name}>--%>
 
-                        <input class="input-info " type="text" readonly value=${user.entity.name}>
+                        <input id="editName" class="input-info " type="text" readonly value=${user.entity.name}>
 
                         <%--<span class="col-lg-8" type="text" > ${user.entity.name}</span>--%>
                     </div>
@@ -115,7 +115,7 @@
                         <span class="col-lg-4 input-name">手机号：</span>
                         <%--<input class="input-info " type="text" disabled="disabled" value=${user.entity.phoneNumber}>--%>
 
-                        <input class="input-info " type="text" readonly value=${user.entity.phoneNumber}>
+                        <input id="editPhone" class="input-info " type="text" readonly value=${user.entity.phoneNumber}>
                         <%--<a class="col-lg-4">修改</a>--%>
                     </div>
                     <div class="row input-row">
@@ -129,14 +129,14 @@
                         <c:choose>
                             <c:when test="${user.entity.gender = true}">
                                 <div class="col-lg-8">
-                                    <label><input class="input-sex" name="sex" checked type="radio"/>男 </label>
+                                    <label><input class="input-sex editSex" name="sex" checked type="radio"/>男 </label>
                                     <label class="col-lg-offset-1"><input class="input-sex" name="sex" type="radio"
                                                                           disabled/>女</label>
                                 </div>
                             </c:when>
                             <c:otherwise>
                                 <div class="col-lg-8">
-                                    <label><input class="input-sex" name="sex" type="radio" disabled/>男 </label>
+                                    <label><input class="input-sex editSex" name="sex" type="radio" disabled/>男 </label>
                                     <label class="col-lg-offset-1"><input class="input-sex" name="sex" checked
                                                                           type="radio"/>女</label>
                                 </div>

@@ -88,44 +88,58 @@
     <div id="fh5co-main">
         <div class="fh5co-narrow-content">
             <h2 class="fh5co-heading animate-box" data-animate-effect="fadeInLeft">租房收藏</h2>
-            <div class="row row-bottom-padded-md">
-                <div class="col-md-3 col-sm-6 col-padding animate-box" data-animate-effect="fadeInLeft">
-                    <div class="blog-entry">
-                        <a href="#" class="blog-img"><img src="../assets/images/myImages/1.jpg" class="img-responsive" alt="加载失败啦"></a>
-                        <div class="desc">
-                            <h3><a href="#">收藏1</a><small>东城 东方财富 1室1厅 </small></h3>
-                            <a>了解更多>></a>
-                            <a href="#" class="delete"data-toggle="modal" data-target="#myModal">删除</a>
-                        </div>
+            <c:choose>
+                <c:when test="${houseAOList.size() == 0}">
+                    <div class="row row-bottom-padded-md">
+                            暂时没有收藏
                     </div>
-                </div>
-            </div>
+                </c:when>
+                <c:otherwise>
+
+                    <div class="row row-bottom-padded-md">
+                        <c:forEach items="${houseAOList}" var="house">
+
+                            <div class="col-md-3 col-sm-6 col-padding animate-box" data-animate-effect="fadeInLeft">
+                                <div class="blog-entry">
+                                    <a href="#" class="blog-img"><img src="${house.pictureList.get(0).pictureAddress}" class="img-responsive" alt="加载失败啦"></a>
+                                    <div class="desc">
+                                        <h3><a href="#">${house.entity.name}</a><small> 位置施工中 </small></h3>
+                                        <a href="/frontHouse/detail?houseId=${house.entity.id}">了解更多>></a>
+                                        <button id="deleteCollection" class="deleteCollection my-detete-btn" data-toggle="modal" data-target="#myModal" data-id="${house.entity.id}" data-type="${house.entity.kind}">删除</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </c:forEach>
+                    </div>
+                </c:otherwise>
+            </c:choose>
         </div>
         <!-- 删除提示 -->
-        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
-                            &times;
-                        </button>
-                        <h4 class="modal-title" id="myModalLabel">
-                            提示
-                        </h4>
-                    </div>
-                    <div class="modal-body">
-                        确认删除收藏？
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">关闭
-                        </button>
-                        <button type="button" class="btn btn-primary">
-                            确认
-                        </button>
-                    </div>
-                </div><!-- /.modal-content -->
-            </div><!-- /.modal -->
-        </div>
+        <%--<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">--%>
+            <%--<div class="modal-dialog">--%>
+                <%--<div class="modal-content">--%>
+                    <%--<div class="modal-header">--%>
+                        <%--<button type="button" class="close" data-dismiss="modal" aria-hidden="true">--%>
+                            <%--&times;--%>
+                        <%--</button>--%>
+                        <%--<h4 class="modal-title" id="myModalLabel">--%>
+                            <%--提示--%>
+                        <%--</h4>--%>
+                    <%--</div>--%>
+                    <%--<div class="modal-body">--%>
+                        <%--确认删除收藏？--%>
+                    <%--</div>--%>
+                    <%--<div class="modal-footer">--%>
+                        <%--<button type="button" class="btn btn-default" data-dismiss="modal">关闭--%>
+                        <%--</button>--%>
+                        <%--<button type="button" class="btn btn-primary">--%>
+                            <%--确认--%>
+                        <%--</button>--%>
+                    <%--</div>--%>
+                <%--</div><!-- /.modal-content -->--%>
+            <%--</div><!-- /.modal -->--%>
+        <%--</div>--%>
 
     </div>
 </div>
@@ -143,5 +157,6 @@
 <!-- MAIN JS -->
 <script src="../assets/js/main.js"></script>
 <script src="../js/user.js"></script>
+<script src="../js/collection.js"></script>
 </body>
 </html>

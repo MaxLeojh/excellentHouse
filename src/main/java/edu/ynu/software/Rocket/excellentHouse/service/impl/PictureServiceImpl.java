@@ -23,7 +23,7 @@ public class PictureServiceImpl implements PictureService {
         List<Picture> pictureList = new ArrayList<Picture>();
 
         PictureExample example = new PictureExample();
-        example.createCriteria().andEntityIdEqualTo(entityId).andEntityTypeEqualTo(entityType);
+        example.createCriteria().andEntityIdEqualTo(entityId).andEntityTypeEqualTo(entityType).andIsVaildEqualTo(true);
         pictureList = pictureMapper.selectByExample(example);
 
         return pictureList;

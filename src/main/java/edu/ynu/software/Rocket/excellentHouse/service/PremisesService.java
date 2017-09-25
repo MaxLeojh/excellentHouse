@@ -22,4 +22,5 @@ public interface PremisesService {
     List<Premises> testPage();
 
     Integer countTotal();
+
 }

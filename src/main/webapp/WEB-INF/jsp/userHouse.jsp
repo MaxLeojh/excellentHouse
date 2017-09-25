@@ -102,12 +102,12 @@
                     </c:when>
                     <c:otherwise>
                         我的出售
-                        </c:otherwise>
+                    </c:otherwise>
                 </c:choose>
                 <%--<span title="添加" class="my-icon animated iconfont icon-jiahao" data-toggle="modal" data-target="#myModal">--%>
 
                 <%--</span>--%>
-                <a title="添加" class="my-icon animated iconfont icon-jiahao" href="insertHouse.jsp" >
+                <a title="添加" class="my-icon animated iconfont icon-jiahao" href="/frontHouse/newHouse?kind=${kind}" >
 
                 </a>
             </h2>
@@ -115,7 +115,7 @@
             <c:forEach items="${houseAOList}" var="house">
                 <div class="row animate-box panel panel-default col-padding">
                     <div class="col-md-5 animate-box" data-animate-effect="fadeInLeft">
-                        <img class="img-responsive my-img" src="../assets/images/myImages/img_bg_1.jpg"
+                        <img class="img-responsive my-img" src="${house.pictureList.get(0).pictureAddress}"
                              alt="Free HTML5 Bootstrap Template by FreeHTML5.co">
                     </div>
                     <div class="house-info  col-md-7 animate-box " data-animate-effect="fadeInLeft">

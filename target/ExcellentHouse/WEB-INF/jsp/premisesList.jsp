@@ -55,14 +55,14 @@
         <div class="container">
             <h2 class="pull-left">共有${totalNum}个楼盘，当前处于${page}/${totalPage}页</h2>
             <div class="pull-right">
-                <div class="property-sorting pull-left">
-                    <label for="property-sort-dropdown"> 排序 </label>
-                    <select name="property-sort-dropdown" id="property-sort-dropdown">
-                        <option value="">默认</option>
-                        <option value="by_date">日期</option>
-                        <option value="by_price">价格</option>
-                    </select>
-                </div>
+                <%--<div class="property-sorting pull-left">--%>
+                    <%--<label for="property-sort-dropdown"> 排序 </label>--%>
+                    <%--<select name="property-sort-dropdown" id="property-sort-dropdown">--%>
+                        <%--<option value="">默认</option>--%>
+                        <%--<option value="by_date">日期</option>--%>
+                        <%--<option value="by_price">价格</option>--%>
+                    <%--</select>--%>
+                <%--</div>--%>
                 <p class="pull-left layout-view"> 展示方式 <i class="fa fa-th selected" data-layout="4"></i> <i
                         class="fa fa-th-large" data-layout="6"></i><i class="fa fa-list-ul" data-layout="12"></i></p>
             </div>
@@ -76,7 +76,7 @@
                     <article class="property layout-item clearfix">
                         <figure class="feature-image">
                             <a class="clearfix zoom" href="single-property.html">
-                                <img data-action="zoom" src="../assets/images/property/1.jpg" alt="Property Image">
+                                <img data-action="zoom" src="${premises.pictureList.get(0).pictureAddress}" alt="Property Image">
                             </a>
                             <span class="btn btn-warning btn-sale">热销</span>
                         </figure>

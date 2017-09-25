@@ -3,12 +3,11 @@ package edu.ynu.software.Rocket.excellentHouse.service.impl;
 import edu.ynu.software.Rocket.excellentHouse.dao.DecoInstanceMapper;
 import edu.ynu.software.Rocket.excellentHouse.eneityAO.DecoInstanceAO;
 import edu.ynu.software.Rocket.excellentHouse.eneityAO.DesignerAO;
+import edu.ynu.software.Rocket.excellentHouse.eneityAO.PostAO;
 import edu.ynu.software.Rocket.excellentHouse.entity.DecoInstance;
 import edu.ynu.software.Rocket.excellentHouse.entity.DecoInstanceExample;
 import edu.ynu.software.Rocket.excellentHouse.entity.Picture;
-import edu.ynu.software.Rocket.excellentHouse.service.DecoInstanceService;
-import edu.ynu.software.Rocket.excellentHouse.service.DesignerService;
-import edu.ynu.software.Rocket.excellentHouse.service.PictureService;
+import edu.ynu.software.Rocket.excellentHouse.service.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -29,6 +28,9 @@ public class DecoInstanceServiceImpl implements DecoInstanceService {
 
     @Autowired
     DesignerService designerService;
+
+    @Autowired
+    PostService postService;
 
     public List<DecoInstance> getAllDecoIntance() {
         DecoInstanceExample example = new DecoInstanceExample();
@@ -108,6 +110,16 @@ public class DecoInstanceServiceImpl implements DecoInstanceService {
         pictureList = pictureService.selectByEntityIdAndType(decoInstanceId, "装修案例");
         decoInstanceAO.setPictureList(pictureList);
 
+        //评论
+        List<PostAO> postAOList = new ArrayList<PostAO>();
+        postAOList = postService.selectByEntityIdAndType(decoInstanceId, "装修案例");
+        decoInstanceAO.setPostAOList(postAOList);
+
         return decoInstanceAO;
+    }
+
+    public Integer countTotal() {
+        DecoInstanceExample example = new DecoInstanceExample();
+        return decoInstanceMapper.countByExample(example);
     }
 }

@@ -67,16 +67,16 @@
     <!--头部-->
     <header class="section-header text-center">
         <div class="container">
-            <h2 class="pull-left">共有${houseAOList.size()}个选择</h2>
+            <h2 class="pull-left">共有${totalNum}个房源，当前处于${page}/${totalPage}页</h2>
             <div class="pull-right">
-                <div class="property-sorting pull-left">
-                    <label for="property-sort-dropdown"> 排序 </label>
-                    <select name="property-sort-dropdown" id="property-sort-dropdown">
-                        <option value="">默认</option>
-                        <option value="by_date">日期</option>
-                        <option value="by_price">价格</option>
-                    </select>
-                </div>
+                <%--<div class="property-sorting pull-left">--%>
+                    <%--<label for="property-sort-dropdown"> 排序 </label>--%>
+                    <%--<select name="property-sort-dropdown" id="property-sort-dropdown">--%>
+                        <%--<option value="">默认</option>--%>
+                        <%--<option value="by_date">日期</option>--%>
+                        <%--<option value="by_price">价格</option>--%>
+                    <%--</select>--%>
+                <%--</div>--%>
                 <p class="pull-left layout-view"> 展示方式 <i class="fa fa-th selected" data-layout="4"></i> <i
                         class="fa fa-th-large" data-layout="6"></i><i class="fa fa-list-ul" data-layout="12"></i></p>
             </div>
@@ -90,7 +90,7 @@
                     <article class="property layout-item clearfix">
                         <figure class="feature-image">
                             <a class="clearfix zoom" href="single-property.html">
-                                <img data-action="zoom" src="../assets/images/property/1.jpg" alt="Property Image">
+                                <img data-action="zoom" src="${house.pictureList.get(0).pictureAddress}" alt="Property Image">
                             </a>
                             <span class="btn btn-warning btn-sale">热销</span>
                         </figure>
@@ -98,7 +98,7 @@
                             <header class="property-header clearfix">
                                 <div class="pull-left">
                                     <h6 class="entry-title  house-name"><a href="/frontHouse/detail?houseId=${house.entity.id}">${house.entity.name}</a></h6>
-                                    <span class="property-location"><i class="fa fa-map-marker"></i>地址施工中</span>
+                                    <span class="property-location"><i class="fa fa-map-marker"></i>${house.location}</span>
                                 </div>
                                 <button class="btn btn-default btn-price pull-right btn-3d" data-hover="￥${house.entity.housePrice}">
                                     <strong>￥${house.entity.housePrice}</strong></button>
@@ -123,12 +123,34 @@
             </c:forEach>
         </div>
         <ul id="pagination" class="text-center clearfix">
-            <li class="disabled"><a href="#">上一页</a></li>
-            <li><a href="#">1</a></li>
-            <li><a href="#">3</a></li>
-            <li><a href="#">4</a></li>
-            <li><a href="#">下一页</a></li>
+            <c:choose>
+                <c:when test="${page == 1}">
+                    <li class="disabled"><a href="#">上一页</a></li>
+                </c:when>
+                <c:otherwise>
+                    <li><a href="/frontHouse/list?kind=${kind}&&page=${page - 1}">上一页</a></li>
+                </c:otherwise>
+            </c:choose>
 
+            <c:forEach items="${pageList}" var="p">
+                <c:choose>
+                    <c:when test="${p == page}">
+                        <li class="disabled"><a href="/frontHouse/list?kind=${kind}&&page=${p}">${p}</a></li>
+                    </c:when>
+                    <c:otherwise>
+                        <li><a href="/frontHouse/list?kind=${kind}&&page=${p}">${p}</a></li>
+                    </c:otherwise>
+                </c:choose>
+            </c:forEach>
+
+            <c:choose>
+                <c:when test="${page == totalPage}">
+                    <li class="disabled"><a href="#">下一页</a></li>
+                </c:when>
+                <c:otherwise>
+                    <li><a href="/frontHouse/list?kind=${kind}&&page=${page + 1}">下一页</a></li>
+                </c:otherwise>
+            </c:choose>
         </ul>
     </div>
 </section>

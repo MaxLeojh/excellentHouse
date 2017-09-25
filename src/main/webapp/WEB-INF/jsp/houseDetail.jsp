@@ -16,6 +16,10 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title>优购房-租房</title>
 
+    <%--AMap links--%>
+    <script src="http://cache.amap.com/lbs/static/es5.min.js"></script>
+    <script src="http://webapi.amap.com/maps?v=1.4.0&key=1854618ef1f4bcf1198f778eebf9ce81"></script>
+    <script type="text/javascript" src="http://cache.amap.com/lbs/static/addToolbar.js"></script>
     <!-- Styles -->
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Poppins:400,600" rel="stylesheet">
 
@@ -41,17 +45,36 @@
 </div>
 <jsp:include page="frontHead.jsp"/>
 <div id="property-single">
-    <div id="main-slider">
-        <div class="slide"><img src="../assets/images/slider/1.jpg" alt="Slide"></div>
-        <div class="slide"><img src="../assets/images/slider/2.jpg" alt="Slide"></div>
-        <div class="slide"><img src="../assets/images/slider/3.jpg" alt="Slide"></div>
-        <div class="slide"><img src="../assets/images/slider/4.jpg" alt="Slide"></div>
+    <div id="main-slider" class="my-slide">
+        <c:forEach items="${houseAO.pictureList}" var="house">
+            <div class="slide my-slide"><img src="${house.pictureAddress}" alt="Slide"></div>
+        </c:forEach>
+        <%--<div class="slide"><img src="../assets/images/slider/1.jpg" alt="Slide"></div>--%>
+        <%--<div class="slide"><img src="../assets/images/slider/2.jpg" alt="Slide"></div>--%>
+        <%--<div class="slide"><img src="../assets/images/slider/3.jpg" alt="Slide"></div>--%>
+        <%--<div class="slide"><img src="../assets/images/slider/4.jpg" alt="Slide"></div>--%>
     </div>
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-md-7">
                 <section class="property-meta-wrapper common">
-                    <h3 class="entry-title">${houseAO.entity.name}</h3>
+                    <div class="entry-title clearfix">
+                        <h4 class="pull-left" id="entityName" data-id="${houseAO.entity.id}"
+                            data-type="${houseAO.entity.kind}">${houseAO.entity.name}</h4>
+                        <c:choose>
+                            <c:when test="${isCollected == true}">
+                                <button id="hasCollect" class="pull-right ">已收藏 <i class="iconfont icon-iconfontlike "></i>
+                                </button>
+                            </c:when>
+                            <c:otherwise>
+                                <button id="collect" class="pull-right ">收藏 <i class="iconfont icon-xihuan "></i>
+                                </button>
+                                <button id="hasCollect" class="pull-right " style="display: none">已收藏 <i
+                                        class="iconfont icon-iconfontlike "></i></button>
+                            </c:otherwise>
+                        </c:choose>
+                    </div>
+
                     <div class="property-single-meta">
                         <ul class="clearfix">
                             <c:choose>
@@ -65,16 +88,24 @@
 
                             <li><span>房屋概况：</span>住宅 | ${houseAO.type.bedroomNum}室${houseAO.type.hallNum}厅${houseAO.type.bathroomNum}卫 </li>
                             <li><span>小区：</span> 滇池卫城锦尚[西山区/滇池度假区]</li>
-                            <li><span>地  址 :</span> 地址施工中 </li>
+                            <li><span>地  址 :</span> ${houseAO.location} </li>
                         </ul>
                     </div>
                 </section>
+
                 <section class="property-contents common">
                     <div class="entry-title clearfix">
                         <h4 class="pull-left">描述 </h4><a class="pull-right print-btn" href="javascript:window.print()">打印信息 <i class="fa fa-print"></i></a>
                     </div>
                     <p> ${houseAO.entity.introduction} </p>
                 </section>
+
+                <%--高德地图--%>
+                <section class="property-single-features common clearfix">
+                    <h4 class="entry-title">位置</h4>
+                    <div id="AMapContainer" style="height: 500px" data-x="${houseAO.entity.locationX}" data-y="${houseAO.entity.locationY}"></div>
+                </section>
+
                 <section class="property-single-features common clearfix">
                     <h4 class="entry-title">配套设施</h4>
                     <ul class="property-single-features-list clearfix">
@@ -145,6 +176,72 @@
                             <%--</div>--%>
                         <%--</div>--%>
                     </div>
+                </section>
+
+                <%--论坛--%>
+                <section class="property-nearby-places common">
+                    <h4 class="entry-title">论坛</h4>
+                    <div class="row">
+                        <div class="form-group">
+                            <label>输入你的评论：</label>
+                            <textarea id="postInfo" class="form-control my-textarea" maxlength="200" rows="5"></textarea>
+                            <button id="submitPost" class="btn submit-comment" data-id="${houseAO.entity.id}" data-type="${houseAO.entity.kind}">提交</button>
+                        </div>
+                    </div>
+
+
+                    <c:forEach items="${houseAO.postAOList}" var="post">
+                        <div class="panel panel-default content-group">
+                            <div class="row">
+                                <div class="col-md-4 col-sm-4 avatar_div">
+                                    <img class=" avatar" src="${post.userAO.pictureList.get(0).pictureAddress}">
+                                </div>
+                                <span class="comment col-md-6 col-sm-6">
+                                 ${post.userAO.entity.name}:
+                                <strong>${post.entity.contains}</strong>
+                                     <a id="btn-parent-comment" class="iconfont icon-pinglun" href="#comment-parent-group${post.entity.id}" data-toggle="collapse">评论</a>
+                                </span>
+                            </div>
+                            <c:choose>
+                                <c:when test="${post.replyAOList.size() > 0}">
+                                    <c:forEach items="${post.replyAOList}" var="reply">
+                                        <div class="row comment-son">
+                                            <div class="col-md-5 col-sm-5 avatar_div" >
+                                                <img class=" avatar" src="${reply.userAO.pictureList.get(0).pictureAddress}" >
+                                            </div>
+                                            <span class="comment col-lg-9">
+                                                <c:choose>
+                                                    <c:when test="${reply.RR != null}">
+                                                        <a>${reply.userAO.entity.name}</a><span> 回复 </span><a>${reply.RR.userAO.entity.name}</a> :
+                                                    </c:when>
+                                                    <c:otherwise>
+                                                        <a>${reply.userAO.entity.name}</a> :
+                                                    </c:otherwise>
+                                                </c:choose>
+                                                <br>
+                                                <strong>${reply.entity.contains}</strong>
+                                                <a class="btn-comment iconfont icon-pinglun"href="#comment-son1${reply.entity.id}" data-toggle="collapse">回复</a>
+                                            </span>
+
+                                                <%--<input class="input-comment form-control " type="text" placeholder="评论">--%>
+                                            <div id="comment-son1${reply.entity.id}" class="collapse" >
+                                                <textarea id="replyContains"  class="form-control comment-textarea col-md-7" maxlength="200" rows="2" ></textarea>
+                                                <button class="btn submit-comment submitReplyReply" data-postId="${post.entity.id}" data-id="${reply.entity.id}">提交</button>
+                                            </div>
+                                        </div>
+                                    </c:forEach>
+                                </c:when>
+                                <c:otherwise>
+
+                                </c:otherwise>
+                            </c:choose>
+                            <div id="comment-parent-group${post.entity.id}" class="row comment-parent-group collapse" >
+                                <textarea id="replyInfo"  class="form-control comment-parent" maxlength="200" rows="2" ></textarea>
+                                <button class="btn submit-comment submitReply" data-id="${post.entity.id}">提交</button>
+                            </div>
+                        </div>
+                    </c:forEach>
+
                 </section>
             </div>
             <div class="col-lg-4 col-md-5">
@@ -225,5 +322,46 @@
 <script src="../plugins/whats-nearby/source/WhatsNearby.js"></script>
 <script src="../assets/js/theme.js"></script>
 <script src="../js/user.js"></script>
+<script src="../js/collection.js"></script>
+<script src="../js/comment.js"></script>
+<script>
+    //    获得焦距变大
+    $(function() {
+        $(".comment-parent-group").focus(function(){
+            this.rows=5;
+        });
+    });
+    //    点击子元素
+    $(function() {
+        $(".btn-comment").click(function(){
+
+        });
+    });
+    //    点击父元素
+    $(function() {
+        $("#btn-parent-comment").click(function(){
+
+
+        });
+    });
+
+</script>
+<script>
+    var location_x = $("#AMapContainer").attr("data-x");
+    var location_y = $("#AMapContainer").attr("data-y");
+
+    var map = new AMap.Map('AMapContainer', {
+        resizeEnable: true,
+        zoom:12,
+        center: [location_x, location_y]
+    });
+    marker = new AMap.Marker({
+        position:[location_x, location_y]
+    });
+    marker.setMap(map);
+
+
+
+</script>
 </body>
 </html>

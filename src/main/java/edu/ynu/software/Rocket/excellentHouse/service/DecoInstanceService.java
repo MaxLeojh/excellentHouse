@@ -18,4 +18,6 @@ public interface DecoInstanceService {
     DecoInstanceAO selectByDecoInstanceId(Integer decoInstanceId);
 
     DecoInstanceAO selectById(Integer decoInstanceId);
+
+    Integer countTotal();
 }

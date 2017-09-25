@@ -93,7 +93,7 @@
 
                             <div class="col-md-3 col-sm-6 col-padding animate-box" data-animate-effect="fadeInLeft">
                                 <div class="blog-entry">
-                                    <a href="#" class="blog-img"><img src="../assets/images/myImages/1.jpg" class="img-responsive" alt="加载失败啦"></a>
+                                    <a href="#" class="blog-img"><img src="${premises.pictureList.get(0).pictureAddress}" class="img-responsive" alt="加载失败啦"></a>
                                     <div class="desc">
                                         <h3><a href="#">${premises.entity.name}</a><small> 位置施工中 </small></h3>
                                         <a href="/frontPremises/detail?premisesId=${premises.entity.id}">了解更多>></a>

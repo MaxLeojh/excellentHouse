@@ -12,10 +12,11 @@ import java.util.List;
  */
 public class HouseAO {
     private House entity;
+    private String location;
     private HouseType type;
     private UserAO userAO;
     private List<Picture> pictureList;
-    private List<Post> postList;
+    private List<PostAO> postAOList;
 
     public House getEntity() {
         return entity;
@@ -23,6 +24,14 @@ public class HouseAO {
 
     public void setEntity(House entity) {
         this.entity = entity;
+    }
+
+    public String getLocation() {
+        return location;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
     }
 
     public HouseType getType() {
@@ -41,12 +50,12 @@ public class HouseAO {
         this.pictureList = pictureList;
     }
 
-    public List<Post> getPostList() {
-        return postList;
+    public List<PostAO> getPostAOList() {
+        return postAOList;
     }
 
-    public void setPostList(List<Post> postList) {
-        this.postList = postList;
+    public void setPostAOList(List<PostAO> postAOList) {
+        this.postAOList = postAOList;
     }
 
     public UserAO getUserAO() {
