@@ -1,3 +1,11 @@
+<%--
+  Created by IntelliJ IDEA.
+  User: maxleo
+  Date: 17-9-25
+  Time: 下午7:38
+  To change this template use File | Settings | File Templates.
+--%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -323,7 +331,7 @@
                                     <span class="section">IMG</span>
                                     <div class="item form-group ">
                                         <label class="col-md-3 col-sm-3 col-xs-12"></label>
-                                            <img id="myImg" src="../production/images/user.png" class="col-md-3 col-sm-3 col-xs-12">
+                                        <img id="myImg" src="../production/images/user.png" class="col-md-3 col-sm-3 col-xs-12">
                                     </div>
                                     <div class="item form-group">
                                         <label class="col-md-4 col-sm-4 col-xs-12"></label>
@@ -338,7 +346,7 @@
                                         <div class="col-md-6 col-sm-6 col-xs-12">
                                             <input value="MaxLeo" id="name" class="form-control col-md-7 col-xs-12"
                                                    data-validate-length-range="6" data-validate-words="2" name="name"
-                                                   placeholder="both name(s) e.g Jon Doe" required="required"
+                                                   placeholder="" required="required"
                                                    type="text">
                                         </div>
                                     </div>
@@ -366,9 +374,9 @@
                                             Gender *:
                                         </label>
                                         <div class="col-md-6 col-sm-6 col-xs-12">
-                                                M:
-                                                <input type="radio" class="flat" name="gender" id="genderM" value="M" checked="" required /> F:
-                                                <input type="radio" class="flat" name="gender" id="genderF" value="F" />
+                                            M:
+                                            <input type="radio" class="flat" name="gender" id="genderM" value="M" checked="" required /> F:
+                                            <input type="radio" class="flat" name="gender" id="genderF" value="F" />
                                         </div>
                                     </div>
                                     <div class="item form-group">
