@@ -135,16 +135,14 @@
                         <c:choose>
                             <c:when test="${user.entity.gender = true}">
                                 <div class="col-lg-8">
-                                    <label><input class="input-sex editSex" name="sex" checked type="radio"/>男 </label>
-                                    <label class="col-lg-offset-1"><input class="input-sex" name="sex" type="radio"
-                                                                          disabled/>女</label>
+                                    <label><input class="input-sex editSex" name="sex" checked type="radio" value="男"/>男 </label>
+                                    <label class="col-lg-offset-1"><input class="input-sex" name="sex" type="radio" value="女" disabled/>女</label>
                                 </div>
                             </c:when>
                             <c:otherwise>
                                 <div class="col-lg-8">
-                                    <label><input class="input-sex editSex" name="sex" type="radio" disabled/>男 </label>
-                                    <label class="col-lg-offset-1"><input class="input-sex" name="sex" checked
-                                                                          type="radio"/>女</label>
+                                    <label><input class="input-sex editSex" name="sex" type="radio" value="男" disabled/>男 </label>
+                                    <label class="col-lg-offset-1"><input class="input-sex" name="sex" checked type="radio" value="女"/>女</label>
                                 </div>
                             </c:otherwise>
                         </c:choose>
@@ -336,7 +334,16 @@
                     url: "/user/updatePic",
                     data: data,
                     type: "POST",
-                    dataType: 'json'
+                    dataType: 'json',
+
+                    success:function (data) {
+                        if (data.result == "success") {
+                            alert("success");
+                            window.location.reload();
+                        }else {
+//                            alert("fail, error : " + data.message);
+                        }
+                    }
                 });
 
                 var newImg = document.createElement("img");
@@ -391,6 +398,7 @@
     //        });
     //    });
 </script>
+<script src="../js/user.js"></script>
 <!--修改头像end-->
 </body>
 </html>

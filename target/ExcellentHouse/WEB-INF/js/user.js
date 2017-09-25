@@ -2,6 +2,7 @@
  * Created by August on 2017/9/18.
  */
 $(function () {
+    //登出
     $("#logout").click(function () {
 
         var userId = $(this).attr("data-id");
