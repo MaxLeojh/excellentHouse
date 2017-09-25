@@ -11,14 +11,15 @@ function btnClick(btn) {
         var name = $("#editName").val();
         var phone = $("#editPhone").val();
         var sex = 0;
-        if ($(".editSex").attr('checked')) {
+
+        if ($('input[name="sex"]:checked').val() === "男") {
             sex = 1;
         }
 
         // alert("id = " + id);
-        alert("name = " + name);
-        alert("phone = " + phone);
-        alert("sex = " + sex);
+        // alert("name = " + name);
+        // alert("phone = " + phone);
+        // alert("sex = " + sex);
 
         var data = {
             // 'id' : id,

@@ -1,11 +1,11 @@
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: August
-  Date: 2017/9/14
-  Time: 14:13
+  Date: 2017/9/25
+  Time: 20:34
   To change this template use File | Settings | File Templates.
 --%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="en">
@@ -67,15 +67,15 @@
     <!--头部-->
     <header class="section-header text-center">
         <div class="container">
-            <h2 class="pull-left">共有${totalNum}个房源，当前处于${page}/${totalPage}页</h2>
+            <h2 class="pull-left">共有${houseAOList.size()}个房源</h2>
             <div class="pull-right">
                 <%--<div class="property-sorting pull-left">--%>
-                    <%--<label for="property-sort-dropdown"> 排序 </label>--%>
-                    <%--<select name="property-sort-dropdown" id="property-sort-dropdown">--%>
-                        <%--<option value="">默认</option>--%>
-                        <%--<option value="by_date">日期</option>--%>
-                        <%--<option value="by_price">价格</option>--%>
-                    <%--</select>--%>
+                <%--<label for="property-sort-dropdown"> 排序 </label>--%>
+                <%--<select name="property-sort-dropdown" id="property-sort-dropdown">--%>
+                <%--<option value="">默认</option>--%>
+                <%--<option value="by_date">日期</option>--%>
+                <%--<option value="by_price">价格</option>--%>
+                <%--</select>--%>
                 <%--</div>--%>
                 <p class="pull-left layout-view"> 展示方式 <i class="fa fa-th selected" data-layout="4"></i> <i
                         class="fa fa-th-large" data-layout="6"></i><i class="fa fa-list-ul" data-layout="12"></i></p>
@@ -122,36 +122,6 @@
                 </div>
             </c:forEach>
         </div>
-        <ul id="pagination" class="text-center clearfix">
-            <c:choose>
-                <c:when test="${page == 1}">
-                    <li class="disabled"><a href="#">上一页</a></li>
-                </c:when>
-                <c:otherwise>
-                    <li><a href="/frontHouse/list?kind=${kind}&&page=${page - 1}">上一页</a></li>
-                </c:otherwise>
-            </c:choose>
-
-            <c:forEach items="${pageList}" var="p">
-                <c:choose>
-                    <c:when test="${p == page}">
-                        <li class="disabled"><a href="/frontHouse/list?kind=${kind}&&page=${p}">${p}</a></li>
-                    </c:when>
-                    <c:otherwise>
-                        <li><a href="/frontHouse/list?kind=${kind}&&page=${p}">${p}</a></li>
-                    </c:otherwise>
-                </c:choose>
-            </c:forEach>
-
-            <c:choose>
-                <c:when test="${page == totalPage}">
-                    <li class="disabled"><a href="#">下一页</a></li>
-                </c:when>
-                <c:otherwise>
-                    <li><a href="/frontHouse/list?kind=${kind}&&page=${page + 1}">下一页</a></li>
-                </c:otherwise>
-            </c:choose>
-        </ul>
     </div>
 </section>
 <jsp:include page="frontFoot.jsp"/>
@@ -177,3 +147,4 @@
 <script src="../js/advancedSearch.js"></script>
 </body>
 </html>
+

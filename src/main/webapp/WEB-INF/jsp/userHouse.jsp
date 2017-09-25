@@ -97,7 +97,7 @@
         <div class="fh5co-narrow-content">
             <h2 class=" animate-box" data-animate-effect="fadeInLeft">
                 <c:choose>
-                    <c:when test="${kind = '出租房'}">
+                    <c:when test="${kind == '出租房'}">
                         我的出租
                     </c:when>
                     <c:otherwise>

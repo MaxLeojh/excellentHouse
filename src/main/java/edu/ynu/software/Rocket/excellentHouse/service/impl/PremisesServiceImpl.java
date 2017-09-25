@@ -141,4 +141,32 @@ public class PremisesServiceImpl implements PremisesService{
         PremisesExample example = new PremisesExample();
         return premisesMapper.countByExample(example);
     }
+
+    public List<PremisesAO> selectByExample(PremisesExample premisesExample, HouseTypeExample houseTypeExample){
+        List<PremisesAO> premisesAOList = new ArrayList<PremisesAO>();
+        List<Premises> premisesList = new ArrayList<Premises>();
+
+        List<Premises> temp = new ArrayList<Premises>();
+        temp = premisesMapper.selectByExample(premisesExample);
+
+        List<HouseType> houseTypeList = new ArrayList<HouseType>();
+        houseTypeList = houseTypeMapper.selectByExample(houseTypeExample);
+
+        for (Premises premises : temp) {
+            for (HouseType houseType : houseTypeList) {
+                if (premises.getId().equals(houseType.getPremisesId())) {
+                    premisesList.add(premises);
+                    break;
+                }
+            }
+        }
+
+        for (Premises premises : premisesList) {
+            PremisesAO premisesAO = new PremisesAO();
+            premisesAO = selectByPremisesId(premises.getId());
+            premisesAOList.add(premisesAO);
+        }
+
+        return premisesAOList;
+    }
 }

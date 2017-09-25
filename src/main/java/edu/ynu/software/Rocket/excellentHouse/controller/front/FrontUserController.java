@@ -286,7 +286,7 @@ public class FrontUserController {
         collectionList = collectionService.getUserCollection(userAO.getEntity().getUserId(), "装修案例");
         for (Collection collection : collectionList) {
             DecoInstanceAO decoInstanceAO = new DecoInstanceAO();
-            decoInstanceAO = decoInstanceService.selectByDecoInstanceId(collection.getEntityId());
+            decoInstanceAO = decoInstanceService.selectById(collection.getEntityId());
             decoInstanceAOList.add(decoInstanceAO);
         }
         mav.addObject("decoInstanceAOList", decoInstanceAOList);

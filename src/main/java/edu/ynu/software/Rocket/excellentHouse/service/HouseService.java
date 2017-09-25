@@ -23,4 +23,6 @@ public interface HouseService {
     Integer countTotal(String kind);
 
     Integer insert(House house);
+
+    List<HouseAO> selectByExample(HouseExample example);
 }

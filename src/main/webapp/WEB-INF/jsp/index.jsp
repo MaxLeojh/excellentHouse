@@ -266,48 +266,48 @@
 <%--</section>--%>
 
 <%--WHY CHOOSE US--%>
-<section id="home-features-section" class="text-center">
-    <header class="section-header home-section-header">
-        <div class="container">
-            <h2 class="wow slideInRight">为什么选择我们</h2>
-            <p class="wow slideInLeft">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                incididunt ut <br>
-                labore et dolore magna aliquan ut enim ad minim veniam.</p>
-        </div>
-    </header>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-3 col-xs-6">
-                <div class="feature clearfix">
-                    <i class="icon"><img src="../assets/images/features/1.png" alt="Feature Icon"></i>
-                    <h6 class="entry-title">Paying guest</h6>
-                    <p>Dolor sit amet consectetuer sed diam nonummy euismod tincidunt laoreet dolore magna</p>
-                </div>
-            </div>
-            <div class="col-md-3 col-xs-6">
-                <div class="feature clearfix">
-                    <i class="icon"><img src="../assets/images/features/2.png" alt="Feature Icon"></i>
-                    <h6 class="entry-title">Paying guest</h6>
-                    <p>Dolor sit amet consectetuer sed diam nonummy euismod tincidunt laoreet dolore magna</p>
-                </div>
-            </div>
-            <div class="col-md-3 col-xs-6">
-                <div class="feature clearfix">
-                    <i class="icon"><img src="../assets/images/features/3.png" alt="Feature Icon"></i>
-                    <h6 class="entry-title">Paying guest</h6>
-                    <p>Dolor sit amet consectetuer sed diam nonummy euismod tincidunt laoreet dolore magna</p>
-                </div>
-            </div>
-            <div class="col-md-3 col-xs-6">
-                <div class="feature clearfix">
-                    <i class="icon"><img src="../assets/images/features/4.png" alt="Feature Icon"></i>
-                    <h6 class="entry-title">Paying guest</h6>
-                    <p>Dolor sit amet consectetuer sed diam nonummy euismod tincidunt laoreet dolore magna</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+<%--<section id="home-features-section" class="text-center">--%>
+    <%--<header class="section-header home-section-header">--%>
+        <%--<div class="container">--%>
+            <%--<h2 class="wow slideInRight">为什么选择我们</h2>--%>
+            <%--<p class="wow slideInLeft">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor--%>
+                <%--incididunt ut <br>--%>
+                <%--labore et dolore magna aliquan ut enim ad minim veniam.</p>--%>
+        <%--</div>--%>
+    <%--</header>--%>
+    <%--<div class="container">--%>
+        <%--<div class="row">--%>
+            <%--<div class="col-md-3 col-xs-6">--%>
+                <%--<div class="feature clearfix">--%>
+                    <%--<i class="icon"><img src="../assets/images/features/1.png" alt="Feature Icon"></i>--%>
+                    <%--<h6 class="entry-title">Paying guest</h6>--%>
+                    <%--<p>Dolor sit amet consectetuer sed diam nonummy euismod tincidunt laoreet dolore magna</p>--%>
+                <%--</div>--%>
+            <%--</div>--%>
+            <%--<div class="col-md-3 col-xs-6">--%>
+                <%--<div class="feature clearfix">--%>
+                    <%--<i class="icon"><img src="../assets/images/features/2.png" alt="Feature Icon"></i>--%>
+                    <%--<h6 class="entry-title">Paying guest</h6>--%>
+                    <%--<p>Dolor sit amet consectetuer sed diam nonummy euismod tincidunt laoreet dolore magna</p>--%>
+                <%--</div>--%>
+            <%--</div>--%>
+            <%--<div class="col-md-3 col-xs-6">--%>
+                <%--<div class="feature clearfix">--%>
+                    <%--<i class="icon"><img src="../assets/images/features/3.png" alt="Feature Icon"></i>--%>
+                    <%--<h6 class="entry-title">Paying guest</h6>--%>
+                    <%--<p>Dolor sit amet consectetuer sed diam nonummy euismod tincidunt laoreet dolore magna</p>--%>
+                <%--</div>--%>
+            <%--</div>--%>
+            <%--<div class="col-md-3 col-xs-6">--%>
+                <%--<div class="feature clearfix">--%>
+                    <%--<i class="icon"><img src="../assets/images/features/4.png" alt="Feature Icon"></i>--%>
+                    <%--<h6 class="entry-title">Paying guest</h6>--%>
+                    <%--<p>Dolor sit amet consectetuer sed diam nonummy euismod tincidunt laoreet dolore magna</p>--%>
+                <%--</div>--%>
+            <%--</div>--%>
+        <%--</div>--%>
+    <%--</div>--%>
+<%--</section>--%>
 
 <%--页脚--%>
 <jsp:include page="frontFoot.jsp"/>
@@ -343,5 +343,6 @@
 <!--<script src="plugins/whats-nearby/source/WhatsNearby.js"></script>-->
 <script src="../assets/js/theme.js"></script>
 <script src="../js/user.js"></script>
+<script src="../js/advancedSearch.js"></script>
 </body>
 </html>

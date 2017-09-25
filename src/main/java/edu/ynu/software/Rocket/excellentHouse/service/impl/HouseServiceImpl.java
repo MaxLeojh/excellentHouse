@@ -174,4 +174,18 @@ public class HouseServiceImpl implements HouseService{
         return houseMapper.insert(house);
     }
 
+    public List<HouseAO> selectByExample(HouseExample example) {
+        List<HouseAO> houseAOList = new ArrayList<HouseAO>();
+        List<House> houseList = new ArrayList<House>();
+        houseList = houseMapper.selectByExample(example);
+
+        for (House house : houseList) {
+            HouseAO houseAO = new HouseAO();
+            houseAO = selectById(house.getId());
+            houseAOList.add(houseAO);
+        }
+
+        return houseAOList;
+    }
+
 }
