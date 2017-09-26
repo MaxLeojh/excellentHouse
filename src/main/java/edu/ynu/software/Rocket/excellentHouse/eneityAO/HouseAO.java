@@ -12,6 +12,7 @@ import java.util.List;
  */
 public class HouseAO {
     private House entity;
+    private String location;
     private HouseType type;
     private UserAO userAO;
     private List<Picture> pictureList;
@@ -23,6 +24,14 @@ public class HouseAO {
 
     public void setEntity(House entity) {
         this.entity = entity;
+    }
+
+    public String getLocation() {
+        return location;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
     }
 
     public HouseType getType() {

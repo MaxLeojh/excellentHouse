@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <!-- Meta, title, CSS, favicons, etc. -->
@@ -15,8 +16,8 @@
     <link href="../vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
     <!-- NProgress -->
     <link href="../vendors/nprogress/nprogress.css" rel="stylesheet">
-    <!-- iCheck -->
-    <link href="../vendors/iCheck/skins/flat/green.css" rel="stylesheet">
+    <!-- Dropzone.js -->
+    <link href="../vendors/dropzone/dist/min/dropzone.min.css" rel="stylesheet">
 
     <!-- Custom Theme Style -->
     <link href="../build/css/custom.min.css" rel="stylesheet">
@@ -270,127 +271,102 @@
 
         <!-- page content -->
         <div class="right_col" role="main">
-            <div class="">
-                <div class="page-title">
-                    <div class="title_left">
-                        <h3>楼盘管理</h3>
-                    </div>
-
-                    <div class="title_right">
-                        <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
-                            <div class="input-group">
-                                <input type="text" class="form-control" placeholder="输入关键字搜索">
-                                <span class="input-group-btn">
-                      <button class="btn btn-default" type="button">搜索</button>
-                    </span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
                 <div class="clearfix"></div>
 
                 <div class="row">
-                    <div class="col-md-12">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
                         <div class="x_panel">
                             <div class="x_title">
-                                <h2>楼盘</h2>
-                                <ul class="nav navbar-right panel_toolbox">
-                                    <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
-                                    </li>
-                                    <li class="dropdown">
-                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
-                                        <ul class="dropdown-menu" role="menu">
-                                            <li><a href="#">Settings 1</a>
-                                            </li>
-                                            <li><a href="#">Settings 2</a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li><a class="close-link"><i class="fa fa-close"></i></a>
-                                    </li>
-                                </ul>
+                                <h2>Dropzone multiple file uploader</h2>
                                 <div class="clearfix"></div>
                             </div>
                             <div class="x_content">
+                                <form action="myPremisesCollect.html" class="dropzone"></form>
 
-                                <p>这是所有楼盘，共200套</p>
+                                <form action="http://localhost:8080/file/upload" method="post" enctype="multipart/form-data" class="form-horizontal form-label-left" novalidate>
+                                    <span class="section">Personal Info</span>
 
-                                <!-- start project list -->
-                                <table class="table text-center">
-                                    <thead>
-                                    <tr >
-                                        <th >编号</th>
-                                        <th >名称</th>
-                                        <th>位置</th>
-                                        <th>面积/㎡</th>
-                                        <th>价格</th>
-                                        <th>联系方式</th>
-                                        <th>类型</th>
-                                        <th >操作</th>
-                                    </tr>
-                                    </thead>
-                                    <tbody>
-                                    <tr>
-                                        <td>1</td>
-                                        <td>楼房</td>
-                                        <td>100</td>
-                                        <td>100</td>
-                                        <td>1000</td>
-                                        <td>1848</td>
-                                        <td>毛坯房</td>
-                                        <td>
-                                            <a href="#" class="btn btn-primary btn-xs" data-toggle="modal" data-target=".modelided"><i class="fa fa-folder"></i> 查看</a>
+                                    <div class="item form-group">
+                                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">Name <span
+                                                class="required">*</span>
+                                        </label>
+                                        <div class="col-md-6 col-sm-6 col-xs-12">
+                                            <input value="" id="name" class="form-control col-md-7 col-xs-12"
+                                                   data-validate-length-range="6" data-validate-words="2" name="name"
+                                                   placeholder="" required="required"
+                                                   type="text">
+                                        </div>
+                                    </div>
+                                    <div class="item form-group">
+                                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="email">Email <span
+                                                class="required">*</span>
+                                        </label>
+                                        <div class="col-md-6 col-sm-6 col-xs-12">
+                                            <input value="" type="email" id="email" name="email" required="required"
+                                                   class="form-control col-md-7 col-xs-12">
+                                        </div>
+                                    </div>
+                                    <div class="item form-group">
+                                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="email">Confirm
+                                            Email <span class="required">*</span>
+                                        </label>
+                                        <div class="col-md-6 col-sm-6 col-xs-12">
+                                            <input type="email" id="email2" name="confirm_email"
+                                                   data-validate-linked="email" required="required"
+                                                   class="form-control col-md-7 col-xs-12">
+                                        </div>
+                                    </div>
+                                    <div class="item form-group">
+                                        <label class="control-label col-md-3 col-sm-3 col-xs-2">
+                                            Gender *:
+                                        </label>
+                                        <div class="col-md-6 col-sm-6 col-xs-12">
+                                            M:
+                                            <input type="radio" class="flat" name="gender" id="genderM" value="M" checked="" required /> F:
+                                            <input type="radio" class="flat" name="gender" id="genderF" value="F" />
+                                        </div>
+                                    </div>
+                                    <div class="item form-group">
+                                        <label for="password" class="control-label col-md-3">Password</label>
+                                        <div class="col-md-6 col-sm-6 col-xs-12">
+                                            <input id="password" type="password" name="password"
+                                                   data-validate-length="6,8" class="form-control col-md-7 col-xs-12"
+                                                   required="required">
+                                        </div>
+                                    </div>
+                                    <div class="item form-group">
+                                        <label for="password2" class="control-label col-md-3 col-sm-3 col-xs-12">Repeat
+                                            Password</label>
+                                        <div class="col-md-6 col-sm-6 col-xs-12">
+                                            <input id="password2" type="password" name="password2"
+                                                   data-validate-linked="password"
+                                                   class="form-control col-md-7 col-xs-12" required="required">
+                                        </div>
+                                    </div>
+                                    <div class="item form-group">
+                                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="telephone">Telephone
+                                            <span class="required">*</span>
+                                        </label>
+                                        <div class="col-md-6 col-sm-6 col-xs-12">
+                                            <input type="tel" id="telephone" name="phone" required="required"
+                                                   data-validate-length-range="8,20"
+                                                   class="form-control col-md-7 col-xs-12">
+                                        </div>
+                                    </div>
 
-                                            <div class="modal fade modelided" tabindex="-1" role="dialog" aria-hidden="true">
-                                                <div class="modal-dialog modal-sm">
-                                                    <div class="modal-content">
 
-                                                        <div class="modal-header">
-                                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span>
-                                                            </button>
-                                                            <h4 class="modal-title" >楼盘详情</h4>
-                                                        </div>
-                                                        <div class="modal-body" style="text-align: center">
-                                                            <div class="profile_img">
-                                                                <div >
-                                                                    <!-- Current avatar -->
-                                                                    <img class="img-responsive avatar-view" src="../production/images/picture.jpg" alt="Avatar" title="Change the avatar" style="margin: auto">
-                                                                </div>
-                                                            </div>
-                                                            <h3>楼房</h3>
-
-                                                            <ul class="list-unstyled user_data">
-                                                                <li><i class="fa fa-map-marker user-profile-icon"></i> 呈贡
-                                                                </li>
-
-                                                                <li>
-                                                                    <i class="fa fa-briefcase user-profile-icon"></i> 100/㎡
-                                                                </li>
-
-                                                                <li class="m-top-xs">
-                                                                    <i class="fa fa-external-link user-profile-icon"></i>
-                                                                    <a href="http://www.kimlabs.com/profile/" target="_blank">分享</a>
-                                                                </li>
-                                                            </ul>
-                                                        </div>
-                                                        <div class="modal-footer">
-                                                            <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
-                                                            <button type="button" class="btn btn-primary">保存</button>
-                                                        </div>
-
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <a href="#" class="btn btn-info btn-xs"><i class="fa fa-pencil"></i> 编辑 </a>
-                                            <a href="#" class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i> 删除 </a>
-                                        </td>
-                                    </tr>
-                                    </tbody>
-                                </table>
-                                <!-- end project list -->
-
+                                    <div class="ln_solid"></div>
+                                    <div class="form-group">
+                                        <div class="col-md-6 col-md-offset-3">
+                                            <button type="submit" class="btn btn-primary">Cancel</button>
+                                            <button id="send" type="submit" class="btn btn-success">Submit</button>
+                                        </div>
+                                    </div>
+                                </form>
+                                <br />
+                                <br />
+                                <br />
+                                <br />
                             </div>
                         </div>
                     </div>
@@ -402,7 +378,7 @@
         <!-- footer content -->
         <footer>
             <div class="pull-right">
-               <a>优购房</a>
+                Gentelella - Bootstrap Admin Template by <a href="https://colorlib.com">Colorlib</a>
             </div>
             <div class="clearfix"></div>
         </footer>
@@ -418,8 +394,8 @@
 <script src="../vendors/fastclick/lib/fastclick.js"></script>
 <!-- NProgress -->
 <script src="../vendors/nprogress/nprogress.js"></script>
-<!-- bootstrap-progressbar -->
-<script src="../vendors/bootstrap-progressbar/bootstrap-progressbar.min.js"></script>
+<!-- Dropzone.js -->
+<script src="../vendors/dropzone/dist/min/dropzone.min.js"></script>
 
 <!-- Custom Theme Scripts -->
 <script src="../build/js/custom.min.js"></script>

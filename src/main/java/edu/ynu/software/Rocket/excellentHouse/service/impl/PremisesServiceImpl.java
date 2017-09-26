@@ -4,10 +4,7 @@ import edu.ynu.software.Rocket.excellentHouse.dao.*;
 import edu.ynu.software.Rocket.excellentHouse.eneityAO.PostAO;
 import edu.ynu.software.Rocket.excellentHouse.eneityAO.PremisesAO;
 import edu.ynu.software.Rocket.excellentHouse.entity.*;
-import edu.ynu.software.Rocket.excellentHouse.service.HouseTypeService;
-import edu.ynu.software.Rocket.excellentHouse.service.PictureService;
-import edu.ynu.software.Rocket.excellentHouse.service.PostService;
-import edu.ynu.software.Rocket.excellentHouse.service.PremisesService;
+import edu.ynu.software.Rocket.excellentHouse.service.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -42,6 +39,9 @@ public class PremisesServiceImpl implements PremisesService{
 
     @Autowired
     PostService postService;
+
+    @Autowired
+    CommonService commonService;
 
 
     public List<Premises> getAllPremises() {
@@ -100,6 +100,10 @@ public class PremisesServiceImpl implements PremisesService{
         premises = premisesMapper.selectByPrimaryKey(premisesId);
         premisesAO.setEntity(premises);
 
+        String location = "";
+        location = commonService.codeToLocation(new Integer(premises.getCityId()));
+        premisesAO.setLocation(location);
+
         Company company = new Company();
         company = companyMapper.selectByPrimaryKey(premises.getCompanyId());
         premisesAO.setCompany(company);
@@ -136,5 +140,33 @@ public class PremisesServiceImpl implements PremisesService{
     public Integer countTotal() {
         PremisesExample example = new PremisesExample();
         return premisesMapper.countByExample(example);
+    }
+
+    public List<PremisesAO> selectByExample(PremisesExample premisesExample, HouseTypeExample houseTypeExample){
+        List<PremisesAO> premisesAOList = new ArrayList<PremisesAO>();
+        List<Premises> premisesList = new ArrayList<Premises>();
+
+        List<Premises> temp = new ArrayList<Premises>();
+        temp = premisesMapper.selectByExample(premisesExample);
+
+        List<HouseType> houseTypeList = new ArrayList<HouseType>();
+        houseTypeList = houseTypeMapper.selectByExample(houseTypeExample);
+
+        for (Premises premises : temp) {
+            for (HouseType houseType : houseTypeList) {
+                if (premises.getId().equals(houseType.getPremisesId())) {
+                    premisesList.add(premises);
+                    break;
+                }
+            }
+        }
+
+        for (Premises premises : premisesList) {
+            PremisesAO premisesAO = new PremisesAO();
+            premisesAO = selectByPremisesId(premises.getId());
+            premisesAOList.add(premisesAO);
+        }
+
+        return premisesAOList;
     }
 }

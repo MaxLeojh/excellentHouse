@@ -85,7 +85,7 @@
                             <header class="property-header clearfix">
                                 <div class="pull-left">
                                     <h6 class="entry-title"><a href="/frontPremises/detail?premisesId=${premises.entity.id}">${premises.entity.name}</a></h6>
-                                    <span class="property-location"><i class="fa fa-map-marker"></i>坐标施工中</span>
+                                    <span class="property-location"><i class="fa fa-map-marker"></i>${premises.location}</span>
                                 </div>
                                 <button class="btn btn-default btn-price pull-right btn-3d" data-hover="￥${premises.entity.averagePrice}/㎡"><strong>￥${premises.entity.averagePrice}/㎡</strong>
                                 </button>
@@ -141,7 +141,7 @@
                                     <div class="pull-left">
                                         <h6 class="entry-title house-name"><a href="/frontHouse/detail?houseId=${house.entity.id}" title=${house.entity.name}>${house.entity.name}</a>
                                         </h6>
-                                        <span class="property-location"><i class="fa fa-map-marker"></i> 地址施工中 </span>
+                                        <span class="property-location"><i class="fa fa-map-marker"></i> ${house.location} </span>
                                     </div>
                                     <button class="btn btn-default btn-price pull-right btn-3d" data-hover="￥${house.entity.housePrice}万">
                                         <strong>￥${house.entity.housePrice}万</strong></button>
@@ -165,7 +165,7 @@
 <section id="home-property-listing">
     <header class="section-header home-section-header text-center">
         <div class="container">
-            <a href="/frontHouse/list?kind=租房"><h2 class="wow slideInLeft">租房</h2></a>
+            <a href="/frontHouse/list?kind=出租房"><h2 class="wow slideInLeft">租房</h2></a>
             <p class="wow slideInRight">这里是租房模块 <br>
                 走过路过</p>
         </div>
@@ -185,7 +185,7 @@
                             <header class="property-header clearfix">
                                 <div class="pull-left">
                                     <h6 class="entry-title house-name"><a href="/frontHouse/detail?houseId=${house.entity.id}">${house.entity.name}</a></h6>
-                                    <span class="property-location"><i class="fa fa-map-marker"></i>坐标施工中</span>
+                                    <span class="property-location"><i class="fa fa-map-marker"></i>${house.location}</span>
                                 </div>
                                 <button class="btn btn-default btn-price pull-right btn-3d" data-hover="￥${house.entity.housePrice}/月"><strong>￥${house.entity.housePrice}/月</strong>
                                 </button>
@@ -240,7 +240,8 @@
                                     <div class="pull-left">
                                         <h6 class="entry-title"><a href="/frontDecoInstance/detail?decoInstanceId=${instance.entity.id}">${instance.entity.name}</a>
                                         </h6>
-                                        <span class="property-location"><i class="fa fa-map-marker"></i> 坐标施工中 </span>
+                                        <%--<span class="property-location"><i class="fa fa-map-marker"></i> 坐标施工中 </span>--%>
+                                        <span>风格：${instance.entity.style}</span>
                                     </div>
                                     <button class="btn btn-default btn-price pull-right btn-3d" data-hover="￥${instance.entity.budget}万">
                                         <strong>￥${instance.entity.budget}万</strong></button>
@@ -274,48 +275,48 @@
 <%--</section>--%>
 
 <%--WHY CHOOSE US--%>
-<section id="home-features-section" class="text-center">
-    <header class="section-header home-section-header">
-        <div class="container">
-            <h2 class="wow slideInRight">为什么选择我们</h2>
-            <p class="wow slideInLeft">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                incididunt ut <br>
-                labore et dolore magna aliquan ut enim ad minim veniam.</p>
-        </div>
-    </header>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-3 col-xs-6">
-                <div class="feature clearfix">
-                    <i class="icon"><img src="../assets/images/features/1.png" alt="Feature Icon"></i>
-                    <h6 class="entry-title">Paying guest</h6>
-                    <p>Dolor sit amet consectetuer sed diam nonummy euismod tincidunt laoreet dolore magna</p>
-                </div>
-            </div>
-            <div class="col-md-3 col-xs-6">
-                <div class="feature clearfix">
-                    <i class="icon"><img src="../assets/images/features/2.png" alt="Feature Icon"></i>
-                    <h6 class="entry-title">Paying guest</h6>
-                    <p>Dolor sit amet consectetuer sed diam nonummy euismod tincidunt laoreet dolore magna</p>
-                </div>
-            </div>
-            <div class="col-md-3 col-xs-6">
-                <div class="feature clearfix">
-                    <i class="icon"><img src="../assets/images/features/3.png" alt="Feature Icon"></i>
-                    <h6 class="entry-title">Paying guest</h6>
-                    <p>Dolor sit amet consectetuer sed diam nonummy euismod tincidunt laoreet dolore magna</p>
-                </div>
-            </div>
-            <div class="col-md-3 col-xs-6">
-                <div class="feature clearfix">
-                    <i class="icon"><img src="../assets/images/features/4.png" alt="Feature Icon"></i>
-                    <h6 class="entry-title">Paying guest</h6>
-                    <p>Dolor sit amet consectetuer sed diam nonummy euismod tincidunt laoreet dolore magna</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+<%--<section id="home-features-section" class="text-center">--%>
+    <%--<header class="section-header home-section-header">--%>
+        <%--<div class="container">--%>
+            <%--<h2 class="wow slideInRight">为什么选择我们</h2>--%>
+            <%--<p class="wow slideInLeft">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor--%>
+                <%--incididunt ut <br>--%>
+                <%--labore et dolore magna aliquan ut enim ad minim veniam.</p>--%>
+        <%--</div>--%>
+    <%--</header>--%>
+    <%--<div class="container">--%>
+        <%--<div class="row">--%>
+            <%--<div class="col-md-3 col-xs-6">--%>
+                <%--<div class="feature clearfix">--%>
+                    <%--<i class="icon"><img src="../assets/images/features/1.png" alt="Feature Icon"></i>--%>
+                    <%--<h6 class="entry-title">Paying guest</h6>--%>
+                    <%--<p>Dolor sit amet consectetuer sed diam nonummy euismod tincidunt laoreet dolore magna</p>--%>
+                <%--</div>--%>
+            <%--</div>--%>
+            <%--<div class="col-md-3 col-xs-6">--%>
+                <%--<div class="feature clearfix">--%>
+                    <%--<i class="icon"><img src="../assets/images/features/2.png" alt="Feature Icon"></i>--%>
+                    <%--<h6 class="entry-title">Paying guest</h6>--%>
+                    <%--<p>Dolor sit amet consectetuer sed diam nonummy euismod tincidunt laoreet dolore magna</p>--%>
+                <%--</div>--%>
+            <%--</div>--%>
+            <%--<div class="col-md-3 col-xs-6">--%>
+                <%--<div class="feature clearfix">--%>
+                    <%--<i class="icon"><img src="../assets/images/features/3.png" alt="Feature Icon"></i>--%>
+                    <%--<h6 class="entry-title">Paying guest</h6>--%>
+                    <%--<p>Dolor sit amet consectetuer sed diam nonummy euismod tincidunt laoreet dolore magna</p>--%>
+                <%--</div>--%>
+            <%--</div>--%>
+            <%--<div class="col-md-3 col-xs-6">--%>
+                <%--<div class="feature clearfix">--%>
+                    <%--<i class="icon"><img src="../assets/images/features/4.png" alt="Feature Icon"></i>--%>
+                    <%--<h6 class="entry-title">Paying guest</h6>--%>
+                    <%--<p>Dolor sit amet consectetuer sed diam nonummy euismod tincidunt laoreet dolore magna</p>--%>
+                <%--</div>--%>
+            <%--</div>--%>
+        <%--</div>--%>
+    <%--</div>--%>
+<%--</section>--%>
 
 <%--页脚--%>
 <jsp:include page="frontFoot.jsp"/>
@@ -351,5 +352,6 @@
 <!--<script src="plugins/whats-nearby/source/WhatsNearby.js"></script>-->
 <script src="../assets/js/theme.js"></script>
 <script src="../js/user.js"></script>
+<script src="../js/advancedSearch.js"></script>
 </body>
 </html>

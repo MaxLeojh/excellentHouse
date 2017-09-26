@@ -41,10 +41,11 @@
 <jsp:include page="frontHead.jsp"/>
 <div id="property-single">
     <div id="main-slider">
-        <div class="slide"><img src="../assets/images/slider/1.jpg" alt="Slide"></div>
-        <div class="slide"><img src="../assets/images/slider/2.jpg" alt="Slide"></div>
-        <div class="slide"><img src="../assets/images/slider/3.jpg" alt="Slide"></div>
-        <div class="slide"><img src="../assets/images/slider/4.jpg" alt="Slide"></div>
+        <c:forEach items="${decoInstanceAO.pictureList}" var="instance">
+            <div class="slide my-slide"><img class="slide-img" src="${instance.pictureAddress}" alt="Slide"></div>
+        </c:forEach>
+
+        <%--src="../assets/images/slider/4.jpg" alt="Slide"></div>--%>
     </div>
     <div class="container">
         <div class="row">
@@ -78,25 +79,28 @@
                 </section>
                 <section class="property-contents common">
                     <div class="entry-title clearfix">
-                        <h4 class="pull-left">描述 </h4><a class="pull-right print-btn" href="javascript:window.print()">打印信息 <i class="fa fa-print"></i></a>
+                        <h4 class="pull-left">描述 </h4>
+                        <%--<a class="pull-right print-btn" href="javascript:window.print()">打印信息 <i class="fa fa-print"></i></a>--%>
                     </div>
                     <p> ${decoInstanceAO.entity.introduction} </p>
                 </section>
-                <section class="property-single-features common clearfix">
-                    <h4 class="entry-title">配套设施</h4>
-                    <ul class="property-single-features-list clearfix">
-                        <li>床</li>
-                        <li>电视</li>
-                        <li>家具</li>
-                        <li class="disabled">空调</li>
-                        <li>冰箱</li>
-                        <li>洗衣机</li>
-                        <li>热水器</li>
-                        <li>宽带</li>
-                        <li class="disabled">暖气</li>
 
-                    </ul>
-                </section>
+                <%--<section class="property-single-features common clearfix">--%>
+                    <%--<h4 class="entry-title">配套设施</h4>--%>
+                    <%--<ul class="property-single-features-list clearfix">--%>
+                        <%--<li>床</li>--%>
+                        <%--<li>电视</li>--%>
+                        <%--<li>家具</li>--%>
+                        <%--<li class="disabled">空调</li>--%>
+                        <%--<li>冰箱</li>--%>
+                        <%--<li>洗衣机</li>--%>
+                        <%--<li>热水器</li>--%>
+                        <%--<li>宽带</li>--%>
+                        <%--<li class="disabled">暖气</li>--%>
+
+                    <%--</ul>--%>
+                <%--</section>--%>
+
                 <%--<section class="property-video common">--%>
                 <%--<h4 class="entry-title">附近</h4>--%>
                 <%--<iframe src="" allowfullscreen></iframe>--%>
@@ -105,6 +109,7 @@
                 <%--<h4 class="entry-title">交通</h4>--%>
                 <%--<div id="nearby-places-map"></div>--%>
                 <%--</section>--%>
+
                 <section class="property-agent common">
                     <h4 class="entry-title">设计师</h4>
                     <div class="row">

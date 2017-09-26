@@ -8,6 +8,7 @@ import edu.ynu.software.Rocket.excellentHouse.eneityAO.HouseAO;
 import edu.ynu.software.Rocket.excellentHouse.eneityAO.PostAO;
 import edu.ynu.software.Rocket.excellentHouse.eneityAO.UserAO;
 import edu.ynu.software.Rocket.excellentHouse.entity.*;
+import edu.ynu.software.Rocket.excellentHouse.service.CommonService;
 import edu.ynu.software.Rocket.excellentHouse.service.HouseService;
 import edu.ynu.software.Rocket.excellentHouse.service.PostService;
 import edu.ynu.software.Rocket.excellentHouse.service.UserService;
@@ -40,6 +41,9 @@ public class HouseServiceImpl implements HouseService{
 
     @Autowired
     UserService userService;
+
+    @Autowired
+    CommonService commonService;
 
     public List<House> getAllHouse() {
         List<House> houseList = new ArrayList<House>();
@@ -130,6 +134,11 @@ public class HouseServiceImpl implements HouseService{
         house = houseMapper.selectByPrimaryKey(houseId);
         houseAO.setEntity(house);
 
+        //位置
+        String location = "";
+        location  = commonService.codeToLocation(house.getCityId());
+        houseAO.setLocation(location);
+
         //用户(拥有者)
         UserAO userAO = new UserAO();
         userAO = userService.selectById(house.getUserId());
@@ -163,6 +172,20 @@ public class HouseServiceImpl implements HouseService{
 
     public Integer insert(House house) {
         return houseMapper.insert(house);
+    }
+
+    public List<HouseAO> selectByExample(HouseExample example) {
+        List<HouseAO> houseAOList = new ArrayList<HouseAO>();
+        List<House> houseList = new ArrayList<House>();
+        houseList = houseMapper.selectByExample(example);
+
+        for (House house : houseList) {
+            HouseAO houseAO = new HouseAO();
+            houseAO = selectById(house.getId());
+            houseAOList.add(houseAO);
+        }
+
+        return houseAOList;
     }
 
 }

@@ -12,6 +12,7 @@ import edu.ynu.software.Rocket.excellentHouse.service.PictureService;
 import edu.ynu.software.Rocket.excellentHouse.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.util.FileCopyUtils;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -24,6 +25,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.math.BigDecimal;
 import java.util.ArrayList;
@@ -140,6 +142,7 @@ public class FrontHouseController {
 
         System.out.println(files.length);
         CommonsMultipartFile file;
+        CommonsMultipartFile file_tomcat;
 
         String kind = request.getParameter("kind");
         String name = request.getParameter("name");
@@ -192,23 +195,26 @@ public class FrontHouseController {
             pictureService.updatePic(picture);
 
             file = files[i];
+            file_tomcat = files[i];
+
             String path = "D:/August/idea/program/ExcellentHouse/src/main/webapp/WEB-INF/images/house/";
             String fileName = picture.getId()+".jpg";
             File dir = new File(path,fileName);
             if(!dir.exists()){
                 dir.mkdirs();
             }
+
             //MultipartFile自带的解析方法
 //            System.out.println(path+"+"+fileName);
             file.transferTo(dir);
 
             //存服务器上
-//            String path_tomcat = servletContext.getRealPath("") + "WEB-INF/images/house/";
-//            File dir_tomcat = new File(path_tomcat,fileName);
-//            if(!dir_tomcat.exists()){
-//                dir_tomcat.mkdirs();
-//            }
-//            file.transferTo(dir_tomcat);
+            String path_tomcat = servletContext.getRealPath("") + "WEB-INF/images/house/";
+            File dir_tomcat = new File(path_tomcat, fileName);
+            if (!dir_tomcat.exists()) {
+                dir.mkdir();
+            }
+            file_tomcat.transferTo(dir_tomcat);
         }
 
         mav.setViewName("userHome");

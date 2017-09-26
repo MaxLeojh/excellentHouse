@@ -43,7 +43,7 @@
 
     <link rel="stylesheet" href="../assets/css/mycss.css">
     <script src="../assets/js/editInfo.js"></script>
-    <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.4.2.min.js"></script>
+    <script type="text/javascript" src="../assets/js/jquery-1.9.1.min.js"></script>
     <!--修改头像-->
     <!-- jQuery -->
     <script src="../assets/jquery.min.js"></script>
@@ -118,12 +118,6 @@
                         <input id="editPhone" class="input-info " type="text" readonly value=${user.entity.phoneNumber}>
                         <%--<a class="col-lg-4">修改</a>--%>
                     </div>
-                    <%--<div class="row input-row" >--%>
-                    <%--<span class="col-lg-4 input-name">昵称：</span>--%>
-                    <%--<div class="col-lg-8 " >--%>
-                    <%--<input type="text" placeholder="八月">--%>
-                    <%--</div>--%>
-                    <%--</div>--%>
                     <div class="row input-row">
                         <span class="col-lg-4 input-name">邮箱：</span>
                         <input class="input-emil " type="text" disabled="disabled" value=${user.entity.email}>
@@ -135,16 +129,14 @@
                         <c:choose>
                             <c:when test="${user.entity.gender = true}">
                                 <div class="col-lg-8">
-                                    <label><input class="input-sex editSex" name="sex" checked type="radio"/>男 </label>
-                                    <label class="col-lg-offset-1"><input class="input-sex" name="sex" type="radio"
-                                                                          disabled/>女</label>
+                                    <label><input class="input-sex editSex" name="sex" checked type="radio" value="男"/>男 </label>
+                                    <label class="col-lg-offset-1"><input class="input-sex" name="sex" type="radio" value="女" disabled/>女</label>
                                 </div>
                             </c:when>
                             <c:otherwise>
                                 <div class="col-lg-8">
-                                    <label><input class="input-sex editSex" name="sex" type="radio" disabled/>男 </label>
-                                    <label class="col-lg-offset-1"><input class="input-sex" name="sex" checked
-                                                                          type="radio"/>女</label>
+                                    <label><input class="input-sex editSex" name="sex" type="radio" value="男" disabled/>男 </label>
+                                    <label class="col-lg-offset-1"><input class="input-sex" name="sex" checked type="radio" value="女"/>女</label>
                                 </div>
                             </c:otherwise>
                         </c:choose>
@@ -154,32 +146,6 @@
                 </div>
             </div>
             <hr>
-            <!--其他信息-->
-            <%--<div class="row col-lg-offset-1">--%>
-            <%--<div class="fh5co-feature animate-box " data-animate-effect="fadeInLeft">--%>
-            <%--<div class="row input-row" >--%>
-            <%--<span class="col-lg-2 input-name">家庭住址：</span>--%>
-            <%--<div class="col-lg-4" style="height: 10px" >--%>
-            <%--<select class=" input-sm" style="font-size: 1px">--%>
-            <%--<option value="">云南</option>--%>
-            <%--<option value="">.云南</option>--%>
-            <%--</select>--%>
-            <%--<select class=" input-sm" style="font-size: 1px">--%>
-            <%--<option value="">昆明</option>--%>
-            <%--<option value="">.云南</option>--%>
-            <%--</select>--%>
-            <%--<select class=" input-sm" style="font-size: 1px">--%>
-            <%--<option value="">云南大学</option>--%>
-            <%--<option value="">.云南</option>--%>
-            <%--</select>--%>
-            <%--</div>--%>
-            <%--</div>--%>
-            <%--<div class="row margin-2 " >--%>
-            <%--<span class="col-lg-2 input-name">出生日期：</span>--%>
-            <%--<input class="input-date" type="date" value="2015-09-24"/>--%>
-            <%--</div>--%>
-            <%--</div>--%>
-            <%--</div>--%>
             <div class="fh5co-feature animate-box " data-animate-effect="fadeInLeft">
                 <%--<button class="btn  save-btn">修改</button>--%>
 
@@ -189,13 +155,7 @@
     </div>
 </div>
 
-<!--修改头像-->
 
-<!--<button type="button" class="btn btn-primary"  data-toggle="modal" data-target="#avatar-modal" style="margin: 10px;">修改头像</button>-->
-
-<!--<div class="user_pic" style="margin: 10px;">-->
-<!--<img id="myAvatar" src="">-->
-<!--</div>-->
 <div class="modal fade" id="avatar-modal" aria-hidden="true" aria-labelledby="avatar-modal-label" role="dialog"
      tabindex="-1">
     <div class="modal-dialog modal-lg">
@@ -307,15 +267,7 @@
         }
 
     });
-    //            var saveFile = function(data, filename){
-    //                var save_link = document.createElementNS('http://www.w3.org/1999/xhtml', 'a');
-    //                save_link.href = data;
-    //                save_link.download = filename;
-    //
-    //                var event = document.createEvent('MouseEvents');
-    //                event.initMouseEvent('click', true, false, window, 0, 0, 0, 0, 0, false, false, false, false, 0, null);
-    //                save_link.dispatchEvent(event);
-    //            };
+
     $(".avatar-save").on("click", function () {
         var img_lg = document.getElementById('imageHead');
         // 截图小的显示框内的内容
@@ -336,7 +288,16 @@
                     url: "/user/updatePic",
                     data: data,
                     type: "POST",
-                    dataType: 'json'
+                    dataType: 'json',
+
+                    success:function (data) {
+                        if (data.result == "success") {
+                            alert("success");
+                            window.location.reload();
+                        }else {
+//                            alert("fail, error : " + data.message);
+                        }
+                    }
                 });
 
                 var newImg = document.createElement("img");
@@ -346,51 +307,8 @@
             }
         });
     });
-    //
-    //    function imagesAjax(src) {
-    //        var data = {};
-    //        data.img = src;
-    //        data.jid = $('#jid').val();
-    //        $.ajax({
-    //            url: "/user/updatePic",
-    //            data: data,
-    //            type: "POST",
-    //            dataType: 'json',
-    //            success: function(re) {
-    //                if(re.result == 'success') {
-    //                    $('.user_pic img').attr('src',src );
-    //                }
-    //            }
-    //        });
-    //    }
-
-    //    $(".avatar-save").on("click", function() {
-    //        var img_lg = document.getElementById('imageHead');
-    //        // 截图小的显示框内的内容
-    //        html2canvas(img_lg, {
-    //            allowTaint: true,
-    //            taintTest: false,
-    //            onrendered: function(canvas) {
-    //                canvas.id = "mycanvas";
-    //                //生成base64图片数据
-    //                var origan = canvas.toDataURL("image/png");
-    //                saveFile(origan,"1.png");
-    //                var base64code = origan.split(',')[1];
-    //                var data = {
-    //                    "base64code": base64code,
-    //                    "origan":origan
-    //                };
-    //
-    //                $.ajax({
-    //                    url: "/user/updatePic",
-    //                    data: data,
-    //                    type: "POST",
-    //                    dataType: 'json'
-    //                });
-    //            }
-    //        });
-    //    });
 </script>
+<script src="../js/user.js"></script>
 <!--修改头像end-->
 </body>
 </html>

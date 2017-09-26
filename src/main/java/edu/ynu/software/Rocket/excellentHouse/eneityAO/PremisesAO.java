@@ -11,6 +11,8 @@ import java.util.List;
 public class PremisesAO {
     private Premises entity;
 
+    private String location;
+
     private Company company;
 
     private List<HouseType> houseTypeList;
@@ -25,6 +27,14 @@ public class PremisesAO {
 
     public void setEntity(Premises entity) {
         this.entity = entity;
+    }
+
+    public String getLocation() {
+        return location;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
     }
 
     public Company getCompany() {
