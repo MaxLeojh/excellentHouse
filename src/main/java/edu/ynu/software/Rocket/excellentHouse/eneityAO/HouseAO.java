@@ -15,7 +15,7 @@ public class HouseAO {
     private HouseType type;
     private UserAO userAO;
     private List<Picture> pictureList;
-    private List<Post> postList;
+    private List<PostAO> postAOList;
 
     public House getEntity() {
         return entity;
@@ -41,12 +41,12 @@ public class HouseAO {
         this.pictureList = pictureList;
     }
 
-    public List<Post> getPostList() {
-        return postList;
+    public List<PostAO> getPostAOList() {
+        return postAOList;
     }
 
-    public void setPostList(List<Post> postList) {
-        this.postList = postList;
+    public void setPostAOList(List<PostAO> postAOList) {
+        this.postAOList = postAOList;
     }
 
     public UserAO getUserAO() {

@@ -19,4 +19,8 @@ public interface HouseService {
     List<HouseAO> getHouseAOListByUserIdAndKind(Integer userId, String kind);
 
     HouseAO selectById(Integer houseId);
+
+    Integer countTotal(String kind);
+
+    Integer insert(House house);
 }

@@ -76,7 +76,9 @@
                     <article class="property layout-item clearfix">
                         <figure class="feature-image zoom">
                             <%--<a class="clearfix zoom" href=""><img data-action="zoom" src="../assets/images/property/1.jpg" alt="图片丢了"></a>--%>
-                            <a class="clearfix " href=""><img data-action="zoom" src="${premises.pictureList.get(0).pictureAddress}" alt="图片丢了"></a>
+                            <a class="clearfix " href="">
+                                <img class="zoom" data-action="zoom" src="${premises.pictureList.get(0).pictureAddress}" alt="图片丢了">
+                            </a>
                             <span class="btn btn-warning btn-sale">热卖中</span>
                         </figure>
                         <div class="property-contents clearfix">
@@ -85,7 +87,7 @@
                                     <h6 class="entry-title"><a href="/frontPremises/detail?premisesId=${premises.entity.id}">${premises.entity.name}</a></h6>
                                     <span class="property-location"><i class="fa fa-map-marker"></i>坐标施工中</span>
                                 </div>
-                                <button class="btn btn-default btn-price pull-right btn-3d" data-hover="￥${premises.entity.averagePrice}/m<sup>2</sup>"><strong>￥${premises.entity.averagePrice}/m<sup>2</sup></strong>
+                                <button class="btn btn-default btn-price pull-right btn-3d" data-hover="￥${premises.entity.averagePrice}/㎡"><strong>￥${premises.entity.averagePrice}/㎡</strong>
                                 </button>
                             </header>
                             <%--<div class="property-meta clearfix">--%>
@@ -129,8 +131,9 @@
                     <div class="col-lg-4 col-md-6 layout-item-wrap">
                         <article class="property clearfix layout-item">
                             <figure class="feature-image">
-                                <a class="clearfix" href="single-property.html"> <img src="../assets/images/property/1.jpg"
-                                                                                      alt="Property Image"></a>
+                                <a class="clearfix " href="single-property.html">
+                                    <img class="zoom" src="${house.pictureList.get(0).pictureAddress}" alt="Property Image">
+                                </a>
 
                             </figure>
                             <div class="property-contents">
@@ -173,7 +176,9 @@
                 <div class="col-lg-4 col-sm-6 layout-item-wrap">
                     <article class="property layout-item clearfix">
                         <figure class="feature-image">
-                            <a class="clearfix zoom" href=""><img data-action="zoom" src="../assets/images/property/1.jpg" alt="图片丢了"></a>
+                            <a class="clearfix " href="">
+                                <img class="zoom" data-action="zoom" src="${house.pictureList.get(0).pictureAddress}" alt="图片丢了">
+                            </a>
                             <span class="btn btn-warning btn-sale">热卖中</span>
                         </figure>
                         <div class="property-contents clearfix">
@@ -226,8 +231,9 @@
                     <div class="col-lg-4 col-md-6">
                         <article class="property clearfix">
                             <figure class="feature-image">
-                                <a class="clearfix" href="single-property.html"> <img src="../assets/images/property/1.jpg"
-                                                                                      alt="Property Image"></a>
+                                <a class="clearfix" href="single-property.html">
+                                    <img class="zoom" src="${instance.pictureList.get(0).pictureAddress}" alt="Property Image">
+                                </a>
                             </figure>
                             <div class="property-contents">
                                 <header class="property-header clearfix">
@@ -240,7 +246,7 @@
                                         <strong>￥${instance.entity.budget}万</strong></button>
                                 </header>
                                 <div class="property-meta clearfix">
-                                    暂时不知道放什么
+                                    <%--暂时不知道放什么--%>
                                         <%--<span><i class="fa fa-arrows-alt"></i> 3060 SqFt</span>--%>
                                         <%--<span><i class="fa fa-bed"></i> 3 Beds</span>--%>
                                         <%--<span><i class="fa fa-bathtub"></i> 3 Baths</span>--%>

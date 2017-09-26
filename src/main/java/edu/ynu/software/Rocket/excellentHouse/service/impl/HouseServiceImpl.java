@@ -5,9 +5,11 @@ import edu.ynu.software.Rocket.excellentHouse.dao.HouseTypeMapper;
 import edu.ynu.software.Rocket.excellentHouse.dao.PictureMapper;
 import edu.ynu.software.Rocket.excellentHouse.dao.PostMapper;
 import edu.ynu.software.Rocket.excellentHouse.eneityAO.HouseAO;
+import edu.ynu.software.Rocket.excellentHouse.eneityAO.PostAO;
 import edu.ynu.software.Rocket.excellentHouse.eneityAO.UserAO;
 import edu.ynu.software.Rocket.excellentHouse.entity.*;
 import edu.ynu.software.Rocket.excellentHouse.service.HouseService;
+import edu.ynu.software.Rocket.excellentHouse.service.PostService;
 import edu.ynu.software.Rocket.excellentHouse.service.UserService;
 import javafx.geometry.Pos;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,6 +34,9 @@ public class HouseServiceImpl implements HouseService{
 
     @Autowired
     PostMapper postMapper;
+
+    @Autowired
+    PostService postService;
 
     @Autowired
     UserService userService;
@@ -71,11 +76,9 @@ public class HouseServiceImpl implements HouseService{
             houseAO.setPictureList(pictureList);
 
             //评论
-            List<Post> postList = new ArrayList<Post>();
-            PostExample postExample = new PostExample();
-            postExample.createCriteria().andEntityIdEqualTo(house.getId()).andEntityTypeEqualTo(kind);
-            postList = postMapper.selectByExample(postExample);
-            houseAO.setPostList(postList);
+            List<PostAO> postAOList = new ArrayList<PostAO>();
+            postAOList = postService.selectByEntityIdAndType(house.getId(), house.getKind());
+            houseAO.setPostAOList(postAOList);
 
             houseAOList.add(houseAO);
         }
@@ -145,13 +148,21 @@ public class HouseServiceImpl implements HouseService{
         houseAO.setPictureList(pictureList);
 
         //评论
-        List<Post> postList = new ArrayList<Post>();
-        PostExample postExample = new PostExample();
-        postExample.createCriteria().andEntityIdEqualTo(house.getId()).andEntityTypeEqualTo(house.getKind());
-        postList = postMapper.selectByExample(postExample);
-        houseAO.setPostList(postList);
+        List<PostAO> postAOList = new ArrayList<PostAO>();
+        postAOList = postService.selectByEntityIdAndType(houseId, houseAO.getEntity().getKind());
+        houseAO.setPostAOList(postAOList);
 
         return houseAO;
+    }
+
+    public Integer countTotal(String kind) {
+        HouseExample example = new HouseExample();
+        example.createCriteria().andKindEqualTo(kind);
+        return houseMapper.countByExample(example);
+    }
+
+    public Integer insert(House house) {
+        return houseMapper.insert(house);
     }
 
 }

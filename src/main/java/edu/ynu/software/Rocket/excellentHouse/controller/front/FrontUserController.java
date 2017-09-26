@@ -1,6 +1,7 @@
 package edu.ynu.software.Rocket.excellentHouse.controller.front;
 
 import com.alibaba.fastjson.JSONObject;
+import edu.ynu.software.Rocket.excellentHouse.eneityAO.DecoInstanceAO;
 import edu.ynu.software.Rocket.excellentHouse.eneityAO.HouseAO;
 import edu.ynu.software.Rocket.excellentHouse.eneityAO.PremisesAO;
 import edu.ynu.software.Rocket.excellentHouse.eneityAO.UserAO;
@@ -18,6 +19,7 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 import sun.misc.BASE64Decoder;
 
+import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -33,6 +35,9 @@ import java.util.List;
 @Controller
 @RequestMapping("/user")
 public class FrontUserController {
+
+    @Autowired
+    private ServletContext servletContext;
 
     @Autowired
     UserService userService;
@@ -51,6 +56,9 @@ public class FrontUserController {
 
     @Autowired
     HouseService houseService;
+
+    @Autowired
+    DecoInstanceService decoInstanceService;
 
     String verCode = "2333";
 
@@ -242,6 +250,20 @@ public class FrontUserController {
     public ModelAndView collectedHouse(HttpServletRequest request, HttpSession session, String kind) {
         ModelAndView mav = new ModelAndView();
 
+        UserAO userAO = new UserAO();
+        userAO = (UserAO) session.getAttribute("user");
+
+        List<HouseAO> houseAOList = new ArrayList<HouseAO>();
+        List<Collection> collectionList = new ArrayList<Collection>();
+
+        collectionList = collectionService.getUserCollection(userAO.getEntity().getUserId(), kind);
+        for (Collection collection : collectionList) {
+            HouseAO houseAO = new HouseAO();
+            houseAO = houseService.selectById(collection.getEntityId());
+            houseAOList.add(houseAO);
+        }
+        mav.addObject("houseAOList", houseAOList);
+
         mav.addObject("kind", kind);
         mav.setViewName("userCollectedHouse");
         return mav;
@@ -254,6 +276,20 @@ public class FrontUserController {
     @RequestMapping(value = "/collectedDecoInstance", method = RequestMethod.GET)
     public ModelAndView collectedDecoInstance(HttpServletRequest request, HttpSession session) {
         ModelAndView mav = new ModelAndView();
+
+        UserAO userAO = new UserAO();
+        userAO = (UserAO) session.getAttribute("user");
+
+        List<DecoInstanceAO> decoInstanceAOList = new ArrayList<DecoInstanceAO>();
+        List<Collection> collectionList = new ArrayList<Collection>();
+
+        collectionList = collectionService.getUserCollection(userAO.getEntity().getUserId(), "装修案例");
+        for (Collection collection : collectionList) {
+            DecoInstanceAO decoInstanceAO = new DecoInstanceAO();
+            decoInstanceAO = decoInstanceService.selectByDecoInstanceId(collection.getEntityId());
+            decoInstanceAOList.add(decoInstanceAO);
+        }
+        mav.addObject("decoInstanceAOList", decoInstanceAOList);
 
         mav.setViewName("userCollectedDecoInstance");
         return mav;
@@ -334,15 +370,6 @@ public class FrontUserController {
     }
 
     /**
-     * 发布House出售或出租
-     */
-    @ResponseBody
-    @RequestMapping(value = "newHouse", method = RequestMethod.POST)
-    public void newHouse(HttpServletRequest request, HttpServletResponse response, HttpSession session, String type) {
-
-    }
-
-    /**
      * 更新头像
      */
     @ResponseBody
@@ -356,12 +383,27 @@ public class FrontUserController {
         picture.setEntityId(userAO.getEntity().getUserId());
         picture.setEntityType("用户");
         picture.setIsVaild(true);
+
+        //删除原来的头像
+        Picture old = userAO.getPictureList().get(0);
+        old.setIsVaild(false);
+        pictureService.updatePic(old);
+
         pictureService.insertPic(picture);
         String address = "../images/user/"+picture.getId()+".jpg";
         picture.setPictureAddress(address);
         pictureService.updatePic(picture);
-        boolean flag = base64ToImg(base64code,"/home/maxleo/workspace/excellentHouse/src/main/webapp/WEB-INF/images/user/"+picture.getId()+".jpg");
+        //存本地
+        boolean flag = base64ToImg(base64code,"D:/August/idea/program/ExcellentHouse/src/main/webapp/WEB-INF/images/user/"+picture.getId()+".jpg");
         System.out.println(flag);
+
+        //存服务器上
+//        String path_tomcat = servletContext.getRealPath("") + "WEB-INF/images/users/" + picture.getId() + ".jpg";
+//        base64ToImg(base64code,path_tomcat);
+
+        //刷新session中的user
+        UserAO newUserAO = userService.selectById(userAO.getEntity().getUserId());
+        session.setAttribute("user", userAO);
 
 //        File file2 = request.;
 
@@ -370,6 +412,34 @@ public class FrontUserController {
         jsonObject.put("result", "success");
         response.getWriter().print(jsonObject.toString());
     }
+
+    /**
+     * 更新基本信息
+     */
+    @ResponseBody
+    @RequestMapping(value = "update", method = RequestMethod.POST)
+    public void update(String base64code,HttpServletRequest request, HttpServletResponse response, HttpSession session) throws IOException{
+        JSONObject jsonObject = new JSONObject();
+
+        String name = request.getParameter("name");
+        String phone = request.getParameter("phone");
+        Boolean sex = new Boolean(request.getParameter("sex"));
+
+        UserAO userAO = (UserAO)session.getAttribute("user");
+        userAO.getEntity().setName(name);
+        userAO.getEntity().setPhoneNumber(phone);
+        userAO.getEntity().setGender(sex);
+
+        userService.update(userAO.getEntity());
+
+        //刷新session中的user
+        UserAO newUserAO = userService.selectById(userAO.getEntity().getUserId());
+        session.setAttribute("user", userAO);
+
+        jsonObject.put("result", "success");
+        response.getWriter().print(jsonObject.toString());
+    }
+
 
     public static boolean base64ToImg(String imgStr, String path) throws IOException {
         if (imgStr == null) return false;

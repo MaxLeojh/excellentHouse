@@ -50,7 +50,24 @@
         <div class="row">
             <div class="col-lg-8 col-md-7">
                 <section class="property-meta-wrapper common">
-                    <h3 class="entry-title">${houseAO.entity.name}</h3>
+                    <div  class="entry-title clearfix">
+                        <h4 class="pull-left" id="entityName" data-id="${decoInstanceAO.entity.id}"
+                            data-type="装修案例">${decoInstanceAO.entity.name}</h4>
+                        <c:choose>
+                            <c:when test="${isCollected == true}">
+                                <button id="hasCollect" class="pull-right ">已收藏 <i class="iconfont icon-iconfontlike "></i>
+                                </button>
+                            </c:when>
+                            <c:otherwise>
+                                <button id="collect" class="pull-right ">收藏 <i class="iconfont icon-xihuan "></i>
+                                </button>
+                                <button id="hasCollect" class="pull-right " style="display: none">已收藏 <i
+                                        class="iconfont icon-iconfontlike "></i></button>
+                            </c:otherwise>
+                        </c:choose>
+
+                    </div>
+
                     <div class="property-single-meta">
                         <ul class="clearfix">
                             <li><span>预算：</span> ￥${decoInstanceAO.entity.budget}</li>
@@ -136,6 +153,73 @@
                         <%--</div>--%>
                     </div>
                 </section>
+
+                <%--论坛--%>
+                <section class="property-nearby-places common">
+                    <h4 class="entry-title">论坛</h4>
+                    <div class="row">
+                        <div class="form-group">
+                            <label>输入你的评论：</label>
+                            <textarea id="postInfo" class="form-control my-textarea" maxlength="200" rows="5"></textarea>
+                            <button id="submitPost" class="btn submit-comment" data-id="${decoInstanceAO.entity.id}" data-type="装修案例">提交</button>
+                        </div>
+                    </div>
+
+
+                    <c:forEach items="${decoInstanceAO.postAOList}" var="post">
+                        <div class="panel panel-default content-group">
+                            <div class="row">
+                                <div class="col-md-4 col-sm-4 avatar_div">
+                                    <img class=" avatar" src="${post.userAO.pictureList.get(0).pictureAddress}">
+                                </div>
+                                <span class="comment col-md-6 col-sm-6">
+                                 ${post.userAO.entity.name}:
+                                <strong>${post.entity.contains}</strong>
+                                     <a id="btn-parent-comment" class="iconfont icon-pinglun" href="#comment-parent-group${post.entity.id}" data-toggle="collapse">评论</a>
+                                </span>
+                            </div>
+                            <c:choose>
+                                <c:when test="${post.replyAOList.size() > 0}">
+                                    <c:forEach items="${post.replyAOList}" var="reply">
+                                        <div class="row comment-son">
+                                            <div class="col-md-5 col-sm-5 avatar_div" >
+                                                <img class=" avatar" src="${reply.userAO.pictureList.get(0).pictureAddress}" >
+                                            </div>
+                                            <span class="comment col-lg-9">
+                                                <c:choose>
+                                                    <c:when test="${reply.RR != null}">
+                                                        <a>${reply.userAO.entity.name}</a><span> 回复 </span><a>${reply.RR.userAO.entity.name}</a> :
+                                                    </c:when>
+                                                    <c:otherwise>
+                                                        <a>${reply.userAO.entity.name}</a> :
+                                                    </c:otherwise>
+                                                </c:choose>
+                                                <br>
+                                                <strong>${reply.entity.contains}</strong>
+                                                <a class="btn-comment iconfont icon-pinglun"href="#comment-son1${reply.entity.id}" data-toggle="collapse">回复</a>
+                                            </span>
+
+                                                <%--<input class="input-comment form-control " type="text" placeholder="评论">--%>
+                                            <div id="comment-son1${reply.entity.id}" class="collapse" >
+                                                <textarea id="replyContains"  class="form-control comment-textarea col-md-7" maxlength="200" rows="2" ></textarea>
+                                                <button class="btn submit-comment submitReplyReply" data-postId="${post.entity.id}" data-id="${reply.entity.id}">提交</button>
+                                            </div>
+                                        </div>
+                                    </c:forEach>
+                                </c:when>
+                                <c:otherwise>
+
+                                </c:otherwise>
+                            </c:choose>
+                            <div id="comment-parent-group${post.entity.id}" class="row comment-parent-group collapse" >
+                                <textarea id="replyInfo"  class="form-control comment-parent" maxlength="200" rows="2" ></textarea>
+                                <button class="btn submit-comment submitReply" data-id="${post.entity.id}">提交</button>
+                            </div>
+                        </div>
+                    </c:forEach>
+
+                </section>
+
             </div>
             <div class="col-lg-4 col-md-5">
                 <div id="property-sidebar">
@@ -215,5 +299,7 @@
 <script src="../plugins/whats-nearby/source/WhatsNearby.js"></script>
 <script src="../assets/js/theme.js"></script>
 <script src="../js/user.js"></script>
+<script src="../js/collection.js"></script>
+<script src="../js/comment.js"></script>
 </body>
 </html>

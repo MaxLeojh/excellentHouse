@@ -20,4 +20,6 @@ public interface PremisesService {
     PremisesAO selectByPremisesId(Integer premisesId);
 
     List<Premises> testPage();
+
+    Integer countTotal();
 }

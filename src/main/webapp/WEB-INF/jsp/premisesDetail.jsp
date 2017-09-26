@@ -63,7 +63,7 @@
                 <section class="property-meta-wrapper common">
 
                     <div class="entry-title clearfix">
-                        <h4 class="pull-left" id="premisesName" data-id="${premisesAO.entity.id}"
+                        <h4 class="pull-left" id="entityName" data-id="${premisesAO.entity.id}"
                             data-type="楼盘">${premisesAO.entity.name}</h4>
                         <c:choose>
                             <c:when test="${isCollected == true}">

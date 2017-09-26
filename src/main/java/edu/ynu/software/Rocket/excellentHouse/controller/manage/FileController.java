@@ -19,9 +19,11 @@ public class FileController {
 
     @RequestMapping(value="/upload",method= RequestMethod.POST)
     @ResponseBody
-    public String upload(@RequestParam("file") CommonsMultipartFile files[], HttpServletRequest request) throws IOException {
+    public String upload(@RequestParam("file") CommonsMultipartFile files[], @RequestParam("name") String name, HttpServletRequest request) throws IOException {
         System.out.println(files.length);
         CommonsMultipartFile file;
+
+        System.out.println("+++++"+name);
         for (int i = 0; i < files.length; i++) {
 
             file = files[i];

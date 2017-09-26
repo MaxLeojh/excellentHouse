@@ -18,4 +18,5 @@ public interface UserService {
     UserAO selectById(Integer userId);
     List<UserAO> selectAllUserAO();
     Integer deleteUser(Integer userId);
+    UserAO edit(UserAO userAO);
 }
