@@ -43,7 +43,7 @@
 
     <link rel="stylesheet" href="../assets/css/mycss.css">
     <script src="../assets/js/editInfo.js"></script>
-    <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.4.2.min.js"></script>
+    <script type="text/javascript" src="../assets/js/jquery-1.9.1.min.js"></script>
     <!--修改头像-->
     <!-- jQuery -->
     <script src="../assets/jquery.min.js"></script>
