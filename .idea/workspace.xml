@@ -2,24 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3f33fa31-275b-4784-9b79-6ae9d96fca45" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/images/house/77.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/images/house/78.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/images/house/79.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/images/user/76.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/images/user/80.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/images/user/81.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/images/user/82.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/images/user/83.jpg" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/assets/images/logo.png" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/assets/images/logo.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ExcellentHouse/WEB-INF/assets/images/logo.png" afterPath="$PROJECT_DIR$/target/ExcellentHouse/WEB-INF/assets/images/logo.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/mUserDetail.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/mUserDetail.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/mUserInsert.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/mUserInsert.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/mUserList.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/mUserList.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/userHome.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/userHome.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ExcellentHouse/WEB-INF/HTML/mIndex.html" afterPath="$PROJECT_DIR$/target/ExcellentHouse/WEB-INF/HTML/mIndex.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ExcellentHouse/WEB-INF/jsp/mUserList.jsp" afterPath="$PROJECT_DIR$/target/ExcellentHouse/WEB-INF/jsp/mUserList.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ExcellentHouse/WEB-INF/jsp/userHome.jsp" afterPath="$PROJECT_DIR$/target/ExcellentHouse/WEB-INF/jsp/userHome.jsp" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -68,15 +53,7 @@
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="logo.png" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/assets/images/logo.png">
-          <provider selected="true" editor-type-id="images">
-            <state />
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -282,6 +259,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -346,41 +324,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="assets" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ExcellentHouse" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ExcellentHouse" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="webapp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WEB-INF" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="assets" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="images" />
+              <option name="myItemId" value="jsp" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -406,7 +350,6 @@
       </pane>
       <pane id="Scratches" />
       <pane id="Scope" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -424,8 +367,19 @@
     <property name="two.files.diff.last.used.file" value="$PROJECT_DIR$/src/main/webapp/WEB-INF/assets/images/logo.png" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\August\idea\program\ExcellentHouse\src\main\webapp\WEB-INF\images\instance" />
+      <recent name="D:\August\idea\program\ExcellentHouse\src\main\webapp\WEB-INF\lib" />
+      <recent name="D:\August\idea\program\ExcellentHouse\src\main\resources\edu\ynu\software\Rocket\excellentHouse\mapper" />
+      <recent name="D:\August\idea\program\ExcellentHouse\src\main\webapp\WEB-INF\HTML" />
+      <recent name="D:\August\idea\program\ExcellentHouse\src\main\webapp\WEB-INF" />
+    </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="edu.ynu.software.Rocket.excellentHouse" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="edu.ynu.software.Rocket.excellentHouse.dao.customized" />
+      <recent name="edu.ynu.software.Rocket.excellentHouse.entity.AO" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\August\idea\program\ExcellentHouse\src\main\webapp\WEB-INF\assets\images" />
@@ -433,17 +387,6 @@
       <recent name="D:\August\idea\program\ExcellentHouse\src\main\webapp\WEB-INF\images\house" />
       <recent name="D:\August\idea\program\ExcellentHouse\src\main\webapp\WEB-INF\images\user" />
       <recent name="D:\August\idea\program\ExcellentHouse\src\main\webapp\WEB-INF\images\premises" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="edu.ynu.software.Rocket.excellentHouse.dao.customized" />
-      <recent name="edu.ynu.software.Rocket.excellentHouse.entity.AO" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\August\idea\program\ExcellentHouse\src\main\webapp\WEB-INF\images\instance" />
-      <recent name="D:\August\idea\program\ExcellentHouse\src\main\webapp\WEB-INF\lib" />
-      <recent name="D:\August\idea\program\ExcellentHouse\src\main\resources\edu\ynu\software\Rocket\excellentHouse\mapper" />
-      <recent name="D:\August\idea\program\ExcellentHouse\src\main\webapp\WEB-INF\HTML" />
-      <recent name="D:\August\idea\program\ExcellentHouse\src\main\webapp\WEB-INF" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -1053,14 +996,8 @@
       <workItem from="1506352237821" duration="5080000" />
       <workItem from="1506358057368" duration="3906000" />
       <workItem from="1506362557612" duration="2835000" />
-      <workItem from="1506386348879" duration="411000" />
-    </task>
-    <task id="LOCAL-00001" summary="first commit">
-      <created>1504750661762</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1504750661762</updated>
+      <workItem from="1506386348879" duration="1858000" />
+      <workItem from="1506408428272" duration="700000" />
     </task>
     <task id="LOCAL-00002" summary="second commit">
       <created>1504750957404</created>
@@ -1398,11 +1335,18 @@
       <option name="project" value="LOCAL" />
       <updated>1506361008444</updated>
     </task>
-    <option name="localTasksCounter" value="50" />
+    <task id="LOCAL-00050" summary="录视频">
+      <created>1506386840104</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1506386840104</updated>
+    </task>
+    <option name="localTasksCounter" value="51" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="400332000" />
+    <option name="totallyTimeSpent" value="402479000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1441,7 +1385,7 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21864952" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290461" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26609442" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26984978" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
@@ -1501,7 +1445,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$" />
     </ignored-roots>
-    <MESSAGE value="后台用户管理Controller" />
     <MESSAGE value="Controller" />
     <MESSAGE value="删除了四个表" />
     <MESSAGE value="user→userAO" />
@@ -1526,7 +1469,8 @@
     <MESSAGE value="高德地图API在HouseDetail页引入" />
     <MESSAGE value="Merge branch 'master' of https://github.com/MaxLeojh/excellentHouse&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml" />
     <MESSAGE value="后台用户管理基本实现" />
-    <option name="LAST_COMMIT_MESSAGE" value="后台用户管理基本实现" />
+    <MESSAGE value="录视频" />
+    <option name="LAST_COMMIT_MESSAGE" value="录视频" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1839,6 +1783,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="5010">
           <caret line="167" column="32" lean-forward="false" selection-start-line="167" selection-start-column="32" selection-end-line="167" selection-end-column="32" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1846,6 +1791,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="8880">
           <caret line="296" column="0" lean-forward="false" selection-start-line="296" selection-start-column="0" selection-end-line="296" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1860,6 +1806,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="7170">
           <caret line="239" column="32" lean-forward="false" selection-start-line="232" selection-start-column="8" selection-end-line="239" selection-end-column="32" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1874,6 +1821,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
           <caret line="39" column="0" lean-forward="true" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
+          <folding>
+            <element signature="e#13484#14804#0#HTML" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1881,12 +1831,8 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
           <caret line="11" column="25" lean-forward="true" selection-start-line="11" selection-start-column="25" selection-end-line="11" selection-end-column="25" />
+          <folding />
         </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/target/ExcellentHouse/WEB-INF/assets/images/logo.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/images/user/83.jpg">
@@ -1908,11 +1854,15 @@
       <provider editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/assets/images/logo.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/target/ExcellentHouse/WEB-INF/assets/images/logo.png">
       <provider selected="true" editor-type-id="images">
         <state />
       </provider>
