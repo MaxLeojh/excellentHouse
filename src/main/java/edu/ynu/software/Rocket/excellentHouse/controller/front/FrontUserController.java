@@ -96,6 +96,7 @@ public class FrontUserController {
             user.setName(userName);
             user.setEmail(Email);
             user.setPassWord(passWord);
+            user.setIsVaild(true);
             int status = userService.insertUser(user);
             if (status >0) {
                 user.setUserId(userService.getLastInsert());
@@ -106,6 +107,7 @@ public class FrontUserController {
                 picture.setEntityType("用户");
                 picture.setPictureAddress("../production/images/user.png");
                 picture.setIsVaild(true);
+                pictureService.insertPic(picture);
 
                 String verCode = user.getUserId().toString();
                 emailService.snedVerMail(user.getEmail(),verCode,user.getName());
